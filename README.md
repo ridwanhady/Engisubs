@@ -18,7 +18,14 @@ Engi's Kitchen by AWSUBS
 		- Milk Producing (Done)
 	- Product (Done)
 		- Farm Product
+			- Telur
+			- Daging
+			- Susu
 		- Side Product
+			- Mayonnaise (Telur)
+			- Steak (Daging)
+			- Ekado (Daging, telur)
+			- Keju (Susu)
 	- Player
 - Linked List (Done)
 
@@ -28,19 +35,20 @@ Macam Farm animal
 - Ayam (Telur, daging)
 - Bison  (Daging, susu)
 - Anjing (Daging)
-- T-rex = Daging
+- T-rex (Daging)
 
-Macam Farm Product
-- Susu platypus
+Macam Telur
 - Telur Pterodactyl
 - Telur Platypus
 - Telur ayam
+
+Macam Daging
 - Daging ayam
 - Daging platypus
 - Daging T-rex
 - Daging Bison
 - Daging anjing
+
+Macam Susu
+- Susu platypus
 - Susu Bison
-- Telur Pterodactyl
-- Telur Ayam
-- Telur Platypus

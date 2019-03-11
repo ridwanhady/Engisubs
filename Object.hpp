@@ -11,8 +11,8 @@ private:
 public:
 	//Ctor
 	Object(string _objectType, char _objectSymbol = '?');
-	//Virtual method untuk mengeluarkan simbol dari suatu objek ke layar
-	virtual void render() = 0;
+	//Untuk mengeluarkan simbol dari suatu objek ke layar
+	void render();
 
 	//Getter
 	string getObjectType();
