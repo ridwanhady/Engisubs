@@ -1,13 +1,15 @@
 #ifndef _FACILITY_HPP
 #define _FACILITY_HPP
 
-#include "Object.hpp"
+#include "Land.hpp"
 
-class Facility : public Object{
-private:
+using namespace std;
 
-public:
-	Facility(string _ObjectType = "Facility", char _objectSymbol = '?');
+class Facility : public Land{
+    public:
+        bool isWalkable(){
+            return false;
+        }
 };
 
 #endif

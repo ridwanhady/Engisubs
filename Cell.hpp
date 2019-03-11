@@ -10,6 +10,8 @@ class Cell : public Object{
 
     public:
         Cell(int _baris, int _kolom);
+
+        virtual bool isWalkable() = 0;
 };
 
 #endif

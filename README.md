@@ -3,20 +3,20 @@ Mohon bersabar Bu / Pak, program ini sedang dikerjakan atau mungkin baru akan di
 Engi's Kitchen by AWSUBS 
 
 # To-do list
-- Object(Done)
-	- Cell
-		-	Land
-		-	Coop
-		-	Barn
-	- Facility (Kosong)
-		- Well
-		- Mixer
-		- Truck
-	- Farm Animal (Done)
-		- Egg Producing (Done)
-		- Meat Producing (Done) 
-		- Milk Producing (Done)
-	- Product (Done)
+- Object **Done**
+	- Cell **Done**
+		-	Land **Done**
+			-	Coop **Done**
+			-	Barn **Done**
+		- Facility **Done**
+			- Well
+			- Mixer
+			- Truck
+	- Farm Animal
+		- Egg Producing **Done**
+		- Meat Producing **Done** 
+		- Milk Producing **Done**
+	- Product **Done**
 		- Farm Product
 			- Telur
 			- Daging
@@ -27,7 +27,7 @@ Engi's Kitchen by AWSUBS
 			- Ekado (Daging, telur)
 			- Keju (Susu, Susu)
 	- Player
-- Linked List (Done)
+- Linked List **Done**
 
 Macam Farm animal
 - Pterodactyl (Telur)

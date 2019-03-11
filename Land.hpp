@@ -3,15 +3,23 @@
 
 #include "Cell.hpp"
 
+enum LandType {
+    GRASSLAND,
+    BARN,
+    COOP
+};
+
 class Land : public Cell{
     private:
         bool isGrown;
-        enum landType {GRASSLAND, BARN, COOP};
+        LandType landType;
 
     public:
         Land(bool _isGrown);
 
-        bool isWalkable();
+        bool isWalkable(){
+            return true;
+        }
 
         bool isGrown();
 
