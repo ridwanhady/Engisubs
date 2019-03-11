@@ -4,7 +4,7 @@ Engi's Kitchen by AWSUBS
 
 # To-do list
 - Object(Done)
-	-	Cell (On-progress)
+	-	Cell
 		-	Land
 		-	Coop
 		-	Barn
@@ -12,10 +12,10 @@ Engi's Kitchen by AWSUBS
 		- Well
 		- Mixer
 		- Truck
-	- Farm Animal
-		- Egg Producing Farm Animal
-		- Meat Producing Farm Animal
-		- Milk Producing Farm Animal
+	- Farm Animal (Done)
+		- Egg Producing (Done)
+		- Meat Producing (Done) 
+		- Milk Producing (Done)
 	- Product (Done)
 		- Farm Product
 		- Side Product

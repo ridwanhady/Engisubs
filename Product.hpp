@@ -1,6 +1,8 @@
 #ifndef _PRODUCT_HPP
 #define _PRODUCT_HPP
 
+#include "Object.hpp"
+
 class Product : public Object{
 private:
 	const char productType;
