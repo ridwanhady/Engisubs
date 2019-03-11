@@ -1,11 +1,14 @@
 #ifndef _PRODUCT_HPP
 #define _PRODUCT_HPP
 
-class Product{
+#include "Object.hpp"
+
+class Product : public Object{
 private:
-	const char type;
+	const char productType;
 public:
-	Product(char _ProductType)
+	//Ctor
+	Product(char _productType);
 	virtual void produce() = 0;
 
 	char getProductType();
