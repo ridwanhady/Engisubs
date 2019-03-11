@@ -4,11 +4,11 @@ Engi's Kitchen by AWSUBS
 
 # To-do list
 - Object(Done)
-	-	Cell
+	- Cell
 		-	Land
 		-	Coop
 		-	Barn
-	- Facility
+	- Facility (Kosong)
 		- Well
 		- Mixer
 		- Truck
