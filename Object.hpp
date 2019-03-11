@@ -3,10 +3,12 @@
 
 class Object{
 private:
-	char tipe;
+	const char ObjectType;
 public:
-	Object(char _tipe);
+	Object(char _ObjectType);
 	virtual void render() = 0;
+
+	char getObjectType();
 };
 
 #endif
