@@ -22,10 +22,10 @@ Engi's Kitchen by AWSUBS
 			- Daging
 			- Susu
 		- Side Product
-			- Mayonnaise (Telur)
-			- Steak (Daging)
+			- Mayonnaise (Telur, Telur)
+			- Steak (Daging, Daging)
 			- Ekado (Daging, telur)
-			- Keju (Susu)
+			- Keju (Susu, Susu)
 	- Player
 - Linked List (Done)
 
