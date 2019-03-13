@@ -7,7 +7,7 @@ class Product : public Object{
 private:
 	const char productType;
 public:
-	//Ctor
+	//Ctor dengagn parameter
 	Product(char _productType);
 	virtual void produce() = 0;
 

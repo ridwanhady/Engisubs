@@ -9,8 +9,10 @@ class Cell : public Object{
         int kolom;
 
     public:
+    	//Ctor dengan parameter
         Cell(int _baris, int _kolom);
 
+        //Virtual method untuk mengecek apakah suatu petak dapat dilangkahi player atau tidak
         virtual bool isWalkable() = 0;
 };
 

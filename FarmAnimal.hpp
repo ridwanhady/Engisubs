@@ -1,5 +1,8 @@
 #ifndef _FARMANIMAL_HPP_
 #define _FARMANIMAL_HPP_
+
+#include "Object.hpp"
+
 class FarmAnimal : public Object {
 public:
   FarmAnimal();
