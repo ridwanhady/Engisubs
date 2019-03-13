@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Mixer {
+class Mixer : public Facility{
     public:
         void interact();
 };
