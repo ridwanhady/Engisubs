@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class Player : public Product{
+class Player : public Object{
 	public:
 		// ctor tanpa parameter
 		Player();		
