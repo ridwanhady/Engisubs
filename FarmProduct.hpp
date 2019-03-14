@@ -1,13 +1,11 @@
 #ifndef _FARMPRODUCT_HPP_
 #define _FARMPRODUCT_HPP_
-#include "Object.hpp"
+#include "Product.hpp"
 
-class FarmProduct : public Object {
+class FarmProduct : public Product {
     private:
 
     public:
-        FarmProduct();
-        virtual ~FarmProduct();
 };
 
 #endif

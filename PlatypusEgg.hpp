@@ -4,7 +4,7 @@
 
 class PlatypusEgg : public Egg {
     private:
-
+        static int totalPlatypusEgg;
     public:
 };
 

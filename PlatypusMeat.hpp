@@ -4,6 +4,7 @@
 
 class PlatypusMeat : public Meat{
     private:
+        static int totalPlatypusMeat;
     public:
 };
 

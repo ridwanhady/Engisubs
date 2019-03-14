@@ -1,6 +1,6 @@
 #ifndef _OBJECT_HPP
 #define _OBJECT_HPP
-
+#include <string>
 using namespace std;
 
 //Enumerator untuk tipe objek

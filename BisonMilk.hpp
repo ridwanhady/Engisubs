@@ -4,7 +4,7 @@
 
 class BisonMilk : public Milk {
     private:
-
+        static int totalBisonMilk;
     public:
 
 };

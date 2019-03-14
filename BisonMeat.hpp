@@ -4,6 +4,7 @@
 
 class BisonMeat : public Meat{
     private:
+        static int totalBisonMeat;
     public:
 };
 
