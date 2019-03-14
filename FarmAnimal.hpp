@@ -1,6 +1,9 @@
 #ifndef _FARMANIMAL_HPP_
 #define _FARMANIMAL_HPP_
-class FarmAnimal {
+
+#include "Object.hpp"
+
+class FarmAnimal : public Object {
 public:
   FarmAnimal();
   FarmAnimal(const FarmAnimal&);

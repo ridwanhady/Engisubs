@@ -15,8 +15,9 @@ class Land : public Cell{
         LandType landType;
 
     public:
+        //Ctor dengan parameter
         Land(bool _isGrown);
-
+        //Land dapat dilangkahi
         bool isWalkable(){
             return true;
         }

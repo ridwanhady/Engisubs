@@ -10,7 +10,7 @@ Engi's Kitchen by AWSUBS
 			-	Barn **Done**
 		- Facility **Done**
 			- Well
-			- Mixer
+			- Mixer **File Created**
 			- Truck
 	- Farm Animal
 		- Egg Producing **Done**
@@ -18,9 +18,9 @@ Engi's Kitchen by AWSUBS
 		- Milk Producing **Done**
 	- Product **Done**
 		- Farm Product
-			- Telur
-			- Daging
-			- Susu
+			- Egg **File Created** 
+			- Meat **File Created**
+			- Milk **File Created**
 		- Side Product
 			- Mayonnaise (Telur, Telur)
 			- Steak (Daging, Daging)
@@ -38,17 +38,17 @@ Macam Farm animal
 - T-rex (Daging)
 
 Macam Telur
-- Telur Pterodactyl
-- Telur Platypus
-- Telur ayam
+- Pterodactyl Egg **File Created**
+- Platypus Egg **File Created**
+- Chicken Egg **File Created**
 
 Macam Daging
-- Daging ayam
-- Daging platypus
-- Daging T-rex
-- Daging Bison
-- Daging anjing
+- Chicken Meat **File Created**
+- Platypus Meat **File Created**
+- TRex Meat **File Created**
+- Bison Meat **File Created**
+- Dog Meat **File Created**
 
 Macam Susu
-- Susu platypus
-- Susu Bison
+- Platypus Milk **File Created**
+- Bison Milk **File Created**

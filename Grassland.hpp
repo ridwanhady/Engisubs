@@ -5,6 +5,7 @@
 
 class Grassland : public Land {
     public:
+    	//Ctor dengan parameter
         Grassland(bool _isGrown);
 };
 

@@ -1,4 +1,4 @@
-#ifndef _TREXEAT_HPP_
+#ifndef _TREXMEAT_HPP_
 #define _TREXMEAT_HPP_
 #include "Meat.hpp"
 

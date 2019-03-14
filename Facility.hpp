@@ -7,6 +7,7 @@ using namespace std;
 
 class Facility : public Land{
     public:
+    	//Facility tidak bisa dilangkahi
         bool isWalkable(){
             return false;
         }

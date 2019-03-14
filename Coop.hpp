@@ -5,6 +5,7 @@
 
 class Coop : public Land{
     public:
+    	//Ctor dengan parameter
         Coop(bool _isGrown);
 };
 
