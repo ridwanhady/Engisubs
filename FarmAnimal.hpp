@@ -14,7 +14,7 @@ class FarmAnimal : public Object {
 
 	public:
       //Constructor. Menambahkan jumlah hewan.
-  		FarmAnimal(pair<int,int> _position);
+  		FarmAnimal(pair<int,int> _position, string _name);
 
       //Copy Constructor. Menambahkan jumlah hewan.
   		FarmAnimal(const FarmAnimal&);
@@ -27,13 +27,14 @@ class FarmAnimal : public Object {
   		int getTimeUntilDead();
   		int getTimeUntilHungry();
   		bool getIsProductProduced();
+      string getName();
 
   		//Setter
   		void setPosition(pair<int,int> _position);
   		void setTimeUntilDead(int _timeUntilDead);
   		void setTimeUntilHungry(int _timeUntilHungry);
   		void setIsProductProduced(bool _isProductProduced);
-
+      void setName(string _name);
 
       bool isHungry(){
         return (timeUntilHungry == 0);

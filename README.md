@@ -47,9 +47,9 @@ Engi's Kitchen by AWSUBS
 Macam Farm animal
 - Pterodactyl (Telur)
 - Platypus (Telur, daging, susu)
-- Ayam (Telur, daging)
+- Chicken (Telur, daging)
 - Bison  (Daging, susu)
-- Anjing (Daging)
+- Dog (Daging)
 - T-rex (Daging)
 
 Macam Telur
