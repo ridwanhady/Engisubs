@@ -5,18 +5,23 @@ Engi's Kitchen by AWSUBS
 # To-do list
 - Object **Done**
 	- Cell **Done**
-		-	Land **Done**
-			-	Coop **Done**
-			-	Barn **Done**
+		- Land **Done**
+			- Coop **Done**
+			- Barn **Done**
+			- Grassland **Done**
 		- Facility **Done**
-			- Well
-			- Mixer **File Created**
-			- Truck
-	- Farm Animal
-		- Egg Producing **Done**
-		- Meat Producing **Done** 
-		- Milk Producing **Done**
-	- Product **Done**
+			- Well **Done**
+			- Mixer **Done**
+			- Truck **Done**
+	- Farm Animal **PERLU** (Nama, isFed, hasProduct)
+		Jika tidak makan selama 5 tick, maka akan mati.   
+		Setelah makan rumput, hewan dapat diambil produknya,
+		kecuali hewan dengan produk daging, yang dapat disembelih
+		tanpa makan terlebih dahulu.
+		- Egg Producing
+		- Meat Producing 
+		- Milk Producing
+	- Product (Harga)
 		- Farm Product
 			- Egg **File Created** 
 			- Meat **File Created**
@@ -38,6 +43,22 @@ Macam Farm animal
 - T-rex (Daging)
 
 Macam Telur
+<<<<<<< HEAD
+- Telur Pterodactyl
+- Telur Platypus
+- Telur Ayam
+
+Macam Daging
+- Daging Ayam
+- Daging Platypus
+- Daging T-rex
+- Daging Bison
+- Daging Anjing
+
+Macam Susu
+- Susu Platypus
+- Susu Bison
+=======
 - Pterodactyl Egg **File Created**
 - Platypus Egg **File Created**
 - Chicken Egg **File Created**
@@ -95,3 +116,4 @@ Behaviour:
             - Menghasilkan FarmProduct di dalam hewan tersebut, namun baru bisa diambil setelah hewan tersebut diinteract
             - Hanya bisa menyimpan 1 FarmProduct
             - Hanya berlaku untuk MilkProducingFarmAnimal dan EggProducingFarmAnimal
+>>>>>>> b393656cd8c3063eb6358ef5d7310e91c8a5218c
