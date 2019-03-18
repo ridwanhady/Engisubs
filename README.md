@@ -3,14 +3,17 @@ Mohon bersabar Bu / Pak, program ini sedang dikerjakan atau mungkin baru akan di
 Engi's Kitchen by AWSUBS 
 
 # Diagram
+
 ## Object
-![Object Diagaram](https://user-images.githubusercontent.com/37581792/54507139-894af080-4972-11e9-8e9a-db9fe6841978.png)
+![Object Diagram](https://user-images.githubusercontent.com/37581792/54507777-8ac9e800-4975-11e9-8e6e-76c20a3ae8ab.png)
 ### Land
-![Land Diagram](https://user-images.githubusercontent.com/37581792/54507226-07a79280-4973-11e9-95ab-0c9af88477be.png)
+![Land Diagram](https://user-images.githubusercontent.com/37581792/54507776-8a315180-4975-11e9-997f-817f1b8d6ec8.png)
 ### Farm Product
-![Farm Product Diagram](https://user-images.githubusercontent.com/37581792/54507193-daf37b00-4972-11e9-9229-1679ffec351e.png)
+![Farm Product Diagram](https://user-images.githubusercontent.com/37581792/54507775-8a315180-4975-11e9-9b1d-707f3f8e7a0d.png)
+### Farm Animal
+![Farm Animal Diagram](https://user-images.githubusercontent.com/37581792/54507774-8a315180-4975-11e9-9a26-76da324d29f3.png)
 ### Side Product
-![Side Product Diagram](https://user-images.githubusercontent.com/37581792/54507238-11c99100-4973-11e9-8bfa-c4751bb4683b.png)
+![Side Product Diagram](https://user-images.githubusercontent.com/37581792/54507778-8ac9e800-4975-11e9-847f-43ae95bbd36a.png)
 # To-do list
 - Object **Done**
 	- Cell **Done**
