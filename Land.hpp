@@ -18,8 +18,9 @@ class Land : public Cell{
         LinkedList<Object> objectHere;
 
     public:
+        //Ctor dengan parameter
         Land(bool _isGrown);
-
+        //Land dapat dilangkahi
         bool isWalkable(){
             return true;
         }

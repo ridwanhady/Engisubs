@@ -1,6 +1,7 @@
 #ifndef _OBJECT_HPP
 #define _OBJECT_HPP
-
+#include <string>
+#include <utility>
 using namespace std;
 
 //Enumerator untuk tipe objek
@@ -17,13 +18,12 @@ class Object{
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
 		const char objectSymbol;
 	public:
-		//Ctor
+		//Ctor dengan parameter
 		Object(ObjectType _objectType, char _objectSymbol = '?');
 		//Untuk mengeluarkan simbol dari suatu objek ke layar
 		void render();
 		//Virtual method untuk berinteraksi dengan interact
 		virtual void interact() = 0;
-
 		//Getter
 		ObjectType getObjectType();
 };
