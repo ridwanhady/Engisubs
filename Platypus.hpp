@@ -9,6 +9,10 @@ class Platypus : public FarmAnimal {
     private:
 
     public:
+        // ctor
+        Platypus();
+    
+        //
         PlatypusMilk produceMilk();
         PlatypusEgg produceEgg();
         PlatypusMeat kill();
