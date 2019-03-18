@@ -6,6 +6,8 @@ using namespace std;
 
 class Mixer : public Facility{
     public:
+    	//Constructor, menginisialisasi posisi
+    	Mixer(pair<int,int> _position);
         void interact();
 };
 

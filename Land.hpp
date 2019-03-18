@@ -19,7 +19,7 @@ class Land : public Cell{
 
     public:
         //Ctor dengan parameter
-        Land(bool _isGrown);
+        Land(pair<int,int> _position, bool _isGrown);
         //Land dapat dilangkahi
         bool isWalkable(){
             return true;

@@ -6,7 +6,7 @@
 class Barn : public Land{
     public:
     	//Ctor dengan parameter
-        Barn(bool _isGrown);
+        Barn(pair<int,int> _position, bool _isGrown);
 };
 
 #endif

@@ -5,6 +5,8 @@
 
 class Well : public Facility{
     public:
+    	//Constructor, menginisialisasi posisi
+    	Well(pair<int,int> _position);
         void interact();
 };
 

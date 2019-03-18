@@ -7,6 +7,9 @@ class Truck : public Facility{
     private:
         int notUsableTurns;
     public:
+        //Constructor, menginisialisasi posisi
+        Truck(pair<int,int> _position);
+
         void interact();
 
         bool isUsable(){

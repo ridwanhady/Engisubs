@@ -6,7 +6,7 @@
 class Grassland : public Land {
     public:
     	//Ctor dengan parameter
-        Grassland(bool _isGrown);
+        Grassland(pair<int,int> _position, bool _isGrown);
 };
 
 #endif
