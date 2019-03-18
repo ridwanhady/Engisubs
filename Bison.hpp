@@ -8,6 +8,10 @@ class Bison : public FarmAnimal {
     private:
 
     public:
+        // ctor
+        Bison();
+        
+        //
         BisonMilk produceMilk();
         BisonMeat kill();
 };
