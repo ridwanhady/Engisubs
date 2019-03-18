@@ -4,10 +4,11 @@
 #include "Object.hpp"
 
 class FarmAnimal : public Object {
-public:
-  FarmAnimal();
-  FarmAnimal(const FarmAnimal&);
-  FarmAnimal& operator= (const FarmAnimal&);
-  virtual ~FarmAnimal();
+	public:
+  		FarmAnimal();
+  		FarmAnimal(const FarmAnimal&);
+  		FarmAnimal& operator= (const FarmAnimal&);
+  		virtual ~FarmAnimal();
+
 };
 #endif

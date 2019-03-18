@@ -23,7 +23,7 @@ class Object{
 		void render();
 		//Virtual method untuk berinteraksi dengan interact
 		virtual void interact() = 0;
-
+		virtual void move() = 0;
 		//Getter
 		ObjectType getObjectType();
 };

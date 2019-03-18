@@ -26,18 +26,17 @@ class Player : public Object{
 		double getUang();
 		
 		// setter
-		setName(string _name);
-		setWater(int _water);
-		setInventory(Product* _tas);
-		setUang(double _uang);	
+		void setName(string _name);
+		void setWater(int _water);
+		void setInventory(Product* _tas);
+		void setUang(double _uang);	
 	
 		// command
-		void Move();
-		void Talk();
-		void Interact();
-		void Kill();
-		void Grow();
-		void Mix();
+		void talk();
+		void interact();
+		void kill();
+		void grow();
+		void mix();
 	private:
 		string player_name; //nama pemain
 		int water;	    //kapasitas air
