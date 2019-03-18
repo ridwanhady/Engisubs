@@ -5,7 +5,7 @@
 
 class Barn : public Land{
     public:
-    	//Ctor dengan parameter
+    	  //Ctor dengan parameter
         Barn(bool _isGrown);
 };
 

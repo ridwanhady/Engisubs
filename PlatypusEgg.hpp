@@ -4,9 +4,8 @@
 #include "Egg.hpp"
 
 class PlatypusEgg : public Egg {
-    private:
-        static int totalPlatypusEgg;
-    public:
+public:
+  PlatypusEgg(int _price);
 };
 
 #endif

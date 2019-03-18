@@ -14,25 +14,26 @@ using namespace std;
 class Player : public Object{
 	public:
 		// ctor tanpa parameter
-		Player();		
-		
+		Player();
+
 		// ctor dengan parameter
-		Player(string _name, int _water, Product* _inventory, double _uang); 
-		
+		Player(string _name, int _water, LinkedList <Product> _inventory, double _uang);
+
 		// getter
 		string getName();
 		int getWater();
-		Product* getInventory();
+		LinkedList <Product> getInventory();
 		double getUang();
 		pair<int,int> getPosition();
-		
+		int getCount(Product _product);
+
 		// setter
 		void setName(string _name);
 		void setWater(int _water);
-		void setInventory(Product* _tas);
-		void setUang(double _uang);	
+		void setInventory(LinkedList <Product> _tas);
+		void setUang(double _uang);
 		void setPosition(pair<int,int> _position);
-	
+
 		// command
 		void talk();
 		void interact();
@@ -43,9 +44,10 @@ class Player : public Object{
 	private:
 		string player_name; //nama pemain
 		int water;	    //kapasitas air
-        Product* inventory; //tas/inventory
+    LinkedList <Product> inventory; //tas/inventory
 		double uang;	    //uang pemain
-		pair<int,int> position
+		pair<int,int> position;
+
 };
 
 #endif

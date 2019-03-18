@@ -10,6 +10,7 @@ enum ObjectType {
 	Kursi
 };
 
+//Enumerator untuk arah gerak.
 enum DirectionType{
 	UP,
 	DOWN,

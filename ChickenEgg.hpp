@@ -4,7 +4,6 @@
 
 class ChickenEgg : public Egg {
     private:
-        static int totalChikenEgg;
     public:
 };
 

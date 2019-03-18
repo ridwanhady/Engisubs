@@ -3,12 +3,9 @@
 #include "SideProduct.hpp"
 
 class Cheese : public SideProduct{
-    private:
-        //ATTRIBUTE NEEDED
-        static int totalCheese;
-    public:
-        //METHOD NEEDED
-        Cheese(Susu, Susu);
+  public:
+    //METHOD NEEDED
+    Cheese(int _price);
 };
 
 #endif

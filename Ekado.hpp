@@ -5,11 +5,9 @@
 
 class Ekado : public SideProduct {
     private:
-        //ATTRIBUTE NEEDED
-        static int totalEkado;
     public:
         //METHODS NEEDED
-        Ekado(Meat, Egg);
+        Ekado(int _price);
 };
 
 #endif

@@ -6,7 +6,7 @@ using namespace std;
 
 class Mixer : public Facility{
     public:
-        void interact();
+        virtual void interact();
 };
 
 #endif

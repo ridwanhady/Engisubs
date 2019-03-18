@@ -4,10 +4,8 @@
 #include "FarmProduct.hpp"
 
 class Meat : public FarmProduct{
-    private:
-
-    public:
-
+  public:
+    Meat(int _price);
 };
 
 #endif

@@ -6,10 +6,9 @@
 class Mayonaise : public SideProduct {
     private:
         //ATTRIBUTE NEEDED
-        static int totalMayonaise;
     public:
         //METHODS NEEDED
-        Mayonaise(Egg, Egg);
+        Mayonaise(int _price);
 };
 
 #endif

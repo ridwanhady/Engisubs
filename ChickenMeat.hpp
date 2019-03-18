@@ -5,8 +5,8 @@
 
 class ChickenMeat : public Meat{
     private:
-        static int totalChickenMeat;
     public:
+      ChickenMeat(int _price = 5);
 };
 
 #endif

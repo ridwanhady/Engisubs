@@ -5,15 +5,19 @@
 
 class FarmAnimal : public Object {
 	private:
-		pair<int,int> position;
-		bool isHungry = false;
-		int timeUntilDead = 100;
-		int timeUntilHungry = 100;
-		bool isProductProduced = false;
+  		pair<int,int> position;
+  		bool isHungry = false;
+  		int timeUntilDead = 100;
+  		int timeUntilHungry = 100;
+  		bool isProductProduced = false;
 	public:
+      //Constructor. Menambahkan jumlah hewan.
   		FarmAnimal(pair<int,int> _position);
+
+      //Copy Constructor. Menambahkan jumlah hewan.
   		FarmAnimal(const FarmAnimal&);
-  		FarmAnimal& operator= (const FarmAnimal&);
+
+      //Destructor. Mengurangi jumlah hewan.
   		~FarmAnimal();
 
   		//Getter
@@ -28,7 +32,7 @@ class FarmAnimal : public Object {
   		void setIsHungry(bool _isHungry);
   		void setTimeUntilDead(int _timeUntilDead);
   		void setTimeUntilHungry(int _timeUntilHungry);
-  		void getIsProductProduced(bool _isProductProduced);
+  		void setIsProductProduced(bool _isProductProduced);
 
   		//Memakan rumput di tempatnya
   		void eat();

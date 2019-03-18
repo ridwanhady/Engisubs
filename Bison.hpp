@@ -4,12 +4,11 @@
 #include "BisonMeat.hpp"
 #include "BisonMilk.hpp"
 
-class Bison : public FarmAnimal {
+class Bison : public MeatProducing, MilkProducing {
     private:
 
     public:
-        BisonMilk produceMilk();
-        BisonMeat kill();
+
 };
 
 #endif

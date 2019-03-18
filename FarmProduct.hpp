@@ -4,12 +4,14 @@
 
 class FarmProduct : public Product {
     private:
-
+      const string producer;
     public:
     	//Ctor tanpa parameter
-        FarmProduct();
-        //Virtual dtor
-        virtual ~FarmProduct();
+      //FarmProduct();
+      //Ctor dengan parameter
+        FarmProduct(int _price);
+      //Virtual dtor
+      //virtual ~FarmProduct();
 };
 
 #endif

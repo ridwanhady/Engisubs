@@ -5,11 +5,12 @@
 #include "ChickenMeat.hpp"
 
 
-class Chicken : public FarmAnimal {
+class Chicken : public EggProducing, MeatProducing {
     private:
+        Chicken();
     public:
-        ChickenEgg produceEgg();
-        ChickenMeat kill();
+        void produceEgg();
+        void produceMeat();
 };
 
 #endif

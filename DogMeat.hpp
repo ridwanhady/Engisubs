@@ -6,6 +6,7 @@
 class DogMeat : public Meat{
     private:
     public:
+      DogMeat(int _price = 15);
 };
 
 #endif

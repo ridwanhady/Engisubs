@@ -4,12 +4,9 @@
 #include "SideProduct.hpp"
 
 class Steak : public SideProduct {
-    private:
-        //ATTRIBUTE NEEDED
-        static int totalSteak;
     public:
         //METHODS NEEDED
-        Steak(Meat, Meat);
+        Steak(int _price);
 };
 
 #endif

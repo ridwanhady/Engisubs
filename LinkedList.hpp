@@ -33,6 +33,21 @@ class LinkedList{
         }
 
         /*
+            Fungsi ini menghitung kemunculan elemen.
+        */
+        int count(T _element){
+          typename vector<T>::iterator itr = data.begin();
+          int countEl = 0;
+          while (itr != data.begin()){
+            if ((*itr) == _element){
+              countEl++;
+            }
+            itr++;
+          }
+          return countEl;
+        }
+
+        /*
             Fungsi isEmpty() mengembalikan boolean yang bernilai True jika LinkedList
             kosong, False jika tidak.
         */

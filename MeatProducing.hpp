@@ -4,12 +4,14 @@
 #include "FarmAnimal.hpp"
 
 class MeatProducing: FarmAnimal {
-protected:
-  Meat M;
-public:
-  EggProducing(Meat);
-  EggProducing(const EggProducing&);
-  EggProducing& operator= (const EggProducing&);
-  virtual ~EggProducing();
+    protected:
+        Meat M;
+    public:
+        //Constructor
+        MeatProducing(Meat _meat);
+
+        //Hewan akan mati saat memproduksi daging. Menerima
+        //reference ke player.
+        virtual void produceMeat(Player& _player) = 0;
 };
 #endif

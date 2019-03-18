@@ -3,10 +3,9 @@
 
 #include "Meat.hpp"
 
-class PlatypusMeat : public Meat{
-    private:
-        static int totalPlatypusMeat;
+class PlatypusMeat : public Meat {
     public:
+      PlatypusMeat(int _price = 10);
 };
 
 #endif

@@ -4,10 +4,8 @@
 #include "Milk.hpp"
 
 class PlatypusMilk : public Milk {
-    private:
-        static int totalPlatypusMilk;
     public:
-
+      PlatypusMilk(int _price);
 };
 
 #endif

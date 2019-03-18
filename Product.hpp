@@ -3,14 +3,21 @@
 
 #include "Object.hpp"
 
+enum ProductType {
+	FARMPRODUCT,
+	SIDEPRODUCT
+}
+
 class Product : public Object{
 private:
-	const char productType;
+	const ProductType productType;
+	const int price;
 public:
 	//Ctor dengagn parameter
-	Product(char _productType);
+	Product(ProductType _productType, int _price);
 	virtual void produce() = 0;
-
+	void setPrice(int _price);
+	int getPrice() const;
 	char getProductType();
 };
 

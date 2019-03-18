@@ -5,10 +5,10 @@
 
 class SideProduct : public Product {
     private:
-
+      LinkedList<FarmProduct> resep;
     public:
-
-    protected:
+      FarmProduct getResep(int i) const;
+      void addResep (FarmProduct _product);
 };
 
 #endif

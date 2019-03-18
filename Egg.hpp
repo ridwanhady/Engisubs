@@ -5,9 +5,9 @@
 using namespace std;
 class Egg : public FarmProduct{
     private:
-        const string producer;
+        int price;
     public:
-        
+      Egg(int _price);
 };
 
 #endif
