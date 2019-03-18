@@ -17,7 +17,7 @@ class Chicken : public FarmAnimal {
         Chicken(const string _name);
         
         // getter
-        setName( _name);
+        setName(string _name);
     
         // setter
         getName(); 

@@ -2,6 +2,15 @@
 Mohon bersabar Bu / Pak, program ini sedang dikerjakan atau mungkin baru akan dikerjakan.
 Engi's Kitchen by AWSUBS 
 
+# Diagram
+## Object
+![Object Diagaram](https://user-images.githubusercontent.com/37581792/54507139-894af080-4972-11e9-8e9a-db9fe6841978.png)
+### Land
+![Land Diagram](https://user-images.githubusercontent.com/37581792/54507226-07a79280-4973-11e9-95ab-0c9af88477be.png)
+### Farm Product
+![Farm Product Diagram](https://user-images.githubusercontent.com/37581792/54507193-daf37b00-4972-11e9-9229-1679ffec351e.png)
+### Side Product
+![Side Product Diagram](https://user-images.githubusercontent.com/37581792/54507238-11c99100-4973-11e9-8bfa-c4751bb4683b.png)
 # To-do list
 - Object **Done**
 	- Cell **Done**
