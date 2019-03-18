@@ -7,6 +7,9 @@ class Dog : public FarmAnimal {
     private:
 
     public:
+        // ctor
+        Dog();    
+    
         /* Method kill will produce its Animal Meat
          * if applied on Dog, it will produce Dog Meat.
         */
