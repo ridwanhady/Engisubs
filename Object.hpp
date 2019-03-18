@@ -10,6 +10,13 @@ enum ObjectType {
 	Kursi
 };
 
+enum DirectionType{
+	UP,
+	DOWN,
+	RIGHT,
+	LEFT
+};
+
 //Class untuk mendefinisikan tipe dari seluruh objek
 class Object{
 	private:

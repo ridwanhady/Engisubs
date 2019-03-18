@@ -39,7 +39,7 @@ class Player : public Object{
 		void kill();
 		void grow();
 		void mix();
-		void move();
+		void move(DirectionType direction);
 	private:
 		string player_name; //nama pemain
 		int water;	    //kapasitas air
