@@ -44,22 +44,6 @@ Macam Farm animal
 - T-rex (Daging)
 
 Macam Telur
-<<<<<<< HEAD
-- Telur Pterodactyl
-- Telur Platypus
-- Telur Ayam
-
-Macam Daging
-- Daging Ayam
-- Daging Platypus
-- Daging T-rex
-- Daging Bison
-- Daging Anjing
-
-Macam Susu
-- Susu Platypus
-- Susu Bison
-=======
 - Pterodactyl Egg **File Created**
 - Platypus Egg **File Created**
 - Chicken Egg **File Created**
@@ -117,4 +101,3 @@ Behaviour:
             - Menghasilkan FarmProduct di dalam hewan tersebut, namun baru bisa diambil setelah hewan tersebut diinteract
             - Hanya bisa menyimpan 1 FarmProduct
             - Hanya berlaku untuk MilkProducingFarmAnimal dan EggProducingFarmAnimal
->>>>>>> b393656cd8c3063eb6358ef5d7310e91c8a5218c
