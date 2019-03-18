@@ -7,6 +7,8 @@ class Truck : public Facility{
     private:
         int notUsableTurns;
     public:
+        //Constructor, menginisialisasi posisi
+        Truck(pair<int,int> _position);
         /**
          * Interact() berguna untuk berinteraksi dengan 'Truck'.
          * Berinteraksi dengan 'Truck' akan menjual semua barang

@@ -5,8 +5,10 @@
 
 using namespace std;
 
-class Facility : public Land{
+class Facility : public Cell{
     public:
+    	//Constructor, menginisialisasi posisi
+    	Facility(pair<int,int> _position);
     	//Facility tidak bisa dilangkahi
         bool isWalkable(){
             return false;

@@ -5,15 +5,20 @@
 
 class Cell : public Object{
     private:
-        int baris;
-        int kolom;
+        pair<int,int> position;
 
     public:
     	//Ctor dengan parameter
-        Cell(int _baris, int _kolom);
+        Cell(pair<int,int> _position);
 
         //Virtual method untuk mengecek apakah suatu petak dapat dilangkahi player atau tidak
         virtual bool isWalkable() = 0;
+
+        //Getter
+        pair<int,int> getPosition();
+
+        //Setter
+        void setPosition(pair<int,int> _position)
 };
 
 #endif

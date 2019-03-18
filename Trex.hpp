@@ -5,23 +5,23 @@
 #include "TRexMeat.hpp"
 #include <string>
 
-class Trex : public FarmAnimal {
+class TRex : public FarmAnimal {
     private:
         string name;
-    
+
     public:
         // ctor
         Trex();
-        
+
         //ctor dengan parameter
-        Trex(const string _name);    
-    
+        Trex(const string _name);
+
         // getter
         setName( _name);
-    
+
         // setter
-        getName(); 
-    
+        getName();
+
         //produksi
         TrexMeat kill();
 };

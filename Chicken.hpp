@@ -17,8 +17,8 @@ class Chicken : public EggProducing, MeatProducing {
         Chicken(const string _name);
 
         // getter
-        setName( _name);
-
+        setName(string _name);
+    
         // setter
         getName();
 

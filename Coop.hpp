@@ -6,7 +6,7 @@
 class Coop : public Land{
     public:
     	//Ctor dengan parameter
-        Coop(bool _isGrown);
+        Coop(pair<int,int> _position, bool _isGrown);
 };
 
 #endif

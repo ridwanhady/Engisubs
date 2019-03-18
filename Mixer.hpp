@@ -6,7 +6,11 @@ using namespace std;
 
 class Mixer : public Facility{
     public:
-        virtual void interact();
+    	//Constructor, menginisialisasi posisi
+    	Mixer(pair<int,int> _position);
+
+      //Implementasi virtual interact()
+      void interact();
 };
 
 #endif
