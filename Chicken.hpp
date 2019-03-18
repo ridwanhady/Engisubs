@@ -8,6 +8,10 @@
 class Chicken : public FarmAnimal {
     private:
     public:
+        // ctor
+        Chicken();
+    
+        //
         ChickenEgg produceEgg();
         ChickenMeat kill();
 };
