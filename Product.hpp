@@ -6,7 +6,7 @@
 enum ProductType {
 	FARMPRODUCT,
 	SIDEPRODUCT
-}
+};
 
 class Product : public Object{
 private:
