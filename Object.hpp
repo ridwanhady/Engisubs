@@ -1,6 +1,7 @@
 #ifndef _OBJECT_HPP
 #define _OBJECT_HPP
 #include <string>
+#include <utility>
 using namespace std;
 
 //Enumerator untuk tipe objek
@@ -23,7 +24,6 @@ class Object{
 		void render();
 		//Virtual method untuk berinteraksi dengan interact
 		virtual void interact() = 0;
-		virtual void move() = 0;
 		//Getter
 		ObjectType getObjectType();
 };
