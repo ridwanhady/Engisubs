@@ -7,6 +7,10 @@ class Trex : public FarmAnimal {
     private:
 
     public:
+        // ctor
+        Trex();
+    
+        //
         TrexMeat kill();
 };
 
