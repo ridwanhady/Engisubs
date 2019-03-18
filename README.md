@@ -5,15 +5,23 @@ Engi's Kitchen by AWSUBS
 # Diagram
 
 ## Object
-![Object Diagram](https://user-images.githubusercontent.com/37581792/54507777-8ac9e800-4975-11e9-8e6e-76c20a3ae8ab.png)
+![class_object](https://user-images.githubusercontent.com/37581792/54508343-40963600-4978-11e9-9f58-b854045a9d64.png)
+
 ### Land
-![Land Diagram](https://user-images.githubusercontent.com/37581792/54507776-8a315180-4975-11e9-997f-817f1b8d6ec8.png)
-### Farm Product
-![Farm Product Diagram](https://user-images.githubusercontent.com/37581792/54507775-8a315180-4975-11e9-9b1d-707f3f8e7a0d.png)
+![class_land](https://user-images.githubusercontent.com/37581792/54508355-4c81f800-4978-11e9-8a4e-5e332c1aa39e.png)
+
+### Product
+![class_product](https://user-images.githubusercontent.com/37581792/54508345-42f89000-4978-11e9-9e66-65cffefa3a71.png)
+
+#### Farm Product
+![class_farm_product](https://user-images.githubusercontent.com/37581792/54508360-5277d900-4978-11e9-9aa8-0c99958c94a7.png)
+
+#### Side Product
+![class_side_product](https://user-images.githubusercontent.com/37581792/54508373-5c99d780-4978-11e9-9b7e-98ff2f98d443.png)
+
 ### Farm Animal
-![Farm Animal Diagram](https://user-images.githubusercontent.com/37581792/54507774-8a315180-4975-11e9-9a26-76da324d29f3.png)
-### Side Product
-![Side Product Diagram](https://user-images.githubusercontent.com/37581792/54507778-8ac9e800-4975-11e9-847f-43ae95bbd36a.png)
+![class_farm_animal](https://user-images.githubusercontent.com/37581792/54508363-54da3300-4978-11e9-8c47-ab433c12ff00.png)
+
 # To-do list
 - Object **Done**
 	- Cell **Done**
