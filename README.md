@@ -5,18 +5,23 @@ Engi's Kitchen by AWSUBS
 # To-do list
 - Object **Done**
 	- Cell **Done**
-		-	Land **Done**
-			-	Coop **Done**
-			-	Barn **Done**
+		- Land **Done**
+			- Coop **Done**
+			- Barn **Done**
+			- Grassland **Done**
 		- Facility **Done**
-			- Well
-			- Mixer
-			- Truck
-	- Farm Animal
-		- Egg Producing **Done**
-		- Meat Producing **Done** 
-		- Milk Producing **Done**
-	- Product **Done**
+			- Well **Done**
+			- Mixer **Done**
+			- Truck **Done**
+	- Farm Animal **PERLU** (Nama, isFed, hasProduct)
+		Jika tidak makan selama 5 tick, maka akan mati.   
+		Setelah makan rumput, hewan dapat diambil produknya,
+		kecuali hewan dengan produk daging, yang dapat disembelih
+		tanpa makan terlebih dahulu.
+		- Egg Producing
+		- Meat Producing 
+		- Milk Producing
+	- Product (Harga)
 		- Farm Product
 			- Telur
 			- Daging
@@ -40,15 +45,15 @@ Macam Farm animal
 Macam Telur
 - Telur Pterodactyl
 - Telur Platypus
-- Telur ayam
+- Telur Ayam
 
 Macam Daging
-- Daging ayam
-- Daging platypus
+- Daging Ayam
+- Daging Platypus
 - Daging T-rex
 - Daging Bison
-- Daging anjing
+- Daging Anjing
 
 Macam Susu
-- Susu platypus
+- Susu Platypus
 - Susu Bison
