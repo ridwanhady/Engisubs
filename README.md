@@ -7,17 +7,11 @@ Engi's Kitchen by AWSUBS
 ## Object
 ![class_object](https://user-images.githubusercontent.com/37581792/54508343-40963600-4978-11e9-9f58-b854045a9d64.png)
 
-### Land
-![class_land](https://user-images.githubusercontent.com/37581792/54508355-4c81f800-4978-11e9-8a4e-5e332c1aa39e.png)
+### Cell
+![class_cell](https://user-images.githubusercontent.com/37581792/54508515-bf8b6e80-4978-11e9-9bd4-5d2590ae0b3c.png)
 
 ### Product
 ![class_product](https://user-images.githubusercontent.com/37581792/54508345-42f89000-4978-11e9-9e66-65cffefa3a71.png)
-
-#### Farm Product
-![class_farm_product](https://user-images.githubusercontent.com/37581792/54508360-5277d900-4978-11e9-9aa8-0c99958c94a7.png)
-
-#### Side Product
-![class_side_product](https://user-images.githubusercontent.com/37581792/54508373-5c99d780-4978-11e9-9b7e-98ff2f98d443.png)
 
 ### Farm Animal
 ![class_farm_animal](https://user-images.githubusercontent.com/37581792/54508363-54da3300-4978-11e9-8c47-ab433c12ff00.png)
