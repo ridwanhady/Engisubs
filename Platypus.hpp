@@ -6,9 +6,10 @@
 #include "PlatypusMilk.hpp"
 #include "MilkProducing.hpp"
 #include "EggProducing.hpp"
+#include "MeatProducing.hpp"
 #include <string>
 
-class Platypus : public MilkProducing, EggProducing {
+class Platypus : public MilkProducing, EggProducing, MeatProducing {
     private:
         string name;
     
