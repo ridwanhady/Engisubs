@@ -10,6 +10,8 @@ class FarmAnimal : public Object {
   		int timeUntilDead = 100;
   		int timeUntilHungry = 100;
   		bool isProductProduced = false;
+      string name = "";
+
 	public:
       //Constructor. Menambahkan jumlah hewan.
   		FarmAnimal(pair<int,int> _position);
@@ -22,18 +24,20 @@ class FarmAnimal : public Object {
 
   		//Getter
   		pair<int,int> getPosition();
-  		bool getIsHungry();
   		int getTimeUntilDead();
   		int getTimeUntilHungry();
   		bool getIsProductProduced();
 
   		//Setter
   		void setPosition(pair<int,int> _position);
-  		void setIsHungry(bool _isHungry);
   		void setTimeUntilDead(int _timeUntilDead);
   		void setTimeUntilHungry(int _timeUntilHungry);
   		void setIsProductProduced(bool _isProductProduced);
 
+
+      bool isHungry(){
+        return (timeUntilHungry == 0);
+      }
   		//Memakan rumput di tempatnya
   		void eat();
 
