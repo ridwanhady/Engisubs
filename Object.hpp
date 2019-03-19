@@ -6,8 +6,32 @@ using namespace std;
 
 //Enumerator untuk tipe objek
 enum ObjectType {
-	Meja,
-	Kursi
+	MIXER,
+	TRUCK,
+	WELL,
+	BARN,
+	COOP,
+	GRASSLAND,
+	CHICKEN,
+	PLATYPUS,
+	PTERODACTYL,
+	BISON,
+	DOG,
+	TREX,
+	CHICKEN_EGG,
+	PLATYPUS_EGG,
+	PTERODACTYL_EGG,
+	BISON_MEAT,
+	CHICKEN_MEAT,
+	DOG_MEAT,
+	PLATYPUS_MEAT,
+	TREX_MEAT,
+	BISON_MILK,
+	PLATYPUS_MILK,
+	CHEESE,
+	EKADO,
+	MAYONAISE,
+	STEAK
 };
 
 //Enumerator untuk arah gerak.
