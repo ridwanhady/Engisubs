@@ -20,11 +20,14 @@ using namespace std;
 //Kelas ini merepresentasikan pemain.
 class Player : public Object{
 	public:
-		// ctor tanpa parameter
+		// Constructor tanpa parameter.
 		Player();
 
-		// ctor dengan parameter
+		// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang.
 		Player(string _name, int _water, double _uang);
+
+		// Destructor karena ada pointer di atribut.
+		~Player();
 
 		// getter
 		/**

@@ -8,10 +8,20 @@
 //Kelas ini merepresentasikan produk sampingan yang terdiri dari beberapa produk hewan.
 class SideProduct : public Product {
     private:
-        LinkedList<FarmProduct> resep;
+        //Menyimpan resep dalam bentuk pointer.
+        LinkedList<FarmProduct*> resep;
     public:
+        //Constructor tanpa parameter.
+        SideProduct();
+
+        //Destructor karena ada pointer.
+        ~SideProduct();
+
+        //Menghasilkan produk pada resep dengan indeks i.
         FarmProduct getResep(int i) const;
-        void addResep (FarmProduct _product);
+
+        //Menambah resep.
+        void addResep (FarmProduct& _product);
 };
 
 #endif

@@ -14,8 +14,11 @@ class Game{
 		LinkedList<Cell*> cellList;
 		Player* mainPlayer;
 	public:
-		//Constructor
+		//Constructor.
 		Game();
+
+		//Destructor.
+		~Game();
 
 		//Memulai game.
 		void startGame();

@@ -12,7 +12,7 @@ class TRex : public MeatProducing {
         Constructor yang menerima parameter position, name, meat.
         Parameter diturunkan dari MeatProducing.
         */
-        Trex(pair<int,int> _position, string _name, Meat* _meat);
+        TRex(pair<int,int> _position, string _name, Meat* _meat);
 
         /*
         Method untuk memproduksi meat dan membuat hewan mati.

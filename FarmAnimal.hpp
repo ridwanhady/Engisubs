@@ -5,12 +5,24 @@
 
 class FarmAnimal : public Object {
 	private:
-  		pair<int,int> position; //Atribut posisi
-  		bool isHungry = false; //Atribut menandakan FarmAnimal sudah makan atau belum
-  		int timeUntilDead = 100; //Atribut menandakan waktu sebelum FarmAnimal mati.
-  		int timeUntilHungry = 100;// Atribut menandakan waktu sebelum FarmAnimal lapar.
-  		bool isProductProduced = false; //Atribut menandakan
-      string name = ""; //Atribut nama dari FarmAnimal
+
+			//Atribut posisi
+  		pair<int,int> position;
+
+			//Atribut menandakan FarmAnimal sudah makan atau belum.
+  		bool isHungry = false;
+
+			//Atribut menandakan waktu sebelum FarmAnimal mati.
+  		int timeUntilDead = 100;
+
+			// Atribut menandakan waktu sebelum FarmAnimal lapar.
+  		int timeUntilHungry = 100;
+
+			//Atribut menandakan
+  		bool isProductProduced = false;
+
+			//Atribut nama dari FarmAnimal
+      string name = "";
 
 	public:
       /*
@@ -24,25 +36,46 @@ class FarmAnimal : public Object {
   		~FarmAnimal();
 
   		//Getter
-  		pair<int,int> getPosition(); //Mendapatkan position
-  		int getTimeUntilDead(); //Mendapat waktu sebelum hewan mati
-  		int getTimeUntilHungry(); //Mendapat waktu sebelum hewan lapar
-  		bool getIsProductProduced(); //Mendapat apakah produk sudah diproduksi
-      string getName(); //Mendapat nama dari FarmAnimal
+
+			//Mendapatkan position
+  		pair<int,int> getPosition();
+
+			//Mendapat waktu sebelum hewan mati
+  		int getTimeUntilDead();
+
+			//Mendapat waktu sebelum hewan lapar
+  		int getTimeUntilHungry();
+
+			//Mendapat apakah produk sudah diproduksi
+  		bool getIsProductProduced();
+
+			//Mendapat nama dari FarmAnimal
+      string getName();
 
   		//Setter
-  		void setPosition(pair<int,int> _position); //Menge-set posisi FarmAnimal
-  		void setTimeUntilDead(int _timeUntilDead); //Menge-set waktu sebelum hewan mati
-  		void setTimeUntilHungry(int _timeUntilHungry); //Menge-set waktu sebelum hewan lapar
-  		void setIsProductProduced(bool _isProductProduced); //Menge-set apakah produk sudah diproduksi
-      void setName(string _name); //Menge-set nama dari FarmAnimal
+
+			//Menge-set posisi FarmAnimal
+  		void setPosition(pair<int,int> _position);
+
+			//Menge-set waktu sebelum hewan mati
+  		void setTimeUntilDead(int _timeUntilDead);
+
+			//Menge-set waktu sebelum hewan lapar
+  		void setTimeUntilHungry(int _timeUntilHungry);
+
+			 //Menge-set apakah produk sudah diproduksi
+  		void setIsProductProduced(bool _isProductProduced);
+
+			//Menge-set nama dari FarmAnimal
+      void setName(string _name);
 
       //Method untuk mengembalikan apakah hewan dalam keadaan lapar
       bool isHungry(){
         return (timeUntilHungry == 0);
       }
 
-  		void eat(); //Method untuk makan rumput di tempat hewan itu berdirI
+			//Method untuk makan rumput di tempat hewan itu berdiri
+  		void eat();
 
   		//Bergerak
   		void move(DirectionType direction, LinkedList<Cell> map);

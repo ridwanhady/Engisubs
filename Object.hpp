@@ -20,11 +20,12 @@ enum DirectionType{
 
 //Class untuk mendefinisikan tipe dari seluruh objek
 class Object{
-	private:
+	protected:
 		//Tipe dari suatu objek, misal: Product, TRex
 		const ObjectType objectType;
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
 		const char objectSymbol;
+
 	public:
 		//Ctor dengan parameter
 		Object(ObjectType _objectType, char _objectSymbol = '?');
