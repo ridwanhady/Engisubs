@@ -27,35 +27,35 @@ Engi's Kitchen by AWSUBS
 			- Well **Done**
 			- Mixer **Done**
 			- Truck **Done**
-	- Farm Animal **PERLU** (Nama, isFed, hasProduct)
+	- Farm Animal **File Created** (Nama, isFed, hasProduct)
 		Jika tidak makan selama 5 tick, maka akan mati.   
 		Setelah makan rumput, hewan dapat diambil produknya,
 		kecuali hewan dengan produk daging, yang dapat disembelih
 		tanpa makan terlebih dahulu.
-		- Egg Producing
-		- Meat Producing 
-		- Milk Producing
+		- Egg Producing **File Created**
+		- Meat Producing **File Created**
+		- Milk Producing **File Created**
 	- Product (Harga)
 		- Farm Product
 			- Egg **File Created** 
 			- Meat **File Created**
 			- Milk **File Created**
 		- Side Product
-			- Mayonnaise (Telur, Telur)
-			- Steak (Daging, Daging)
-			- Ekado (Daging, telur)
-			- Keju (Susu, Susu)
-	- Player
+			- Mayonnaise (Telur, Telur) **File Created**
+			- Steak (Daging, Daging) **File Created**
+			- Ekado (Daging, telur) **File Created**
+			- Keju (Susu, Susu) **File Created**
+	- Player **Done**
 - Linked List **Done**
-- Game
+- Game **Done**
 
 Macam Farm animal
-- Pterodactyl (Telur)
-- Platypus (Telur, daging, susu)
-- Chicken (Telur, daging)
-- Bison  (Daging, susu)
-- Dog (Daging)
-- T-rex (Daging)
+- Pterodactyl (Telur) **File Created**
+- Platypus (Telur, daging, susu) **File Created**
+- Chicken (Telur, daging) **File Created**
+- Bison  (Daging, susu) **File Created**
+- Dog (Daging) **File Created**
+- T-rex (Daging) **File Created**
 
 Macam Telur
 - Pterodactyl Egg **File Created**
