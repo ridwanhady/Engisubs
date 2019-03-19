@@ -3,13 +3,13 @@
 
 #include "Meat.hpp"
 
+//Kelas ini merepresentasikan produk daging Ayam.
 class ChickenMeat : public Meat{
     public:
-      /*
-      Constructor yang menerima parameter price,
-      price adalah atribut dari Product
-      */
-      ChickenMeat(int _price = 5);
+
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        ChickenMeat(int _price, string producer);
+
 };
 
 #endif

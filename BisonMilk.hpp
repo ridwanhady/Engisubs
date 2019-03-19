@@ -3,13 +3,12 @@
 
 #include "Milk.hpp"
 
+//Kelas ini merepresentasikan produk susu Bison.
 class BisonMilk : public Milk {
     public:
-      /*
-      Constructor yang menerima parameter price,
-      price adalah atribut dari Product
-      */
-      BisonMilk(int _price);
+
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        BisonMilk(int _price, string producer);
 
 };
 

@@ -2,13 +2,13 @@
 #define _CHICKENEGG_HPP_
 #include "Egg.hpp"
 
+//Kelas ini merepresentasikan produk telur Ayam.
 class ChickenEgg : public Egg {
     public:
-      /*
-      Constructor yang menerima parameter price,
-      price adalah atribut dari Product
-      */
-      ChickenEgg(int _price);
+
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        ChickenEgg(int _price, string producer);
+
 };
 
 #endif

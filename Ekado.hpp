@@ -3,10 +3,10 @@
 
 #include "SideProduct.hpp"
 
+//Kelas ini merepresentasikan produk sampingan Ekado.
 class Ekado : public SideProduct {
-    private:
     public:
-        //METHODS NEEDED
+        //Constructor menerima harga, dan menginisialisasi resep.
         Ekado(int _price);
 };
 

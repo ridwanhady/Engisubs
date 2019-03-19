@@ -3,9 +3,10 @@
 
 #include "SideProduct.hpp"
 
+//Kelas ini merepresentasikan produk sampingan steik.
 class Steak : public SideProduct {
     public:
-        //METHODS NEEDED
+        //Constructor menerima harga, dan menginisialisasi resep.
         Steak(int _price);
 };
 

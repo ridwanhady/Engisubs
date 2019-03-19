@@ -3,22 +3,29 @@
 
 #include "Object.hpp"
 
+//Enumerator untuk tipe produk.
 enum ProductType {
 	FARMPRODUCT,
 	SIDEPRODUCT
 };
 
+//Kelas ini merepresentasikan produk.
 class Product : public Object{
-private:
-	const ProductType productType;
-	const int price;
-public:
-	//Ctor dengagn parameter
-	Product(ProductType _productType, int _price);
-	virtual void produce() = 0;
-	void setPrice(int _price);
-	int getPrice() const;
-	char getProductType();
+	private:
+		//Tipe dari produk ini.
+		const ProductType productType;
+
+		//Harga dari produk ini.
+		const int price;
+	public:
+		//Ctor dengagn parameter
+		Product(ProductType _productType, int _price);
+
+		//Mengambil harga.
+		int getPrice() const;
+
+		//Mengambil tipe produk.
+		ProductType getProductType() const;
 };
 
 #endif

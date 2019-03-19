@@ -41,9 +41,11 @@ class FarmAnimal : public Object {
         return (timeUntilHungry == 0); //Method untuk mengembalikan apakah hewan dalam keadaan lapar
       }
 
-  		void eat(); //Method untuk makan rumput di tempat hewan itu berdiri
+  		void eat(); //Method untuk makan rumput di tempat hewan itu berdirI
 
-  		void move(DirectionType direction); //Method untuk bergerak secara acak.
+  		//Bergerak
+  		void move(DirectionType direction, LinkedList<Cell> map);
+
 
   		//Method untuk mengupdate keadaan animal
   		//Jika isHungry = True, timeUntilDead = timeUntilDead-1

@@ -3,9 +3,11 @@
 
 #include "FarmProduct.hpp"
 
+//Kelas ini merepresentasikan produk daging.
 class Meat : public FarmProduct{
-  public:
-    Meat(int _price);
+    public:
+        //Constructor menerima harga, dan menginisialisasi producer untuk superclass
+        Meat(int _price, string producer);
 };
 
 #endif

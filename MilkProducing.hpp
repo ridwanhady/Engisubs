@@ -4,7 +4,7 @@
 #include "FarmAnimal.hpp"
 #include "Milk.hpp"
 
-class MilkProducing : FarmAnimal {
+class MilkProducing : public FarmAnimal {
     protected:
         Milk M;
     public:
