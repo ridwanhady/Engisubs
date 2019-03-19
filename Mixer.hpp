@@ -5,12 +5,12 @@
 using namespace std;
 
 class Mixer : public Facility{
-    public:
+	public:
     	//Constructor, menginisialisasi posisi
-    	Mixer(pair<int,int> _position);
+		Mixer(pair<int,int> _position);
 
-      //Implementasi virtual interact()
-      void interact();
+		//Implementasi virtual interact()
+		void interact();
 };
 
 #endif

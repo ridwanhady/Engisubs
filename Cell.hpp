@@ -18,7 +18,7 @@ class Cell : public Object{
         pair<int,int> getPosition();
 
         //Setter
-        void setPosition(pair<int,int> _position)
+        void setPosition(pair<int,int> _position);
 };
 
 #endif
