@@ -40,7 +40,7 @@ class Player : public Object{
 		void kill();
 		void grow();
 		void mix();
-		void move(DirectionType direction);
+		void move(DirectionType direction, LinkedList<Cell>);
 	private:
 		string player_name; //nama pemain
 		int water;	    //kapasitas air

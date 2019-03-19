@@ -43,7 +43,7 @@ class FarmAnimal : public Object {
   		void eat();
 
   		//Bergerak
-  		void move(DirectionType direction);
+  		void move(DirectionType direction, LinkedList<Cell> map);
 
   		//Mengupdate keadaan animal
   		//Jika isHungry = True, timeUntilDead = timeUntilDead-1
