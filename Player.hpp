@@ -23,7 +23,7 @@ class Player : public Object{
 		Player();
 
 		// ctor dengan parameter
-		Player(string _name, int _water, LinkedList <Product> _inventory, double _uang);
+		Player(string _name, int _water, double _uang);
 
 		// getter
 		/**
@@ -49,7 +49,7 @@ class Player : public Object{
 		/**
 		 * Mengembalikan nilai dari Atribut Count / Jumlah Produk
 		 */
-		int getCount(Product _product);
+		int getCount(Product& _product);
 
 		// setter
 		/**
@@ -61,9 +61,9 @@ class Player : public Object{
 		 */
 		void setWater(int _water);
 		/**
-		 * Mengeset nilai dari Atribut Inventory
+		 * Menambah barang ke dalam inventory.
 		 */
-		void setInventory(LinkedList <Product> _tas);
+		void addInventory(Product& _barang);
 		/**
 		 * Mengeset nilai dari Atribut Uang
 		 */ 
