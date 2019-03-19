@@ -3,11 +3,10 @@
 
 #include "SideProduct.hpp"
 
+//Kelas ini merepresentasikan produk sampingan mayonais.
 class Mayonaise : public SideProduct {
-    private:
-        //ATTRIBUTE NEEDED
     public:
-        //METHODS NEEDED
+        //Constructor menerima harga, dan menginisialisasi resep.
         Mayonaise(int _price);
 };
 

@@ -5,6 +5,7 @@
 
 #include <string>
 #include "Product.hpp"
+#include "LinkedList.hpp"
 
 #define MAX_WATER 100
 #define MAX_INVENTORY 10
@@ -44,7 +45,7 @@ class Player : public Object{
 	private:
 		string player_name; //nama pemain
 		int water;	    //kapasitas air
-    LinkedList <Product> inventory; //tas/inventory
+    	LinkedList <Product> inventory; //tas/inventory
 		double uang;	    //uang pemain
 		pair<int,int> position;
 

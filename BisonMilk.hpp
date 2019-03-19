@@ -3,11 +3,11 @@
 
 #include "Milk.hpp"
 
+//Kelas ini merepresentasikan produk susu Bison.
 class BisonMilk : public Milk {
-    private:
-        static int totalBisonMilk;
     public:
-
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        BisonMilk(int _price, string producer);
 };
 
 #endif

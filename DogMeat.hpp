@@ -3,10 +3,11 @@
 
 #include "Meat.hpp"
 
+//Kelas ini merepresentasikan produk daging Anjing.
 class DogMeat : public Meat{
-    private:
     public:
-      DogMeat(int _price = 15);
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        DogMeat(int _price, string producer);
 };
 
 #endif

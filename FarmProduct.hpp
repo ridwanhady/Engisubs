@@ -2,16 +2,14 @@
 #define _FARMPRODUCT_HPP_
 #include "Product.hpp"
 
+//Kelas ini merepresentasikan produk dari hewan.
 class FarmProduct : public Product {
-    private:
+  private:
+      //Nama hewan yang memproduksi.
       const string producer;
-    public:
-    	//Ctor tanpa parameter
-      //FarmProduct();
-      //Ctor dengan parameter
-        FarmProduct(int _price);
-      //Virtual dtor
-      //virtual ~FarmProduct();
+  public:
+      //Constructor harus menerima harga, dan menginisialisasi tipe untuk superclass.
+      FarmProduct(int _price);
 };
 
 #endif
