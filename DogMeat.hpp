@@ -4,8 +4,11 @@
 #include "Meat.hpp"
 
 class DogMeat : public Meat{
-    private:
     public:
+      /*
+      Constructor yang menerima parameter price,
+      price adalah atribut dari Product
+      */
       DogMeat(int _price = 15);
 };
 

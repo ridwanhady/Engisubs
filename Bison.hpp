@@ -8,11 +8,25 @@
 #include <string>
 
 class Bison : public MeatProducing, MilkProducing {
-    private:
-    
     public:
-        // ctor dengan parameter nama
-        Bison(const string _name);
-};
+        /*
+        Constructor yang menerima parameter position, name, meat, dan milk
+        Parameter diturunkan dari MeatProducing dan MilkProducing.
+        */
+        Bison(pair<int,int> _position, string _name, Meat _meat, Milk _milk);
+
+        /*
+        Method untuk mengetahui apakah Bison sudah mati
+        karena dagingnya diproduksi. Method diturunkan dari
+        MeatProducing
+        */
+        produceMeat(Player& _player);
+
+        /*
+        Method untuk mengetahui apakah susunya sudah diproduksi. Method diturunkan dari
+        MilkProducing
+        */
+        produceMilk(Player& _player);
+    };
 
 #endif

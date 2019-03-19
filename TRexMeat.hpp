@@ -3,8 +3,11 @@
 #include "Meat.hpp"
 
 class TRexMeat : public Meat{
-    private:
     public:
+      /*
+      Constructor yang menerima parameter price,
+      price adalah atribut dari Product.
+      */
       TRexMeat(int _price = 20);
 };
 

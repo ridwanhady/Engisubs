@@ -4,8 +4,6 @@
 #include "FarmProduct.hpp"
 using namespace std;
 class Egg : public FarmProduct{
-    private:
-        int price;
     public:
       Egg(int _price);
 };

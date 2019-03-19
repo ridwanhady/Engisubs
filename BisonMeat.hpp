@@ -4,9 +4,12 @@
 #include "Meat.hpp"
 
 class BisonMeat : public Meat{
-    private:
-        static int totalBisonMeat;
     public:
+      /*
+      Constructor yang menerima parameter price,
+      price adalah atribut dari Product
+      */
+      BisonMeat(int _price);
 };
 
 #endif

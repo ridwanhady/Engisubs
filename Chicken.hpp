@@ -8,11 +8,26 @@
 #include <string>
 
 class Chicken : public EggProducing, MeatProducing {
-    private:
-
     public:
-        // ctor dengan parameter
-        Chicken(const string _name);
+      /*
+      Constructor yang menerima parameter position, name, egg, dan meat
+      Parameter diturunkan dari EggProducing dan MeatProducing.
+      */
+      Chicken(pair<int,int> _position, string _name, Egg _egg, Meat _meat);
+
+      /*
+      Method untuk mengetahui apakah Chicken sudah mati
+      karena dagingnya diproduksi. Method diturunkan dari
+      MeatProducing
+      */
+      void produceMeat(Player& _player);
+
+      /*
+      Method untuk mengetahui apakah Chicken sudah
+      memproduksi susu. Method diturunkan dari
+      MilkProducing
+      */
+     void produceMilk(Player& _player) = 0;
 };
 
 #endif

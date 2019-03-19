@@ -10,9 +10,6 @@
 #include <string>
 
 class Platypus : public MilkProducing, EggProducing, MeatProducing {
-    private:
-        string name;
-    
     public:
         // ctor dengan parameter
         Platypus(const string _name);
