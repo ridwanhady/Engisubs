@@ -9,6 +9,7 @@
 
 #include <string>
 #include "Product.hpp"
+#include "Cell.hpp"
 #include "LinkedList.hpp"
 
 #define MAX_WATER 100
