@@ -19,5 +19,11 @@ class MilkProducing : public FarmAnimal {
         Method virtual. Memproduksi susu. Menerima reference ke player.
         */
         virtual void produceMilk(Player& _player) = 0;
+
+        /*
+        Desktruktor
+        */
+
+        ~MilkProducing();
 };
 #endif

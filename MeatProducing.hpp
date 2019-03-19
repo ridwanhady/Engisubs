@@ -20,5 +20,10 @@ class MeatProducing: public FarmAnimal {
         Menerima reference ke player
         */
         virtual void produceMeat(Player& _player) = 0;
+
+        /*
+        Desktruktor
+        */
+        ~MeatProducing();
 };
 #endif

@@ -19,5 +19,10 @@ class EggProducing : public FarmAnimal {
         Method untuk memproduksi telur. Menerima reference ke player.
         */
         virtual void produceEgg(Player& _player) = 0;
+
+        /*
+        Destructor.
+        */
+        ~EggProducing();
 };
 #endif
