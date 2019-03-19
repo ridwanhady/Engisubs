@@ -3,11 +3,12 @@
 
 #include "FarmProduct.hpp"
 using namespace std;
+
+//Kelas ini merepresentasikan produk telur.
 class Egg : public FarmProduct{
-    private:
-        int price;
     public:
-      Egg(int _price);
+        //Constructor menerima harga, dan menginisialisasi producer untuk superclass.
+        Egg(int _price, string producer);
 };
 
 #endif

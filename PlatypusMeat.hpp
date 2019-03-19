@@ -3,9 +3,11 @@
 
 #include "Meat.hpp"
 
+//Kelas ini merepresentasikan produk daging Platipus.
 class PlatypusMeat : public Meat {
     public:
-      PlatypusMeat(int _price = 10);
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        PlatypusMeat(int _price, string producer);
 };
 
 #endif

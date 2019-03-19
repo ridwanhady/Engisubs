@@ -6,11 +6,19 @@
 #include <string>
 
 class Dog : public MeatProducing {
-    private:
     public:
+      /*
+      Constructor yang menerima parameter position, name, meat.
+      Parameter diturunkan dari MeatProducing.
+      */
+      Dog(pair<int,int> _position, string _name, Meat* _meat);
 
-        // ctor dengan parameter
-        Dog(const string _name);
+      /*
+      Method untuk mengetahui apakah Dog sudah mati
+      karena dagingnya diproduksi. Method diturunkan dari
+      MeatProducing
+      */
+      void produceMeat(Player& _player);
 };
 
 #endif

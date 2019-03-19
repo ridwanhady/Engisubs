@@ -3,9 +3,11 @@
 
 #include "Egg.hpp"
 
+//Kelas ini merepresentasikan produk telur Platipus.
 class PlatypusEgg : public Egg {
-public:
-  PlatypusEgg(int _price);
+    public:
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        PlatypusEgg(int _price, string producer);
 };
 
 #endif

@@ -4,9 +4,12 @@
 #include "Land.hpp"
 
 class Barn : public Land{
-    public:
-    	//Ctor dengan parameter
-        Barn(pair<int,int> _position, bool _isGrown);
+  public:
+      Barn(pair<int,int> _position, bool _isGrown);
+      /*
+      Constructor yang menerima parameter posisi dan isGrown, yaitu
+      apakah petak itu bisa ditumbuhkan atau tidak.
+      */
 };
 
 #endif

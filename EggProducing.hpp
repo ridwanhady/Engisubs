@@ -2,15 +2,27 @@
 #define _EGGPRODUCING_HPP_
 
 #include "FarmAnimal.hpp"
+#include "Egg.hpp"
+#include "Player.hpp"
 
 class EggProducing : public FarmAnimal {
     private:
-        Egg E;
+        Egg* E;
     public:
-        //Constructor
-        EggProducing(Egg _egg);
+        /*
+        Constructor yang menerima parameter position, name, egg.
+        Parameter diturunkan dari FarmAnimal.
+        */
+        EggProducing(pair <int,int> _position, string _name, Egg* _egg);
 
-        //Memproduksi telur. Menerima reference ke player.
+        /*
+        Method untuk memproduksi telur. Menerima reference ke player.
+        */
         virtual void produceEgg(Player& _player) = 0;
+
+        /*
+        Destructor.
+        */
+        ~EggProducing();
 };
 #endif

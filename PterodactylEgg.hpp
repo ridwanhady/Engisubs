@@ -2,10 +2,11 @@
 #define _PTERODACTYLEGG_HPP_
 #include "Egg.hpp"
 
+//Kelas ini merepresentasikan produk telur Pterodaktil.
 class PterodactylEgg : public Egg{
-    private:
-
     public:
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        PterodactylEgg(int _price, string producer);
 };
 
 #endif

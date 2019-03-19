@@ -3,10 +3,13 @@
 
 #include "Meat.hpp"
 
+//Kelas ini merepresentasikan produk daging Bison.
 class BisonMeat : public Meat{
-    private:
-        static int totalBisonMeat;
     public:
+
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        BisonMeat(int _price, string producer);
+
 };
 
 #endif

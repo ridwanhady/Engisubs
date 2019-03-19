@@ -6,8 +6,32 @@ using namespace std;
 
 //Enumerator untuk tipe objek
 enum ObjectType {
-	Meja,
-	Kursi
+	MIXER,
+	TRUCK,
+	WELL,
+	BARN,
+	COOP,
+	GRASSLAND,
+	CHICKEN,
+	PLATYPUS,
+	PTERODACTYL,
+	BISON,
+	DOG,
+	TREX,
+	CHICKEN_EGG,
+	PLATYPUS_EGG,
+	PTERODACTYL_EGG,
+	BISON_MEAT,
+	CHICKEN_MEAT,
+	DOG_MEAT,
+	PLATYPUS_MEAT,
+	TREX_MEAT,
+	BISON_MILK,
+	PLATYPUS_MILK,
+	CHEESE,
+	EKADO,
+	MAYONAISE,
+	STEAK
 };
 
 //Enumerator untuk arah gerak.
@@ -20,11 +44,12 @@ enum DirectionType{
 
 //Class untuk mendefinisikan tipe dari seluruh objek
 class Object{
-	private:
+	protected:
 		//Tipe dari suatu objek, misal: Product, TRex
 		const ObjectType objectType;
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
 		const char objectSymbol;
+
 	public:
 		//Ctor dengan parameter
 		Object(ObjectType _objectType, char _objectSymbol = '?');

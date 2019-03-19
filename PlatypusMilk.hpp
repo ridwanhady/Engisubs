@@ -3,9 +3,11 @@
 
 #include "Milk.hpp"
 
+//Kelas ini merepresentasikan produk susu Platipus.
 class PlatypusMilk : public Milk {
     public:
-      PlatypusMilk(int _price);
+        //Constructor menerima harga, dan mempassing producer untuk superclass.
+        PlatypusMilk(int _price, string producer);
 };
 
 #endif
