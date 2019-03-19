@@ -11,7 +11,7 @@ class Dog : public MeatProducing {
       Constructor yang menerima parameter position, name, meat.
       Parameter diturunkan dari MeatProducing.
       */
-      Dog(pair<int,int> _position, string _name, Meat _meat);
+      Dog(pair<int,int> _position, string _name, Meat* _meat);
 
       /*
       Method untuk mengetahui apakah Dog sudah mati

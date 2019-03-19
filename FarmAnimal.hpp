@@ -37,8 +37,9 @@ class FarmAnimal : public Object {
   		void setIsProductProduced(bool _isProductProduced); //Menge-set apakah produk sudah diproduksi
       void setName(string _name); //Menge-set nama dari FarmAnimal
 
+      //Method untuk mengembalikan apakah hewan dalam keadaan lapar
       bool isHungry(){
-        return (timeUntilHungry == 0); //Method untuk mengembalikan apakah hewan dalam keadaan lapar
+        return (timeUntilHungry == 0);
       }
 
   		void eat(); //Method untuk makan rumput di tempat hewan itu berdirI

@@ -7,13 +7,13 @@
 
 class MilkProducing : public FarmAnimal {
     protected:
-        Milk& M;
+        Milk* M;
     public:
         /*
         Constructor yang menerima parameter position, name, egg.
         Parameter diturunkan dari FarmAnimal.
         */
-        MilkProducing(pair<int,int> _position, string _name, Milk& _milk);
+        MilkProducing(pair<int,int> _position, string _name, Milk* _milk);
 
         /*
         Method virtual. Memproduksi susu. Menerima reference ke player.

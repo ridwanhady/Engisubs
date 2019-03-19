@@ -13,7 +13,7 @@ class Chicken : public EggProducing, MeatProducing {
       Constructor yang menerima parameter position, name, egg, dan meat
       Parameter diturunkan dari EggProducing dan MeatProducing.
       */
-      Chicken(pair<int,int> _position, string _name, Egg _egg, Meat _meat);
+      Chicken(pair<int,int> _position, string _name, Egg* _egg, Meat* _meat);
 
       /*
       Method untuk mengetahui apakah Chicken sudah mati
@@ -27,7 +27,7 @@ class Chicken : public EggProducing, MeatProducing {
       memproduksi susu. Method diturunkan dari
       MilkProducing
       */
-     void produceMilk(Player& _player) = 0;
+     void produceEgg(Player& _player);
 };
 
 #endif
