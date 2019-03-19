@@ -17,6 +17,7 @@
 
 using namespace std;
 
+//Kelas ini merepresentasikan pemain.
 class Player : public Object{
 	public:
 		// ctor tanpa parameter
@@ -103,11 +104,16 @@ class Player : public Object{
 		 */
 		void move(DirectionType direction, LinkedList<Cell>);
 	private:
-		string player_name; //nama pemain
-		int water;	    //kapasitas air
-    	LinkedList <Product> inventory; //tas/inventory
-		double uang;	    //uang pemain
-		pair<int,int> position; //Posisi pemain
+	 	//Nama pemain.
+		string player_name;
+		//Kapasitas air.
+		int water;
+		//Inventori pemain.
+    	LinkedList <Product*> inventory;
+		//Uang pemain.
+		double uang;
+		//Posisi pemain.
+		pair<int,int> position;
 
 };
 

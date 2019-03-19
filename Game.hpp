@@ -1,9 +1,10 @@
 #ifndef _GAME_HPP
 #define _GAME_HPP
 
-#include "LinkedList.hpp"
-#include "FarmAnimal.hpp"
-#include "Cell.hpp"
+#include "AnimalDependencies.hpp"
+#include "CellDependencies.hpp"
+#include "ProductDependencies.hpp"
+#include "Player.hpp"
 
 class Game{
 	private:
@@ -11,6 +12,7 @@ class Game{
 		int currentTime = 0;
 		LinkedList<FarmAnimal*> farmAnimalList;
 		LinkedList<Cell*> cellList;
+		Player* mainPlayer;
 	public:
 		//Constructor
 		Game();
