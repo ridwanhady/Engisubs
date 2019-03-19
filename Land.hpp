@@ -15,7 +15,7 @@ class Land : public Cell{
         bool isGrown;
         bool isOccupied;
         LandType landType;
-        LinkedList<Object> objectHere;
+        Object& objectHere;
 
     public:
         //Ctor dengan parameter

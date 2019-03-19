@@ -3,7 +3,7 @@
 
 #include "FarmAnimal.hpp"
 
-class EggProducing : FarmAnimal {
+class EggProducing : public FarmAnimal {
     private:
         Egg E;
     public:

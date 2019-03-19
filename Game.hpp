@@ -5,6 +5,8 @@ class Game{
 	private:
 		bool isGameStarted = false;
 		int currentTime = 0;
+		LinkedList<FarmAnimal> farmAnimalList;
+		LinkedList<Cell> cellList;
 	public:
 		Game();
 
