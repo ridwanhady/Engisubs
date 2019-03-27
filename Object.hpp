@@ -6,6 +6,7 @@ using namespace std;
 
 //Enumerator untuk tipe objek
 enum ObjectType {
+	PLAYER,
 	MIXER,
 	TRUCK,
 	WELL,
@@ -48,7 +49,7 @@ class Object{
 		//Tipe dari suatu objek, misal: Product, TRex
 		const ObjectType objectType;
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
-		const char objectSymbol;
+		char objectSymbol;
 
 	public:
 		//Ctor dengan parameter
