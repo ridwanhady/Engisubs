@@ -24,9 +24,9 @@ Sudah hampir setahun semenjak Chef membuka restoran Engi’s Kitchen. Chef telah
 	- Cell **Done**
 		- Land **Done**
 			- Coop **Done**
-			- Barn **File Created**
+			- Barn **Done**
 			- Grassland **File Created**
-		- Facility **File Created**
+		- Facility **Done**
 			- Well **File Created**
 			- Mixer **File Created**
 			- Truck **File Created**
