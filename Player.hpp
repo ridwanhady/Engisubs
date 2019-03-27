@@ -8,6 +8,7 @@
 #define PLAYER_HPP
 
 #include <string>
+#include "Object.hpp"
 #include "Product.hpp"
 #include "Cell.hpp"
 #include "LinkedList.hpp"
@@ -19,12 +20,9 @@ using namespace std;
 
 //Kelas ini merepresentasikan pemain.
 class Player : public Object{
-	public:
-		// Constructor tanpa parameter.
-		Player();
-
+public:
 		// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang.
-		Player(string _name, int _water, double _uang);
+		Player(string _name, int _water, double _uang, pair<int,int> _position);
 
 		// Destructor karena ada pointer di atribut.
 		~Player();
@@ -53,7 +51,7 @@ class Player : public Object{
 		/**
 		 * Mengembalikan nilai dari Atribut Count / Jumlah Produk
 		 */
-		int getCount(Product& _product);
+		int getCount(Product* _product);
 
 		// setter
 		/**
@@ -67,10 +65,10 @@ class Player : public Object{
 		/**
 		 * Menambah barang ke dalam inventory.
 		 */
-		void addInventory(Product& _barang);
+		void addInventory(Product* _barang);
 		/**
 		 * Mengeset nilai dari Atribut Uang
-		 */ 
+		 */
 		void setUang(double _uang);
 		/**
 		 * Mengeset nilai dari Atribut Position
