@@ -22,35 +22,31 @@ Sudah hampir setahun semenjak Chef membuka restoran Engi’s Kitchen. Chef telah
 # To-do list
 - Object **Done**
 	- Cell **Done**
-		- Land **Done**
-			- Coop **Done**
-			- Barn **Done**
-			- Grassland **Done**
-		- Facility **Done**
-			- Well **Done**
-			- Mixer **Done**
-			- Truck **Done**
-	- Farm Animal **File Created** (Nama, isFed, hasProduct)
-		Jika tidak makan selama 5 tick, maka akan mati.   
-		Setelah makan rumput, hewan dapat diambil produknya,
-		kecuali hewan dengan produk daging, yang dapat disembelih
-		tanpa makan terlebih dahulu.
+		- Land **File Created**
+			- Coop **File Created**
+			- Barn **File Created**
+			- Grassland **File Created**
+		- Facility **File Created**
+			- Well **File Created**
+			- Mixer **File Created**
+			- Truck **File Created**
+	- Farm Animal **File Created**
 		- Egg Producing **File Created**
 		- Meat Producing **File Created**
 		- Milk Producing **File Created**
-	- Product (Harga)
-		- Farm Product
+	- Product **Done**
+		- Farm Product **File Created**
 			- Egg **File Created** 
 			- Meat **File Created**
 			- Milk **File Created**
-		- Side Product
+		- Side Product **File Created**
 			- Mayonnaise (Telur, Telur) **File Created**
 			- Steak (Daging, Daging) **File Created**
 			- Ekado (Daging, telur) **File Created**
 			- Keju (Susu, Susu) **File Created**
 	- Player **Done**
 - Linked List **Done**
-- Game **Done**
+- Game **File Created**
 
 Macam Farm animal
 - Pterodactyl (Telur) **File Created**
