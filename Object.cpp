@@ -1,4 +1,6 @@
 #include "Object.hpp"
+#include <iostream>
+using namespace std;
 
 //Ctor dengan parameter
 Object::Object(ObjectType _objectType, char _objectSymbol = '?') : objectType(_objectType), objectSymbol(_objectSymbol){

@@ -4,7 +4,7 @@
 #include "Object.hpp"
 
 class Cell : public Object{
-    private:
+    protected:
         pair<int,int> position;
 
     public:

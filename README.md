@@ -22,8 +22,8 @@ Sudah hampir setahun semenjak Chef membuka restoran Engi’s Kitchen. Chef telah
 # To-do list
 - Object **Done**
 	- Cell **Done**
-		- Land **File Created**
-			- Coop **File Created**
+		- Land **Done**
+			- Coop **Done**
 			- Barn **File Created**
 			- Grassland **File Created**
 		- Facility **File Created**

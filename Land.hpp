@@ -10,6 +10,9 @@ enum LandType {
     COOP
 };
 
+char landSymbol[3] = {'-', 'x', 'o'};
+char grassSymbol[3] = {'#', '@', '*'};
+
 class Land : public Cell{
     private:
         bool isGrown;
@@ -41,6 +44,9 @@ class Land : public Cell{
 
         //Menumbuhkan rumput di cell
         void grow();
+
+        //Menghilangkan rumput di cell
+        void ungrow();
 
 };
 
