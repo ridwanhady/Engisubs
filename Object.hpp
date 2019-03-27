@@ -52,7 +52,7 @@ class Object{
 
 	public:
 		//Ctor dengan parameter
-		Object(ObjectType _objectType, char _objectSymbol = '?');
+		Object(char _objectSymbol = '?');
 		//Untuk mengeluarkan simbol dari suatu objek ke layar
 		void render();
 		//Virtual method untuk berinteraksi dengan interact

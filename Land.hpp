@@ -12,10 +12,10 @@ enum LandType {
 
 class Land : public Cell{
     private:
-        bool isGrown;
-        bool isOccupied;
+        bool grown;
+        bool occupied;
         const LandType landType;
-        Object& objectHere = NULL;
+        Object* objectHere = NULL;
 
     public:
         //Ctor dengan parameter
@@ -37,7 +37,7 @@ class Land : public Cell{
         }
 
         //Menambah/mengurangi object saat ini dan mengganti isOccupied
-        void setObjectHere(Object& _objectHere);
+        void setObjectHere(Object* _objectHere);
 
         //Menumbuhkan rumput di cell
         void grow();
