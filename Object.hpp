@@ -2,6 +2,7 @@
 #define _OBJECT_HPP
 #include <string>
 #include <utility>
+
 using namespace std;
 
 //Enumerator untuk tipe objek
@@ -10,9 +11,7 @@ enum ObjectType {
 	MIXER,
 	TRUCK,
 	WELL,
-	BARN,
-	COOP,
-	GRASSLAND,
+	LAND,
 	CHICKEN,
 	PLATYPUS,
 	PTERODACTYL,
@@ -43,11 +42,13 @@ enum DirectionType{
 	LEFT
 };
 
+class Player;
+
 //Class untuk mendefinisikan tipe dari seluruh objek
 class Object{
 	protected:
 		//Tipe dari suatu objek, misal: Product, TRex
-		const ObjectType objectType;
+		ObjectType objectType;
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
 		char objectSymbol;
 
@@ -57,7 +58,7 @@ class Object{
 		//Untuk mengeluarkan simbol dari suatu objek ke layar
 		void render();
 		//Virtual method untuk berinteraksi dengan interact
-		virtual void interact() = 0;
+		virtual void interact(Player* _p) = 0;
 		//Getter
 		ObjectType getObjectType();
 };
