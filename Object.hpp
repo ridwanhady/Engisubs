@@ -6,6 +6,7 @@ using namespace std;
 
 //Enumerator untuk tipe objek
 enum ObjectType {
+	PLAYER,
 	MIXER,
 	TRUCK,
 	WELL,

@@ -1,0 +1,1 @@
+Player(string _name, int _water, double _uang) menjadi Player(string _name, int _water, double _uang, pair<int,int> _position);
