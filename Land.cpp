@@ -1,8 +1,7 @@
 #include "Land.hpp"
 
 //Ctor dengan parameter
-Land::Land(pair<int,int> _position, bool _isGrown, LandType _landType) : landType(_landType){
-	position = _position;
+Land::Land(pair<int,int> _position, bool _isGrown, LandType _landType) : Cell(_position), landType(_landType){
 	grown = _isGrown;
 	if(grown){
 		objectSymbol = grassSymbol[landType];
