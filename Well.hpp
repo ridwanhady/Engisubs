@@ -2,6 +2,7 @@
 #define _WELL_HPP
 
 #include "Facility.hpp"
+#include "Player.hpp"
 
 class Well : public Facility{
     public:
@@ -12,7 +13,7 @@ class Well : public Facility{
          * Berinteraksi dengan 'Well' akan menambah persediaan
          * 'Water' yang dimiliki hingga mencapai maksimal.
          */
-        void interact();
+        void interact(Player* _p);
 };
 
 #endif

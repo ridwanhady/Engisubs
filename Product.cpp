@@ -1,7 +1,7 @@
 #include "Product.hpp"
 
 //Ctor dengagn parameter
-Product::Product(ProductType _productType, int _price) : productType(_productType), price(_price){
+Product::Product(ProductType _productType) : productType(_productType){
 
 }
 

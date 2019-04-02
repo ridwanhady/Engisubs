@@ -5,9 +5,8 @@
 //Kelas ini merepresentasikan produk daging TRex.
 class TRexMeat : public Meat{
     public:
-
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        TRexMeat(int _price, string producer);
+        TRexMeat(int _price, string _producer);
 
 };
 

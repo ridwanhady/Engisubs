@@ -15,11 +15,11 @@ class MeatProducing: public FarmAnimal {
         */
         MeatProducing(pair<int,int> _position, string _name, Meat* _meat);
 
-        /*
-        Method virtual. Hewan akan mati saat memproduksi daging.
+        /*Method virtual. 
+        Hewan akan mati saat memproduksi daging.
         Menerima reference ke player
         */
-        virtual void produceMeat(Player& _player) = 0;
+        void produceMeat(Player& _player);
 
         /*
         Desktruktor

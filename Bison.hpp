@@ -14,19 +14,6 @@ class Bison : public MeatProducing, MilkProducing {
         Parameter diturunkan dari MeatProducing dan MilkProducing.
         */
         Bison(pair<int,int> _position, string _name, Meat* _meat, Milk* _milk);
-
-        /*
-        Method untuk mengetahui apakah Bison sudah mati
-        karena dagingnya diproduksi. Method diturunkan dari
-        MeatProducing
-        */
-        void produceMeat(Player& _player);
-
-        /*
-        Method untuk mengetahui apakah susunya sudah diproduksi. Method diturunkan dari
-        MilkProducing
-        */
-        void produceMilk(Player& _player);
-    };
+};
 
 #endif

@@ -9,19 +9,16 @@
 class SideProduct : public Product {
     protected:
         //Menyimpan resep dalam bentuk pointer.
-        LinkedList<FarmProduct*> resep;
+        LinkedList<ObjectType> resep;
     public:
         //Constructor tanpa parameter.
         SideProduct();
-
-        //Destructor karena ada pointer.
-        ~SideProduct();
 
         //Menghasilkan produk pada resep dengan indeks i.
         FarmProduct getResep(int i) const;
 
         //Menambah resep.
-        void addResep (FarmProduct& _product);
+        void addResep (ObjectType _product);
 };
 
 #endif

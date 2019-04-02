@@ -5,7 +5,6 @@
 //Kelas ini merepresentasikan produk telur Ayam.
 class ChickenEgg : public Egg {
     public:
-
         //Constructor menerima harga, dan mempassing producer untuk superclass.
         ChickenEgg(int _price, string producer);
 

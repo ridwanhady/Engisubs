@@ -7,7 +7,7 @@
 class PlatypusEgg : public Egg {
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        PlatypusEgg(int _price, string producer);
+        PlatypusEgg(int _price, string _producer);
 };
 
 #endif

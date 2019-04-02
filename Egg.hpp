@@ -6,7 +6,8 @@ using namespace std;
 
 //Kelas ini merepresentasikan produk telur.
 class Egg : public FarmProduct{
-
+    public:
+        Egg();
 };
 
 #endif

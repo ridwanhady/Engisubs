@@ -7,7 +7,7 @@
 class Milk : public FarmProduct {
     public:
         //Constructor menerima harga, dan menginisialisasi producer untuk superclass
-        Milk(int _price, string producer);
+        Milk();
 };
 
 #endif

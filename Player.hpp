@@ -11,6 +11,7 @@
 #include "Object.hpp"
 #include "Product.hpp"
 #include "Cell.hpp"
+#include "Land.hpp"
 #include "LinkedList.hpp"
 
 #define MAX_WATER 100
@@ -103,7 +104,7 @@ public:
 		 * Fungsi Move berguna untuk mengubah posisi dari
 		 * player sesuai dengan direction yang diberikan.
 		 */
-		void move(DirectionType direction, LinkedList<Cell>);
+		void move(DirectionType direction, LinkedList<LinkedList<Cell*>>* worldMap);
 	private:
 	 	//Nama pemain.
 		string player_name;
@@ -115,6 +116,8 @@ public:
 		double uang;
 		//Posisi pemain.
 		pair<int,int> position;
+		//Menunjuk ke Land tempat Player berada.
+		Land *landPos;
 
 };
 

@@ -6,7 +6,6 @@
 //Kelas ini merepresentasikan produk susu Bison.
 class BisonMilk : public Milk {
     public:
-
         //Constructor menerima harga, dan mempassing producer untuk superclass.
         BisonMilk(int _price, string producer);
 

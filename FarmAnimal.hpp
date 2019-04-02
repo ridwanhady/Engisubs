@@ -2,6 +2,7 @@
 #define _FARMANIMAL_HPP_
 
 #include "Object.hpp"
+#include "Land.hpp"
 
 class FarmAnimal : public Object {
 	private:
@@ -18,11 +19,14 @@ class FarmAnimal : public Object {
 			// Atribut menandakan waktu sebelum FarmAnimal lapar.
   		int timeUntilHungry = 100;
 
-			//Atribut menandakan
+			//Atribut menandakan hewan sudah memroduksi produk saat ini.
   		bool isProductProduced = false;
 
 			//Atribut nama dari FarmAnimal
       string name = "";
+
+			//Menunjuk ke Land tempat Animal berada.
+			Land *landPos;
 
 	public:
       /*
