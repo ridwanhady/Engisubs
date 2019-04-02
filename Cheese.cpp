@@ -2,6 +2,6 @@
 #include <iostream>
 using namespace std;
 //Konstruktor Cheese
-Cheese::Cheese(int _price) : price(_price){
-    cout << price << endl;
+Cheese::Cheese(int _price)  {
+    price = _price;
 }

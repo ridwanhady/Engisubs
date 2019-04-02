@@ -6,11 +6,11 @@ Product::Product(ProductType _productType, int _price) : productType(_productTyp
 }
 
 //Mengambil harga.
-int Product::getPrice(){
+int Product::getPrice() const{
 	return price;
 }
 
 //Mengambil tipe produk.
-ProductType Product::getProductType(){
+ProductType Product::getProductType() const {
 	return productType;
 }

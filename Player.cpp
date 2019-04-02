@@ -3,26 +3,25 @@
  * Tanggal   : 19 Maret 2019
  * Deskripsi : Kelas yang berkaitan dengan objek Player
  */
+#include <iostream>
 
 //Kelas ini merepresentasikan pemain.
 #include "Player.hpp"
 
 	// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang, beserta posisi
-Player::Player(string _name, int _water, double _uang, pair<int,int> _position): Object(PLAYER,'P'): objectType(PLAYER), objectSymbol('P') {
+Player::Player(string _name, int _water, double _uang, pair<int,int> _position): Object('P'){
 	setName(_name);
 	setWater(_water);
 	setUang(_uang);
 	setPosition(_position);
+	objectType = PLAYER;
 }
 
 
 // Destructor karena ada pointer di atribut.
 // Kemungkinan memory leak dari player, belum bener.
 Player::~Player(){
-	typename vector<Product*>::iterator itr = inventory.begin();
-	if (itr != inventory.end()){
-			data.erase(itr);
-	}
+	//Panggil desktruktor linkedlist
 }
 
 // getter
@@ -30,7 +29,7 @@ Player::~Player(){
  * Mengembalikan nilai dari Atribut Name
  */
 string Player::getName() {
-	return name;
+	return player_name;
 }
 
 
@@ -44,7 +43,7 @@ int Player::getWater() {
 /**
  * Mengembalikan nilai dari Atribut Inventory
 */
-LinkedList<Product> Player::getInventory(){
+LinkedList<Product*> Player::getInventory(){
 	return inventory;
 }
 
@@ -77,7 +76,7 @@ int Player::getCount(Product* _product){
 */
 
 void Player::setName(string _name){
-	name = _name;
+	player_name = _name;
 }
 
 /**
