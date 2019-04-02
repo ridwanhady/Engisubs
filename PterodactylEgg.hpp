@@ -6,7 +6,7 @@
 class PterodactylEgg : public Egg{
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        PterodactylEgg(int _price, string producer);
+        PterodactylEgg(int _price, string _producer);
 };
 
 #endif

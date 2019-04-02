@@ -18,8 +18,8 @@ class Product : public Object{
 		//Harga dari produk ini.
 		int price;
 	public:
-		//Ctor dengagn parameter
-		Product(ProductType _productType, int _price);
+		//Ctor dengan parameter
+		Product(ProductType _productType);
 
 		//Mengambil harga.
 		int getPrice() const;

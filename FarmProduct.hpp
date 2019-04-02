@@ -6,10 +6,14 @@
 class FarmProduct : public Product {
   protected:
       //Nama hewan yang memproduksi.
-      const string producer;
+      string producer;
   public:
       //Constructor harus menerima harga, dan menginisialisasi tipe untuk superclass.
       FarmProduct();
+
+      string getProducer(){
+          return producer;
+      }
 };
 
 #endif

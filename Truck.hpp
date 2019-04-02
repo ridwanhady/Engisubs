@@ -2,6 +2,7 @@
 #define _TRUCK_HPP
 
 #include "Facility.hpp"
+#include "Player.hpp"
 
 class Truck : public Facility{
     private:

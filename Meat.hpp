@@ -7,7 +7,7 @@
 class Meat : public FarmProduct{
     public:
         //Constructor menerima harga, dan menginisialisasi producer untuk superclass
-        Meat(int _price, string producer);
+        Meat();
 };
 
 #endif

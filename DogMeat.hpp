@@ -7,7 +7,7 @@
 class DogMeat : public Meat{
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        DogMeat(int _price, string producer);
+        DogMeat(int _price, string _producer);
 };
 
 #endif

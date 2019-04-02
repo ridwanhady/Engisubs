@@ -3,9 +3,10 @@
 Game::Game(){
 	//Init animal
 	//Init cell
+
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			farmAnimalList.insert(Cell({i,j}));
+			
 		}
 	}
 	//Todo: Minta input buat minta nama

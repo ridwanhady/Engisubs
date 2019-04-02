@@ -1,5 +1,5 @@
 #include "FarmProduct.hpp"
 
-FarmProduct::FarmProduct() : productType(FARMPRODUCT){
-
+FarmProduct::FarmProduct() : Product(FARMPRODUCT){
+    
 }
