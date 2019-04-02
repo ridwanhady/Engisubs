@@ -13,6 +13,8 @@ class Game{
 		LinkedList<FarmAnimal*> farmAnimalList;
 		LinkedList<Cell*> cellList;
 		Player* mainPlayer;
+		int n = 10;
+		int m = 10;
 	public:
 		//Constructor.
 		Game();

@@ -5,6 +5,7 @@
 #include "MeatProducing.hpp"
 #include "ChickenEgg.hpp"
 #include "ChickenMeat.hpp"
+#include "Player.hpp"
 #include <string>
 
 class Chicken : public EggProducing, MeatProducing {
