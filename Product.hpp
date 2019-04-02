@@ -11,12 +11,12 @@ enum ProductType {
 
 //Kelas ini merepresentasikan produk.
 class Product : public Object{
-	private:
+	protected:
 		//Tipe dari produk ini.
-		const ProductType productType;
+		ProductType productType;
 
 		//Harga dari produk ini.
-		const int price;
+		int price;
 	public:
 		//Ctor dengagn parameter
 		Product(ProductType _productType, int _price);
