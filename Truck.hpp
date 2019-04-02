@@ -17,7 +17,7 @@ class Truck : public Facility{
          * Setelah interact digunakan, Interact tidak akan bisa
          * digunakan untuk sementara waktu.
          */
-        void interact();
+        void interact(Player* _p);
         
         /**
          * isUsable() akan mengembalikan True jika Truck bisa digunakan,

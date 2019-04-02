@@ -11,7 +11,7 @@ enum ProductType {
 
 //Kelas ini merepresentasikan produk.
 class Product : public Object{
-	private:
+	protected:
 		//Tipe dari produk ini.
 		const ProductType productType;
 

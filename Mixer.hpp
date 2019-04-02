@@ -10,7 +10,7 @@ class Mixer : public Facility{
 		Mixer(pair<int,int> _position);
 
 		//Implementasi virtual interact()
-		void interact();
+		void interact(Player* _p);
 };
 
 #endif

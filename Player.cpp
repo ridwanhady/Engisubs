@@ -126,7 +126,7 @@ void Player::setPosition(pair<int,int> _position){
  * interaksi dengan objek objek yang ada.
  * Efek Interaksi bergantung pada objek yang dikenai.
  */
-void Player::interact(){
+void Player::interact(Player *_p){
 
 }
 
