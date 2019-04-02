@@ -38,7 +38,7 @@ class LinkedList{
         int count(T _element){
           typename vector<T>::iterator itr = data.begin();
           int countEl = 0;
-          while (itr != data.begin()){
+          while (itr != data.end()){
             if ((*itr) == _element){
               countEl++;
             }
@@ -67,7 +67,7 @@ class LinkedList{
         */
         void remove(T _element){
             typename vector<T>::iterator itr = find(data.begin(), data.end(), _element);
-            if (itr != begin.end()){
+            if (itr != data.end()){
                 data.erase(itr);
             }
         }
@@ -77,6 +77,10 @@ class LinkedList{
         */
         T get(int _indeks){
             return data.at(_indeks);
+        }
+
+        int size(){
+            return data.size();
         }
 };
 
@@ -157,6 +161,10 @@ class LinkedList{
         */
         T* get(int _indeks){
             return data.at(_indeks);
+        }
+
+        int size(){
+            return data.size();
         }
 };
 

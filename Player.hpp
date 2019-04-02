@@ -39,7 +39,7 @@ public:
 		/**
 		 * Mengembalikan nilai dari Atribut Inventory
 		 */
-		LinkedList <Product> getInventory();
+		LinkedList <Product *> getInventory();
 		/**
 		 * Mengembalikan nilai dari Atribut Uang
 		 */
@@ -87,7 +87,7 @@ public:
 		 * interaksi dengan objek objek yang ada.
 		 * Efek Interaksi bergantung pada objek yang dikenai.
 		 */
-		void interact();
+		void interact(Player *_p);
 		/**
 		 * Fungsi kill berguna untuk menyembelih hewan
 		 * hewan dalam kategori MeatProducing.

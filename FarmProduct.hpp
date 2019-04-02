@@ -4,12 +4,12 @@
 
 //Kelas ini merepresentasikan produk dari hewan.
 class FarmProduct : public Product {
-  private:
+  protected:
       //Nama hewan yang memproduksi.
       const string producer;
   public:
       //Constructor harus menerima harga, dan menginisialisasi tipe untuk superclass.
-      FarmProduct(int _price);
+      FarmProduct();
 };
 
 #endif

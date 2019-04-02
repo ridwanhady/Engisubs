@@ -27,18 +27,18 @@ Sudah hampir setahun semenjak Chef membuka restoran Engi’s Kitchen. Chef telah
 			- Barn **Done**
 			- Grassland **File Created**
 		- Facility **Done**
-			- Well **File Created**
+			- Well **Done**
 			- Mixer **File Created**
-			- Truck **File Created**
+			- Truck **Done**
 	- Farm Animal **File Created**
 		- Egg Producing **File Created**
 		- Meat Producing **File Created**
 		- Milk Producing **File Created**
 	- Product **Done**
-		- Farm Product **File Created**
-			- Egg **File Created** 
-			- Meat **File Created**
-			- Milk **File Created**
+		- Farm Product **Done**
+			- Egg **Done** 
+			- Meat **Done**
+			- Milk **Done**
 		- Side Product **File Created**
 			- Mayonnaise (Telur, Telur) **File Created**
 			- Steak (Daging, Daging) **File Created**
@@ -57,20 +57,20 @@ Macam Farm animal
 - T-rex (Daging) **File Created**
 
 Macam Telur
-- Pterodactyl Egg **File Created**
-- Platypus Egg **File Created**
-- Chicken Egg **File Created**
+- Pterodactyl Egg **Done**
+- Platypus Egg **Done**
+- Chicken Egg **Done**
 
 Macam Daging
-- Chicken Meat **File Created**
-- Platypus Meat **File Created**
-- TRex Meat **File Created**
-- Bison Meat **File Created**
-- Dog Meat **File Created**
+- Chicken Meat **Done**
+- Platypus Meat **Done**
+- TRex Meat **Done**
+- Bison Meat **Done**
+- Dog Meat **Done**
 
 Macam Susu
-- Platypus Milk **File Created**
-- Bison Milk **File Created**
+- Platypus Milk **Done**
+- Bison Milk **Done**
 
 Behaviour:
 - Game
