@@ -25,12 +25,18 @@ class Game{
 		//Memulai game.
 		void startGame();
 
-		//Game loop, meminta command dari player dan mengupdate currentTime.
+		//Game loop, meminta command dari player dan memanggil updateGame.
 		//Pada fungsi ini game berjalan.
 		void gameLoop();
 
+		//Mengupdate seluruh state game
+		void updateGame();
+
 		//Menyelesaikan game.
 		void endGame();
+
+		//Menampilkan map
+		void showMap();
 };
 
 #endif
