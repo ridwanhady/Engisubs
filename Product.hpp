@@ -13,10 +13,10 @@ enum ProductType {
 class Product : public Object{
 	protected:
 		//Tipe dari produk ini.
-		const ProductType productType;
+		ProductType productType;
 
 		//Harga dari produk ini.
-		const int price;
+		int price;
 	public:
 		//Ctor dengagn parameter
 		Product(ProductType _productType, int _price);
