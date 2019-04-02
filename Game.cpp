@@ -1,7 +1,7 @@
 #include "Game.hpp"
 
 bool isValid(pair<int,int> pos, int n, int m){
-	if(!(cellList.get(pos.first*m+pos.second))->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+	if(!(cellList.get(pos.first).get(pos.second))->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
 	return true;
@@ -117,7 +117,7 @@ void Game::endGame(){
 void Game::showMap(){
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			cellList.get(i*m+j)->render();
+			cellList.get(i).get(j)->render();
 		}
 		cout<<endl;
 	}
