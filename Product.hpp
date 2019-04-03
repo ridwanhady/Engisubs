@@ -26,6 +26,7 @@ class Product : public Object{
 
 		//Mengambil tipe produk.
 		ProductType getProductType() const;
+
 };
 
 #endif

@@ -6,7 +6,7 @@ Land::Land(pair<int,int> _position, bool _isGrown, LandType _landType) : Cell(_p
 	if(grown){
 		objectSymbol = grassSymbol[landType];
 	} else {
-		objectSymbol = grassSymbol[landType];
+		objectSymbol = landSymbol[landType];
 	}
 }
 

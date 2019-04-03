@@ -105,7 +105,7 @@ public:
 		 * player sesuai dengan direction yang diberikan.
 		 */
 		void move(DirectionType direction, LinkedList<LinkedList<Cell*>>* worldMap);
-	private:
+	protected:
 	 	//Nama pemain.
 		string player_name;
 		//Kapasitas air.
