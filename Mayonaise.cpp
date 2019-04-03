@@ -5,7 +5,7 @@ Mayonaise::Mayonaise(int _price)  {
     price = _price;
 }
 
-void InitResepMayonaise() {
+void InitResep() {
     //Inisialisasi resep:
     Mayonaise::resep.add(EGG);
     Mayonaise::resep.add(MILK);

@@ -5,7 +5,7 @@ Ekado::Ekado(int _price)  {
     price = _price;
 }
 
-void InitResepEkado() {
+void InitResep() {
     //Inisialisasi resep:
     Ekado::resep.add(EGG);
     Ekado::resep.add(MEAT);
