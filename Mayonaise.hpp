@@ -8,7 +8,7 @@ class Mayonaise : public SideProduct {
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
         Mayonaise(int _price);
-        static void InitResepMayonaise();
+        static void InitResep();
 };
 
 #endif

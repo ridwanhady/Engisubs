@@ -6,7 +6,7 @@ Cheese::Cheese(int _price)  {
     
 }
 
-void InitResepCheese() {
+void InitResep() {
     //Inisialisasi resep:
     Cheese::resep.add(MILK);
     Cheese::resep.add(EGG);
