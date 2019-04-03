@@ -23,6 +23,12 @@ void Land::grow(){
 	objectSymbol = grassSymbol[landType];
 }
 
+//Getter object saat ini
+
+Object* Land::getObjectHere() {
+	return objectHere;
+}
+
 //Menghilangkan rumput di cell
 void Land::ungrow(){
 	grown = false;

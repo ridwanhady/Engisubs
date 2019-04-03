@@ -45,6 +45,9 @@ class Land : public Cell{
         //Menumbuhkan rumput di cell
         void grow();
 
+        //Getter object saat ini
+        Object* getObjectHere();
+
         //Menghilangkan rumput di cell
         void ungrow();
 

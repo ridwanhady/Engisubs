@@ -5,15 +5,17 @@
 #include "Milk.hpp"
 #include "Player.hpp"
 
-class MilkProducing : public FarmAnimal {
+class MilkProducing : public virtual FarmAnimal {
     protected:
-        Milk* M;
+        Milk* milk;
     public:
         /*
         Constructor yang menerima parameter position, name, egg.
         Parameter diturunkan dari FarmAnimal.
         */
-        MilkProducing(pair<int,int> _position, string _name, Milk* _milk);
+        MilkProducing();
+
+        void initializeMilkProducing(Milk* _milk);
 
         /*
         Method virtual. Memproduksi susu. Menerima reference ke player.
