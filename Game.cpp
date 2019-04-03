@@ -43,6 +43,10 @@ Game::Game(){
 		daftarProduct.add(EKADO);
 		daftarProduct.add(MAYONAISE);
 		daftarProduct.add(STEAK);
+		Cheese::InitResep();
+		Ekado::InitResep();
+		Mayonaise::InitResep();
+		Steak::InitResep();
 	}
 }
 

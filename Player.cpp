@@ -8,11 +8,15 @@
 //Kelas ini merepresentasikan pemain.
 #include "Player.hpp"
 
-bool isValid(pair<int,int> pos, int n, int m){
-	Cell *targetCell = worldMap.get(pos.first).get(pos.second);
-	if(!targetCell->isWalkable() or targetCell->isOccupied() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
+	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
+	int n = worldMap->size();
+	int m = (worldMap->get(0))->size();
+	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
+	Land *targetLand = (Land*)targetCell;
+	if(targetLand->isOccupied)return false;
 	return true;
 }
 
@@ -164,19 +168,19 @@ void Player::grow(){
 	* Fungsi Move berguna untuk mengubah posisi dari
 	* player sesuai dengan direction yang diberikan.
 	*/
-void Player::move(DirectionType direction, DirectionType direction) {
+void Player::move(DirectionType direction) {
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
 
-	if(isValid(Position.first+di[direction], position.second+dj[direction], worldMap)){
+	if(isValid({position.first+di[direction], position.second+dj[direction]}, worldMap)){
 
 	}
 }
 
-Cell* getCellInFront(LinkedList<LinkedList<Cell*>>* worldMap){
+Cell* Player::getCellInFront(){
 	
 }
 
-void changeDirection(DirectionType newDirection){
+void Player::changeDirection(DirectionType newDirection){
 	direction = newDirection;
 }
