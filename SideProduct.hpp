@@ -7,10 +7,10 @@
 
 //Kelas ini merepresentasikan produk sampingan yang terdiri dari beberapa produk hewan.
 class SideProduct : public Product {
-    protected:
-        //Menyimpan resep dalam bentuk pointer.
-        LinkedList<ObjectType> resep;
     public:
+        //Menyimpan resep dalam bentuk pointer.
+        static LinkedList<ObjectType> resep;
+        
         //Constructor tanpa parameter.
         SideProduct();
 

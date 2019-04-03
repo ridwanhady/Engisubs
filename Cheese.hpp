@@ -7,6 +7,7 @@ class Cheese : public SideProduct{
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
         Cheese(int _price);
+        static void InitResepCheese();
 };
 
 #endif

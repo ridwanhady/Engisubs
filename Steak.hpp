@@ -8,6 +8,7 @@ class Steak : public SideProduct {
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
         Steak(int _price);
+        static void InitResepSteak();
 };
 
 #endif

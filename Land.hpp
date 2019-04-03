@@ -31,12 +31,12 @@ class Land : public Cell{
 
         //Mengecek apakah terdapat rumput di cell ini
         bool isGrown(){
-            return isGrown;
+            return grown;
         }
 
         //Mengecek apakah terdapat FarmAnimal atau Player disini
         bool isOccupied(){
-            return isOccupied;
+            return occupied;
         }
 
         //Menambah/mengurangi object saat ini dan mengganti isOccupied
