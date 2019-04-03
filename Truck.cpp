@@ -18,6 +18,7 @@ void Truck::interact(Player* _p){
 		_p->setUang(_p->getUang + inventTemp.get(i)->getPrice());
 	}
 	//Todo: Delete inventory
+	_p->getInventory().~LinkedList();
 }
 
 

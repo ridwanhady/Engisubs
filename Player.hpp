@@ -129,7 +129,7 @@ public:
 		//Arah hadap pemain
 		DirectionType direction;
 		//Menyimpan worldmap
-		LinkedList<LinkedList<Cell*>>* worldMap
+		LinkedList<LinkedList<Cell*>>* worldMap;
 };
 
 #endif

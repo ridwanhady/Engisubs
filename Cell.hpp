@@ -12,7 +12,7 @@ class Cell : public Object{
         Cell(pair<int,int> _position);
 
         //Virtual method untuk mengecek apakah suatu petak dapat dilangkahi player atau tidak
-        virtual bool isWalkable() = 0;
+        virtual bool isWalkable();
 
         //Getter
         pair<int,int> getPosition();

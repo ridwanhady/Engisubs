@@ -8,6 +8,7 @@ class Ekado : public SideProduct {
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
         Ekado(int _price);
+        static void InitResepEkado();
 };
 
 #endif
