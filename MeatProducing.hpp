@@ -5,21 +5,23 @@
 #include "Meat.hpp"
 #include "Player.hpp"
 
-class MeatProducing: public FarmAnimal {
+class MeatProducing: public virtual FarmAnimal {
     protected:
-        Meat* M;
+        Meat* meat;
     public:
         /*
         Constructor yang menerima parameter position, name, egg.
         Parameter diturunkan dari FarmAnimal.
         */
-        MeatProducing(pair<int,int> _position, string _name, Meat* _meat);
+        MeatProducing();
+
+        void initializeMeatProducing(Meat* _meat);
 
         /*Method virtual. 
         Hewan akan mati saat memproduksi daging.
         Menerima reference ke player
         */
-        void produceMeat(Player& _player);
+        virtual void produceMeat(Player& _player);
 
         /*
         Desktruktor

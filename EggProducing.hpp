@@ -5,15 +5,17 @@
 #include "Egg.hpp"
 #include "Player.hpp"
 
-class EggProducing : public FarmAnimal {
-    private:
-        Egg* E;
+class EggProducing : public virtual FarmAnimal {
+    protected:
+        Egg* egg;
     public:
         /*
         Constructor yang menerima parameter position, name, egg.
         Parameter diturunkan dari FarmAnimal.
         */
-        EggProducing(pair <int,int> _position, string _name, Egg* _egg);
+        EggProducing();
+
+        void initializeEggProducing(Egg* _egg);
 
         /*
         Method untuk memproduksi telur. Menerima reference ke player.

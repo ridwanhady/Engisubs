@@ -1,6 +1,7 @@
 #ifndef _PLATYPUS_H_
 #define _PLATYPUS_H_
 
+#include "Land.hpp"
 #include "PlatypusEgg.hpp"
 #include "PlatypusMeat.hpp"
 #include "PlatypusMilk.hpp"
@@ -10,13 +11,17 @@
 #include "Player.hpp"
 #include <string>
 
+#define HARGA_TELUR_PLATYPUS 10
+#define HARGA_SUSU_PLATYPUS 15
+#define HARGA_DAGING_PLATYPUS 50
+
 class Platypus : public MilkProducing, EggProducing, MeatProducing {
     public:
         /*
         Constructor yang menerima parameter position, name, meat, dan milk serta egg
         Parameter diturunkan dari MeatProducing dan MilkProducing dan EggProducing
         */
-        Platypus(pair<int,int> _position, string _name, Milk* _milk, Egg* _egg, Meat* _meat);
+        Platypus(pair<int,int> _position, string _name, Land* _landPos);
 
         /*
         Method untuk memproduksi daging Platypus. Method diturunkan dari
@@ -35,6 +40,14 @@ class Platypus : public MilkProducing, EggProducing, MeatProducing {
         EggProducing
         */
         void produceEgg(Player& _player);
+
+        bool isKillable();
+
+        void eat();
+
+        void talk();
+
+        void interact(Player* _p);
 };
 
 #endif

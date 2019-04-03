@@ -4,20 +4,24 @@
 #include "Object.hpp"
 #include "Land.hpp"
 
+#define TIME_UNTIL_HUNGRY_DEFAULT 100
+#define TIME_UNTIL_DEAD_DEFAULT 100
+
 class FarmAnimal : public Object {
-	private:
+	protected:
+			static int animalCount;
 
 			//Atribut posisi
   		pair<int,int> position;
 
 			//Atribut menandakan FarmAnimal sudah makan atau belum.
-  		bool isHungry = false;
+  		bool hungry = false;
 
 			//Atribut menandakan waktu sebelum FarmAnimal mati.
-  		int timeUntilDead = 100;
+  		int timeUntilDead = TIME_UNTIL_DEAD_DEFAULT;
 
 			// Atribut menandakan waktu sebelum FarmAnimal lapar.
-  		int timeUntilHungry = 100;
+  		int timeUntilHungry = TIME_UNTIL_HUNGRY_DEFAULT;
 
 			//Atribut menandakan hewan sudah memroduksi produk saat ini.
   		bool isProductProduced = false;
@@ -32,7 +36,9 @@ class FarmAnimal : public Object {
       /*
       Constructor yang menerima parameter posisi, nama)
       */
-  		FarmAnimal(pair<int,int> _position, string _name);
+  		FarmAnimal();
+
+			void initializeFarmAnimal(pair<int,int> _position, string _name, Land *_landPos);
 
       /*
       Destructor untuk mengurangi jumlah hewan.
@@ -56,6 +62,13 @@ class FarmAnimal : public Object {
 			//Mendapat nama dari FarmAnimal
       string getName();
 
+			//Mendapat Land tempat hewan berada
+			Land* getLandPos();
+
+			virtual bool isKillable() = 0;
+
+			virtual void talk();
+
   		//Setter
 
 			//Menge-set posisi FarmAnimal
@@ -73,6 +86,9 @@ class FarmAnimal : public Object {
 			//Menge-set nama dari FarmAnimal
       void setName(string _name);
 
+			//Menge-set Land tempat hewan berada
+			void setLandPos(Land *_newLand);
+
       //Method untuk mengembalikan apakah hewan dalam keadaan lapar
       bool isHungry(){
         return (timeUntilHungry == 0);
@@ -82,7 +98,7 @@ class FarmAnimal : public Object {
   		void eat();
 
   		//Bergerak
-  		void move(DirectionType direction, LinkedList<Cell> map);
+  		void move(DirectionType direction, LinkedList<LinkedList<Cell*>>* map);
 
 
   		//Method untuk mengupdate keadaan animal
