@@ -8,6 +8,15 @@
 //Kelas ini merepresentasikan pemain.
 #include "Player.hpp"
 
+bool isValid(pair<int,int> pos, int n, int m){
+	Cell *targetCell = worldMap.get(pos.first).get(pos.second);
+	if(!targetCell->isWalkable() or targetCell->isOccupied() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+		return false;
+	}
+	return true;
+}
+
+
 	// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang, beserta posisi
 Player::Player(string _name, int _water, double _uang, pair<int,int> _position): Object('P'){
 	setName(_name);
@@ -144,13 +153,30 @@ void Player::kill() {
 	*/
 
 void Player::grow(){
+	try{
 
+	} catch (Exception &e){
+
+	}
 }
 
 /**
 	* Fungsi Move berguna untuk mengubah posisi dari
 	* player sesuai dengan direction yang diberikan.
 	*/
-void Player::move(DirectionType direction, LinkedList<Cell>) {
+void Player::move(DirectionType direction, DirectionType direction) {
+	int di[4] = {-1,1,0,0};
+	int dj[4] = {0,0,1,-1};
 
+	if(isValid(Position.first+di[direction], position.second+dj[direction], worldMap)){
+
+	}
+}
+
+Cell* getCellInFront(LinkedList<LinkedList<Cell*>>* worldMap){
+	
+}
+
+void changeDirection(DirectionType newDirection){
+	direction = newDirection;
 }

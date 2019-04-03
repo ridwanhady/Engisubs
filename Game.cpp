@@ -1,9 +1,15 @@
 #include "Game.hpp"
+#include <iostream>
+#include <time.h>
+using namespace std;
 
-bool isValid(pair<int,int> pos, int n, int m){
-	if(!(cellList.get(pos.first).get(pos.second))->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+bool isValid(pair<int,int> pos, int n, int m, LinkedList<LinkedList<Cell*>> cellList){
+	Cell *targetCell = cellList.get(pos.first).get(pos.second);
+	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
+	Land *targetLand = (Land*)targetCell;
+	if(targetLand->isOccupied) return false;
 	return true;
 }
 
@@ -26,10 +32,18 @@ Game::Game(){
 
 	//Menaruh player di posisi random
 	pair<int,int> curPos = {rand()%n, rand()%m};
-	while(!isValid(curPos,n,m)){
+	while(!isValid(curPos,n,m, cellList)){
 		curPos = {rand()%n, rand()%m};
 	}
 	mainPlayer = new Player(namaPemain, 10, 10, curPos);
+
+	//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
+	if(daftarProduct.size() == 0){
+		daftarProduct.add(CHEESE);
+		daftarProduct.add(EKADO);
+		daftarProduct.add(MAYONAISE);
+		daftarProduct.add(STEAK);
+	}
 }
 
 //Destructor.
@@ -67,16 +81,16 @@ void Game::gameLoop(){
 			cout<<"LR"<<endl;
 			cout<<"QUIT"<<endl;
 		} else if(command == "UP"){
-			mainPlayer->move(UP, cellList);
+			mainPlayer->move(UP);
 			updateGame();
 		} else if(command == "DOWN"){
-			mainPlayer->move(DOWN, cellList);
+			mainPlayer->move(DOWN);
 			updateGame();
 		} else if(command == "RIGHT"){
-			mainPlayer->move(RIGHT, cellList);
+			mainPlayer->move(RIGHT);
 			updateGame();
 		} else if(command == "LEFT"){
-			mainPlayer->move(LEFT, cellList);
+			mainPlayer->move(LEFT);
 			updateGame();
 		} else if(command == "TALK"){
 			updateGame();

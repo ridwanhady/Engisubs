@@ -12,6 +12,7 @@ class Game{
 		int currentTime = 0;
 		LinkedList<FarmAnimal*> farmAnimalList;
 		LinkedList<LinkedList<Cell*>> cellList;
+		static LinkedList<ObjectType> daftarProduct;
 		Player* mainPlayer;
 		int n = 10;
 		int m = 10;
@@ -37,6 +38,9 @@ class Game{
 
 		//Menampilkan map
 		void showMap();
+		
+		//Mengecek product2 yang bisa dibuat
+		static void getProduct();
 };
 
 #endif
