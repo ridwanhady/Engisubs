@@ -78,7 +78,7 @@ void Game::gameLoop(){
 			cout<<"INTERACT"<<endl;
 			cout<<"KILL"<<endl;
 			cout<<"GROW"<<endl;
-			cout<<"Untuk mengubah arah hadap player (Tidak akan menambah waktu bermain)"<<endl;
+			cout<<"Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain)"<<endl;
 			cout<<"LU"<<endl;
 			cout<<"LD"<<endl;
 			cout<<"LL"<<endl;
@@ -97,21 +97,25 @@ void Game::gameLoop(){
 			mainPlayer->move(LEFT);
 			updateGame();
 		} else if(command == "TALK"){
+			mainPlayer->talk();
 			updateGame();
 		} else if(command == "INTERACT"){
+			mainPlayer->interact();
 			updateGame();
 		} else if(command == "KILL"){
+			mainPlayer->kill();
 			updateGame();
 		} else if(command == "GROW"){
+			mainPlayer->grow();
 			updateGame();
 		} else if(command == "LU"){
-			
+			mainPlayer->changeDirection(UP);
 		} else if(command == "LD"){
-			
+			mainPlayer->changeDirection(DOWN);
 		} else if(command == "LL"){
-			
+			mainPlayer->changeDirection(LEFT);
 		} else if(command == "LR"){
-			
+			mainPlayer->changeDirection(RIGHT);
 		} else if(command == "QUIT"){
 			endGame();
 		} else {

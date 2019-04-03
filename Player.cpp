@@ -11,7 +11,7 @@
 bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
 	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
 	int n = worldMap->size();
-	int m = (worldMap->get(0))->size();
+	int m = (worldMap->get(0)).size();
 	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
@@ -130,7 +130,16 @@ void Player::setPosition(pair<int,int> _position){
  * yang berada di depan player.
  */
  void Player::talk() {
-	 cout << "Hello" << endl;
+	Cell *targetCell = getCellInFront();
+	if(targetCell->isWalkable()){
+		Land *targetLand = (Land*)targetCell;
+		if(!targetLand->isOccupied){
+			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
+			targetAnimal->talk();
+			return;
+		}
+	} 
+	cout<<"Tidak ada hewan disitu"<<endl;
  }
 
 /**
@@ -138,6 +147,12 @@ void Player::setPosition(pair<int,int> _position){
  * interaksi dengan objek objek yang ada.
  * Efek Interaksi bergantung pada objek yang dikenai.
  */
+void Player::interact(){
+
+}
+/*
+	Fungsi kosong dikarenakan terdapat virtual method interact
+*/
 void Player::interact(Player *_p){
 
 }
@@ -157,10 +172,12 @@ void Player::kill() {
 	*/
 
 void Player::grow(){
-	try{
-
-	} catch (Exception &e){
-
+	Cell *targetCell = getCellInFront();
+	if(targetCell->isWalkable()){
+		Land *targetLand = (Land*)targetCell;
+		targetLand()->grow();
+	} else{
+		cout<<"Tidak ada tanah disitu"<<endl;
 	}
 }
 
@@ -171,14 +188,19 @@ void Player::grow(){
 void Player::move(DirectionType direction) {
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
-
-	if(isValid({position.first+di[direction], position.second+dj[direction]}, worldMap)){
-
+	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
+	if(isValid(targetPosition, worldMap)){
+		position = {position.first+di[direction], position.second+dj[direction]};
+	} else {
+		cout<<"Langkah tidak valid"<<endl;
 	}
 }
 
 Cell* Player::getCellInFront(){
-	
+	int di[4] = {-1,1,0,0};
+	int dj[4] = {0,0,1,-1};
+	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
+	worldMap->get(targetPosition.first).get(targetPosition.second);
 }
 
 void Player::changeDirection(DirectionType newDirection){

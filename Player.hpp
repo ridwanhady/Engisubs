@@ -12,6 +12,7 @@
 #include "Product.hpp"
 #include "Cell.hpp"
 #include "Land.hpp"
+#include "FarmAnimal.hpp"
 #include "LinkedList.hpp"
 
 #define MAX_WATER 100
@@ -88,6 +89,10 @@ public:
 		 * interaksi dengan objek objek yang ada.
 		 * Efek Interaksi bergantung pada objek yang dikenai.
 		 */
+		void interact();
+		/*
+			Fungsi kosong dikarenakan terdapat virtual method interact
+		*/
 		void interact(Player *_p);
 		/**
 		 * Fungsi kill berguna untuk menyembelih hewan
@@ -124,8 +129,6 @@ public:
 		double uang;
 		//Posisi pemain.
 		pair<int,int> position;
-		//Menunjuk ke Land tempat Player berada.
-		Land *landPos;
 		//Arah hadap pemain
 		DirectionType direction;
 		//Menyimpan worldmap
