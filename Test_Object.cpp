@@ -10,7 +10,7 @@ class DummyDerrived: public Object{
             objectType = PLAYER;
         }
         void interact(Player* _p){
-            cout << "Do Nothing";
+            //Do Nothing, Just a dummy to check whether other method is work or not
         }
 };
 
