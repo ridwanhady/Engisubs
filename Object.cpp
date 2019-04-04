@@ -15,7 +15,3 @@ void Object::render(){
 ObjectType Object::getObjectType(){
 	return objectType;
 }
-
-void Object::interact(Player* _p){
-
-}
