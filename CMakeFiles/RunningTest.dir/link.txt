@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/RunningTest.dir/Test_Object.cpp.o  -o RunningTest /usr/local/lib/libgtest.a -lpthread 
+/usr/bin/c++     CMakeFiles/RunningTest.dir/Test_Object.cpp.o CMakeFiles/RunningTest.dir/Test_Cell.cpp.o  -o RunningTest /usr/local/lib/libgtest.a -lpthread 

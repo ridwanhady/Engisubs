@@ -15,17 +15,17 @@ class DummyDerrived: public Object{
 };
 
 TEST(ObjectTest, FunctionalityRender) { 
-        DummyDerrived test;
-        testing::internal::CaptureStdout();
-        test.render();
-        std::string output = testing::internal::GetCapturedStdout();
-        ASSERT_EQ("D", output);
-    }
+    DummyDerrived test;
+    testing::internal::CaptureStdout();
+    test.render();
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("D", output);
+}
 
 TEST(ObjectTest, ReturningObjectType) { 
-        DummyDerrived test;
-        ASSERT_EQ(PLAYER, test.getObjectType());
-    }
+    DummyDerrived test;
+    ASSERT_EQ(PLAYER, test.getObjectType());
+}
 
 TEST(ObjectTest, OverrideInteract){
     DummyDerrived test;
@@ -35,8 +35,7 @@ TEST(ObjectTest, OverrideInteract){
     ASSERT_EQ("Im just a Dummy", output);
 }
  
-int main(int argc, char **argv) 
-    {
+int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-    }
+}

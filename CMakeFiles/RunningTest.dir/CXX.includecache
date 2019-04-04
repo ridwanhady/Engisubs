@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/rid1hady/Engisubs/Cell.cpp
+Cell.hpp
+/home/rid1hady/Engisubs/Cell.hpp
+
+/home/rid1hady/Engisubs/Cell.hpp
+Object.hpp
+/home/rid1hady/Engisubs/Object.hpp
+
 /home/rid1hady/Engisubs/Object.cpp
 Object.hpp
 /home/rid1hady/Engisubs/Object.hpp
@@ -17,6 +25,14 @@ string
 -
 utility
 -
+
+/home/rid1hady/Engisubs/Test_Cell.cpp
+Cell.cpp
+/home/rid1hady/Engisubs/Cell.cpp
+gtest/gtest.h
+-
+cstring
+/home/rid1hady/Engisubs/cstring
 
 /home/rid1hady/Engisubs/Test_Object.cpp
 Object.cpp

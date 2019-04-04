@@ -24,17 +24,19 @@ void Map::initMap(string filename){
 	        getline(mapfile,content); // Saves the line in STRING.
 	        int j = 0;
             for(char x : content){
+                pair<int,int> pos = {i,j};
                 if (x == '-'){
                     // Adding Grassland
-                    Grassland grass({i,j}, false);
+                    
+                    Grassland grass(pos, false);
                     tempContent.push_back(grass);
                 } else if (x == 'x'){
                     // Adding Barn
-                    Barn barn({i,j}, false);
+                    Barn barn(pos, false);
                     tempContent.push_back(barn);
                 } else if (x == 'o'){
                     // Adding Coop
-                    Coop coop({i,j}, false);
+                    Coop coop(pos, false);
                     tempContent.push_back(coop);
                 }
                 j++;

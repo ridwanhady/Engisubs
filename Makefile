@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RunningTest
+# Target rules for targets named AllTest
 
 # Build rule for target.
-RunningTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RunningTest
-.PHONY : RunningTest
+AllTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AllTest
+.PHONY : AllTest
 
 # fast build rule for target.
-RunningTest/fast:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/build
-.PHONY : RunningTest/fast
+AllTest/fast:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/build
+.PHONY : AllTest/fast
+
+Test_Cell.o: Test_Cell.cpp.o
+
+.PHONY : Test_Cell.o
+
+# target to build an object file
+Test_Cell.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.o
+.PHONY : Test_Cell.cpp.o
+
+Test_Cell.i: Test_Cell.cpp.i
+
+.PHONY : Test_Cell.i
+
+# target to preprocess a source file
+Test_Cell.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.i
+.PHONY : Test_Cell.cpp.i
+
+Test_Cell.s: Test_Cell.cpp.s
+
+.PHONY : Test_Cell.s
+
+# target to generate assembly for a file
+Test_Cell.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.s
+.PHONY : Test_Cell.cpp.s
 
 Test_Object.o: Test_Object.cpp.o
 
@@ -129,7 +156,7 @@ Test_Object.o: Test_Object.cpp.o
 
 # target to build an object file
 Test_Object.cpp.o:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.o
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.o
 .PHONY : Test_Object.cpp.o
 
 Test_Object.i: Test_Object.cpp.i
@@ -138,7 +165,7 @@ Test_Object.i: Test_Object.cpp.i
 
 # target to preprocess a source file
 Test_Object.cpp.i:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.i
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.i
 .PHONY : Test_Object.cpp.i
 
 Test_Object.s: Test_Object.cpp.s
@@ -147,7 +174,7 @@ Test_Object.s: Test_Object.cpp.s
 
 # target to generate assembly for a file
 Test_Object.cpp.s:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.s
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.s
 .PHONY : Test_Object.cpp.s
 
 # Help Target
@@ -157,8 +184,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... RunningTest"
+	@echo "... AllTest"
 	@echo "... edit_cache"
+	@echo "... Test_Cell.o"
+	@echo "... Test_Cell.i"
+	@echo "... Test_Cell.s"
 	@echo "... Test_Object.o"
 	@echo "... Test_Object.i"
 	@echo "... Test_Object.s"
