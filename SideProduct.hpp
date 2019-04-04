@@ -5,12 +5,10 @@
 #include "FarmProduct.hpp"
 #include "LinkedList.hpp"
 
+
 //Kelas ini merepresentasikan produk sampingan yang terdiri dari beberapa produk hewan.
 class SideProduct : public Product {
     public:
-        //Menyimpan resep dalam bentuk pointer.
-        static LinkedList<ObjectType> resep;
-        
         //Constructor tanpa parameter.
         SideProduct();
 

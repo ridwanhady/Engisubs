@@ -4,10 +4,12 @@
 
 //Kelas ini merepresentasikan produk sampingan keju.
 class Cheese : public SideProduct{
+        
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
         Cheese(int _price);
         static void InitResep();
+        static LinkedList<FarmProductType> resep;
 };
 
 #endif
