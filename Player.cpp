@@ -7,6 +7,7 @@
 
 //Kelas ini merepresentasikan pemain.
 #include "Player.hpp"
+#include "Facility.hpp"
 
 bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
 	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
@@ -148,7 +149,21 @@ void Player::setPosition(pair<int,int> _position){
  * Efek Interaksi bergantung pada objek yang dikenai.
  */
 void Player::interact(){
-
+	Cell *targetCell = getCellInFront();
+	if(targetCell != NULL){
+		if(targetCell->isWalkable()){
+			Land *targetLand = (Land*)targetCell;
+			if(targetLand->getObjectHere() != NULL){
+				targetLand->getObjectHere()->interact(this);
+				return;
+			}
+		} else {
+			Facility *targetFacility = (Facility*)targetFacility;
+			targetFacility->interact(this);
+			return;
+		}
+	}
+	cout<<"Tidak ada object yang bisa dilakukan interact disitu"<<endl;
 }
 /*
 	Fungsi kosong dikarenakan terdapat virtual method interact
@@ -162,7 +177,18 @@ void Player::interact(Player *_p){
 	* hewan dalam kategori MeatProducing.
 	*/
 void Player::kill() {
-
+	Cell *targetCell = getCellInFront();
+	if(targetCell != NULL and targetCell->isWalkable()){
+		Land *targetLand = (Land*)targetCell;
+		if(!targetLand->isOccupied){
+			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
+			if(targetAnimal->isKillable()){
+				delete targetAnimal;
+			}
+			return;
+		}
+	} 
+	cout<<"Tidak ada hewan yang bisa disembelih disitu"<<endl;
 }
 
 /**
@@ -172,13 +198,9 @@ void Player::kill() {
 	*/
 
 void Player::grow(){
-	Cell *targetCell = getCellInFront();
-	if(targetCell->isWalkable()){
-		Land *targetLand = (Land*)targetCell;
-		targetLand()->grow();
-	} else{
-		cout<<"Tidak ada tanah disitu"<<endl;
-	}
+	Cell *targetCell = worldMap->get(position.first).get(position.second);
+	Land *targetLand = (Land*)targetCell;
+	targetLand->grow();
 }
 
 /**
@@ -200,7 +222,10 @@ Cell* Player::getCellInFront(){
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
 	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
-	worldMap->get(targetPosition.first).get(targetPosition.second);
+	if(targetPosition.first < 0 || targetPosition.first >= worldMap->size() || targetPosition.second < 0 || targetPosition.second >= worldMap->get(0).size()){
+		return NULL;
+	}
+	return worldMap->get(targetPosition.first).get(targetPosition.second);
 }
 
 void Player::changeDirection(DirectionType newDirection){
