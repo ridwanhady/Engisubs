@@ -9,9 +9,6 @@ class DummyDerrived: public Object{
         DummyDerrived() : Object('D'){
             objectType = PLAYER;
         }
-        void interact(Player* _p){
-            //Do Nothing, Just a dummy to check whether other method is work or not
-        }
 };
 
 TEST(ObjectTest, FunctionalityRender) 
