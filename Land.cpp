@@ -2,6 +2,7 @@
 
 //Ctor dengan parameter
 Land::Land(pair<int,int> _position, bool _isGrown, LandType _landType) : Cell(_position), landType(_landType){
+	objectType = LAND;
 	grown = _isGrown;
 	if(grown){
 		objectSymbol = grassSymbol[landType];
