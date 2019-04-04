@@ -3,6 +3,8 @@
 #include <time.h>
 using namespace std;
 
+LinkedList<ObjectType> Game::daftarProduct;
+
 bool Game::isValid(pair<int,int> pos){
 	Cell *targetCell = cellList.get(pos.first).get(pos.second);
 	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
@@ -11,17 +13,6 @@ bool Game::isValid(pair<int,int> pos){
 	Land *targetLand = (Land*)targetCell;
 	if(targetLand->isOccupied()) return false;
 	return true;
-}
-
-pair<int,int> Game::randomMove(pair<int,int> pos){
-	int dx[5] = {0,1,0,-1,0};
-	int dy[5] = {1,0,-1,0,0};
-	pair<int,int> randPosition;
-	do{
-		int t = rand()%5;
-		randPosition = {pos.first+dx[t], pos.second+dy[t]};
-	} while (!isValid(randPosition));
-	return randPosition;
 }
 
 Game::Game(){
@@ -46,7 +37,7 @@ Game::Game(){
 		while(!isValid(randPosition)){
 			randPosition = {rand()%n, rand()%m};
 		}
-		Chicken *x;//= new Chicken(randPosition, "Joko");
+		Chicken *x = new Chicken(randPosition, "Joko", (Land*)cellList.get(randPosition.first).get(randPosition.second));
 		farmAnimalList.add(x);
 		((Land*)cellList.get(randPosition.first).get(randPosition.second))->setObjectHere(x);
 	}
@@ -151,18 +142,29 @@ void Game::gameLoop(){
 
 //Mengupdate seluruh state game
 void Game::updateGame(){
-	//Todo: Mengupdate seluruh state animal
+	//Mengupdate seluruh state animal
 	//Urutan pengerjaan:
 	//1. Makan
 	//2. Update hungryBar
 	//3. Pindah ke cell lain
+	DirectionType dir[4] = {UP,DOWN,RIGHT,LEFT};
+	int di[4] = {-1,1,0,0};
+	int dj[4] = {0,0,1,-1};
 	for(int i = 0; i < farmAnimalList.size(); i++){
 		if(farmAnimalList.get(i)->isHungry()){
 			farmAnimalList.get(i)->eat();
 		}
 		farmAnimalList.get(i)->updateCondition();
-		farmAnimalList.get(i)->setPosition(randomMove(farmAnimalList.get(i)->getPosition()));
-		//farmAnimalList.get(i)->move((DirectionType)rand()%4, &cellList);
+		//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
+		int moveDirection;
+		pair<int,int> curPos = farmAnimalList.get(i)->getPosition();
+		do{
+			moveDirection = rand()%5;
+			if(moveDirection < 4){
+				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+			}
+		} while (!isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]}));
+
 	}
 	//Mengupdate seluruh state Truck
 	for(int i = 0; i < n; i++){
@@ -189,4 +191,8 @@ void Game::showMap(){
 		}
 		cout<<endl;
 	}
+}
+
+LinkedList<ObjectType> Game::getProduct(){
+	return Game::daftarProduct;
 }

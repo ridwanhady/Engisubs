@@ -47,7 +47,7 @@ class Game{
 		void showMap();
 		
 		//Mengecek product2 yang bisa dibuat
-		static void getProduct();
+		static LinkedList<ObjectType> getProduct();
 };
 
 #endif

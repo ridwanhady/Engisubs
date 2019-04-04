@@ -184,6 +184,7 @@ void Player::kill() {
 			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
 			if(targetAnimal->isKillable()){
 				delete targetAnimal;
+				targetLand->setObjectHere(NULL);
 			}
 			return;
 		}
@@ -212,7 +213,11 @@ void Player::move(DirectionType direction) {
 	int dj[4] = {0,0,1,-1};
 	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
 	if(isValid(targetPosition, worldMap)){
+		Land *currentLand = (Land*)worldMap->get(position.first).get(position.second);
+		currentLand->setObjectHere(NULL);
 		position = {position.first+di[direction], position.second+dj[direction]};
+		currentLand = (Land*)worldMap->get(position.first).get(position.second);
+		currentLand->setObjectHere(this);
 	} else {
 		cout<<"Langkah tidak valid"<<endl;
 	}
