@@ -16,6 +16,13 @@ class Game{
 		Player* mainPlayer;
 		int n = 10;
 		int m = 10;
+
+	//Mengecek kevalidan suatu koordinat
+	bool isValid(pair<int,int> pos);
+
+	//Melakukan pergerakan secara random ke sekitar object
+	pair<int,int> randomMove(pair<int,int> pos);
+
 	public:
 		//Constructor.
 		Game();

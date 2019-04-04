@@ -3,7 +3,7 @@
 #include <time.h>
 using namespace std;
 
-bool isValid(pair<int,int> pos, int n, int m, LinkedList<LinkedList<Cell*>> cellList){
+bool Game::isValid(pair<int,int> pos){
 	Cell *targetCell = cellList.get(pos.first).get(pos.second);
 	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
@@ -13,18 +13,43 @@ bool isValid(pair<int,int> pos, int n, int m, LinkedList<LinkedList<Cell*>> cell
 	return true;
 }
 
+pair<int,int> Game::randomMove(pair<int,int> pos){
+	int dx[5] = {0,1,0,-1,0};
+	int dy[5] = {1,0,-1,0,0};
+	pair<int,int> randPosition;
+	do{
+		int t = rand()%5;
+		randPosition = {pos.first+dx[t], pos.second+dy[t]};
+	} while (!isValid(randPosition));
+	return randPosition;
+}
+
 Game::Game(){
 	srand(time(NULL));
 	string namaPemain;
 
 	//Init cell (Todo)
 	for(int i = 0; i < n; i++){
+		cellList.add(LinkedList<Cell*>());
 		for(int j = 0; j < m; j++){
-			
+			if(rand()%100 <= 90){
+				cellList.get(i).add(new Grassland({i,j},1));
+			} else {
+				cellList.get(i).add(new Truck({i,j}));
+			}
 		}
 	}
 	//Init animal
-	//Todo
+	int cntAnimal = 3;
+	while(cntAnimal--){
+		pair<int,int> randPosition = {rand()%n, rand()%m};
+		while(!isValid(randPosition)){
+			randPosition = {rand()%n, rand()%m};
+		}
+		Chicken *x;//= new Chicken(randPosition, "Joko");
+		farmAnimalList.add(x);
+		((Land*)cellList.get(randPosition.first).get(randPosition.second))->setObjectHere(x);
+	}
 
 	//Meminta nama pemain
 	cout<<"Masukkan nama pemain"<<endl;
@@ -32,7 +57,7 @@ Game::Game(){
 
 	//Menaruh player di posisi random
 	pair<int,int> curPos = {rand()%n, rand()%m};
-	while(!isValid(curPos,n,m, cellList)){
+	while(!isValid(curPos)){
 		curPos = {rand()%n, rand()%m};
 	}
 	mainPlayer = new Player(namaPemain, 10, 10, curPos);
@@ -52,7 +77,7 @@ Game::Game(){
 
 //Destructor.
 Game::~Game(){
-
+	delete mainPlayer;
 }
 
 //Memulai game.
@@ -127,7 +152,28 @@ void Game::gameLoop(){
 //Mengupdate seluruh state game
 void Game::updateGame(){
 	//Todo: Mengupdate seluruh state animal
-	//Todo: Mengupdate seluruh state object
+	//Urutan pengerjaan:
+	//1. Makan
+	//2. Update hungryBar
+	//3. Pindah ke cell lain
+	for(int i = 0; i < farmAnimalList.size(); i++){
+		if(farmAnimalList.get(i)->isHungry()){
+			farmAnimalList.get(i)->eat();
+		}
+		farmAnimalList.get(i)->updateCondition();
+		farmAnimalList.get(i)->setPosition(randomMove(farmAnimalList.get(i)->getPosition()));
+		//farmAnimalList.get(i)->move((DirectionType)rand()%4, &cellList);
+	}
+	//Mengupdate seluruh state Truck
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			Cell *targetCell = cellList.get(i).get(j);
+			if(targetCell->getObjectType() == TRUCK){
+				Truck *targetTruck = (Truck*)targetCell;
+				targetTruck->setNotUsableTurns = max(0,targetTruck->getNotUsableTurns()-1);
+			}
+		}
+	}
 	currentTime++;
 }
 

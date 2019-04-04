@@ -180,7 +180,7 @@ void Player::kill() {
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL and targetCell->isWalkable()){
 		Land *targetLand = (Land*)targetCell;
-		if(!targetLand->isOccupied){
+		if(!targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
 			if(targetAnimal->isKillable()){
 				delete targetAnimal;
