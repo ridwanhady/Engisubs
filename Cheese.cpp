@@ -3,7 +3,6 @@
 //Konstruktor Cheese
 Cheese::Cheese(int _price)  {
     price = _price;
-    
 }
 
 void InitResep() {

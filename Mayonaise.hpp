@@ -9,6 +9,7 @@ class Mayonaise : public SideProduct {
         //Constructor menerima harga, dan menginisialisasi resep.
         Mayonaise(int _price);
         static void InitResep();
+        static LinkedList<FarmProductType> resep;
 };
 
 #endif

@@ -58,7 +58,7 @@ class Object{
 		//Untuk mengeluarkan simbol dari suatu objek ke layar
 		void render();
 		//Virtual method untuk berinteraksi dengan interact
-		virtual void interact(Player* _p);
+		virtual void interact(Player* _p) = 0;
 		//Getter
 		ObjectType getObjectType();
 };
