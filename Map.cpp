@@ -27,7 +27,6 @@ void Map::initMap(string filename){
                 pair<int,int> pos = {i,j};
                 if (x == '-'){
                     // Adding Grassland
-                    
                     Grassland grass(pos, false);
                     tempContent.push_back(grass);
                 } else if (x == 'x'){
