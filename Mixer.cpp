@@ -13,12 +13,14 @@ Mixer::Mixer(pair<int,int> _position) : Facility(_position){
 //Implementasi virtual interact()
 void interact(Player* _p){
 	//minta input
-	int idxInventory_1, idxInventory_2, idxSideProd;
+	int idxInventory_1, idxInventory_2, idxSideProd, idxResep;
 	bool isIdx1Valid, isIdx2Valid, isIdxSideProdValid, isFarmProduct;
-	bool isFound;
+	FarmProductType idx1_farmProductType, idx2_farmProductType;
+	bool isFoundIdx1 = false;
+	bool isFoundIdx2 = false;
 
 	//Panggil static dari Game dilakukan
-	LinkedList<ObjectType> daftarSideProduct = Game::getDaftarSideProduct();
+	LinkedList<ObjectType> daftarSideProduct = Game::getProduct();
 
 	cout << "Masukkan indeks inventori (dari 0 - size)" << endl;
 	cin >> idxInventory_1;
@@ -29,29 +31,60 @@ void interact(Player* _p){
 	isIdx1Valid = (idxInventory_1 >= 0  && idxInventory_1 < (_p)->getInventory().size());
 	isIdx2Valid = (idxInventory_2 >= 0  && idxInventory_2 < (_p)->getInventory().size());
 
-	if (isIdx1Valid && isIdx2Valid){
+	if (isIdx1Valid && isIdx2Valid && idxInventory_1 != idxInventory_2){
 		//Jika valid, dapatkan ProductType, ObjectType, serta Price.
 		//Perhatikan bahwa (_p)->getInventory().get(idxInventory_1) merupakan tipe data Product*
 
-		//Cek ProductType: Mixer akan berhasil kalau tipe dari ProductType adalah FARMPRODUCT
+		//Cek ProductType: Mixer akan berhasil kalau kedua indeks mengembalikan FARMPRODUCT
 		isFarmProduct = ( ((_p)->getInventory().get(idxInventory_1))->getProductType() == FARMPRODUCT) && ( ((_p)->getInventory().get(idxInventory_2))->getProductType() == FARMPRODUCT) ;
 		if (isFarmProduct) {
+			//Jika SideProduct yang dipilih benar (CHEESE, EKADO, STEAK, dan MAYONAISE )
 			cout << "Silakan masukkan indeks SideProduct yang anda mau!" << endl;
-			cin >> idxSideProd;
-			isIdxSideProdValid = (idxSideProd >= 0 && idxSideProd < daftarSideProduct.size());
+			cin >> idxSideProd; isIdxSideProdValid = (idxSideProd >= 0 && idxSideProd < daftarSideProduct.size());
+
 			//Cek apakah indeks untuk linkedList Resep valid atau tidak.
 			if (isIdxSideProdValid) {
 				if (daftarSideProduct.get(idxSideProd) == CHEESE){
-					Cheese::InitResepCheese();
-					isFound = Cheese::resep.findElement(daftarSideProduct.get(idxSideProd));
-					if (isFound != -1) {
-						cout << "Resep tidak ditemukan!" << endl;
-					} else {
-						
+					//Cari resep yang digunakan untuk membuat cheese
+					for (idxResep = 0 ; idxResep < Cheese::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep CHEESE
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_1))->getObjectType()) == Cheese::getResepwithIdx(idxResep)) {
+							//Simpam FarmProductType pada idx1_farmProductType, sebagai validasi idxInventory_2
+							idx1_farmProductType = Cheese::getResepwithIdx(idxResep);
+							isFoundIdx1 = true;
+							break;
+						}
 					}
-				}
+
+					for (idxResep = 0 ; idxResep < Cheese::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep CHEESE
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_2))->getObjectType()) == Cheese::getResepwithIdx(idxResep)) {
+							//Kalau tipenya berbeda (contoh : EGG dan MILK, bukan EGG dan EGG maupun MILK dan MILK )
+							if (idx1_farmProductType != Cheese::getResepwithIdx(idxResep)) {
+								isFoundIdx2 = true;
+								break;
+							}
+						}
+					}
+
+					if (isFoundIdx1 && isFoundIdx2) {
+						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+
+						//Tambahkan Cheese pada Inventori:
+						//Construct newCheese
+						Cheese newCheese(20);
+						( (_p)->getInventory() ).add(newCheese*);
+
+						cout << "MEMBUAT CHEESE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
+					} else {
+						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
+					}
+				} 
+
 			} else {
-				cout << "Indeks yang Anda masukkan tidak valid." << endl;
+				cout << "Indeks yang Anda masukkan tidak valid atau sama." << endl;
 			}
 
 		} else {
@@ -63,3 +96,4 @@ void interact(Player* _p){
 	}
 		
 }
+

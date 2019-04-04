@@ -7,6 +7,10 @@ Cheese::Cheese(int _price)  {
 
 void InitResep() {
     //Inisialisasi resep:
-    Cheese::resep.add(MILK);
-    Cheese::resep.add(EGG);
+    Cheese::getResep().add(MILK);
+    Cheese::getResep().add(EGG);
+}
+
+FarmProductType getResepwithIdx(int i) {
+    return Cheese::getResep().get(i);
 }

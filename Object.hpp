@@ -42,6 +42,14 @@ enum DirectionType{
 	LEFT
 };
 
+//Enumerator untuk tipe FarmProduct.
+enum FarmProductType {
+    EGG,
+    MEAT,
+    MILK,
+	NOT_FOUND
+};
+
 class Player;
 
 //Class untuk mendefinisikan tipe dari seluruh objek
