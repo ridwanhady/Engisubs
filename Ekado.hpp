@@ -2,6 +2,7 @@
 #define _EKADO_H_
 
 #include "SideProduct.hpp"
+#define EKADO_PRICE 10
 
 //Kelas ini merepresentasikan produk sampingan Ekado.
 class Ekado : public SideProduct {

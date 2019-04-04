@@ -116,8 +116,79 @@ void interact(Player* _p){
 					} else {
 						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
 					}
-				} 
+				} else if (daftarSideProduct.get(idxSideProd) == EKADO){
+					//Cari resep yang digunakan untuk membuat EKADO
+					for (idxResep = 0 ; idxResep < Ekado::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep EKADO
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_1))->getObjectType()) == Ekado::getResepwithIdx(idxResep)) {
+							//Simpam FarmProductType pada idx1_farmProductType, sebagai validasi idxInventory_2
+							idx1_farmProductType = Ekado::getResepwithIdx(idxResep);
+							isFoundIdx1 = true;
+							break;
+						}
+					}
 
+					for (idxResep = 0 ; idxResep < Ekado::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep Ekado
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_2))->getObjectType()) == Ekado::getResepwithIdx(idxResep)) {
+							//Kalau tipenya berbeda (contoh : EGG dan MILK, bukan EGG dan EGG maupun MILK dan MILK )
+							if (idx1_farmProductType != Ekado::getResepwithIdx(idxResep)) {
+								isFoundIdx2 = true;
+								break;
+							}
+						}
+					}
+
+					if (isFoundIdx1 && isFoundIdx2) {
+						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+
+						//Tambahkan EKADO pada Inventori:
+						//Construct newEkado
+						( (_p)->getInventory() ).add(new Ekado(EKADO_PRICE, SIDEPRODUCT, EKADO, 'E'));
+
+						cout << "MEMBUAT EKADO BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
+					} else {
+						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
+					}
+				} else if (daftarSideProduct.get(idxSideProd) == MAYONAISE){
+					//Cari resep yang digunakan untuk membuat Mayonaise
+					for (idxResep = 0 ; idxResep < Mayonaise::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep MAYONAISE
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_1))->getObjectType()) == Mayonaise::getResepwithIdx(idxResep)) {
+							//Simpam FarmProductType pada idx1_farmProductType, sebagai validasi idxInventory_2
+							idx1_farmProductType = Mayonaise::getResepwithIdx(idxResep);
+							isFoundIdx1 = true;
+							break;
+						}
+					}
+
+					for (idxResep = 0 ; idxResep < Mayonaise::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep Mayonaise
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_2))->getObjectType()) == Mayonaise::getResepwithIdx(idxResep)) {
+							//Kalau tipenya berbeda (contoh : EGG dan MILK, bukan EGG dan EGG maupun MILK dan MILK )
+							if (idx1_farmProductType != Mayonaise::getResepwithIdx(idxResep)) {
+								isFoundIdx2 = true;
+								break;
+							}
+						}
+					}
+
+					if (isFoundIdx1 && isFoundIdx2) {
+						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+
+						//Tambahkan Mayonaise pada Inventori:
+						//Construct newMayonaise
+						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE, SIDEPRODUCT, MAYONAISE, 'M'));
+
+						cout << "MEMBUAT MAYONAISE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
+					} else {
+						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
+					}
+				} 
 
 			} else {
 				cout << "Indeks yang Anda masukkan tidak valid atau sama." << endl;

@@ -2,6 +2,7 @@
 #define _MAYONAISE_H_
 
 #include "SideProduct.hpp"
+#define MAYONAISE_PRICE 10
 
 //Kelas ini merepresentasikan produk sampingan mayonais.
 class Mayonaise : public SideProduct {
