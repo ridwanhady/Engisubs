@@ -9,7 +9,7 @@ bool isValid(pair<int,int> pos, int n, int m, LinkedList<LinkedList<Cell*>> cell
 		return false;
 	}
 	Land *targetLand = (Land*)targetCell;
-	if(targetLand->isOccupied) return false;
+	if(targetLand->isOccupied()) return false;
 	return true;
 }
 

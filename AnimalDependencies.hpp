@@ -9,7 +9,7 @@
 #include "Chicken.hpp"
 #include "Dog.hpp"
 #include "Platypus.hpp"
-#include "Trex.hpp"
+#include "TRex.hpp"
 #include "Pterodactyl.hpp"
 
 #endif

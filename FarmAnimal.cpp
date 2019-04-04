@@ -102,7 +102,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
             //Jika masih bisa ke atas
             if (position.first > 0){
                 Cell* tempCell = ((*map).get(position.first - 1)).get(position.second);
-                if ((*tempCell).isWalkable){
+                if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
                         landPos = tempLand;
@@ -116,7 +116,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
             //Jika masih bisa ke bawah
             if (position.first < (*map).size() - 1){
                 Cell* tempCell = ((*map).get(position.first + 1)).get(position.second);
-                if ((*tempCell).isWalkable){
+                if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
                         landPos = tempLand;
@@ -130,7 +130,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
             //Jika masih bisa ke kiri
             if (position.second > 0){
                 Cell* tempCell = ((*map).get(position.first)).get(position.second - 1);
-                if ((*tempCell).isWalkable){
+                if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
                         landPos = tempLand;
@@ -144,7 +144,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
             //Jika masih bisa ke kanan
             if (position.second < (*map).get(position.first).size() - 1){
                 Cell* tempCell = ((*map).get(position.first)).get(position.second + 1);
-                if ((*tempCell).isWalkable){
+                if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
                         landPos = tempLand;

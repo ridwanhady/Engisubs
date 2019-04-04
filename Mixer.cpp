@@ -38,12 +38,12 @@ void interact(Player* _p){
 		if (isFarmProduct) {
 			cout << "Silakan masukkan indeks SideProduct yang anda mau!" << endl;
 			cin >> idxSideProd;
-			isIdxSideProdValid = (idxSideProd >= 0 && idxSideProd < daftarSideProduct);
+			isIdxSideProdValid = (idxSideProd >= 0 && idxSideProd < daftarSideProduct.size());
 			//Cek apakah indeks untuk linkedList Resep valid atau tidak.
 			if (isIdxSideProdValid) {
 				if (daftarSideProduct.get(idxSideProd) == CHEESE){
 					Cheese::InitResepCheese();
-					isFound = Cheese::resep.find(daftarSideProduct.get(idxSideProd));
+					isFound = Cheese::resep.findElement(daftarSideProduct.get(idxSideProd));
 					if (isFound != -1) {
 						cout << "Resep tidak ditemukan!" << endl;
 					} else {

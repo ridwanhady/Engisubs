@@ -17,7 +17,7 @@ bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
 		return false;
 	}
 	Land *targetLand = (Land*)targetCell;
-	if(targetLand->isOccupied)return false;
+	if(targetLand->isOccupied())return false;
 	return true;
 }
 
@@ -134,7 +134,7 @@ void Player::setPosition(pair<int,int> _position){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = (Land*)targetCell;
-		if(!targetLand->isOccupied){
+		if(!targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
 			targetAnimal->talk();
 			return;
