@@ -15,7 +15,7 @@ Truck::Truck(pair<int,int> _position) : Facility(_position){
 void Truck::interact(Player* _p){
 	LinkedList <Product *> inventTemp = _p->getInventory();
 	for(int i = 0; i < inventTemp.size(); i++){
-		_p->setUang(_p->getUang + inventTemp.get(i)->getPrice());
+		_p->setUang(_p->getUang() + inventTemp.get(i)->getPrice());
 	}
 	//Todo: Delete inventory
 	_p->getInventory().~LinkedList();

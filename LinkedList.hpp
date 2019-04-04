@@ -4,8 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-using namespace std;
-
 template <class T>
 /*
     Kelas LinkedList
@@ -24,7 +22,7 @@ class LinkedList{
             Fungsi find() mencari elemen pada LinkedList dan mengembalikan indeks dari
             elemen tersebut. Jika tidak ditemukan maka akan mengembalikan nilai -1.
         */
-        int find(T _element){
+        int findElement(T _element){
             typename vector<T>::iterator itr = find(data.begin(), data.end(), _element);
             if (itr == data.end()){
                 return -1;
@@ -91,7 +89,7 @@ template <class T>
     Kelas ini adalah kelas template yang merepresentasikan sebuah LinkedList menggunakan
     Vector dari STL-C++.
 */
-class LinkedList{
+class LinkedList<T*>{
     private:
         /*
             Vector yang menyimpan data.
@@ -108,7 +106,7 @@ class LinkedList{
             }
         }
 
-        int find(T* _element){
+        int findElement(T* _element){
             typename vector<T*>::iterator itr = find(data.begin(), data.end(), _element);
             if (itr == data.end()){
                 return -1;
@@ -122,7 +120,7 @@ class LinkedList{
         int count(T* _element){
           typename vector<T*>::iterator itr = data.begin();
           int countEl = 0;
-          while (itr != data.begin()){
+          while (itr != data.end()){
             if ((*itr) == _element){
               countEl++;
             }
@@ -151,7 +149,7 @@ class LinkedList{
         */
         void remove(T* _element){
             typename vector<T>::iterator itr = find(data.begin(), data.end(), _element);
-            if (itr != begin.end()){
+            if (itr != data.end()){
                 data.erase(itr);
             }
         }

@@ -16,7 +16,7 @@ bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
 		return false;
 	}
 	Land *targetLand = (Land*)targetCell;
-	if(targetLand->isOccupied)return false;
+	if(targetLand->isOccupied())return false;
 	return true;
 }
 
@@ -133,7 +133,7 @@ void Player::setPosition(pair<int,int> _position){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = (Land*)targetCell;
-		if(!targetLand->isOccupied){
+		if(!targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
 			targetAnimal->talk();
 			return;
@@ -175,7 +175,7 @@ void Player::grow(){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = (Land*)targetCell;
-		targetLand()->grow();
+		targetLand->grow();
 	} else{
 		cout<<"Tidak ada tanah disitu"<<endl;
 	}
