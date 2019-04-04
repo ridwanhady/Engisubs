@@ -74,8 +74,7 @@ void interact(Player* _p){
 
 						//Tambahkan Cheese pada Inventori:
 						//Construct newCheese
-						Cheese newCheese(20);
-						( (_p)->getInventory() ).add(newCheese*);
+						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE, FARMPRODUCT, CHEESE, 'C'));
 
 						cout << "MEMBUAT CHEESE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {

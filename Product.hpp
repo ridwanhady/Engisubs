@@ -19,13 +19,15 @@ class Product : public Object{
 		int price;
 	public:
 		//Ctor dengan parameter
-		Product(ProductType _productType);
+		Product();
 
 		//Mengambil harga.
 		int getPrice() const;
 
 		//Mengambil tipe produk.
 		ProductType getProductType() const;
+
+		void initializeProduct(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol);
 
 };
 

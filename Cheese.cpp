@@ -1,8 +1,8 @@
 #include "Cheese.hpp"
 
 //Konstruktor Cheese
-Cheese::Cheese(int _price)  {
-    price = _price;
+Cheese::Cheese(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol) {
+    initializeProduct(_price, _productType, _objectType, _objectSymbol);
 }
 
 void InitResep() {
