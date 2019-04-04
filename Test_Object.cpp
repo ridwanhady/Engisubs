@@ -1,6 +1,6 @@
 #include "Object.cpp"
 #include <gtest/gtest.h>
-#include "cstring"
+#include <string>
 
 using namespace std;
 
@@ -18,7 +18,7 @@ TEST(ObjectTest, FunctionalityRender) {
     DummyDerrived test;
     testing::internal::CaptureStdout();
     test.render();
-    std::string output = testing::internal::GetCapturedStdout();
+    string output = testing::internal::GetCapturedStdout();
     ASSERT_EQ("D", output);
 }
 

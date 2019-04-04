@@ -9,5 +9,9 @@ add_executable(
  AllTest 
  Test_Object.cpp
  Test_Cell.cpp
+ Test_Land.cpp
+ Test_Coop.cpp
+ Test_Barn.cpp
+ Test_Grassland.cpp
  )
 target_link_libraries(AllTest ${GTEST_LIBRARIES} pthread)
