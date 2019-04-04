@@ -2,6 +2,7 @@
 #define _STEAK_H_
 
 #include "SideProduct.hpp"
+#define STEAK_PRICE 30
 
 //Kelas ini merepresentasikan produk sampingan steik.
 class Steak : public SideProduct {

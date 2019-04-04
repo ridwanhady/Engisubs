@@ -74,13 +74,50 @@ void interact(Player* _p){
 
 						//Tambahkan Cheese pada Inventori:
 						//Construct newCheese
-						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE, FARMPRODUCT, CHEESE, 'C'));
+						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE, SIDEPRODUCT, CHEESE, 'C'));
 
 						cout << "MEMBUAT CHEESE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
 						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
 					}
+				} else if (daftarSideProduct.get(idxSideProd) == STEAK){
+					//Cari resep yang digunakan untuk membuat cheese
+					for (idxResep = 0 ; idxResep < Steak::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep STEAK
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_1))->getObjectType()) == Steak::getResepwithIdx(idxResep)) {
+							//Simpam FarmProductType pada idx1_farmProductType, sebagai validasi idxInventory_2
+							idx1_farmProductType = Steak::getResepwithIdx(idxResep);
+							isFoundIdx1 = true;
+							break;
+						}
+					}
+
+					for (idxResep = 0 ; idxResep < Steak::getResep().size() ; idxResep++) {
+						//Kalau inventory yang dipilih pemain cocok dengan resep STEAK
+						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_2))->getObjectType()) == Steak::getResepwithIdx(idxResep)) {
+							//Kalau tipenya berbeda (contoh : EGG dan MILK, bukan EGG dan EGG maupun MILK dan MILK )
+							if (idx1_farmProductType != Steak::getResepwithIdx(idxResep)) {
+								isFoundIdx2 = true;
+								break;
+							}
+						}
+					}
+
+					if (isFoundIdx1 && isFoundIdx2) {
+						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
+						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+
+						//Tambahkan Steak pada Inventori:
+						//Construct newSteak
+						( (_p)->getInventory() ).add(new Steak(STEAK_PRICE, SIDEPRODUCT, STEAK, 'S'));
+
+						cout << "MEMBUAT STEAK BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
+					} else {
+						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
+					}
 				} 
+
 
 			} else {
 				cout << "Indeks yang Anda masukkan tidak valid atau sama." << endl;
