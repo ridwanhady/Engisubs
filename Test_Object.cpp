@@ -1,25 +1,34 @@
 #include "Object.cpp"
-#include "Player.cpp"
-#include "Land.cpp"
-#include "Cell.cpp"
-#include "FarmAnimal.cpp"
 #include <gtest/gtest.h>
 #include "cstring"
 
-TEST(ObjectTest, ReturningObjectSymbol) 
+using namespace std;
+
+class DummyDerrived: public Object{
+    public:
+        DummyDerrived() : Object('D'){
+            objectType = PLAYER;
+        }
+        void interact(Player* _p){
+            cout << "Do Nothing";
+        }
+};
+
+TEST(ObjectTest, FunctionalityRender) 
     { 
-        Player testPlayer("Joko", 20, 20, {0,0});
+        DummyDerrived test;
         testing::internal::CaptureStdout();
-        testPlayer.render();
+        test.render();
         std::string output = testing::internal::GetCapturedStdout();
-        ASSERT_EQ("P", output);
+        ASSERT_EQ("D", output);
     }
- 
-//TEST(SquareRootTest, NegativeNos) 
-//    {
-//    ASSERT_EQ(-1.0, squareRoot(-15.0));
-//    ASSERT_EQ(-1.0, squareRoot(-0.2));
-//    }
+
+TEST(ObjectTest, ReturningObjectType) 
+    { 
+        DummyDerrived test;
+        ASSERT_EQ(PLAYER, test.getObjectType());
+    }
+
  
 int main(int argc, char **argv) 
     {
