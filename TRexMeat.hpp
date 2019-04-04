@@ -6,7 +6,7 @@
 class TRexMeat : public Meat{
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        TRexMeat(int _price, string _producer);
+        TRexMeat(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol);
 
 };
 

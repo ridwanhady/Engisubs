@@ -12,6 +12,8 @@ class FarmProduct : public Product {
       //Constructor harus menerima harga, dan menginisialisasi tipe untuk superclass.
       FarmProduct();
 
+      void initializeFarmProduct(string _producer);
+
       string getProducer(){
           return producer;
       }

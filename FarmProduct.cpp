@@ -1,8 +1,11 @@
 #include "FarmProduct.hpp"
 
 //Constructor 
-FarmProduct::FarmProduct() : Product(FARMPRODUCT){
+FarmProduct::FarmProduct() {
     
+}
+void FarmProduct::initializeFarmProduct(string _producer) {
+	producer = _producer;
 }
 
 FarmProductType FarmProduct::getFarmProductType(ObjectType objectType) {
