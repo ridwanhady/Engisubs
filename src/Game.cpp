@@ -6,23 +6,16 @@ using namespace std;
 LinkedList<ObjectType> Game::daftarProduct;
 
 bool Game::isValid(pair<int,int> pos){
-	cout << "Maruf" << endl;
 	if(pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
-		cout << "Sandi" << endl;
 		return false;
 	}
 
-	cout << "Bawaslu" << endl;
 	Cell *targetCell = cellList.get(pos.first)->get(pos.second);
-	cout << "Polri" << endl;
 
 	if (!targetCell->isWalkable()){
-		cout << "Aga" << endl;
 		return false;
 	}
-	cout << "KP" << endl;
 	Land *targetLand = dynamic_cast<Land*>(targetCell);
-	cout << "KPU" << endl;
 	if(targetLand->isOccupied()) return false;
 	return true;
 }
@@ -34,12 +27,8 @@ Game::Game(){
 	//Init cell (Todo)
 	//vector<vector<Cell*> > vc;
 	for(int i = 0; i < n; i++){
-		cout << "ADDO" << endl;
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
-		//vector<Cell*> temp;
 		for(int j = 0; j < m; j++){
-			cout << "ADDI" << endl;
-			//temp.push_back(new Grassland({i,j},1));
 			if(rand()%100 <= 90){
 				temp->add(new Grassland({i,j},1));
 			} else {
@@ -47,24 +36,17 @@ Game::Game(){
 			}
 		}
 		
-		cout << "OO" << endl;
 		cellList.add(temp);
-		cout<<"CI "<< cellList.get(i)->size() <<endl;
-		cout<<"CO "<< cellList.size()<<endl;
 		//vc.push_back(temp);
 	}
-	cout<<"Done"<<endl;
 	//Init animal
 	
 	int cntAnimal = 3;
 	while(cntAnimal--){
 		pair<int,int> randPosition = {rand()%n, rand()%m};
-		cout << "Joko" << endl;
 		while(!isValid(randPosition)){
-			cout << "RAND" << endl;
 			randPosition = {rand()%n, rand()%m};
 		}
-		cout << "Prabo" << endl;
 		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
 		farmAnimalList.add(x);
 		(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
@@ -213,8 +195,6 @@ void Game::endGame(){
 }
 
 void Game::showMap(){
-	cout << cellList.size() << endl;
-	cout << cellList.get(0)->size() << endl;
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
 			cellList.get(i)->get(j)->render();

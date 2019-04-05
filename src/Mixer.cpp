@@ -74,7 +74,7 @@ void Mixer::interact(Player* _p){
 
 						//Tambahkan Cheese pada Inventori:
 						//Construct newCheese
-						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE, SIDEPRODUCT, CHEESE, 'C'));
+						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE));
 
 						cout << "MEMBUAT CHEESE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
@@ -110,7 +110,7 @@ void Mixer::interact(Player* _p){
 
 						//Tambahkan Steak pada Inventori:
 						//Construct newSteak
-						( (_p)->getInventory() ).add(new Steak(STEAK_PRICE, SIDEPRODUCT, STEAK, 'S'));
+						( (_p)->getInventory() ).add(new Steak(STEAK_PRICE));
 
 						cout << "MEMBUAT STEAK BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
@@ -146,7 +146,7 @@ void Mixer::interact(Player* _p){
 
 						//Tambahkan EKADO pada Inventori:
 						//Construct newEkado
-						( (_p)->getInventory() ).add(new Ekado(EKADO_PRICE, SIDEPRODUCT, EKADO, 'E'));
+						( (_p)->getInventory() ).add(new Ekado(EKADO_PRICE));
 
 						cout << "MEMBUAT EKADO BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
@@ -182,7 +182,7 @@ void Mixer::interact(Player* _p){
 
 						//Tambahkan Mayonaise pada Inventori:
 						//Construct newMayonaise
-						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE, SIDEPRODUCT, MAYONAISE, 'Y'));
+						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE));
 
 						cout << "MEMBUAT MAYONAISE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
