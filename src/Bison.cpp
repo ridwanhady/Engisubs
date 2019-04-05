@@ -6,6 +6,7 @@ Constructor yang menerima parameter position, name, meat, dan milk
 Parameter diturunkan dari MeatProducing dan MilkProducing.
 */
 Bison::Bison(pair<int,int> _position, string _name, Land* _landPos){
+    initObject(BISON, 'B');
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new BisonMeat(HARGA_DAGING_BISON, getName()));
     initializeMilkProducing(NULL);

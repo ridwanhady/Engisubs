@@ -8,11 +8,10 @@ Constructor yang menerima parameter position, name, egg, dan meat
 Parameter diturunkan dari EggProducing dan MeatProducing.
 */
 Chicken::Chicken(pair<int,int> _position, string _name, Land* _landPos){
+    initObject(CHICKEN, 'C');
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new ChickenMeat(HARGA_DAGING_AYAM, getName()));
     initializeEggProducing(NULL);
-    objectType = CHICKEN;
-    objectSymbol = 'C';
     setIsProductProduced(true);
 }
 

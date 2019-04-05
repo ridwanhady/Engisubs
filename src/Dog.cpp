@@ -8,6 +8,7 @@ Constructor yang menerima parameter position, name, meat.
 Parameter diturunkan dari MeatProducing.
 */
 Dog::Dog(pair<int,int> _position, string _name, Land* _landPos){
+    initObject(DOG, 'D');
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new DogMeat(HARGA_DAGING_ANJING, getName()));
 }
