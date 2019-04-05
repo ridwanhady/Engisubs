@@ -8,6 +8,7 @@ Constructor yang menerima parameter position, name, meat, dan milk serta egg
 Parameter diturunkan dari MeatProducing dan MilkProducing dan EggProducing
 */
 Platypus::Platypus(pair<int,int> _position, string _name, Land* _landPos){
+    initObject(PLATYPUS, 'Y');
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new PlatypusMeat(HARGA_DAGING_PLATYPUS, getName()));
     initializeEggProducing(NULL);

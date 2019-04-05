@@ -17,6 +17,7 @@ Method untuk memproduksi egg. Method diturunkan dari
 EggProducing
 */
 void Pterodactyl::produceEgg(Player& _player){
+    initObject(PTERODACTYL, 'L');
     if (egg != NULL){
         _player.addInventory(egg);
         egg = NULL;

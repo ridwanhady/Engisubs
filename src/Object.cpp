@@ -15,3 +15,8 @@ void Object::render(){
 ObjectType Object::getObjectType(){
 	return objectType;
 }
+
+void Object::initObject(ObjectType _objectType, char _objectSymbol){
+	objectType = _objectType;
+	objectSymbol = _objectSymbol;
+}
