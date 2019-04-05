@@ -13,5 +13,6 @@ add_executable(
  Test_Coop.cpp
  Test_Barn.cpp
  Test_Grassland.cpp
+ Test_Facility.cpp
  )
 target_link_libraries(AllTest ${GTEST_LIBRARIES} pthread)
