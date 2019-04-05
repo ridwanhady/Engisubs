@@ -7,13 +7,13 @@
 			- Barn **TESTED**
 			- Grassland **TESTED**
 		- Facility **TESTED**
-			- Well 
-			- Mixer
-			- Truck
-	- Farm Animal
-		- Egg Producing
-		- Meat Producing
-		- Milk Producing
+			- Well  **TESTED**
+			- Mixer **TESTED**
+			- Truck **TESTED**
+	- Farm Animal  **TESTED**
+		- Egg Producing  **TESTED**
+		- Meat Producing  **TESTED**
+		- Milk Producing  **TESTED**
 	- Product  **TESTED**
 		- Farm Product **TESTED**
 			- Egg   **TESTED**
@@ -24,18 +24,18 @@
 			- Steak (Daging, Daging) **TESTED**
 			- Ekado (Daging, telur) **TESTED**
 			- Keju (Susu, Susu) **TESTED**
-	- Player 
+	- Player  **TESTED**
 - Linked List 
 - Game 
 - Map
 
 Macam Farm animal
-- Pterodactyl (Telur) 
-- Platypus (Telur, daging, susu) 
-- Chicken (Telur, daging) 
-- Bison  (Daging, susu) 
-- Dog (Daging) 
-- T-rex (Daging)
+- Pterodactyl (Telur)  **TESTED**
+- Platypus (Telur, daging, susu)  **TESTED**
+- Chicken (Telur, daging)  **TESTED**
+- Bison  (Daging, susu)  **TESTED**
+- Dog (Daging)  **TESTED**
+- T-rex (Daging) **TESTED**
 
 Macam Telur
 - Pterodactyl Egg  **TESTED**
