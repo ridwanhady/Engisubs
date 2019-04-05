@@ -8,10 +8,10 @@
 class Ekado : public SideProduct {
     private:
         static LinkedList<FarmProductType> resep;
+        static void InitResep();
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
-        Ekado(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol);
-        static void InitResep();
+        Ekado(int _price);
         static LinkedList<FarmProductType> getResep() {
             return resep;
         }
