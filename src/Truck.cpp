@@ -23,12 +23,6 @@ void Truck::interact(Player* _p){
 	}
 	setNotUsableTurns(10);
 	cout << "Isi Inventori Sekarang Kosong!" << endl;
-	cout << "Berikut adalah isi dari Inventori:" << endl;
-
-	for (int i = 0 ; i < inventTemp.size() ; i ++) {
-		cout << inventTemp.get(i) << ",";
-	}
-	cout << endl;
 
 	//Todo: Delete inventory
 	_p->getInventory().removeAll();
