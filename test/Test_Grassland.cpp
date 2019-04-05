@@ -24,5 +24,5 @@ TEST(GrasslandTest, AllFunctionalityofGrassland){
     testing::internal::CaptureStdout();
     testGrassland.render();
     string output2 = testing::internal::GetCapturedStdout();
-    ASSERT_EQ("-", output2);
+    ASSERT_EQ("?", output2);
 }
