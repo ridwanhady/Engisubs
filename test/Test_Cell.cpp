@@ -1,4 +1,4 @@
-#include "../include/Cell.cpp"
+#include "../src/Cell.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

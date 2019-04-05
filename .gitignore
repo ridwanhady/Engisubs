@@ -27,3 +27,9 @@
 .vscode
 
 CMakeFiles
+
+CMakeCache.txt
+
+Makefile
+
+c_make_install.cmake

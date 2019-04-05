@@ -1,4 +1,4 @@
-#include "../include/Truck.cpp"
+#include "../src/Truck.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

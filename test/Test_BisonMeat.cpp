@@ -1,4 +1,4 @@
-#include "../include/BisonMeat.cpp"
+#include "../src/BisonMeat.cpp"
 #include <gtest/gtest.h>
 
 using namespace std;

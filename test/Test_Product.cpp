@@ -1,4 +1,4 @@
-#include "../include/Product.cpp"
+#include "../src/Product.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

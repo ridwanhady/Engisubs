@@ -1,4 +1,4 @@
-#include "../include/PlatypusEgg.cpp"
+#include "../src/PlatypusEgg.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

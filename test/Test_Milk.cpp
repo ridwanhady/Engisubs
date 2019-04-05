@@ -1,4 +1,4 @@
-#include "../include/Milk.cpp"
+#include "../src/Milk.cpp"
 #include <gtest/gtest.h>
 
 using namespace std;

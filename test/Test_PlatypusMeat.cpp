@@ -1,4 +1,4 @@
-#include "../include/PlatypusMeat.cpp"
+#include "../src/PlatypusMeat.cpp"
 #include <gtest/gtest.h>
 
 using namespace std;
