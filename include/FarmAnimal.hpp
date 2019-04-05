@@ -67,7 +67,7 @@ class FarmAnimal : public Object {
 
 			virtual bool isKillable() = 0;
 
-			virtual void talk();
+			virtual void talk() = 0;
 
   		//Setter
 

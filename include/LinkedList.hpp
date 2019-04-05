@@ -148,7 +148,7 @@ class LinkedList<T*>{
             Fungsi remove() menghapus elemen dari LinkedList.
         */
         void remove(T* _element){
-            typename vector<T>::iterator itr = find(data.begin(), data.end(), _element);
+            typename vector<T*>::iterator itr = find(data.begin(), data.end(), _element);
             if (itr != data.end()){
                 data.erase(itr);
             }

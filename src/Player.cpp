@@ -6,8 +6,8 @@
 #include <iostream>
 
 //Kelas ini merepresentasikan pemain.
-#include "Player.hpp"
-#include "Facility.hpp"
+#include "../include/Player.hpp"
+#include "../include/Facility.hpp"
 
 bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> >* worldMap){
 	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
