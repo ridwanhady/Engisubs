@@ -9,6 +9,8 @@
 #include "../include/Player.hpp"
 #include "../include/Facility.hpp"
 
+using namespace std;
+
 bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> *>* worldMap){
 	int n = worldMap->size();
 	int m = (worldMap->get(0))->size();
@@ -139,6 +141,10 @@ void Player::setPosition(pair<int,int> _position){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = dynamic_cast<Land*>(targetCell);
+		if (targetLand == worldMap->get(position.first)->get(position.second)){
+			cout<<"Tidak ada hewan disitu"<<endl;
+			return;
+		}
 		if(!targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			targetAnimal->talk();
@@ -157,12 +163,14 @@ void Player::interact(){
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL){
 		if(targetCell->isWalkable()){
+			cout << "NOT FAC" << endl;
 			Land *targetLand = dynamic_cast<Land*>(targetCell);
 			if(targetLand->getObjectHere() != NULL){
 				targetLand->getObjectHere()->interact(this);
 				return;
 			}
 		} else {
+			cout << "FAC" << endl;
 			Facility *targetFacility = dynamic_cast<Facility*>(targetFacility);
 			targetFacility->interact(this);
 			return;

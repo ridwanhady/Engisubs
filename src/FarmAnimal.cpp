@@ -105,7 +105,9 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        landPos->setObjectHere(NULL);
                         landPos = tempLand;
+                        landPos->setObjectHere(this);
                         position.first -= 1;
                     }
                 }
@@ -119,7 +121,9 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        landPos->setObjectHere(NULL);
                         landPos = tempLand;
+                        landPos->setObjectHere(this);
                         position.first += 1;
                     }
                 }
@@ -133,7 +137,9 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        landPos->setObjectHere(NULL);
                         landPos = tempLand;
+                        landPos->setObjectHere(this);
                         position.second -= 1;
                     }
                 }
@@ -147,7 +153,9 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        landPos->setObjectHere(NULL);
                         landPos = tempLand;
+                        landPos->setObjectHere(this);
                         position.second += 1;
                     }
                 }
