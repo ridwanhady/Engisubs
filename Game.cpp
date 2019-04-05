@@ -10,7 +10,7 @@ bool Game::isValid(pair<int,int> pos){
 	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
-	Land *targetLand = (Land*)targetCell;
+	Land *targetLand = dynamic_cast<Land*>(targetCell);
 	if(targetLand->isOccupied()) return false;
 	return true;
 }
@@ -37,9 +37,9 @@ Game::Game(){
 		while(!isValid(randPosition)){
 			randPosition = {rand()%n, rand()%m};
 		}
-		Chicken *x = new Chicken(randPosition, "Joko", (Land*)cellList.get(randPosition.first).get(randPosition.second));
+		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)));
 		farmAnimalList.add(x);
-		((Land*)cellList.get(randPosition.first).get(randPosition.second))->setObjectHere(x);
+		(dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)))->setObjectHere(x);
 	}
 
 	//Meminta nama pemain
@@ -171,7 +171,7 @@ void Game::updateGame(){
 		for(int j = 0; j < m; j++){
 			Cell *targetCell = cellList.get(i).get(j);
 			if(targetCell->getObjectType() == TRUCK){
-				Truck *targetTruck = (Truck*)targetCell;
+				Truck *targetTruck = dynamic_cast<Truck*>(targetCell);
 				targetTruck->setNotUsableTurns = max(0,targetTruck->getNotUsableTurns()-1);
 			}
 		}

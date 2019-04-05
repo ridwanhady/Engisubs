@@ -16,7 +16,7 @@ bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
 	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
 		return false;
 	}
-	Land *targetLand = (Land*)targetCell;
+	Land *targetLand = dynamic_cast<Land*>(targetCell);
 	if(targetLand->isOccupied())return false;
 	return true;
 }
@@ -133,9 +133,9 @@ void Player::setPosition(pair<int,int> _position){
  void Player::talk() {
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
-		Land *targetLand = (Land*)targetCell;
+		Land *targetLand = dynamic_cast<Land*>(targetCell);
 		if(!targetLand->isOccupied()){
-			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
+			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			targetAnimal->talk();
 			return;
 		}
@@ -152,13 +152,13 @@ void Player::interact(){
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL){
 		if(targetCell->isWalkable()){
-			Land *targetLand = (Land*)targetCell;
+			Land *targetLand = dynamic_cast<Land*>(targetCell);
 			if(targetLand->getObjectHere() != NULL){
 				targetLand->getObjectHere()->interact(this);
 				return;
 			}
 		} else {
-			Facility *targetFacility = (Facility*)targetFacility;
+			Facility *targetFacility = dynamic_cast<Facility*>(targetFacility);
 			targetFacility->interact(this);
 			return;
 		}
@@ -179,9 +179,9 @@ void Player::interact(Player *_p){
 void Player::kill() {
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL and targetCell->isWalkable()){
-		Land *targetLand = (Land*)targetCell;
+		Land *targetLand = dynamic_cast<Land*>(targetCell);
 		if(!targetLand->isOccupied()){
-			FarmAnimal *targetAnimal = (FarmAnimal*)targetLand->getObjectHere();
+			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			if(targetAnimal->isKillable()){
 				delete targetAnimal;
 				targetLand->setObjectHere(NULL);
@@ -200,7 +200,7 @@ void Player::kill() {
 
 void Player::grow(){
 	Cell *targetCell = worldMap->get(position.first).get(position.second);
-	Land *targetLand = (Land*)targetCell;
+	Land *targetLand = dynamic_cast<Land*>(targetCell);
 	targetLand->grow();
 }
 
@@ -213,7 +213,7 @@ void Player::move(DirectionType direction) {
 	int dj[4] = {0,0,1,-1};
 	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
 	if(isValid(targetPosition, worldMap)){
-		Land *currentLand = (Land*)worldMap->get(position.first).get(position.second);
+		Land *currentLand = dynamic_cast<Land*>(worldMap->get(position.first).get(position.second));
 		currentLand->setObjectHere(NULL);
 		position = {position.first+di[direction], position.second+dj[direction]};
 		currentLand = (Land*)worldMap->get(position.first).get(position.second);
