@@ -23,10 +23,6 @@ void TRex::produceMeat(Player& _player){
     }
 }
 
-bool TRex::isKillable(){
-    return true;
-}
-
 void TRex::eat(){
     FarmAnimal::eat();
 }

@@ -26,10 +26,6 @@ void Bison::produceMilk(Player& _player){
     }
 }
 
-bool Bison::isKillable(){
-    return true;
-}
-
 void Bison::eat(){
     FarmAnimal::eat();
     setIsProductProduced(false);

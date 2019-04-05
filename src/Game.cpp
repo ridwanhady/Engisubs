@@ -30,7 +30,7 @@ Game::Game(){
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
 		for(int j = 0; j < m; j++){
 			if(rand()%100 <= 90){
-				temp->add(new Grassland({i,j},1));
+				temp->add(new Grassland({i,j},0));
 			} else {
 				temp->add(new Truck({i,j}));
 			}
@@ -90,7 +90,7 @@ void Game::startGame(){
 //Pada fungsi ini game berjalan.
 void Game::gameLoop(){
 	string command;
-	while(isGameStarted){
+	while(isGameStarted and farmAnimalList.size() > 0){
 		showMap();
 		cout<<"Input: "<<endl;
 		cin>>command;
@@ -148,6 +148,9 @@ void Game::gameLoop(){
 			cout<<"Command tidak valid"<<endl;
 		}
 	}
+	if(farmAnimalList.size() == 0){
+		cout << "Sudah tidak ada hewan lagi di game"<<endl;
+	}
 }
 
 //Mengupdate seluruh state game
@@ -167,7 +170,9 @@ void Game::updateGame(){
 		}
 		farmAnimalList.get(i)->updateCondition();
 		if(farmAnimalList.get(i)->getTimeUntilDead() == 0){
+			FarmAnimal *temp = farmAnimalList.get(i);
 			farmAnimalList.remove(farmAnimalList.get(i));
+			delete temp;
 			i--;
 			continue;
 		}

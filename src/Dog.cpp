@@ -25,10 +25,6 @@ void Dog::produceMeat(Player& _player){
     }
 }
 
-bool Dog::isKillable(){
-    return true;
-}
-
 void Dog::eat(){
     FarmAnimal::eat();
 }

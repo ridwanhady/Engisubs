@@ -5,7 +5,7 @@ Constructor yang menerima parameter position, name, egg.
 Parameter diturunkan dari FarmAnimal.
 */
 MeatProducing::MeatProducing(){
-
+    killable = true;
 }
 
 void MeatProducing::initializeMeatProducing(Meat* _meat){
