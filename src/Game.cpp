@@ -168,6 +168,12 @@ void Game::gameLoop(){
 			mainPlayer->changeDirection(RIGHT);
 		} else if(command == "QUIT"){
 			endGame();
+		} else if(command == "SHOW") {
+			cout << "Berikut adalah isi dari Inventori:" << endl;
+			for (int i = 0 ; i < mainPlayer->getInventory().size() ; i ++) {
+				cout << mainPlayer->getInventory().get(i) << ",";
+			}
+			cout << endl;
 		} else {
 			cout<<"Command tidak valid"<<endl;
 		}
