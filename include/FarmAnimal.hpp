@@ -98,7 +98,7 @@ class FarmAnimal : public Object {
   		void eat();
 
   		//Bergerak
-  		void move(DirectionType direction, LinkedList<LinkedList<Cell*>>* map);
+  		void move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* map);
 
 
   		//Method untuk mengupdate keadaan animal

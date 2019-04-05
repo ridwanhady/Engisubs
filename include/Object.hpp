@@ -58,13 +58,15 @@ class Object{
 		//Tipe dari suatu objek, misal: Product, TRex
 		ObjectType objectType;
 		//Simbol dari suatu objek, misal: C untuk Ayam, ? untuk produk yang tidak memiliki simbol
-		char objectSymbol;
+		
 
 	public:
+		char objectSymbol;
+
 		//Ctor dengan parameter
 		Object(char _objectSymbol = '?');
 		//Untuk mengeluarkan simbol dari suatu objek ke layar
-		void render();
+		virtual void render();
 		//Virtual method untuk berinteraksi dengan interact
 		virtual void interact(Player* _p){}
 		//Getter

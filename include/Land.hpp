@@ -50,6 +50,8 @@ class Land : public Cell{
         //Menghilangkan rumput di cell
         void ungrow();
 
+        void render();
+
 };
 
 #endif

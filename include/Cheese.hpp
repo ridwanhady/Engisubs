@@ -6,7 +6,7 @@
 class Cheese : public SideProduct{
     private:
         static LinkedList<FarmProductType> resep;
-        static void InitResep();
+        
 
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
@@ -15,7 +15,7 @@ class Cheese : public SideProduct{
             return resep;
         }
         static FarmProductType getResepwithIdx(int i);
-        
+        static void InitResep();
 };
 
 #endif
