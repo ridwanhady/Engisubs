@@ -7,7 +7,7 @@
 class BisonMeat : public Meat{
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        BisonMeat(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol);
+        BisonMeat(int _price, string _producer);
 
 };
 

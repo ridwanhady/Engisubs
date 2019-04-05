@@ -14,5 +14,20 @@ add_executable(
  Test_Barn.cpp
  Test_Grassland.cpp
  Test_Facility.cpp
+ Test_Product.cpp
+ Test_FarmProduct.cpp
+ Test_Egg.cpp
+ Test_ChickenEgg.cpp
+ Test_PlatypusEgg.cpp
+ Test_PterodactylEgg.cpp
+ Test_Meat.cpp
+ Test_ChickenMeat.cpp
+ Test_PlatypusMeat.cpp
+ Test_TRexMeat.cpp
+ Test_BisonMeat.cpp
+ Test_DogMeat.cpp
+ Test_Milk.cpp
+ Test_PlatypusMilk.cpp
+ Test_BisonMilk.cpp
  )
 target_link_libraries(AllTest ${GTEST_LIBRARIES} pthread)

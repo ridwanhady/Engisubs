@@ -1,7 +1,7 @@
 #include "DogMeat.hpp"
 
 //Constructor menerima harga, dan mempassing producer untuk superclass.
-DogMeat::DogMeat(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol){
+DogMeat::DogMeat(int _price, string _producer){
 	initializeFarmProduct(_producer);
-	initializeProduct(_price, _productType, _objectType, _objectSymbol);
+	initializeProduct(_price, FARMPRODUCT, DOG_MEAT, '?');
 }

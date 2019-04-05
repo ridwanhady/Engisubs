@@ -2,7 +2,7 @@
 
 
 //Constructor menerima harga, dan mempassing producer untuk superclass.
-BisonMeat::BisonMeat(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol){
+BisonMeat::BisonMeat(int _price, string _producer){
 	initializeFarmProduct(_producer);
-	initializeProduct(_price, _productType, _objectType, _objectSymbol);
+	initializeProduct(_price, FARMPRODUCT, BISON_MEAT, '?');
 }
