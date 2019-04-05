@@ -95,13 +95,13 @@ void FarmAnimal::eat(){
 }
 
 //Bergerak
-void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* map){
+void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* map){
     switch (direction){
         //Atas
         case UP:
             //Jika masih bisa ke atas
             if (position.first > 0){
-                Cell* tempCell = ((*map).get(position.first - 1)).get(position.second);
+                Cell* tempCell = ((*map).get(position.first - 1))->get(position.second);
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
@@ -115,7 +115,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
         case DOWN:
             //Jika masih bisa ke bawah
             if (position.first < (*map).size() - 1){
-                Cell* tempCell = ((*map).get(position.first + 1)).get(position.second);
+                Cell* tempCell = ((*map).get(position.first + 1))->get(position.second);
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
@@ -129,7 +129,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
         case LEFT:
             //Jika masih bisa ke kiri
             if (position.second > 0){
-                Cell* tempCell = ((*map).get(position.first)).get(position.second - 1);
+                Cell* tempCell = ((*map).get(position.first))->get(position.second - 1);
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
@@ -142,8 +142,8 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>>* ma
         //Kanan
         case RIGHT:
             //Jika masih bisa ke kanan
-            if (position.second < (*map).get(position.first).size() - 1){
-                Cell* tempCell = ((*map).get(position.first)).get(position.second + 1);
+            if (position.second < (*map).get(position.first)->size() - 1){
+                Cell* tempCell = ((*map).get(position.first))->get(position.second + 1);
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){

@@ -11,6 +11,8 @@ Chicken::Chicken(pair<int,int> _position, string _name, Land* _landPos){
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new ChickenMeat(HARGA_DAGING_AYAM, getName()));
     initializeEggProducing(NULL);
+    objectType = CHICKEN;
+    objectSymbol = 'C';
     setIsProductProduced(true);
 }
 

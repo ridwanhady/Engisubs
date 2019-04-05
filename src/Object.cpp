@@ -3,8 +3,8 @@
 using namespace std;
 
 //Ctor dengan parameter
-Object::Object(char _objectSymbol) : objectSymbol(_objectSymbol){
-
+Object::Object(char _objectSymbol){
+	objectSymbol = _objectSymbol;
 }
 
 //Untuk mengeluarkan simbol dari suatu objek ke layar

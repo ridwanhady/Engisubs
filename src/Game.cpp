@@ -13,7 +13,7 @@ bool Game::isValid(pair<int,int> pos){
 	}
 
 	cout << "Bawaslu" << endl;
-	Cell *targetCell = cellList.get(pos.first).get(pos.second);
+	Cell *targetCell = cellList.get(pos.first)->get(pos.second);
 	cout << "Polri" << endl;
 
 	if (!targetCell->isWalkable()){
@@ -32,24 +32,29 @@ Game::Game(){
 	string namaPemain;
 
 	//Init cell (Todo)
-	
+	//vector<vector<Cell*> > vc;
 	for(int i = 0; i < n; i++){
-		LinkedList<Cell*> temp;
+		cout << "ADDO" << endl;
+		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
+		//vector<Cell*> temp;
 		for(int j = 0; j < m; j++){
-			temp.add(new Grassland({i,j},1));
-			
-			/*
+			cout << "ADDI" << endl;
+			//temp.push_back(new Grassland({i,j},1));
 			if(rand()%100 <= 90){
-				cellList.get(i).add(new Grassland({i,j},1));
+				temp->add(new Grassland({i,j},1));
 			} else {
-				cellList.get(i).add(new Truck({i,j}));
-			}*/
+				temp->add(new Truck({i,j}));
+			}
 		}
+		
+		cout << "OO" << endl;
 		cellList.add(temp);
-		cout<<cellList.get(i).size()<<endl;
+		cout<<"CI "<< cellList.get(i)->size() <<endl;
+		cout<<"CO "<< cellList.size()<<endl;
+		//vc.push_back(temp);
 	}
+	cout<<"Done"<<endl;
 	//Init animal
-	showMap();
 	
 	int cntAnimal = 3;
 	while(cntAnimal--){
@@ -60,9 +65,9 @@ Game::Game(){
 			randPosition = {rand()%n, rand()%m};
 		}
 		cout << "Prabo" << endl;
-		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)));
+		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
 		farmAnimalList.add(x);
-		(dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)))->setObjectHere(x);
+		(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
 	}
 
 	//Meminta nama pemain
@@ -75,7 +80,7 @@ Game::Game(){
 		curPos = {rand()%n, rand()%m};
 	}
 	mainPlayer = new Player(namaPemain, 10, 10, curPos);
-
+	dynamic_cast<Land*>(cellList.get(curPos.first)->get(curPos.second))->setObjectHere(mainPlayer);
 	//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 	if(daftarProduct.size() == 0){
 		daftarProduct.add(CHEESE);
@@ -192,7 +197,7 @@ void Game::updateGame(){
 	//Mengupdate seluruh state Truck
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			Cell *targetCell = cellList.get(i).get(j);
+			Cell *targetCell = cellList.get(i)->get(j);
 			if(targetCell->getObjectType() == TRUCK){
 				Truck *targetTruck = dynamic_cast<Truck*>(targetCell);
 				targetTruck->setNotUsableTurns(max(0,targetTruck->getNotUsableTurns()-1));
@@ -209,10 +214,10 @@ void Game::endGame(){
 
 void Game::showMap(){
 	cout << cellList.size() << endl;
-	cout << cellList.get(0).size() << endl;
+	cout << cellList.get(0)->size() << endl;
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			cellList.get(i).get(j)->render();
+			cellList.get(i)->get(j)->render();
 		}
 		cout<<endl;
 	}
