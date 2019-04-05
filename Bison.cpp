@@ -7,7 +7,7 @@ Parameter diturunkan dari MeatProducing dan MilkProducing.
 */
 Bison::Bison(pair<int,int> _position, string _name, Land* _landPos){
     initializeFarmAnimal(_position, _name, _landPos);
-    initializeMeatProducing(new BisonMeat(HARGA_DAGING_BISON, getName()));
+    initializeMeatProducing(new BisonMeat(HARGA_DAGING_BISON, getName(), FARMPRODUCT, BISON_MEAT, 'B'));
     initializeMilkProducing(NULL);
 }
 
