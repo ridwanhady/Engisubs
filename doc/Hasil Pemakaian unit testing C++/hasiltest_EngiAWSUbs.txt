@@ -1,39 +1,207 @@
-[==========] Running 8 tests from 6 test suites.
+[==========] Running 47 tests from 36 test suites.
 [----------] Global test environment set-up.
 [----------] 3 tests from ObjectTest
-[ RUN      ] ObjectTest.FunctionalityRender
-[       OK ] ObjectTest.FunctionalityRender (8 ms)
-[ RUN      ] ObjectTest.ReturningObjectType
-[       OK ] ObjectTest.ReturningObjectType (0 ms)
-[ RUN      ] ObjectTest.OverrideInteract
-[       OK ] ObjectTest.OverrideInteract (0 ms)
-[----------] 3 tests from ObjectTest (8 ms total)
+[ RUN ] ObjectTest.FunctionalityRender
+[ OK ] ObjectTest.FunctionalityRender (0 ms)
+[ RUN ] ObjectTest.ReturningObjectType
+[ OK ] ObjectTest.ReturningObjectType (0 ms)
+[ RUN ] ObjectTest.OverrideInteract
+[ OK ] ObjectTest.OverrideInteract (0 ms)
+[----------] 3 tests from ObjectTest (0 ms total)
 
 [----------] 1 test from CellTest
-[ RUN      ] CellTest.PositionTest
-[       OK ] CellTest.PositionTest (0 ms)
+[ RUN ] CellTest.PositionTest
+[ OK ] CellTest.PositionTest (0 ms)
 [----------] 1 test from CellTest (0 ms total)
 
 [----------] 1 test from LandTest
-[ RUN      ] LandTest.AllFunctionalityofLand
-[       OK ] LandTest.AllFunctionalityofLand (0 ms)
+[ RUN ] LandTest.AllFunctionalityofLand
+[ OK ] LandTest.AllFunctionalityofLand (0 ms)
 [----------] 1 test from LandTest (0 ms total)
 
 [----------] 1 test from CoopTest
-[ RUN      ] CoopTest.AllFunctionalityofCoop
-[       OK ] CoopTest.AllFunctionalityofCoop (0 ms)
+[ RUN ] CoopTest.AllFunctionalityofCoop
+[ OK ] CoopTest.AllFunctionalityofCoop (0 ms)
 [----------] 1 test from CoopTest (0 ms total)
 
 [----------] 1 test from BarnTest
-[ RUN      ] BarnTest.AllFunctionalityofBarn
-[       OK ] BarnTest.AllFunctionalityofBarn (0 ms)
+[ RUN ] BarnTest.AllFunctionalityofBarn
+[ OK ] BarnTest.AllFunctionalityofBarn (1 ms)
 [----------] 1 test from BarnTest (1 ms total)
 
 [----------] 1 test from GrasslandTest
-[ RUN      ] GrasslandTest.AllFunctionalityofGrassland
-[       OK ] GrasslandTest.AllFunctionalityofGrassland (0 ms)
+[ RUN ] GrasslandTest.AllFunctionalityofGrassland
+[ OK ] GrasslandTest.AllFunctionalityofGrassland (0 ms)
 [----------] 1 test from GrasslandTest (0 ms total)
 
+[----------] 1 test from FacilityTest
+[ RUN ] FacilityTest.PositionTest
+[ OK ] FacilityTest.PositionTest (0 ms)
+[----------] 1 test from FacilityTest (0 ms total)
+
+[----------] 1 test from ProductTest
+[ RUN ] ProductTest.PureProductFunctionality
+[ OK ] ProductTest.PureProductFunctionality (0 ms)
+[----------] 1 test from ProductTest (0 ms total)
+
+[----------] 1 test from FarmProductTest
+[ RUN ] FarmProductTest.AllFarmProductFunctionality
+[ OK ] FarmProductTest.AllFarmProductFunctionality (0 ms)
+[----------] 1 test from FarmProductTest (0 ms total)
+
+[----------] 1 test from EggTest
+[ RUN ] EggTest.NoTestNeededForPureEGG
+[ OK ] EggTest.NoTestNeededForPureEGG (0 ms)
+[----------] 1 test from EggTest (0 ms total)
+
+[----------] 1 test from ChickenEggTest
+[ RUN ] ChickenEggTest.AllFunctionalityofChickenEgg
+[ OK ] ChickenEggTest.AllFunctionalityofChickenEgg (0 ms)
+[----------] 1 test from ChickenEggTest (0 ms total)
+
+[----------] 1 test from PlatypusEggTest
+[ RUN ] PlatypusEggTest.AllFunctionalityofPlatypusEgg
+[ OK ] PlatypusEggTest.AllFunctionalityofPlatypusEgg (0 ms)
+[----------] 1 test from PlatypusEggTest (0 ms total)
+
+[----------] 1 test from PterodactylEggTest
+[ RUN ] PterodactylEggTest.AllFunctionalityofPteradactylEgg
+[ OK ] PterodactylEggTest.AllFunctionalityofPteradactylEgg (0 ms)
+[----------] 1 test from PterodactylEggTest (0 ms total)
+
+[----------] 1 test from MeatTest
+[ RUN ] MeatTest.NoTestNeededForPureMeat
+[ OK ] MeatTest.NoTestNeededForPureMeat (0 ms)
+[----------] 1 test from MeatTest (0 ms total)
+
+[----------] 1 test from ChickenMeatTest
+[ RUN ] ChickenMeatTest.AllFunctionalityofChickenMeat
+[ OK ] ChickenMeatTest.AllFunctionalityofChickenMeat (0 ms)
+[----------] 1 test from ChickenMeatTest (0 ms total)
+
+[----------] 1 test from PlatypusMeatTest
+[ RUN ] PlatypusMeatTest.AllFunctionalityofPlatypusMeat
+[ OK ] PlatypusMeatTest.AllFunctionalityofPlatypusMeat (0 ms)
+[----------] 1 test from PlatypusMeatTest (0 ms total)
+
+[----------] 1 test from TRexMeatTest
+[ RUN ] TRexMeatTest.AllFunctionalityofTRexMeat
+[ OK ] TRexMeatTest.AllFunctionalityofTRexMeat (0 ms)
+[----------] 1 test from TRexMeatTest (0 ms total)
+
+[----------] 1 test from BisonMeatTest
+[ RUN ] BisonMeatTest.AllFunctionalityofBisonMeat
+[ OK ] BisonMeatTest.AllFunctionalityofBisonMeat (1 ms)
+[----------] 1 test from BisonMeatTest (1 ms total)
+
+[----------] 1 test from DogMeatTest
+[ RUN ] DogMeatTest.AllFunctionalityofDogMeat
+[ OK ] DogMeatTest.AllFunctionalityofDogMeat (0 ms)
+[----------] 1 test from DogMeatTest (0 ms total)
+
+[----------] 1 test from MilkTest
+[ RUN ] MilkTest.NoTestNeededForPureMilk
+[ OK ] MilkTest.NoTestNeededForPureMilk (0 ms)
+[----------] 1 test from MilkTest (0 ms total)
+
+[----------] 1 test from PlatypusMilkTest
+[ RUN ] PlatypusMilkTest.AllFunctionalityofPlatypusMilk
+[ OK ] PlatypusMilkTest.AllFunctionalityofPlatypusMilk (0 ms)
+[----------] 1 test from PlatypusMilkTest (0 ms total)
+
+[----------] 1 test from BisonMilkTest
+[ RUN ] BisonMilkTest.AllFunctionalityofBisonMilk
+[ OK ] BisonMilkTest.AllFunctionalityofBisonMilk (0 ms)
+[----------] 1 test from BisonMilkTest (0 ms total)
+
+[----------] 1 test from CheeseTest
+[ RUN ] CheeseTest.AllFunctionalityTest
+[ OK ] CheeseTest.AllFunctionalityTest (0 ms)
+[----------] 1 test from CheeseTest (0 ms total)
+
+[----------] 1 test from SteakTest
+[ RUN ] SteakTest.AllFunctionalityTest
+[ OK ] SteakTest.AllFunctionalityTest (0 ms)
+[----------] 1 test from SteakTest (0 ms total)
+
+[----------] 1 test from MayonaiseTest
+[ RUN ] MayonaiseTest.AllFunctionalityTest
+[ OK ] MayonaiseTest.AllFunctionalityTest (0 ms)
+[----------] 1 test from MayonaiseTest (0 ms total)
+
+[----------] 1 test from EkadoTest
+[ RUN ] EkadoTest.AllFunctionalityTest
+[ OK ] EkadoTest.AllFunctionalityTest (0 ms)
+[----------] 1 test from EkadoTest (0 ms total)
+
+[----------] 1 test from FarmAnimalTest
+[ RUN ] FarmAnimalTest.FunctionalityTest
+[ OK ] FarmAnimalTest.FunctionalityTest (0 ms)
+[----------] 1 test from FarmAnimalTest (0 ms total)
+
+[----------] 1 test from EggProducingTest
+[ RUN ] EggProducingTest.FunctionalityTest
+[ OK ] EggProducingTest.FunctionalityTest (0 ms)
+[----------] 1 test from EggProducingTest (0 ms total)
+
+[----------] 1 test from MilkProducingTest
+[ RUN ] MilkProducingTest.FunctionalityTest
+[ OK ] MilkProducingTest.FunctionalityTest (0 ms)
+[----------] 1 test from MilkProducingTest (0 ms total)
+
+[----------] 1 test from MeatProducingTest
+[ RUN ] MeatProducingTest.FunctionalityTest
+[ OK ] MeatProducingTest.FunctionalityTest (0 ms)
+[----------] 1 test from MeatProducingTest (0 ms total)
+
+[----------] 2 tests from PlayerTest
+[ RUN ] PlayerTest.BasicTest
+[ OK ] PlayerTest.BasicTest (0 ms)
+[ RUN ] PlayerTest.SetTest
+[ OK ] PlayerTest.SetTest (0 ms)
+[----------] 2 tests from PlayerTest (0 ms total)
+
+[----------] 3 tests from BisonTest
+[ RUN ] BisonTest.ItCanTalk
+[ OK ] BisonTest.ItCanTalk (0 ms)
+[ RUN ] BisonTest.ProduceMilk
+[ OK ] BisonTest.ProduceMilk (0 ms)
+[ RUN ] BisonTest.ProduceMeat
+[ OK ] BisonTest.ProduceMeat (0 ms)
+[----------] 3 tests from BisonTest (0 ms total)
+
+[----------] 2 tests from DogTest
+[ RUN ] DogTest.ItCanTalk
+[ OK ] DogTest.ItCanTalk (0 ms)
+[ RUN ] DogTest.ProduceMeat
+[ OK ] DogTest.ProduceMeat (0 ms)
+[----------] 2 tests from DogTest (0 ms total)
+
+[----------] 3 tests from PlatypusTest
+[ RUN ] PlatypusTest.ItCanTalk
+[ OK ] PlatypusTest.ItCanTalk (0 ms)
+[ RUN ] PlatypusTest.ProduceEggtandMilk
+[ OK ] PlatypusTest.ProduceEggtandMilk (0 ms)
+[ RUN ] PlatypusTest.ProduceMeat
+[ OK ] PlatypusTest.ProduceMeat (0 ms)
+[----------] 3 tests from PlatypusTest (0 ms total)
+
+[----------] 2 tests from TRexTest
+[ RUN ] TRexTest.ItCanTalk
+[ OK ] TRexTest.ItCanTalk (0 ms)
+[ RUN ] TRexTest.ProduceMeat
+[ OK ] TRexTest.ProduceMeat (0 ms)
+[----------] 2 tests from TRexTest (0 ms total)
+
+[----------] 3 tests from ChickenTest
+[ RUN ] ChickenTest.ItCanTalk
+[ OK ] ChickenTest.ItCanTalk (1 ms)
+[ RUN ] ChickenTest.ProduceEgg
+[ OK ] ChickenTest.ProduceEgg (0 ms)
+[ RUN ] ChickenTest.ProduceMeat
+[ OK ] ChickenTest.ProduceMeat (0 ms)
+[----------] 3 tests from ChickenTest (1 ms total)
+
 [----------] Global test environment tear-down
-[==========] 8 tests from 6 test suites ran. (9 ms total)
-[  PASSED  ] 8 tests.
+[==========] 47 tests from 36 test suites ran. (4 ms total)
+[ PASSED ] 47 tests.
