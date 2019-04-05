@@ -11,7 +11,7 @@ Mixer::Mixer(pair<int,int> _position) : Facility(_position){
 }
 
 //Implementasi virtual interact()
-void interact(Player* _p){
+void Mixer::interact(Player* _p){
 	//minta input
 	int idxInventory_1, idxInventory_2, idxSideProd, idxResep;
 	bool isIdx1Valid, isIdx2Valid, isIdxSideProdValid, isFarmProduct;
