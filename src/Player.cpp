@@ -186,13 +186,14 @@ void Player::interact(Player *_p){
 	* Fungsi kill berguna untuk menyembelih hewan
 	* hewan dalam kategori MeatProducing.
 	*/
-void Player::kill() {
+void Player::kill(LinkedList<FarmAnimal*> &farmAnimalList) {
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL and targetCell->isWalkable()){
 		Land *targetLand = dynamic_cast<Land*>(targetCell);
 		if(targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			if(targetAnimal->isKillable()){
+				farmAnimalList.remove(farmAnimalList.get(farmAnimalList.findElement(targetAnimal)));
 				delete targetAnimal;
 				targetLand->setObjectHere(NULL);
 			}

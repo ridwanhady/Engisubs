@@ -129,7 +129,7 @@ void Game::gameLoop(){
 			mainPlayer->interact();
 			updateGame();
 		} else if(command == "KILL"){
-			mainPlayer->kill();
+			mainPlayer->kill(farmAnimalList);
 			updateGame();
 		} else if(command == "GROW"){
 			mainPlayer->grow();
@@ -165,6 +165,11 @@ void Game::updateGame(){
 	int dj[4] = {0,0,1,-1};
 	cout << "AYAM " << farmAnimalList.size() << endl;
 	for(int i = 0; i < farmAnimalList.size(); i++){
+		if(farmAnimalList.get(i) == NULL){
+			farmAnimalList.remove(farmAnimalList.get(i));
+			i--;
+			continue;
+		}
 		if(farmAnimalList.get(i)->isHungry()){
 			farmAnimalList.get(i)->eat();
 		}

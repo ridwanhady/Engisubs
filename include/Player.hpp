@@ -98,7 +98,7 @@ public:
 		 * Fungsi kill berguna untuk menyembelih hewan
 		 * hewan dalam kategori MeatProducing.
 		 */
-		void kill();
+		void kill(LinkedList<FarmAnimal*> &farmAnimalList);
 		/**
 		 * Fungsi grow berguna untuk menumbuhkan rumput
 		 * pada land yang dikenai, agar bisa dimakan oleh
