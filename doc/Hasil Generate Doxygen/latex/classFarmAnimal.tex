@@ -1,0 +1,104 @@
+\hypertarget{classFarmAnimal}{}\doxysection{Farm\+Animal Class Reference}
+\label{classFarmAnimal}\index{FarmAnimal@{FarmAnimal}}
+Inheritance diagram for Farm\+Animal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.044025cm]{classFarmAnimal}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a72654933eac89968cc8ab6f51428d1b3}\label{classFarmAnimal_a72654933eac89968cc8ab6f51428d1b3}} 
+void {\bfseries initialize\+Farm\+Animal} (pair$<$ int, int $>$ \+\_\+position, string \+\_\+name, \mbox{\hyperlink{classLand}{Land}} $\ast$\+\_\+land\+Pos)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aed90650906aaff7fd0a7f121c7863a04}\label{classFarmAnimal_aed90650906aaff7fd0a7f121c7863a04}} 
+pair$<$ int, int $>$ {\bfseries get\+Position} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aa98f09d9c1bcf7b4c5b4f810c12dda33}\label{classFarmAnimal_aa98f09d9c1bcf7b4c5b4f810c12dda33}} 
+int {\bfseries get\+Time\+Until\+Dead} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aaab174ab6e436f9b2ebefe666b6301f7}\label{classFarmAnimal_aaab174ab6e436f9b2ebefe666b6301f7}} 
+int {\bfseries get\+Time\+Until\+Hungry} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_abbca79c14895031baa150dff6a757ce8}\label{classFarmAnimal_abbca79c14895031baa150dff6a757ce8}} 
+bool {\bfseries get\+Is\+Product\+Produced} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a98c45dab82b8b60a59bd4d234b43c324}\label{classFarmAnimal_a98c45dab82b8b60a59bd4d234b43c324}} 
+string {\bfseries get\+Name} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a2c95885f217f4cb8bb35adcf55490d3c}\label{classFarmAnimal_a2c95885f217f4cb8bb35adcf55490d3c}} 
+\mbox{\hyperlink{classLand}{Land}} $\ast$ {\bfseries get\+Land\+Pos} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a08700786762606b493f8f1521a753770}\label{classFarmAnimal_a08700786762606b493f8f1521a753770}} 
+virtual bool {\bfseries is\+Killable} ()=0
+\item 
+\mbox{\Hypertarget{classFarmAnimal_af468358fc6539b2403b017d4045ce8d3}\label{classFarmAnimal_af468358fc6539b2403b017d4045ce8d3}} 
+virtual void {\bfseries talk} ()=0
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a12cda6d9a42ed98c1b523af8e514f439}\label{classFarmAnimal_a12cda6d9a42ed98c1b523af8e514f439}} 
+void {\bfseries set\+Position} (pair$<$ int, int $>$ \+\_\+position)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_acea846e305573691ff7718ec7655540e}\label{classFarmAnimal_acea846e305573691ff7718ec7655540e}} 
+void {\bfseries set\+Time\+Until\+Dead} (int \+\_\+time\+Until\+Dead)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_ab8032528ccc00ccc2f4dbc9ca85784e7}\label{classFarmAnimal_ab8032528ccc00ccc2f4dbc9ca85784e7}} 
+void {\bfseries set\+Time\+Until\+Hungry} (int \+\_\+time\+Until\+Hungry)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a06e879c52aaf562c30b15ed098d4dca4}\label{classFarmAnimal_a06e879c52aaf562c30b15ed098d4dca4}} 
+void {\bfseries set\+Is\+Product\+Produced} (bool \+\_\+is\+Product\+Produced)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a2709f309063bcdea915b83072f66e8c7}\label{classFarmAnimal_a2709f309063bcdea915b83072f66e8c7}} 
+void {\bfseries set\+Name} (string \+\_\+name)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a3a58627fbcf54a0291d1d862f93dbaa4}\label{classFarmAnimal_a3a58627fbcf54a0291d1d862f93dbaa4}} 
+void {\bfseries set\+Land\+Pos} (\mbox{\hyperlink{classLand}{Land}} $\ast$\+\_\+new\+Land)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_adcfec948b4f9dd777207529006c66753}\label{classFarmAnimal_adcfec948b4f9dd777207529006c66753}} 
+bool {\bfseries is\+Hungry} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_ad805436da6500547986a78f986f85904}\label{classFarmAnimal_ad805436da6500547986a78f986f85904}} 
+void {\bfseries eat} ()
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aa714178be46f61866f6d473c698b26bb}\label{classFarmAnimal_aa714178be46f61866f6d473c698b26bb}} 
+void {\bfseries move} (Direction\+Type direction, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classCell}{Cell}} $\ast$ $>$$>$ $\ast$map)
+\item 
+\mbox{\Hypertarget{classFarmAnimal_ab1a4d529f091f23f9a4faa92d05fe7d0}\label{classFarmAnimal_ab1a4d529f091f23f9a4faa92d05fe7d0}} 
+void {\bfseries update\+Condition} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a40c58dad646e660673c5f2bb9cb24ba0}\label{classFarmAnimal_a40c58dad646e660673c5f2bb9cb24ba0}} 
+pair$<$ int, int $>$ {\bfseries position}
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aef3b4a396f52764547171d5b2bc44d8b}\label{classFarmAnimal_aef3b4a396f52764547171d5b2bc44d8b}} 
+bool {\bfseries hungry} = false
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a495beae428e87a0396f467bbe30eeb5f}\label{classFarmAnimal_a495beae428e87a0396f467bbe30eeb5f}} 
+int {\bfseries time\+Until\+Dead} = T\+I\+M\+E\+\_\+\+U\+N\+T\+I\+L\+\_\+\+D\+E\+A\+D\+\_\+\+D\+E\+F\+A\+U\+LT
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a5880e0f1e5aeab8d4e33b86c6d78037f}\label{classFarmAnimal_a5880e0f1e5aeab8d4e33b86c6d78037f}} 
+int {\bfseries time\+Until\+Hungry} = T\+I\+M\+E\+\_\+\+U\+N\+T\+I\+L\+\_\+\+H\+U\+N\+G\+R\+Y\+\_\+\+D\+E\+F\+A\+U\+LT
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a88ff7bc18c5808e3ec5d795b7adecaa8}\label{classFarmAnimal_a88ff7bc18c5808e3ec5d795b7adecaa8}} 
+bool {\bfseries is\+Product\+Produced} = false
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a20276e664f31cf04f3158fab427420aa}\label{classFarmAnimal_a20276e664f31cf04f3158fab427420aa}} 
+string {\bfseries name} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{classFarmAnimal_aacb8d26027a5dc256b47f23598332fb9}\label{classFarmAnimal_aacb8d26027a5dc256b47f23598332fb9}} 
+\mbox{\hyperlink{classLand}{Land}} $\ast$ {\bfseries land\+Pos}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFarmAnimal_a85e3b7732f970bf22e640cff502d1a4c}\label{classFarmAnimal_a85e3b7732f970bf22e640cff502d1a4c}} 
+static int {\bfseries animal\+Count} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Farm\+Animal.\+hpp\item 
+src/Farm\+Animal.\+cpp\end{DoxyCompactItemize}
