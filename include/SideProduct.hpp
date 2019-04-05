@@ -10,7 +10,7 @@
 class SideProduct : public Product {
     public:
         //Constructor tanpa parameter.
-        SideProduct();
+        SideProduct(){};
         
 };
 

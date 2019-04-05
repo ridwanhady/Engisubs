@@ -21,7 +21,7 @@ class MeatProducing: public virtual FarmAnimal {
         Hewan akan mati saat memproduksi daging.
         Menerima reference ke player
         */
-        virtual void produceMeat(Player& _player);
+        virtual void produceMeat(Player& _player) = 0;
 
         /*
         Desktruktor
