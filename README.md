@@ -6,7 +6,7 @@
 			- Coop **TESTED**
 			- Barn **TESTED**
 			- Grassland **TESTED**
-		- Facility
+		- Facility **TESTED**
 			- Well 
 			- Mixer
 			- Truck
@@ -14,11 +14,11 @@
 		- Egg Producing
 		- Meat Producing
 		- Milk Producing
-	- Product 
-		- Farm Product
-			- Egg  
-			- Meat
-			- Milk
+	- Product  **TESTED**
+		- Farm Product **TESTED**
+			- Egg   **TESTED**
+			- Meat **TESTED**
+			- Milk **TESTED**
 		- Side Product
 			- Mayonnaise (Telur, Telur) 
 			- Steak (Daging, Daging) 
@@ -38,20 +38,20 @@ Macam Farm animal
 - T-rex (Daging)
 
 Macam Telur
-- Pterodactyl Egg 
-- Platypus Egg
-- Chicken Egg
+- Pterodactyl Egg  **TESTED**
+- Platypus Egg **TESTED**
+- Chicken Egg **TESTED**
 
 Macam Daging
-- Chicken Meat
-- Platypus Meat
-- TRex Meat
-- Bison Meat
-- Dog Meat
+- Chicken Meat **TESTED**
+- Platypus Meat **TESTED**
+- TRex Meat **TESTED**
+- Bison Meat **TESTED**
+- Dog Meat **TESTED**
 
 Macam Susu
-- Platypus Milk
-- Bison Milk
+- Platypus Milk **TESTED**
+- Bison Milk **TESTED**
 
 Behaviour:
 - Game
