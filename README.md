@@ -19,11 +19,11 @@
 			- Egg   **TESTED**
 			- Meat **TESTED**
 			- Milk **TESTED**
-		- Side Product
-			- Mayonnaise (Telur, Telur) 
-			- Steak (Daging, Daging) 
-			- Ekado (Daging, telur) 
-			- Keju (Susu, Susu) 
+		- Side Product**TESTED**
+			- Mayonnaise (Telur, Telur) **TESTED** 
+			- Steak (Daging, Daging) **TESTED**
+			- Ekado (Daging, telur) **TESTED**
+			- Keju (Susu, Susu) **TESTED**
 	- Player 
 - Linked List 
 - Game 
