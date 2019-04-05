@@ -19,14 +19,6 @@ class LinkedList{
         vector<T> data;
     public:
 
-        LinkedList(){
-
-        }
-
-        LinkedList(LinkedList<T> &lL){
-            
-        }
-
         /*
             Fungsi find() mencari elemen pada LinkedList dan mengembalikan indeks dari
             elemen tersebut. Jika tidak ditemukan maka akan mengembalikan nilai -1.
