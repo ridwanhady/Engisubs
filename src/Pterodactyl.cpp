@@ -8,6 +8,7 @@ Constructor yang menerima parameter position, name, egg.
 Parameter diturunkan dari EggProducing
 */
 Pterodactyl::Pterodactyl(pair <int,int> _position, string _name, Land* _landPos){
+    initObject(PTERODACTYL, 'L');
     initializeFarmAnimal(_position, _name, _landPos);
     initializeEggProducing(NULL);
 }
