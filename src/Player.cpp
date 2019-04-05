@@ -199,8 +199,8 @@ void Player::kill(LinkedList<FarmAnimal*> &farmAnimalList) {
 				m->produceMeat(*this);
 				delete targetAnimal;
 				targetLand->setObjectHere(NULL);
+				return;
 			}
-			return;
 		}
 	} 
 	cout<<"Tidak ada hewan yang bisa disembelih disitu"<<endl;
