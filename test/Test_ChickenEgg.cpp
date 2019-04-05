@@ -1,4 +1,4 @@
-#include "../include/ChickenEgg.cpp"
+#include "../src/ChickenEgg.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

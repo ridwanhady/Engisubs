@@ -1,4 +1,4 @@
-#include "../include/Barn.cpp"
+#include "../src/Barn.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

@@ -1,4 +1,4 @@
-#include "../include/PterodactylEgg.cpp"
+#include "../src/PterodactylEgg.cpp"
 #include <gtest/gtest.h>
 #include <string>
 

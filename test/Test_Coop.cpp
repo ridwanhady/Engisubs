@@ -1,4 +1,4 @@
-#include "../include/Coop.cpp"
+#include "../src/Coop.cpp"
 #include <gtest/gtest.h>
 #include <string>
 
