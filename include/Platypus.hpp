@@ -41,8 +41,6 @@ class Platypus : public MilkProducing, EggProducing, MeatProducing {
         */
         void produceEgg(Player& _player);
 
-        bool isKillable();
-
         void eat();
 
         void talk();

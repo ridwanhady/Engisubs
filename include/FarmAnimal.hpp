@@ -32,6 +32,8 @@ class FarmAnimal : public Object {
 			//Menunjuk ke Land tempat Animal berada.
 			Land *landPos;
 
+			bool killable = false;
+
 	public:
       /*
       Constructor yang menerima parameter posisi, nama)
@@ -65,7 +67,9 @@ class FarmAnimal : public Object {
 			//Mendapat Land tempat hewan berada
 			Land* getLandPos();
 
-			virtual bool isKillable() = 0;
+			bool isKillable(){
+				return killable;
+			}
 
 			virtual void talk() = 0;
 

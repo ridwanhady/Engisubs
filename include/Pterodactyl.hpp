@@ -23,8 +23,6 @@ class Pterodactyl : public EggProducing {
         */
         void produceEgg(Player& _player);
 
-        bool isKillable();
-
         void eat();
 
         void talk();

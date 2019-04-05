@@ -23,8 +23,6 @@ class Bison : public MeatProducing, MilkProducing {
 
         void produceMilk(Player& _player);
 
-        bool isKillable();
-
         void eat();
 
         void talk();

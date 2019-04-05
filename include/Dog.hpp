@@ -23,8 +23,6 @@ class Dog : public MeatProducing {
         */
         void produceMeat(Player& _player);
 
-        bool isKillable();
-
         void eat();
 
         void talk();
