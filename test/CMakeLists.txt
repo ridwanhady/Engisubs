@@ -29,5 +29,9 @@ add_executable(
  Test_Milk.cpp
  Test_PlatypusMilk.cpp
  Test_BisonMilk.cpp
+ Test_Cheese.cpp
+ Test_Steak.cpp
+ Test_Mayonaise.cpp
+ Test_Ekado.cpp
  )
 target_link_libraries(AllTest ${GTEST_LIBRARIES} pthread)

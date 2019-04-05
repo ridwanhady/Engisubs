@@ -3,14 +3,15 @@
 LinkedList<FarmProductType> Ekado::resep;
 
 //Konstruktor Cheese
-Ekado::Ekado(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol)  {
-    initializeProduct(_price, _productType, _objectType, _objectSymbol);
+Ekado::Ekado(int _price)  {
+    initializeProduct(_price, SIDEPRODUCT, EKADO, '?');
+    InitResep();
 }
 
 void Ekado::InitResep() {
     //Inisialisasi resep:
-    Ekado::getResep().add(EGG);
-    Ekado::getResep().add(MEAT);
+    resep.add(EGG);
+    resep.add(MEAT);
 }
 
 FarmProductType Ekado::getResepwithIdx(int i) {
