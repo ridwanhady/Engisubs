@@ -8,10 +8,10 @@
 class Steak : public SideProduct {
     private:
         static LinkedList<FarmProductType> resep;
+        static void InitResep();
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
-        Steak(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol);
-        static void InitResep();
+        Steak(int _price);
         static LinkedList<FarmProductType> getResep() {
             return resep;
         }

@@ -8,10 +8,10 @@
 class Mayonaise : public SideProduct {
     private:
         static LinkedList<FarmProductType> resep;
+        static void InitResep();
     public:
         //Constructor menerima harga, dan menginisialisasi resep.
-        Mayonaise(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol);
-        static void InitResep();
+        Mayonaise(int _price);
         static LinkedList<FarmProductType> getResep() {
             return resep;
         }

@@ -3,14 +3,15 @@
 LinkedList<FarmProductType> Mayonaise::resep;
 
 //Konstruktor Cheese
-Mayonaise::Mayonaise(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol)  {
-    initializeProduct(_price, _productType, _objectType, _objectSymbol);
+Mayonaise::Mayonaise(int _price)  {
+    initializeProduct(_price, SIDEPRODUCT, MAYONAISE, '?');
+    InitResep();
 }
 
 void Mayonaise::InitResep() {
     //Inisialisasi resep:
-    Mayonaise::getResep().add(EGG);
-    Mayonaise::getResep().add(MILK);
+    resep.add(EGG);
+    resep.add(MILK);
 }
 
 FarmProductType Mayonaise::getResepwithIdx(int i) {

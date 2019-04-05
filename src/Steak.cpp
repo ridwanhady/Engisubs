@@ -3,14 +3,15 @@
 LinkedList<FarmProductType> Steak::resep;
 
 //Konstruktor Steak
-Steak::Steak(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol)  {
-    initializeProduct(_price, _productType, _objectType, _objectSymbol);
+Steak::Steak(int _price)  {
+    initializeProduct(_price, SIDEPRODUCT, STEAK, '?');
+    InitResep();
 }
 
 void Steak::InitResep() {
     //Inisialisasi resep:
-    Steak::getResep().add(MEAT);
-    Steak::getResep().add(MILK);
+    resep.add(MEAT);
+    resep.add(MILK);
 }
 
 FarmProductType Steak::getResepwithIdx(int i) {
