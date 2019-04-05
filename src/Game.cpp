@@ -6,11 +6,23 @@ using namespace std;
 LinkedList<ObjectType> Game::daftarProduct;
 
 bool Game::isValid(pair<int,int> pos){
-	Cell *targetCell = cellList.get(pos.first).get(pos.second);
-	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+	cout << "Maruf" << endl;
+	if(pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+		cout << "Sandi" << endl;
 		return false;
 	}
+
+	cout << "Bawaslu" << endl;
+	Cell *targetCell = cellList.get(pos.first).get(pos.second);
+	cout << "Polri" << endl;
+
+	if (!targetCell->isWalkable()){
+		cout << "Aga" << endl;
+		return false;
+	}
+	cout << "KP" << endl;
 	Land *targetLand = dynamic_cast<Land*>(targetCell);
+	cout << "KPU" << endl;
 	if(targetLand->isOccupied()) return false;
 	return true;
 }
@@ -20,23 +32,34 @@ Game::Game(){
 	string namaPemain;
 
 	//Init cell (Todo)
+	
 	for(int i = 0; i < n; i++){
-		cellList.add(LinkedList<Cell*>());
+		LinkedList<Cell*> temp;
 		for(int j = 0; j < m; j++){
+			temp.add(new Grassland({i,j},1));
+			
+			/*
 			if(rand()%100 <= 90){
 				cellList.get(i).add(new Grassland({i,j},1));
 			} else {
 				cellList.get(i).add(new Truck({i,j}));
-			}
+			}*/
 		}
+		cellList.add(temp);
+		cout<<cellList.get(i).size()<<endl;
 	}
 	//Init animal
+	showMap();
+	
 	int cntAnimal = 3;
 	while(cntAnimal--){
 		pair<int,int> randPosition = {rand()%n, rand()%m};
+		cout << "Joko" << endl;
 		while(!isValid(randPosition)){
+			cout << "RAND" << endl;
 			randPosition = {rand()%n, rand()%m};
 		}
+		cout << "Prabo" << endl;
 		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)));
 		farmAnimalList.add(x);
 		(dynamic_cast<Land*>(cellList.get(randPosition.first).get(randPosition.second)))->setObjectHere(x);
@@ -185,6 +208,8 @@ void Game::endGame(){
 }
 
 void Game::showMap(){
+	cout << cellList.size() << endl;
+	cout << cellList.get(0).size() << endl;
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
 			cellList.get(i).get(j)->render();
