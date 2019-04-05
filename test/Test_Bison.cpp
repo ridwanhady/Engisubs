@@ -8,7 +8,7 @@ pair<int,int> pos = {1,1};
 Land landPos(pos, true, GRASSLAND);
 Bison bernard(pos, "Bernard", &landPos);
 pair<int,int> playerPosTB = {1,2};
-Player pemainTB("Joko", 20, 100, playerPosTB);
+Player pemainTB("Joko", 20, 100, playerPosTB, NULL);
 
 TEST(BisonTest, ItCanTalk){
     testing::internal::CaptureStdout();

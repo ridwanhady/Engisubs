@@ -63,7 +63,7 @@ void Platypus::talk(){
 void Platypus::interact(Player* _p){
     if (!getIsProductProduced()){
         produceEgg(*_p);
-        produceMeat(*_p);
+        produceMilk(*_p);
         setIsProductProduced(true);
     }
 }

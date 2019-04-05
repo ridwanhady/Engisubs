@@ -4,9 +4,10 @@
 using namespace std;
 
 pair<int,int> playerPos = {0,0};
-Player pemain("Joko", 100, 2000, playerPos);
+Player pemain("A", 100, 2000, playerPos, NULL);
+
 TEST(PlayerTest, BasicTest){
-    ASSERT_EQ("Joko", pemain.getName());
+    ASSERT_EQ("A", pemain.getName());
     ASSERT_EQ(100, pemain.getWater());
     ASSERT_EQ(2000, pemain.getUang());
     ASSERT_EQ(0, pemain.getInventory().size());
