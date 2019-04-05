@@ -8,6 +8,7 @@
 //Kelas ini merepresentasikan pemain.
 #include "../include/Player.hpp"
 #include "../include/Facility.hpp"
+#include "../include/MeatProducing.hpp"
 
 using namespace std;
 
@@ -194,6 +195,8 @@ void Player::kill(LinkedList<FarmAnimal*> &farmAnimalList) {
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			if(targetAnimal->isKillable()){
 				farmAnimalList.remove(farmAnimalList.get(farmAnimalList.findElement(targetAnimal)));
+				MeatProducing *m = dynamic_cast<MeatProducing*> (targetAnimal);
+				m->produceMeat(*this);
 				delete targetAnimal;
 				targetLand->setObjectHere(NULL);
 			}
