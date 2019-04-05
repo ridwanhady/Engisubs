@@ -49,10 +49,6 @@ void Platypus::produceEgg(Player& _player){
     }
 }
 
-bool Platypus::isKillable(){
-    return true;
-}
-
 void Platypus::eat(){
     FarmAnimal::eat();
     setIsProductProduced(false);

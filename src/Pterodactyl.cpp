@@ -24,10 +24,6 @@ void Pterodactyl::produceEgg(Player& _player){
     }
 }
 
-bool Pterodactyl::isKillable(){
-    return false;
-}
-
 void Pterodactyl::eat(){
     FarmAnimal::eat();
     setIsProductProduced(false);

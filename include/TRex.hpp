@@ -22,8 +22,6 @@ class TRex : public MeatProducing {
         */
         void produceMeat(Player& _player);
 
-        bool isKillable();
-
         void eat();
 
         void talk();

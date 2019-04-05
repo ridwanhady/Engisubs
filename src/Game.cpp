@@ -30,7 +30,7 @@ Game::Game(){
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
 		for(int j = 0; j < m; j++){
 			if(rand()%100 <= 90){
-				temp->add(new Grassland({i,j},1));
+				temp->add(new Grassland({i,j},0));
 			} else {
 				temp->add(new Truck({i,j}));
 			}
@@ -61,7 +61,7 @@ Game::Game(){
 	while(!isValid(curPos)){
 		curPos = {rand()%n, rand()%m};
 	}
-	mainPlayer = new Player(namaPemain, 10, 10, curPos);
+	mainPlayer = new Player(namaPemain, 10, 10, curPos, &cellList);
 	dynamic_cast<Land*>(cellList.get(curPos.first)->get(curPos.second))->setObjectHere(mainPlayer);
 	//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 	if(daftarProduct.size() == 0){
@@ -90,7 +90,7 @@ void Game::startGame(){
 //Pada fungsi ini game berjalan.
 void Game::gameLoop(){
 	string command;
-	while(isGameStarted){
+	while(isGameStarted and farmAnimalList.size() > 0){
 		showMap();
 		cout<<"Input: "<<endl;
 		cin>>command;
@@ -148,6 +148,9 @@ void Game::gameLoop(){
 			cout<<"Command tidak valid"<<endl;
 		}
 	}
+	if(farmAnimalList.size() == 0){
+		cout << "Sudah tidak ada hewan lagi di game"<<endl;
+	}
 }
 
 //Mengupdate seluruh state game
@@ -160,18 +163,31 @@ void Game::updateGame(){
 	DirectionType dir[4] = {UP,DOWN,RIGHT,LEFT};
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
+	cout << "AYAM " << farmAnimalList.size() << endl;
 	for(int i = 0; i < farmAnimalList.size(); i++){
 		if(farmAnimalList.get(i)->isHungry()){
 			farmAnimalList.get(i)->eat();
 		}
 		farmAnimalList.get(i)->updateCondition();
+		if(farmAnimalList.get(i)->getTimeUntilDead() == 0){
+			FarmAnimal *temp = farmAnimalList.get(i);
+			farmAnimalList.remove(farmAnimalList.get(i));
+			delete temp;
+			i--;
+			continue;
+		}
 		//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 		int moveDirection;
 		pair<int,int> curPos = farmAnimalList.get(i)->getPosition();
+		cout << "HEWAN " << i << endl;
 		do{
 			moveDirection = rand()%5;
-			if(moveDirection < 4){
-				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){
+				//farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+				break;
+			} else if(moveDirection == 4){
+				cout<<"Berhenti"<<endl;
+				break;
 			}
 		} while (!isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]}));
 

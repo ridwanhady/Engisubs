@@ -1,5 +1,8 @@
 #include "../include/Truck.hpp"
 #include "../include/Product.hpp"
+#include <iostream>
+using namespace std;
+
 //Constructor, menginisialisasi posisi
 Truck::Truck(pair<int,int> _position) : Facility(_position){
 	this->notUsableTurns = 0;
@@ -19,6 +22,14 @@ void Truck::interact(Player* _p){
 		_p->setUang(_p->getUang() + inventTemp.get(i)->getPrice());
 	}
 	setNotUsableTurns(10);
+	cout << "Isi Inventori Sekarang Kosong!" << endl;
+	cout << "Berikut adalah isi dari Inventori:" << endl;
+
+	for (int i = 0 ; i < inventTemp.size() ; i ++) {
+		cout << inventTemp.get(i) << ",";
+	}
+	cout << endl;
+
 	//Todo: Delete inventory
 	_p->getInventory().removeAll();
 }

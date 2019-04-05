@@ -39,10 +39,6 @@ void Chicken::produceEgg(Player& _player){
     }
 }
 
-bool Chicken::isKillable(){
-    return true;
-}
-
 void Chicken::eat(){
     FarmAnimal::eat();
     setIsProductProduced(false);
