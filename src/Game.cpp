@@ -112,7 +112,6 @@ void Game::gameLoop(){
 			cout<<"QUIT"<<endl;
 		} else if(command == "UP"){
 			mainPlayer->move(UP);
-			cout<<"TEST"<<endl;
 			updateGame();
 		} else if(command == "DOWN"){
 			mainPlayer->move(DOWN);
@@ -161,6 +160,7 @@ void Game::updateGame(){
 	DirectionType dir[4] = {UP,DOWN,RIGHT,LEFT};
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
+	cout << "AYAM " << farmAnimalList.size() << endl;
 	for(int i = 0; i < farmAnimalList.size(); i++){
 		if(farmAnimalList.get(i)->isHungry()){
 			farmAnimalList.get(i)->eat();
@@ -169,10 +169,15 @@ void Game::updateGame(){
 		//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 		int moveDirection;
 		pair<int,int> curPos = farmAnimalList.get(i)->getPosition();
+		cout << "HEWAN " << i << endl;
 		do{
 			moveDirection = rand()%5;
-			if(moveDirection < 4){
+			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){
 				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+				break;
+			} else if(moveDirection == 4){
+				cout<<"Berhenti"<<endl;
+				break;
 			}
 		} while (!isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]}));
 

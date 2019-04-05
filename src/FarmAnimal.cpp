@@ -1,4 +1,7 @@
 #include "../include/FarmAnimal.hpp"
+#include <iostream>
+
+using namespace std;
 
 int FarmAnimal::animalCount = 0;
 
@@ -105,6 +108,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        cout << "BERGERAK KE " << position.first - 1 << " " << position.second << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -121,6 +125,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        cout << "BERGERAK KE " << position.first + 1 << " " << position.second << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -137,6 +142,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        cout << "BERGERAK KE " << position.first << " " << position.second - 1 << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -153,6 +159,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
+                        cout << "BERGERAK KE " << position.first << " " << position.second + 1 << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);

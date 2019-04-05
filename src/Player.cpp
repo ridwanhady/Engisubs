@@ -141,10 +141,6 @@ void Player::setPosition(pair<int,int> _position){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = dynamic_cast<Land*>(targetCell);
-		if (targetLand == worldMap->get(position.first)->get(position.second)){
-			cout<<"Tidak ada hewan disitu"<<endl;
-			return;
-		}
 		if(!targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			targetAnimal->talk();
@@ -171,7 +167,8 @@ void Player::interact(){
 			}
 		} else {
 			cout << "FAC" << endl;
-			Facility *targetFacility = dynamic_cast<Facility*>(targetFacility);
+			Facility *targetFacility = dynamic_cast<Facility*>(targetCell);
+			cout << "FAC2" << endl;
 			targetFacility->interact(this);
 			return;
 		}
