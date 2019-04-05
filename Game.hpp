@@ -11,7 +11,7 @@ class Game{
 		bool isGameStarted = false;
 		int currentTime = 0;
 		LinkedList<FarmAnimal*> farmAnimalList;
-		LinkedList<LinkedList<Cell*>> cellList;
+		LinkedList<LinkedList<Cell*> > cellList;
 		static LinkedList<ObjectType> daftarProduct;
 		Player* mainPlayer;
 		int n = 10;

@@ -9,7 +9,7 @@
 #include "Player.hpp"
 #include "Facility.hpp"
 
-bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*>>* worldMap){
+bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> >* worldMap){
 	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
 	int n = worldMap->size();
 	int m = (worldMap->get(0)).size();
