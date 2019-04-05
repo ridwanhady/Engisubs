@@ -71,6 +71,8 @@ class Object{
 		virtual void interact(Player* _p){}
 		//Getter
 		ObjectType getObjectType();
+		//InitObject
+		void initObject(ObjectType _objectType, char _objectSymbol);
 };
 
 #endif

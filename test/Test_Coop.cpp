@@ -24,5 +24,5 @@ TEST(CoopTest, AllFunctionalityofCoop){
     testing::internal::CaptureStdout();
     testCoop.render();
     string output2 = testing::internal::GetCapturedStdout();
-    ASSERT_EQ("o", output2);
+    ASSERT_EQ("?", output2);
 }

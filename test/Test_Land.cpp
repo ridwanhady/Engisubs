@@ -24,5 +24,5 @@ TEST(LandTest, AllFunctionalityofLand){
     testing::internal::CaptureStdout();
     testLand.render();
     string output2 = testing::internal::GetCapturedStdout();
-    ASSERT_EQ("-", output2);
+    ASSERT_EQ("?", output2);
 }

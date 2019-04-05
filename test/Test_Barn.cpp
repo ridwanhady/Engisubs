@@ -24,5 +24,5 @@ TEST(BarnTest, AllFunctionalityofBarn){
     testing::internal::CaptureStdout();
     testBarn.render();
     string output2 = testing::internal::GetCapturedStdout();
-    ASSERT_EQ("x", output2);
+    ASSERT_EQ("?", output2);
 }
