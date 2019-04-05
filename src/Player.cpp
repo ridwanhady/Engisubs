@@ -141,7 +141,7 @@ void Player::setPosition(pair<int,int> _position){
 	Cell *targetCell = getCellInFront();
 	if(targetCell->isWalkable()){
 		Land *targetLand = dynamic_cast<Land*>(targetCell);
-		if(!targetLand->isOccupied()){
+		if(targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			targetAnimal->talk();
 			return;
@@ -190,7 +190,7 @@ void Player::kill() {
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL and targetCell->isWalkable()){
 		Land *targetLand = dynamic_cast<Land*>(targetCell);
-		if(!targetLand->isOccupied()){
+		if(targetLand->isOccupied()){
 			FarmAnimal *targetAnimal = dynamic_cast<FarmAnimal*>(targetLand->getObjectHere());
 			if(targetAnimal->isKillable()){
 				delete targetAnimal;

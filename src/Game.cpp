@@ -30,7 +30,7 @@ Game::Game(){
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
 		for(int j = 0; j < m; j++){
 			if(rand()%100 <= 90){
-				temp->add(new Grassland({i,j},1));
+				temp->add(new Grassland({i,j},0));
 			} else {
 				temp->add(new Truck({i,j}));
 			}
@@ -178,7 +178,7 @@ void Game::updateGame(){
 		do{
 			moveDirection = rand()%5;
 			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){
-				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+				//farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
 				break;
 			} else if(moveDirection == 4){
 				cout<<"Berhenti"<<endl;
