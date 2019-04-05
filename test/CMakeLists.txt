@@ -37,10 +37,11 @@ add_executable(
  Test_EggProducing.cpp
  Test_MilkProducing.cpp
  Test_MeatProducing.cpp
+ Test_Player.cpp
  Test_Bison.cpp
  Test_Dog.cpp
- Test_Chicken.cpp
  Test_Platypus.cpp
- Test_Player.cpp
+ Test_TRex.cpp
+ Test_Chicken.cpp
  )
 target_link_libraries(AllTest ${GTEST_LIBRARIES} pthread)
