@@ -182,7 +182,7 @@ void interact(Player* _p){
 
 						//Tambahkan Mayonaise pada Inventori:
 						//Construct newMayonaise
-						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE, SIDEPRODUCT, MAYONAISE, 'M'));
+						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE, SIDEPRODUCT, MAYONAISE, 'Y'));
 
 						cout << "MEMBUAT MAYONAISE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
