@@ -30,9 +30,23 @@ Game::Game(){
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
 		for(int j = 0; j < m; j++){
 			if(rand()%100 <= 90){
-				temp->add(new Grassland({i,j},0));
+				int r = rand()%3;
+				if (r == 0){
+					temp->add(new Grassland({i,j},0));
+				}else if (r == 1){
+					temp->add(new Barn({i,j},0));
+				}else {
+					temp->add(new Coop({i,j},0));
+				}
 			} else {
-				temp->add(new Truck({i,j}));
+				int r = rand()%3;
+				if (r == 0){
+					temp->add(new Truck({i,j}));
+				}else if (r == 1){
+					temp->add(new Mixer({i, j}));
+				}else {
+					temp->add(new Well({i, j}));
+				}
 			}
 		}
 		
@@ -41,15 +55,39 @@ Game::Game(){
 	}
 	//Init animal
 	
-	int cntAnimal = 3;
+	int cntAnimal = 8;
 	while(cntAnimal--){
 		pair<int,int> randPosition = {rand()%n, rand()%m};
 		while(!isValid(randPosition)){
 			randPosition = {rand()%n, rand()%m};
 		}
-		Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
-		farmAnimalList.add(x);
-		(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		int randAnimal = rand()%6;
+		if(randAnimal == 0){
+			Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		} else if(randAnimal == 1){
+			Bison *x = new Bison(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		} else if(randAnimal == 2){
+			Dog *x = new Dog(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		} else if(randAnimal == 3){
+			Platypus *x = new Platypus(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		} else if(randAnimal == 4){
+			Pterodactyl *x = new Pterodactyl(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		} else {
+			TRex *x = new TRex(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
+			farmAnimalList.add(x);
+			(dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)))->setObjectHere(x);
+		
+		}
 	}
 
 	//Meminta nama pemain
@@ -129,7 +167,7 @@ void Game::gameLoop(){
 			mainPlayer->interact();
 			updateGame();
 		} else if(command == "KILL"){
-			mainPlayer->kill();
+			mainPlayer->kill(farmAnimalList);
 			updateGame();
 		} else if(command == "GROW"){
 			mainPlayer->grow();
@@ -144,6 +182,12 @@ void Game::gameLoop(){
 			mainPlayer->changeDirection(RIGHT);
 		} else if(command == "QUIT"){
 			endGame();
+		} else if(command == "SHOW") {
+			cout << "Berikut adalah isi dari Inventori:" << endl;
+			for (int i = 0 ; i < mainPlayer->getInventory().size() ; i ++) {
+				cout << mainPlayer->getInventory().get(i) << ",";
+			}
+			cout << endl;
 		} else {
 			cout<<"Command tidak valid"<<endl;
 		}
@@ -165,6 +209,11 @@ void Game::updateGame(){
 	int dj[4] = {0,0,1,-1};
 	cout << "AYAM " << farmAnimalList.size() << endl;
 	for(int i = 0; i < farmAnimalList.size(); i++){
+		if(farmAnimalList.get(i) == NULL){
+			farmAnimalList.remove(farmAnimalList.get(i));
+			i--;
+			continue;
+		}
 		if(farmAnimalList.get(i)->isHungry()){
 			farmAnimalList.get(i)->eat();
 		}
