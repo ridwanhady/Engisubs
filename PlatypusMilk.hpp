@@ -7,7 +7,7 @@
 class PlatypusMilk : public Milk {
     public:
         //Constructor menerima harga, dan mempassing producer untuk superclass.
-        PlatypusMilk(int _price, string _producer);
+        PlatypusMilk(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol);
 };
 
 #endif

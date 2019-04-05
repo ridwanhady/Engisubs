@@ -10,15 +10,14 @@ enum LandType {
     COOP
 };
 
-char landSymbol[3] = {'-', 'x', 'o'};
-char grassSymbol[3] = {'#', '@', '*'};
-
 class Land : public Cell{
     private:
         bool grown;
-        bool occupied;
+        bool occupied = false;
         const LandType landType;
         Object* objectHere = NULL;
+        char landSymbol[3] = {'-', 'x', 'o'};
+        char grassSymbol[3] = {'#', '@', '*'};
 
     public:
         //Ctor dengan parameter

@@ -1,3 +1,3 @@
 /home/rid1hady/Engisubs/CMakeFiles/rebuild_cache.dir
-/home/rid1hady/Engisubs/CMakeFiles/RunningTest.dir
+/home/rid1hady/Engisubs/CMakeFiles/AllTest.dir
 /home/rid1hady/Engisubs/CMakeFiles/edit_cache.dir

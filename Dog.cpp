@@ -9,7 +9,7 @@ Parameter diturunkan dari MeatProducing.
 */
 Dog::Dog(pair<int,int> _position, string _name, Land* _landPos){
     initializeFarmAnimal(_position, _name, _landPos);
-    initializeMeatProducing(new DogMeat(HARGA_DAGING_ANJING, getName()));
+    initializeMeatProducing(new DogMeat(HARGA_DAGING_ANJING, getName(), FARMPRODUCT, DOG, 'D'));
 }
 
 /*

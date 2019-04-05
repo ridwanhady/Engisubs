@@ -111,17 +111,152 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RunningTest
+# Target rules for targets named AllTest
 
 # Build rule for target.
-RunningTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RunningTest
-.PHONY : RunningTest
+AllTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AllTest
+.PHONY : AllTest
 
 # fast build rule for target.
-RunningTest/fast:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/build
-.PHONY : RunningTest/fast
+AllTest/fast:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/build
+.PHONY : AllTest/fast
+
+Test_Barn.o: Test_Barn.cpp.o
+
+.PHONY : Test_Barn.o
+
+# target to build an object file
+Test_Barn.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Barn.cpp.o
+.PHONY : Test_Barn.cpp.o
+
+Test_Barn.i: Test_Barn.cpp.i
+
+.PHONY : Test_Barn.i
+
+# target to preprocess a source file
+Test_Barn.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Barn.cpp.i
+.PHONY : Test_Barn.cpp.i
+
+Test_Barn.s: Test_Barn.cpp.s
+
+.PHONY : Test_Barn.s
+
+# target to generate assembly for a file
+Test_Barn.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Barn.cpp.s
+.PHONY : Test_Barn.cpp.s
+
+Test_Cell.o: Test_Cell.cpp.o
+
+.PHONY : Test_Cell.o
+
+# target to build an object file
+Test_Cell.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.o
+.PHONY : Test_Cell.cpp.o
+
+Test_Cell.i: Test_Cell.cpp.i
+
+.PHONY : Test_Cell.i
+
+# target to preprocess a source file
+Test_Cell.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.i
+.PHONY : Test_Cell.cpp.i
+
+Test_Cell.s: Test_Cell.cpp.s
+
+.PHONY : Test_Cell.s
+
+# target to generate assembly for a file
+Test_Cell.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Cell.cpp.s
+.PHONY : Test_Cell.cpp.s
+
+Test_Coop.o: Test_Coop.cpp.o
+
+.PHONY : Test_Coop.o
+
+# target to build an object file
+Test_Coop.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Coop.cpp.o
+.PHONY : Test_Coop.cpp.o
+
+Test_Coop.i: Test_Coop.cpp.i
+
+.PHONY : Test_Coop.i
+
+# target to preprocess a source file
+Test_Coop.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Coop.cpp.i
+.PHONY : Test_Coop.cpp.i
+
+Test_Coop.s: Test_Coop.cpp.s
+
+.PHONY : Test_Coop.s
+
+# target to generate assembly for a file
+Test_Coop.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Coop.cpp.s
+.PHONY : Test_Coop.cpp.s
+
+Test_Grassland.o: Test_Grassland.cpp.o
+
+.PHONY : Test_Grassland.o
+
+# target to build an object file
+Test_Grassland.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Grassland.cpp.o
+.PHONY : Test_Grassland.cpp.o
+
+Test_Grassland.i: Test_Grassland.cpp.i
+
+.PHONY : Test_Grassland.i
+
+# target to preprocess a source file
+Test_Grassland.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Grassland.cpp.i
+.PHONY : Test_Grassland.cpp.i
+
+Test_Grassland.s: Test_Grassland.cpp.s
+
+.PHONY : Test_Grassland.s
+
+# target to generate assembly for a file
+Test_Grassland.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Grassland.cpp.s
+.PHONY : Test_Grassland.cpp.s
+
+Test_Land.o: Test_Land.cpp.o
+
+.PHONY : Test_Land.o
+
+# target to build an object file
+Test_Land.cpp.o:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Land.cpp.o
+.PHONY : Test_Land.cpp.o
+
+Test_Land.i: Test_Land.cpp.i
+
+.PHONY : Test_Land.i
+
+# target to preprocess a source file
+Test_Land.cpp.i:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Land.cpp.i
+.PHONY : Test_Land.cpp.i
+
+Test_Land.s: Test_Land.cpp.s
+
+.PHONY : Test_Land.s
+
+# target to generate assembly for a file
+Test_Land.cpp.s:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Land.cpp.s
+.PHONY : Test_Land.cpp.s
 
 Test_Object.o: Test_Object.cpp.o
 
@@ -129,7 +264,7 @@ Test_Object.o: Test_Object.cpp.o
 
 # target to build an object file
 Test_Object.cpp.o:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.o
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.o
 .PHONY : Test_Object.cpp.o
 
 Test_Object.i: Test_Object.cpp.i
@@ -138,7 +273,7 @@ Test_Object.i: Test_Object.cpp.i
 
 # target to preprocess a source file
 Test_Object.cpp.i:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.i
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.i
 .PHONY : Test_Object.cpp.i
 
 Test_Object.s: Test_Object.cpp.s
@@ -147,7 +282,7 @@ Test_Object.s: Test_Object.cpp.s
 
 # target to generate assembly for a file
 Test_Object.cpp.s:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/Test_Object.cpp.s
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/Test_Object.cpp.s
 .PHONY : Test_Object.cpp.s
 
 # Help Target
@@ -157,8 +292,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... RunningTest"
+	@echo "... AllTest"
 	@echo "... edit_cache"
+	@echo "... Test_Barn.o"
+	@echo "... Test_Barn.i"
+	@echo "... Test_Barn.s"
+	@echo "... Test_Cell.o"
+	@echo "... Test_Cell.i"
+	@echo "... Test_Cell.s"
+	@echo "... Test_Coop.o"
+	@echo "... Test_Coop.i"
+	@echo "... Test_Coop.s"
+	@echo "... Test_Grassland.o"
+	@echo "... Test_Grassland.i"
+	@echo "... Test_Grassland.s"
+	@echo "... Test_Land.o"
+	@echo "... Test_Land.i"
+	@echo "... Test_Land.s"
 	@echo "... Test_Object.o"
 	@echo "... Test_Object.i"
 	@echo "... Test_Object.s"

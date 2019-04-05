@@ -1,11 +1,7 @@
 #ifndef _FARMPRODUCT_HPP_
 #define _FARMPRODUCT_HPP_
 #include "Product.hpp"
-enum FarmProductType {
-    EGG,
-    MEAT,
-    MILK
-};
+
 
 //Kelas ini merepresentasikan produk dari hewan.
 class FarmProduct : public Product {
@@ -16,9 +12,14 @@ class FarmProduct : public Product {
       //Constructor harus menerima harga, dan menginisialisasi tipe untuk superclass.
       FarmProduct();
 
+      void initializeFarmProduct(string _producer);
+
       string getProducer(){
           return producer;
       }
+
+      //Mengembalikan FarmObjectType apakah barang pada suatu inventori player
+     static FarmProductType getFarmProductType(ObjectType objectType);
 };
 
 #endif

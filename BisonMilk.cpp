@@ -1,8 +1,7 @@
 #include "BisonMilk.hpp"
 
 //Constructor menerima harga, dan menginisialisasi producer untuk superclass
-BisonMilk::BisonMilk(int _price, string _producer){
-	price = _price;
-	producer = _producer;
-	objectType = BISON_MILK;
+BisonMilk::BisonMilk(int _price, string _producer, ProductType _productType, ObjectType _objectType, char _objectSymbol){
+	initializeFarmProduct(_producer);
+	initializeProduct(_price, _productType, _objectType, _objectSymbol);
 }

@@ -11,12 +11,7 @@ class SideProduct : public Product {
     public:
         //Constructor tanpa parameter.
         SideProduct();
-
-        //Menghasilkan produk pada resep dengan indeks i.
-        FarmProduct getResep(int i) const;
-
-        //Menambah resep.
-        void addResep (ObjectType _product);
+        
 };
 
 #endif

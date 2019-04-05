@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/rid1hady/Engisubs
 CMAKE_BINARY_DIR = /home/rid1hady/Engisubs
 
 #=============================================================================
-# Target rules for target CMakeFiles/RunningTest.dir
+# Target rules for target CMakeFiles/AllTest.dir
 
 # All Build rule for target.
-CMakeFiles/RunningTest.dir/all:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/depend
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rid1hady/Engisubs/CMakeFiles --progress-num=1,2 "Built target RunningTest"
-.PHONY : CMakeFiles/RunningTest.dir/all
+CMakeFiles/AllTest.dir/all:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/depend
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rid1hady/Engisubs/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target AllTest"
+.PHONY : CMakeFiles/AllTest.dir/all
 
 # Include target in all.
-all: CMakeFiles/RunningTest.dir/all
+all: CMakeFiles/AllTest.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/RunningTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rid1hady/Engisubs/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RunningTest.dir/all
+CMakeFiles/AllTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rid1hady/Engisubs/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AllTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rid1hady/Engisubs/CMakeFiles 0
-.PHONY : CMakeFiles/RunningTest.dir/rule
+.PHONY : CMakeFiles/AllTest.dir/rule
 
 # Convenience name for target.
-RunningTest: CMakeFiles/RunningTest.dir/rule
+AllTest: CMakeFiles/AllTest.dir/rule
 
-.PHONY : RunningTest
-
-# clean rule for target.
-CMakeFiles/RunningTest.dir/clean:
-	$(MAKE) -f CMakeFiles/RunningTest.dir/build.make CMakeFiles/RunningTest.dir/clean
-.PHONY : CMakeFiles/RunningTest.dir/clean
+.PHONY : AllTest
 
 # clean rule for target.
-clean: CMakeFiles/RunningTest.dir/clean
+CMakeFiles/AllTest.dir/clean:
+	$(MAKE) -f CMakeFiles/AllTest.dir/build.make CMakeFiles/AllTest.dir/clean
+.PHONY : CMakeFiles/AllTest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/AllTest.dir/clean
 
 .PHONY : clean
 
