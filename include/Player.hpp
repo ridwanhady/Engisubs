@@ -24,7 +24,7 @@ using namespace std;
 class Player : public Object{
 public:
 		// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang.
-		Player(string _name, int _water, double _uang, pair<int,int> _position);
+		Player(string _name, int _water, double _uang, pair<int,int> _position, LinkedList<LinkedList<Cell*> *>* _worldMap);
 
 		// Destructor karena ada pointer di atribut.
 		~Player();
@@ -132,7 +132,7 @@ public:
 		//Arah hadap pemain
 		DirectionType direction;
 		//Menyimpan worldmap
-		LinkedList<LinkedList<Cell*> >* worldMap;
+		LinkedList<LinkedList<Cell*> *>* worldMap;
 };
 
 #endif

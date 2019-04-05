@@ -61,7 +61,7 @@ Game::Game(){
 	while(!isValid(curPos)){
 		curPos = {rand()%n, rand()%m};
 	}
-	mainPlayer = new Player(namaPemain, 10, 10, curPos);
+	mainPlayer = new Player(namaPemain, 10, 10, curPos, &cellList);
 	dynamic_cast<Land*>(cellList.get(curPos.first)->get(curPos.second))->setObjectHere(mainPlayer);
 	//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 	if(daftarProduct.size() == 0){
@@ -112,6 +112,7 @@ void Game::gameLoop(){
 			cout<<"QUIT"<<endl;
 		} else if(command == "UP"){
 			mainPlayer->move(UP);
+			cout<<"TEST"<<endl;
 			updateGame();
 		} else if(command == "DOWN"){
 			mainPlayer->move(DOWN);

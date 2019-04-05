@@ -9,11 +9,14 @@
 #include "../include/Player.hpp"
 #include "../include/Facility.hpp"
 
-bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> >* worldMap){
-	Cell *targetCell = worldMap->get(pos.first).get(pos.second);
+bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> *>* worldMap){
 	int n = worldMap->size();
-	int m = (worldMap->get(0)).size();
-	if(!targetCell->isWalkable() or pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+	int m = (worldMap->get(0))->size();
+	if(pos.first < 0 or pos.first >= n or pos.second < 0 or pos.second >= m){
+		return false;
+	}
+	Cell *targetCell = worldMap->get(pos.first)->get(pos.second);
+	if(!targetCell->isWalkable()){
 		return false;
 	}
 	Land *targetLand = dynamic_cast<Land*>(targetCell);
@@ -23,12 +26,13 @@ bool isValid(pair<int,int> pos, LinkedList<LinkedList<Cell*> >* worldMap){
 
 
 	// Constructor dengan parameter nama pemain, jumlah air, dan jumlah uang, beserta posisi
-Player::Player(string _name, int _water, double _uang, pair<int,int> _position): Object('P'){
+Player::Player(string _name, int _water, double _uang, pair<int,int> _position, LinkedList<LinkedList<Cell*> *>* _worldMap): Object('P'){
 	setName(_name);
 	setWater(_water);
 	setUang(_uang);
 	setPosition(_position);
 	objectType = PLAYER;
+	worldMap = _worldMap;
 }
 
 
@@ -36,6 +40,7 @@ Player::Player(string _name, int _water, double _uang, pair<int,int> _position):
 // Kemungkinan memory leak dari player, belum bener.
 Player::~Player(){
 	//Panggil desktruktor linkedlist
+	delete worldMap;
 }
 
 // getter
@@ -199,7 +204,7 @@ void Player::kill() {
 	*/
 
 void Player::grow(){
-	Cell *targetCell = worldMap->get(position.first).get(position.second);
+	Cell *targetCell = worldMap->get(position.first)->get(position.second);
 	Land *targetLand = dynamic_cast<Land*>(targetCell);
 	targetLand->grow();
 }
@@ -213,10 +218,10 @@ void Player::move(DirectionType direction) {
 	int dj[4] = {0,0,1,-1};
 	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
 	if(isValid(targetPosition, worldMap)){
-		Land *currentLand = dynamic_cast<Land*>(worldMap->get(position.first).get(position.second));
+		Land *currentLand = dynamic_cast<Land*>(worldMap->get(position.first)->get(position.second));
 		currentLand->setObjectHere(NULL);
 		position = {position.first+di[direction], position.second+dj[direction]};
-		currentLand = (Land*)worldMap->get(position.first).get(position.second);
+		currentLand = (Land*)worldMap->get(position.first)->get(position.second);
 		currentLand->setObjectHere(this);
 	} else {
 		cout<<"Langkah tidak valid"<<endl;
@@ -227,10 +232,10 @@ Cell* Player::getCellInFront(){
 	int di[4] = {-1,1,0,0};
 	int dj[4] = {0,0,1,-1};
 	pair<int,int> targetPosition = {position.first+di[direction], position.second+dj[direction]};
-	if(targetPosition.first < 0 || targetPosition.first >= worldMap->size() || targetPosition.second < 0 || targetPosition.second >= worldMap->get(0).size()){
+	if(targetPosition.first < 0 || targetPosition.first >= worldMap->size() || targetPosition.second < 0 || targetPosition.second >= worldMap->get(0)->size()){
 		return NULL;
 	}
-	return worldMap->get(targetPosition.first).get(targetPosition.second);
+	return worldMap->get(targetPosition.first)->get(targetPosition.second);
 }
 
 void Player::changeDirection(DirectionType newDirection){
