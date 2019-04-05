@@ -154,6 +154,12 @@ class LinkedList<T*>{
             }
         }
 
+        void removeAll(){
+            for (typename vector<T*>::iterator itr = data.begin(); itr != data.end(); itr++){
+                delete (*itr);
+            }
+        }
+
         /*
             Fungsi get() mengembalikan elemen pada LinkedList dengan indeks ke _indeks.
         */

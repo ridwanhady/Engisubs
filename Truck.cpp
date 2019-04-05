@@ -2,7 +2,7 @@
 #include "Product.hpp"
 //Constructor, menginisialisasi posisi
 Truck::Truck(pair<int,int> _position) : Facility(_position){
-
+	setNotUsableTurns(0);
 }
 /**
  * Interact() berguna untuk berinteraksi dengan 'Truck'.
@@ -18,7 +18,7 @@ void Truck::interact(Player* _p){
 		_p->setUang(_p->getUang() + inventTemp.get(i)->getPrice());
 	}
 	//Todo: Delete inventory
-	_p->getInventory().~LinkedList();
+	_p->getInventory().removeAll();
 }
 
 
