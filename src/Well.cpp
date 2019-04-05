@@ -2,7 +2,7 @@
 
 //Constructor, menginisialisasi posisi
 Well::Well(pair<int,int> _position) : Facility(_position){
-
+	initObject(WELL, 'W');
 }
 /**
  * Interact berguna untuk berinteraksi dengan 'Well'.

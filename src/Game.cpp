@@ -32,7 +32,14 @@ Game::Game(){
 			if(rand()%100 <= 90){
 				temp->add(new Grassland({i,j},0));
 			} else {
-				temp->add(new Truck({i,j}));
+				int r = rand()%3;
+				if (r == 0){
+					temp->add(new Truck({i,j}));
+				}else if (r == 1){
+					temp->add(new Mixer({i, j}));
+				}else {
+					temp->add(new Well({i, j}));
+				}
 			}
 		}
 		

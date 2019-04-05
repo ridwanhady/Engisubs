@@ -6,7 +6,7 @@ using namespace std;
 //Constructor, menginisialisasi posisi
 Truck::Truck(pair<int,int> _position) : Facility(_position){
 	this->notUsableTurns = 0;
-	objectSymbol = 'T';
+	initObject(TRUCK, 'T');
 }
 /**
  * Interact() berguna untuk berinteraksi dengan 'Truck'.

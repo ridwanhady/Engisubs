@@ -7,7 +7,7 @@ using namespace std;
 
 //Constructor, menginisialisasi posisi
 Mixer::Mixer(pair<int,int> _position) : Facility(_position){
-
+	initObject(MIXER, 'M');
 }
 
 //Implementasi virtual interact()
