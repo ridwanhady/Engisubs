@@ -18,6 +18,15 @@ class LinkedList{
         */
         vector<T> data;
     public:
+
+        LinkedList(){
+
+        }
+
+        LinkedList(LinkedList<T> &lL){
+            
+        }
+
         /*
             Fungsi find() mencari elemen pada LinkedList dan mengembalikan indeks dari
             elemen tersebut. Jika tidak ditemukan maka akan mengembalikan nilai -1.
@@ -73,8 +82,8 @@ class LinkedList{
         /*
             Fungsi get() mengembalikan elemen pada LinkedList dengan indeks ke _indeks.
         */
-        T get(int _indeks){
-            return data.at(_indeks);
+        T& get(int _indeks){
+            return data[_indeks];
         }
 
         int size(){
@@ -164,7 +173,7 @@ class LinkedList<T*>{
             Fungsi get() mengembalikan elemen pada LinkedList dengan indeks ke _indeks.
         */
         T* get(int _indeks){
-            return data.at(_indeks);
+            return data[_indeks];
         }
 
         int size(){
