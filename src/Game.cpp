@@ -30,7 +30,14 @@ Game::Game(){
 		LinkedList<Cell*>* temp = new LinkedList<Cell*> ();
 		for(int j = 0; j < m; j++){
 			if(rand()%100 <= 90){
-				temp->add(new Grassland({i,j},0));
+				int r = rand()%3;
+				if (r == 0){
+					temp->add(new Grassland({i,j},0));
+				}else if (r == 1){
+					temp->add(new Barn({i,j},0));
+				}else {
+					temp->add(new Coop({i,j},0));
+				}
 			} else {
 				int r = rand()%3;
 				if (r == 0){
