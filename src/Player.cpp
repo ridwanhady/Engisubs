@@ -228,6 +228,7 @@ void Player::move(DirectionType direction) {
 		position = {position.first+di[direction], position.second+dj[direction]};
 		currentLand = (Land*)worldMap->get(position.first)->get(position.second);
 		currentLand->setObjectHere(this);
+		this->direction = direction;
 	} else {
 		cout<<"Langkah tidak valid"<<endl;
 	}

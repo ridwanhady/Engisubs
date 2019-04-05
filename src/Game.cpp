@@ -166,6 +166,11 @@ void Game::updateGame(){
 			farmAnimalList.get(i)->eat();
 		}
 		farmAnimalList.get(i)->updateCondition();
+		if(farmAnimalList.get(i)->getTimeUntilDead() == 0){
+			farmAnimalList.remove(farmAnimalList.get(i));
+			i--;
+			continue;
+		}
 		//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 		int moveDirection;
 		pair<int,int> curPos = farmAnimalList.get(i)->getPosition();
