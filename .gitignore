@@ -32,4 +32,4 @@ CMakeCache.txt
 
 Makefile
 
-c_make_install.cmake
+cmake_install.cmake
