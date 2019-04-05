@@ -24,7 +24,7 @@ void Dog::produceMeat(Player& _player){
     }
 }
 
-bool isKillable(){
+bool Dog::isKillable(){
     return true;
 }
 

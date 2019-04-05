@@ -22,7 +22,7 @@ void TRex::produceMeat(Player& _player){
     }
 }
 
-bool isKillable(){
+bool TRex::isKillable(){
     return true;
 }
 

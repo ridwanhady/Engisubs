@@ -23,7 +23,7 @@ void Pterodactyl::produceEgg(Player& _player){
     }
 }
 
-bool isKillable(){
+bool Pterodactyl::isKillable(){
     return false;
 }
 

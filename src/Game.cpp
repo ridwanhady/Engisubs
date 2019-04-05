@@ -172,7 +172,7 @@ void Game::updateGame(){
 			Cell *targetCell = cellList.get(i).get(j);
 			if(targetCell->getObjectType() == TRUCK){
 				Truck *targetTruck = dynamic_cast<Truck*>(targetCell);
-				targetTruck->setNotUsableTurns = max(0,targetTruck->getNotUsableTurns()-1);
+				targetTruck->setNotUsableTurns(max(0,targetTruck->getNotUsableTurns()-1));
 			}
 		}
 	}

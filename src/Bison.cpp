@@ -25,7 +25,7 @@ void Bison::produceMilk(Player& _player){
     }
 }
 
-bool isKillable(){
+bool Bison::isKillable(){
     return true;
 }
 

@@ -18,7 +18,7 @@ void Map::initMap(string filename){
     ifstream mapfile;
     mapfile.open (filename);
     int i = 0;
-    while(!mapfile.eof) // To get you all the lines.
+    while(!mapfile.eof()) // To get you all the lines.
         {
             int j = 0;
             LinkedList<LinkedList<Cell*>> cellContent;
