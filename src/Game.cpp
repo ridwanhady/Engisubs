@@ -46,6 +46,7 @@ Game::Game(){
 			}*/
 		}
 		cellList.add(temp);
+		cout<<cellList.get(i).size()<<endl;
 	}
 	//Init animal
 	showMap();
