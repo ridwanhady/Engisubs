@@ -183,7 +183,7 @@ void Game::updateGame(){
 		do{
 			moveDirection = rand()%5;
 			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){
-				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+				//farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
 				break;
 			} else if(moveDirection == 4){
 				cout<<"Berhenti"<<endl;
