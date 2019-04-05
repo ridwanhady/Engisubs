@@ -1,0 +1,60 @@
+\hypertarget{classTruck}{}\doxysection{Truck Class Reference}
+\label{classTruck}\index{Truck@{Truck}}
+Inheritance diagram for Truck\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classTruck}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTruck_a2c943a2f4b4ac9750edea29813fe21ea}\label{classTruck_a2c943a2f4b4ac9750edea29813fe21ea}} 
+{\bfseries Truck} (pair$<$ int, int $>$ \+\_\+position)
+\item 
+void \mbox{\hyperlink{classTruck_aa62d87447fa34e641ee7d76a79ad4f4e}{interact}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$\+\_\+p)
+\item 
+bool \mbox{\hyperlink{classTruck_a9c350ee00b52bd28a77fa1aeea8f284b}{is\+Usable}} ()
+\item 
+int \mbox{\hyperlink{classTruck_ac90c44907ab23614db882e3677f5fd24}{get\+Not\+Usable\+Turns}} ()
+\item 
+void \mbox{\hyperlink{classTruck_a41e64f145614aa99340d12e3450b9383}{set\+Not\+Usable\+Turns}} (int nut)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTruck_ac90c44907ab23614db882e3677f5fd24}\label{classTruck_ac90c44907ab23614db882e3677f5fd24}} 
+\index{Truck@{Truck}!getNotUsableTurns@{getNotUsableTurns}}
+\index{getNotUsableTurns@{getNotUsableTurns}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{getNotUsableTurns()}{getNotUsableTurns()}}
+{\footnotesize\ttfamily int Truck\+::get\+Not\+Usable\+Turns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get\+Not\+Usable\+Turns akan mengembalikan nilai dari atribut not\+Usable\+Turns. \mbox{\Hypertarget{classTruck_aa62d87447fa34e641ee7d76a79ad4f4e}\label{classTruck_aa62d87447fa34e641ee7d76a79ad4f4e}} 
+\index{Truck@{Truck}!interact@{interact}}
+\index{interact@{interact}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{interact()}{interact()}}
+{\footnotesize\ttfamily void Truck\+::interact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{\+\_\+p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Interact() berguna untuk berinteraksi dengan \textquotesingle{}\mbox{\hyperlink{classTruck}{Truck}}\textquotesingle{}. Berinteraksi dengan \textquotesingle{}\mbox{\hyperlink{classTruck}{Truck}}\textquotesingle{} akan menjual semua barang yang ada di Inventory player, dan menambah uang pemain sejumlah harga barang -\/ barang tersebut. Setelah interact digunakan, Interact tidak akan bisa digunakan untuk sementara waktu. 
+
+Reimplemented from \mbox{\hyperlink{classObject}{Object}}.
+
+\mbox{\Hypertarget{classTruck_a9c350ee00b52bd28a77fa1aeea8f284b}\label{classTruck_a9c350ee00b52bd28a77fa1aeea8f284b}} 
+\index{Truck@{Truck}!isUsable@{isUsable}}
+\index{isUsable@{isUsable}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{isUsable()}{isUsable()}}
+{\footnotesize\ttfamily bool Truck\+::is\+Usable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classTruck_a9c350ee00b52bd28a77fa1aeea8f284b}{is\+Usable()}} akan mengembalikan True jika \mbox{\hyperlink{classTruck}{Truck}} bisa digunakan, yaitu, bisa dikenai fungsi Interact(). Ditunjukan dengan value dari atribut not\+Usable\+Turns yang bernilai 0 \mbox{\Hypertarget{classTruck_a41e64f145614aa99340d12e3450b9383}\label{classTruck_a41e64f145614aa99340d12e3450b9383}} 
+\index{Truck@{Truck}!setNotUsableTurns@{setNotUsableTurns}}
+\index{setNotUsableTurns@{setNotUsableTurns}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{setNotUsableTurns()}{setNotUsableTurns()}}
+{\footnotesize\ttfamily void Truck\+::set\+Not\+Usable\+Turns (\begin{DoxyParamCaption}\item[{int}]{nut }\end{DoxyParamCaption})}
+
+set\+Not\+Usable\+Turns akan mengubah nilai dari not\+Usable\+Turn menjadi sebesar nut. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Truck.\+hpp\item 
+src/Truck.\+cpp\end{DoxyCompactItemize}
