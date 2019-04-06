@@ -50,8 +50,8 @@ void Platypus::produceEgg(Player& _player){
 }
 
 void Platypus::eat(){
-    FarmAnimal::eat();
     cout <<"testPlatypusMakan1"  << endl;
+    FarmAnimal::eat();
     setIsProductProduced(false);
     cout << "testPlatypusMakan" << endl;
     initializeEggProducing(new PlatypusEgg(HARGA_TELUR_PLATYPUS, getName()));
