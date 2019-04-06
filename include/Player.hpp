@@ -15,7 +15,7 @@
 #include "FarmAnimal.hpp"
 #include "LinkedList.hpp"
 
-#define MAX_WATER 100
+#define MAX_WATER 10
 #define MAX_INVENTORY 10
 
 using namespace std;
@@ -118,13 +118,15 @@ public:
 			Mengubah arah hadap pemain
 		*/
 		void changeDirection(DirectionType newDirection);	
+
+		//Inventori pemain.
+    	LinkedList <Product*> inventory;
 	protected:
 	 	//Nama pemain.
 		string player_name;
 		//Kapasitas air.
 		int water;
-		//Inventori pemain.
-    	LinkedList <Product*> inventory;
+		
 		//Uang pemain.
 		double uang;
 		//Posisi pemain.

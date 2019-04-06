@@ -164,6 +164,7 @@ void Player::interact(){
 			Land *targetLand = dynamic_cast<Land*>(targetCell);
 			if(targetLand->getObjectHere() != NULL){
 				targetLand->getObjectHere()->interact(this);
+				cout << "INTERACT DIPANGGIL" << endl;
 				return;
 			}
 		} else {
@@ -215,7 +216,16 @@ void Player::kill(LinkedList<FarmAnimal*> &farmAnimalList) {
 void Player::grow(){
 	Cell *targetCell = worldMap->get(position.first)->get(position.second);
 	Land *targetLand = dynamic_cast<Land*>(targetCell);
-	targetLand->grow();
+	if (!targetLand->isGrown()) {
+		if (water > 0){
+			targetLand->grow();
+			water--;
+		} else{
+			cout << "Air Anda tidak cukup" << endl;
+		}
+	} else {
+		cout << "Sudah ada Rumput di Land ini, mau dijadiin Pohon?" << endl;
+	}
 }
 
 /**

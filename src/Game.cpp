@@ -32,11 +32,11 @@ Game::Game(){
 			if(rand()%100 <= 90){
 				int r = rand()%3;
 				if (r == 0){
-					temp->add(new Grassland({i,j},0));
+					temp->add(new Grassland({i,j},1));
 				}else if (r == 1){
-					temp->add(new Barn({i,j},0));
+					temp->add(new Barn({i,j},1));
 				}else {
-					temp->add(new Coop({i,j},0));
+					temp->add(new Coop({i,j},1));
 				}
 			} else {
 				int r = rand()%3;
@@ -61,7 +61,7 @@ Game::Game(){
 		while(!isValid(randPosition)){
 			randPosition = {rand()%n, rand()%m};
 		}
-		int randAnimal = rand()%6;
+		int randAnimal = 3;//rand()%6;
 		if(randAnimal == 0){
 			Chicken *x = new Chicken(randPosition, "Joko", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
 			farmAnimalList.add(x);
@@ -140,7 +140,7 @@ void Game::gameLoop(){
 			cout<<"Command yang tersedia:"<<endl;
 			cout<<"UP,  DOWN,  RIGHT,  LEFT,  TALK,  INTERACT,  KILL,  GROW"<<endl;
 			cout<<"Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain):"<<endl;
-			cout<<"LU,  LD,  LL,  LR,  QUIT"<<endl;
+			cout<<"LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS"<<endl;
 		} else if(command == "UP"){
 			mainPlayer->move(UP);
 			updateGame();
@@ -181,6 +181,9 @@ void Game::gameLoop(){
 				cout << mainPlayer->getInventory().get(i)->getName() << ",";
 			}
 			cout << endl;
+		} else if (command == "STATUS") {
+			cout << "WATER : " << mainPlayer->getWater() << endl;
+			cout << "UANG : " << mainPlayer->getUang() << endl;
 		} else {
 			cout<<"Command tidak valid"<<endl;
 		}

@@ -17,15 +17,15 @@ Truck::Truck(pair<int,int> _position) : Facility(_position){
  * digunakan untuk sementara waktu.
  */
 void Truck::interact(Player* _p){
-	LinkedList <Product *> inventTemp = _p->getInventory();
-	for(int i = 0; i < inventTemp.size(); i++){
-		_p->setUang(_p->getUang() + inventTemp.get(i)->getPrice());
+	//LinkedList <Product *> inventTemp = _p->getInventory();
+	for(int i = 0; i < _p->inventory.size(); i++){
+		_p->setUang(_p->getUang() + _p->inventory.get(i)->getPrice());
 	}
 	setNotUsableTurns(10);
 	cout << "Isi Inventori Sekarang Kosong!" << endl;
 
 	//Todo: Delete inventory
-	_p->getInventory().removeAll();
+	_p->inventory.removeAll();
 }
 
 

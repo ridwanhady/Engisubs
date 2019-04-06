@@ -96,6 +96,7 @@ void FarmAnimal::eat(){
         timeUntilHungry = TIME_UNTIL_HUNGRY_DEFAULT;
         timeUntilDead = TIME_UNTIL_DEAD_DEFAULT;
         (*landPos).ungrow();
+        cout << "MAKAN PHASE 2" << endl;
     }
 }
 
