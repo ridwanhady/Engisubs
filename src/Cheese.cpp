@@ -4,7 +4,7 @@ LinkedList<FarmProductType> Cheese::resep;
 
 //Konstruktor Cheese
 Cheese::Cheese(int _price) {
-    initializeProduct(_price, SIDEPRODUCT, CHEESE, '?');
+    initializeProduct(_price, SIDEPRODUCT, CHEESE, "Keju");
     InitResep();
 }
 

@@ -4,7 +4,7 @@ LinkedList<FarmProductType> Ekado::resep;
 
 //Konstruktor Cheese
 Ekado::Ekado(int _price)  {
-    initializeProduct(_price, SIDEPRODUCT, EKADO, '?');
+    initializeProduct(_price, SIDEPRODUCT, EKADO, "Ekado");
     InitResep();
 }
 

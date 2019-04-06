@@ -4,7 +4,7 @@ LinkedList<FarmProductType> Steak::resep;
 
 //Konstruktor Steak
 Steak::Steak(int _price)  {
-    initializeProduct(_price, SIDEPRODUCT, STEAK, '?');
+    initializeProduct(_price, SIDEPRODUCT, STEAK, "Steak");
     InitResep();
 }
 

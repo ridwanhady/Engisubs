@@ -16,9 +16,13 @@ ProductType Product::getProductType() const {
 	return productType;
 }
 
-void Product::initializeProduct(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol) {
+void Product::initializeProduct(int _price,  ProductType _productType, ObjectType _objectType, string _name) {
 	price = _price;
 	productType = _productType;
 	objectType = _objectType;
-	objectSymbol = _objectSymbol;
+	name = _name;
+}
+
+string Product::getName()  {
+	return name;
 }

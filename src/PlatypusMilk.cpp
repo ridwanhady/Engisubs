@@ -3,5 +3,5 @@
 //Constructor menerima harga, dan mempassing producer untuk superclass.
 PlatypusMilk::PlatypusMilk(int _price, string _producer){
 	initializeFarmProduct(_producer);
-	initializeProduct(_price, FARMPRODUCT, PLATYPUS_MILK, '?');
+	initializeProduct(_price, FARMPRODUCT, PLATYPUS_MILK, "Susu Platypus");
 }

@@ -4,7 +4,7 @@ LinkedList<FarmProductType> Mayonaise::resep;
 
 //Konstruktor Cheese
 Mayonaise::Mayonaise(int _price)  {
-    initializeProduct(_price, SIDEPRODUCT, MAYONAISE, '?');
+    initializeProduct(_price, SIDEPRODUCT, MAYONAISE, "Mayonaise");
     InitResep();
 }
 

@@ -129,25 +129,18 @@ void Game::startGame(){
 void Game::gameLoop(){
 	string command;
 	while(isGameStarted and farmAnimalList.size() > 0){
+		cout<< "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl<<endl;
 		showMap();
-		cout<<"Input: "<<endl;
-		cin>>command;
+		cout<< "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl<<endl;
+		cout<<"Input: "; cin>>command;
+		cout << endl;
+		cout<< "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl;
 		if(command == "HELP"){
+			cout << endl;
 			cout<<"Command yang tersedia:"<<endl;
-			cout<<"UP"<<endl;
-			cout<<"DOWN"<<endl;
-			cout<<"RIGHT"<<endl;
-			cout<<"LEFT"<<endl;
-			cout<<"TALK"<<endl;
-			cout<<"INTERACT"<<endl;
-			cout<<"KILL"<<endl;
-			cout<<"GROW"<<endl;
-			cout<<"Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain)"<<endl;
-			cout<<"LU"<<endl;
-			cout<<"LD"<<endl;
-			cout<<"LL"<<endl;
-			cout<<"LR"<<endl;
-			cout<<"QUIT"<<endl;
+			cout<<"UP,  DOWN,  RIGHT,  LEFT,  TALK,  INTERACT,  KILL,  GROW"<<endl;
+			cout<<"Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain):"<<endl;
+			cout<<"LU,  LD,  LL,  LR,  QUIT"<<endl;
 		} else if(command == "UP"){
 			mainPlayer->move(UP);
 			updateGame();
@@ -185,7 +178,7 @@ void Game::gameLoop(){
 		} else if(command == "SHOW") {
 			cout << "Berikut adalah isi dari Inventori:" << endl;
 			for (int i = 0 ; i < mainPlayer->getInventory().size() ; i ++) {
-				cout << mainPlayer->getInventory().get(i) << ",";
+				cout << mainPlayer->getInventory().get(i)->getName() << ",";
 			}
 			cout << endl;
 		} else {
@@ -232,7 +225,8 @@ void Game::updateGame(){
 		do{
 			moveDirection = rand()%5;
 			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){
-				//farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
+				//Fungsi untuk gerak random
+				farmAnimalList.get(i)->move(dir[moveDirection], &cellList);
 				break;
 			} else if(moveDirection == 4){
 				cout<<"Berhenti"<<endl;
@@ -263,8 +257,9 @@ void Game::showMap(){
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
 			cellList.get(i)->get(j)->render();
+			cout << "   ";
 		}
-		cout<<endl;
+		cout << endl << endl << endl;
 	}
 }
 

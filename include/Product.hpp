@@ -2,6 +2,7 @@
 #define _PRODUCT_HPP
 
 #include "Object.hpp"
+#include <string>
 
 //Enumerator untuk tipe produk.
 enum ProductType {
@@ -14,6 +15,7 @@ class Product : public Object{
 	protected:
 		//Tipe dari produk ini.
 		ProductType productType;
+		string name;
 
 		//Harga dari produk ini.
 		int price;
@@ -27,7 +29,10 @@ class Product : public Object{
 		//Mengambil tipe produk.
 		ProductType getProductType() const;
 
-		void initializeProduct(int _price,  ProductType _productType, ObjectType _objectType, char _objectSymbol);
+		void initializeProduct(int _price,  ProductType _productType, ObjectType _objectType, string _name);
+
+		//Mengambil nama produk
+		string getName() ;
 
 };
 

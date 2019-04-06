@@ -91,8 +91,10 @@ void FarmAnimal::setLandPos(Land *_newLand){
 
 //Method untuk makan rumput di tempat hewan itu berdiri
 void FarmAnimal::eat(){
+    cout << "MAKAN" << endl;
     if ((*landPos).isGrown()){
         timeUntilHungry = TIME_UNTIL_HUNGRY_DEFAULT;
+        timeUntilDead = TIME_UNTIL_DEAD_DEFAULT;
         (*landPos).ungrow();
     }
 }
