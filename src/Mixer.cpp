@@ -69,19 +69,19 @@ void Mixer::interact(Player* _p){
 
 					if (isFoundIdx1 && isFoundIdx2) {
 						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+						_p->inventory.remove( _p->inventory.get(idxInventory_1));
+						_p->inventory.remove( _p->inventory.get(idxInventory_2));
 
 						//Tambahkan Cheese pada Inventori:
 						//Construct newCheese
-						( (_p)->getInventory() ).add(new Cheese(CHEESE_PRICE));
+						_p->inventory.add(new Cheese(CHEESE_PRICE));
 
 						cout << "MEMBUAT CHEESE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
 						cout << "Gagal membuat product karena dua tipe sama atau tidak sesuai tipe" << endl;
 					}
 				} else if (daftarSideProduct.get(idxSideProd) == STEAK){
-					//Cari resep yang digunakan untuk membuat cheese
+					//Cari resep yang digunakan untuk membuat STEAK
 					for (idxResep = 0 ; idxResep < Steak::getResep().size() ; idxResep++) {
 						//Kalau inventory yang dipilih pemain cocok dengan resep STEAK
 						if (FarmProduct::getFarmProductType( ((_p)->getInventory().get(idxInventory_1))->getObjectType()) == Steak::getResepwithIdx(idxResep)) {
@@ -105,12 +105,12 @@ void Mixer::interact(Player* _p){
 
 					if (isFoundIdx1 && isFoundIdx2) {
 						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+						_p->inventory.remove( _p->inventory.get(idxInventory_1));
+						_p->inventory.remove( _p->inventory.get(idxInventory_2));
 
 						//Tambahkan Steak pada Inventori:
 						//Construct newSteak
-						( (_p)->getInventory() ).add(new Steak(STEAK_PRICE));
+						_p->inventory.add(new Steak(STEAK_PRICE));
 
 						cout << "MEMBUAT STEAK BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
@@ -141,12 +141,12 @@ void Mixer::interact(Player* _p){
 
 					if (isFoundIdx1 && isFoundIdx2) {
 						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+						_p->inventory.remove( _p->inventory.get(idxInventory_1));
+						_p->inventory.remove( _p->inventory.get(idxInventory_2));
 
-						//Tambahkan EKADO pada Inventori:
+						//Tambahkan Ekado pada Inventori:
 						//Construct newEkado
-						( (_p)->getInventory() ).add(new Ekado(EKADO_PRICE));
+						_p->inventory.add(new Ekado(EKADO_PRICE));
 
 						cout << "MEMBUAT EKADO BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {
@@ -177,12 +177,12 @@ void Mixer::interact(Player* _p){
 
 					if (isFoundIdx1 && isFoundIdx2) {
 						//Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_1)));
-						( (_p)->getInventory() ).remove( ((_p)->getInventory().get(idxInventory_2)));
+						_p->inventory.remove( _p->inventory.get(idxInventory_1));
+						_p->inventory.remove( _p->inventory.get(idxInventory_2));
 
 						//Tambahkan Mayonaise pada Inventori:
 						//Construct newMayonaise
-						( (_p)->getInventory() ).add(new Mayonaise(MAYONAISE_PRICE));
+						_p->inventory.add(new Mayonaise(MAYONAISE_PRICE));
 
 						cout << "MEMBUAT MAYONAISE BERHASIL! Dua Barang dihilangkan dari inventori Anda!" << endl;
 					} else {

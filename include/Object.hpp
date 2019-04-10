@@ -44,8 +44,8 @@ enum DirectionType{
 
 //Enumerator untuk tipe FarmProduct.
 enum FarmProductType {
-    EGG,
     MEAT,
+	EGG,
     MILK,
 	NOT_FOUND
 };

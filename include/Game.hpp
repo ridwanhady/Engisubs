@@ -20,6 +20,9 @@ class Game{
 	//Mengecek kevalidan suatu koordinat
 	bool isValid(pair<int,int> pos);
 
+	//Berguna untuk convert indeks ke String.
+	string ConvertIdxToString(int idxResep);
+
 	//Melakukan pergerakan secara random ke sekitar object
 	pair<int,int> randomMove(pair<int,int> pos);
 
