@@ -11,8 +11,6 @@ MilkProducing::MilkProducing(){
 void MilkProducing::initializeMilkProducing(Milk* _milk){
     if (milk == NULL){
         milk = _milk;
-    }else {
-        delete _milk;
     }
 }
 
