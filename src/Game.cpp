@@ -130,7 +130,20 @@ void Game::startGame(){
 //Pada fungsi ini game berjalan.
 void Game::gameLoop(){
 	string command;
+
 	while(isGameStarted and farmAnimalList.size() > 0){
+		cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl;
+		cout << "STATUS " << endl;
+		cout << "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl<<endl;
+		cout << "NAMA :" << mainPlayer->getName() << endl;
+		cout << "WATER : " << mainPlayer->getWater() << endl;
+		cout << "UANG : " << mainPlayer->getUang() << endl;
+		cout << "Berikut adalah isi dari Inventori:" << endl;
+		for (int i = 0 ; i < mainPlayer->getInventory().size() ; i ++) {
+			cout << "[" << i << "] " << mainPlayer->getInventory().get(i)->getName() << endl;
+		}
+		cout << endl << endl;
+
 		cout<< "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl<<endl;
 		showMap();
 		cout<< "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - " << endl<<endl;
@@ -213,7 +226,14 @@ void Game::gameLoop(){
 		} else if(command == "SHOW") {
 			cout << "Berikut adalah isi dari DaftarProduct" << endl;
 			for (int i = 0 ; i < daftarProduct.size() ; i++) {
-				cout << daftarProduct.get(i) << endl;
+				if (daftarProduct.get(i) == 21)
+					cout << "[" << i << "] " << "CHEESE" << endl;
+				else if (daftarProduct.get(i) == 22)
+					cout << "[" << i << "] " << "EKADO" << endl;
+				else if (daftarProduct.get(i) == 23)
+					cout << "[" << i << "] " << "MAYONAISE" << endl;
+				else if (daftarProduct.get(i) == 24)
+					cout << "[" << i << "] " <<"STEAK" << endl;
 			}
 		} else if (command == "STATUS") {
 			cout << "WATER : " << mainPlayer->getWater() << endl;
@@ -224,8 +244,41 @@ void Game::gameLoop(){
 			}
 			cout << endl;
 		} else if (command == "SHOWRESEP"){
-			for (int i = 0 ; i < Cheese::getResep().size() ; i++) {
-				cout << Cheese::getResepwithIdx(i) << endl;
+			cout << "Berikut adalah isi dari DaftarProduct" << endl;
+			for (int i = 0 ; i < daftarProduct.size() ; i++) {
+				if (daftarProduct.get(i) == 21)
+					cout << "CHEESE" << endl;
+				else if (daftarProduct.get(i) == 22)
+					cout << "EKADO" << endl;
+				else if (daftarProduct.get(i) == 23)
+					cout << "MAYONAISE" << endl;
+				else if (daftarProduct.get(i) == 24)
+					cout << "STEAK" << endl;
+			}
+			cout << "Pilih indeks dari Daftar Product!" << endl;
+			int idxDaftarProduct;
+			cin >> idxDaftarProduct;
+			cout << "Resep untuk membuat product adalah:" << endl;
+			if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
+				if (idxDaftarProduct == 0) {
+					for (int i = 0 ; i < Cheese::getResep().size() ; i++) {
+						cout << ConvertIdxToString(Cheese::getResepwithIdx(i)) << endl;
+					}
+				} else if (idxDaftarProduct == 1) {
+					for (int i = 0 ; i < Ekado::getResep().size() ; i++) {
+						cout << ConvertIdxToString(Ekado::getResepwithIdx(i)) << endl;
+					}
+				} else if (idxDaftarProduct == 2) {
+					for (int i = 0 ; i < Mayonaise::getResep().size() ; i++) {
+						cout << ConvertIdxToString(Mayonaise::getResepwithIdx(i)) << endl;
+					}
+				} else if (idxDaftarProduct == 3) {
+					for (int i = 0 ; i < Steak::getResep().size() ; i++) {
+						cout << ConvertIdxToString(Steak::getResepwithIdx(i)) << endl;
+					}
+				}
+			} else {
+				cout << "Indeks tidak valid" << endl;
 			}
 
 		} else {
@@ -235,6 +288,15 @@ void Game::gameLoop(){
 	if(farmAnimalList.size() == 0){
 		cout << "Sudah tidak ada hewan lagi di game"<<endl;
 	}
+}
+
+string Game::ConvertIdxToString(int idxResep) {
+	if (idxResep == 0)
+		return "MEAT";
+	else if (idxResep == 1)
+		return "EGG";
+	else if (idxResep == 2)
+		return "MILK";
 }
 
 //Mengupdate seluruh state game
@@ -268,7 +330,7 @@ void Game::updateGame(){
 		//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 		int moveDirection;
 		pair<int,int> curPos = farmAnimalList.get(i)->getPosition();
-		cout << "HEWAN " << i << endl;
+		//cout << "HEWAN " << i << endl;
 		do{
 			moveDirection = rand()%5;
 			if(moveDirection < 4 and isValid({curPos.first+di[moveDirection],curPos.second+dj[moveDirection]})){

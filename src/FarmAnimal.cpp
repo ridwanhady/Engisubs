@@ -96,7 +96,6 @@ void FarmAnimal::eat(){
         timeUntilHungry = TIME_UNTIL_HUNGRY_DEFAULT;
         timeUntilDead = TIME_UNTIL_DEAD_DEFAULT;
         (*landPos).ungrow();
-        cout << "MAKAN PHASE 2" << endl;
     }
 }
 
@@ -111,7 +110,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
-                        cout << "BERGERAK KE " << position.first - 1 << " " << position.second << endl;
+                        //cout << "BERGERAK KE " << position.first - 1 << " " << position.second << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -128,7 +127,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
-                        cout << "BERGERAK KE " << position.first + 1 << " " << position.second << endl;
+                        //cout << "BERGERAK KE " << position.first + 1 << " " << position.second << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -145,7 +144,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
-                        cout << "BERGERAK KE " << position.first << " " << position.second - 1 << endl;
+                        //cout << "BERGERAK KE " << position.first << " " << position.second - 1 << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);
@@ -162,7 +161,7 @@ void FarmAnimal::move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* m
                 if ((*tempCell).isWalkable()){
                     Land* tempLand = dynamic_cast<Land*> (tempCell);
                     if (!(*tempLand).isOccupied()){
-                        cout << "BERGERAK KE " << position.first << " " << position.second + 1 << endl;
+                        //cout << "BERGERAK KE " << position.first << " " << position.second + 1 << endl;
                         landPos->setObjectHere(NULL);
                         landPos = tempLand;
                         landPos->setObjectHere(this);

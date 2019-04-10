@@ -99,7 +99,7 @@ class FarmAnimal : public Object {
       }
 
 			//Method untuk makan rumput di tempat hewan itu berdiri
-  		void eat();
+  		virtual void eat();
 
   		//Bergerak
   		void move(DirectionType direction, LinkedList<LinkedList<Cell*>*>* map);

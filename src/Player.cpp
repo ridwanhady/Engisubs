@@ -161,11 +161,11 @@ void Player::interact(){
 	Cell *targetCell = getCellInFront();
 	if(targetCell != NULL){
 		if(targetCell->isWalkable()){
-			cout << "NOT FAC" << endl;
+			cout << "Anda menjalankan fungsi Interact" << endl;
 			Land *targetLand = dynamic_cast<Land*>(targetCell);
 			if(targetLand->getObjectHere() != NULL){
 				targetLand->getObjectHere()->interact(this);
-				cout << "INTERACT DIPANGGIL" << endl;
+				//cout << "INTERACT DIPANGGIL" << endl;
 				return;
 			}
 		} else {

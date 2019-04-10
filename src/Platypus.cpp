@@ -50,10 +50,10 @@ void Platypus::produceEgg(Player& _player){
 }
 
 void Platypus::eat(){
-    cout <<"testPlatypusMakan1"  << endl;
+    //cout <<"testPlatypusMakan1"  << endl;
     FarmAnimal::eat();
     setIsProductProduced(false);
-    cout << "testPlatypusMakan" << endl;
+    //cout << "testPlatypusMakan" << endl;
     initializeEggProducing(new PlatypusEgg(HARGA_TELUR_PLATYPUS, getName()));
     initializeMilkProducing(new PlatypusMilk(HARGA_SUSU_PLATYPUS, getName()));
 }
@@ -63,12 +63,12 @@ void Platypus::talk(){
 }
 
 void Platypus::interact(Player* _p){
-    cout << "PLATYPUS INTERACT" << endl;
+    //cout << "PLATYPUS INTERACT" << endl;
     if (!getIsProductProduced()){
-        cout << "PLATYPUS INTERACT KEDUA" << endl;
+       // cout << "PLATYPUS INTERACT KEDUA" << endl;
         produceEgg(*_p);
         produceMilk(*_p);
-        cout << "PLATYPUS INTERACT KETIGA" << endl;
+        //cout << "PLATYPUS INTERACT KETIGA" << endl;
         setIsProductProduced(true);
     }
 }
