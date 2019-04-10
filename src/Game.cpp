@@ -1,6 +1,8 @@
 #include "../include/Game.hpp"
 #include <iostream>
 #include <time.h>
+#include <stdexcept>
+
 using namespace std;
 
 LinkedList<ObjectType> Game::daftarProduct;
@@ -142,29 +144,62 @@ void Game::gameLoop(){
 			cout<<"Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain):"<<endl;
 			cout<<"LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS"<<endl;
 		} else if(command == "UP"){
-			mainPlayer->move(UP);
-			updateGame();
+			try{
+				mainPlayer->move(UP);
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "DOWN"){
-			mainPlayer->move(DOWN);
-			updateGame();
+			try{
+				mainPlayer->move(DOWN);
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
+
 		} else if(command == "RIGHT"){
-			mainPlayer->move(RIGHT);
-			updateGame();
+			try{
+				mainPlayer->move(RIGHT);
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "LEFT"){
-			mainPlayer->move(LEFT);
-			updateGame();
+			try{
+				mainPlayer->move(LEFT);
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "TALK"){
-			mainPlayer->talk();
-			updateGame();
+			try{
+				mainPlayer->talk();
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "INTERACT"){
-			mainPlayer->interact();
-			updateGame();
+			try{
+				mainPlayer->interact();
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "KILL"){
-			mainPlayer->kill(farmAnimalList);
-			updateGame();
+			try{
+				mainPlayer->kill(farmAnimalList);
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "GROW"){
-			mainPlayer->grow();
-			updateGame();
+			try{
+				mainPlayer->grow();
+				updateGame();				
+			} catch (logic_error const& e){
+				cout<<e.what()<<endl;
+			}
 		} else if(command == "LU"){
 			mainPlayer->changeDirection(UP);
 		} else if(command == "LD"){

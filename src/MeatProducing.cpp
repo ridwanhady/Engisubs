@@ -6,6 +6,7 @@ Parameter diturunkan dari FarmAnimal.
 */
 MeatProducing::MeatProducing(){
     killable = true;
+    meat = NULL;
 }
 
 void MeatProducing::initializeMeatProducing(Meat* _meat){

@@ -22,8 +22,8 @@ MeatProducing
 */
 void Chicken::produceMeat(Player& _player){
     if (meat != NULL){
-        _player.addInventory(meat);
-        meat = NULL;
+        _player.addInventory(new ChickenMeat(HARGA_DAGING_AYAM, getName()));
+        delete meat;
     }
 }
 
@@ -34,8 +34,8 @@ MilkProducing
 */
 void Chicken::produceEgg(Player& _player){
     if (egg != NULL){
-        _player.addInventory(egg);
-        egg = NULL;
+        _player.addInventory(new ChickenEgg(HARGA_TELUR_AYAM, getName()));
+        delete egg;
     }
 }
 

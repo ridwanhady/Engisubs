@@ -22,8 +22,8 @@ MeatProducing
 */
 void Platypus::produceMeat(Player& _player){
     if (meat != NULL){
-        _player.addInventory(meat);
-        meat = NULL;
+        _player.addInventory(new PlatypusMeat(HARGA_DAGING_PLATYPUS, getName()));
+        delete meat;
     }
 }
 
@@ -33,8 +33,8 @@ MilkProducing
 */
 void Platypus::produceMilk(Player& _player){
     if (milk != NULL){
-        _player.addInventory(milk);
-        milk = NULL;
+        _player.addInventory(new PlatypusMilk(HARGA_SUSU_PLATYPUS, getName()));
+        delete milk;
     }
 }
 
@@ -44,8 +44,8 @@ EggProducing
 */
 void Platypus::produceEgg(Player& _player){
     if (egg != NULL){
-        _player.addInventory(egg);
-        egg = NULL;
+        _player.addInventory(new PlatypusEgg(HARGA_TELUR_PLATYPUS, getName()));
+        delete egg;
     }
 }
 

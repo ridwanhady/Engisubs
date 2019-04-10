@@ -14,15 +14,15 @@ Bison::Bison(pair<int,int> _position, string _name, Land* _landPos){
 
 void Bison::produceMeat(Player& _player){
     if (meat != NULL){
-        _player.addInventory(meat);
-        meat = NULL;
+        _player.addInventory(new BisonMeat(HARGA_DAGING_BISON, getName()));
+        delete meat;
     }
 }
 
 void Bison::produceMilk(Player& _player){
     if (milk != NULL){
-        _player.addInventory(milk);
-        milk = NULL;
+        _player.addInventory(new BisonMilk(HARGA_SUSU_BISON, getName()));
+        delete milk;
     }
 }
 

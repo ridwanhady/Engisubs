@@ -9,6 +9,7 @@
 #include "../include/Player.hpp"
 #include "../include/Facility.hpp"
 #include "../include/MeatProducing.hpp"
+#include <stdexcept>
 
 using namespace std;
 
@@ -148,7 +149,7 @@ void Player::setPosition(pair<int,int> _position){
 			return;
 		}
 	} 
-	cout<<"Tidak ada hewan disitu"<<endl;
+	throw logic_error("Tidak ada hewan disitu");
  }
 
 /**
@@ -175,7 +176,7 @@ void Player::interact(){
 			return;
 		}
 	}
-	cout<<"Tidak ada object yang bisa dilakukan interact disitu"<<endl;
+	throw logic_error("Tidak ada object yang bisa dilakukan interact disitu");
 }
 /*
 	Fungsi kosong dikarenakan terdapat virtual method interact
@@ -204,7 +205,7 @@ void Player::kill(LinkedList<FarmAnimal*> &farmAnimalList) {
 			}
 		}
 	} 
-	cout<<"Tidak ada hewan yang bisa disembelih disitu"<<endl;
+	throw logic_error("Tidak ada hewan yang bisa disembelih disitu");
 }
 
 /**
@@ -221,10 +222,10 @@ void Player::grow(){
 			targetLand->grow();
 			water--;
 		} else{
-			cout << "Air Anda tidak cukup" << endl;
+			throw logic_error("Air Anda tidak cukup");
 		}
 	} else {
-		cout << "Sudah ada Rumput di Land ini, mau dijadiin Pohon?" << endl;
+		throw logic_error("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
 	}
 }
 
@@ -244,7 +245,8 @@ void Player::move(DirectionType direction) {
 		currentLand->setObjectHere(this);
 		this->direction = direction;
 	} else {
-		cout<<"Langkah tidak valid"<<endl;
+		//cout<<"Langkah tidak valid"<<endl;
+		throw logic_error("Langkah tidak valid");
 	}
 }
 

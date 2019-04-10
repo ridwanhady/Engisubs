@@ -18,8 +18,8 @@ Method untuk memproduksi meat dan membuat hewan mati.
 */
 void TRex::produceMeat(Player& _player){
     if (meat != NULL){
-        _player.addInventory(meat);
-        meat = NULL;
+        _player.addInventory(new TRexMeat(HARGA_DAGING_TREX, getName()));
+        delete meat;
     }
 }
 

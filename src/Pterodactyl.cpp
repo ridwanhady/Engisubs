@@ -20,8 +20,8 @@ EggProducing
 void Pterodactyl::produceEgg(Player& _player){
     initObject(PTERODACTYL, 'L');
     if (egg != NULL){
-        _player.addInventory(egg);
-        egg = NULL;
+        _player.addInventory(new PterodactylEgg(HARGA_TELUR_PTERODACTYL, getName()));
+        delete egg;
     }
 }
 

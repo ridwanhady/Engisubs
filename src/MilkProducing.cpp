@@ -5,7 +5,7 @@ Constructor yang menerima parameter position, name, egg.
 Parameter diturunkan dari FarmAnimal.
 */
 MilkProducing::MilkProducing(){
-
+	milk = NULL;
 }
 
 void MilkProducing::initializeMilkProducing(Milk* _milk){

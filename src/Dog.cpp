@@ -20,8 +20,8 @@ MeatProducing
 */
 void Dog::produceMeat(Player& _player){
     if (meat != NULL){
-        _player.addInventory(meat);
-        meat = NULL;
+        _player.addInventory(new DogMeat(HARGA_DAGING_ANJING, getName()));
+        delete meat;
     }
 }
 
