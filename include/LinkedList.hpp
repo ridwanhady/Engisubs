@@ -156,12 +156,10 @@ class LinkedList<T*>{
         }
 
         void removeAll(){
-            data.clear();
-            /*
-            for (typename vector<T*>::iterator itr = data.begin(); itr != data.end(); itr++){
-                data.erase(itr);
+            for(int i = 0; i < data.size(); i++){
+                delete data[i];
             }
-            */
+            data.clear();
         }
 
         /*
