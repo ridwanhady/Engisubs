@@ -5,7 +5,7 @@
 #include "Land.hpp"
 
 #define TIME_UNTIL_HUNGRY_DEFAULT 0
-#define TIME_UNTIL_DEAD_DEFAULT 10
+#define TIME_UNTIL_DEAD_DEFAULT 1000
 
 class FarmAnimal : public Object {
 	protected:
