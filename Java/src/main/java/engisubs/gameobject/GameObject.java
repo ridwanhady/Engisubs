@@ -1,56 +1,4 @@
 package main.java.engisubs.gameobject;
-
-/**
- * Enumerator untuk Tipe - Tipe GameObject
- */
-enum GameObjectType {
-	PLAYER,
-	MIXER,
-	TRUCK,
-	WELL,
-	LAND,
-	CHICKEN,
-	PLATYPUS,
-	PTERODACTYL,
-	BISON,
-	DOG,
-	TREX,
-	CHICKEN_EGG,
-	PLATYPUS_EGG,
-	PTERODACTYL_EGG,
-	BISON_MEAT,
-	CHICKEN_MEAT,
-	DOG_MEAT,
-	PLATYPUS_MEAT,
-	TREX_MEAT,
-	BISON_MILK,
-	PLATYPUS_MILK,
-	CHEESE,
-	EKADO,
-	MAYONAISE,
-	STEAK
-};
-
-/**
- * Enumerator untuk Arah Gerak
- */
-enum DirectionType{
-	UP,
-	DOWN,
-	RIGHT,
-	LEFT
-};
-
-/** 
- * Enumerator untuk tipe FarmProduct.
- */
-enum FarmProductType {
-    MEAT,
-	EGG,
-    MILK,
-	NOT_FOUND
-};
-
 /**
  * Class GameObject adalah super parent dari hampir setiap kelas yang ada di dalam game
  * 
@@ -61,10 +9,6 @@ enum FarmProductType {
  * @author 115 - Edward Alexander Jaya
  */
 public class GameObject {
-	/**
-	 * Tipe dari suatu Objek, misalnya Product, TRex, etc
-	 */
-	
 	protected GameObjectType gameObjectType;
 	/**
 	 * Simbol dari suatu Objek yang nantinya 
@@ -95,7 +39,7 @@ public class GameObject {
 	 * render() akan mengeluarkan objectSymbol ke layar
 	 */
 	public void render(){
-		System.out.println(this.objectSymbol);
+		System.err.println(this.objectSymbol);
 	}
 
 	/**
@@ -104,7 +48,7 @@ public class GameObject {
 	 * @param _p
 	 */
 	public void interact(Player _p){
-		System.out.printerr("Must Be Override");
+		System.out.println("Must Be Override");
 	}
 
 	/**
@@ -112,7 +56,7 @@ public class GameObject {
 	 * @return ObjectType
 	 */
 	public GameObjectType getGameObjectType(){
-		return this.gameoObjectType;
+		return this.gameObjectType;
 	}
 
 	/**
@@ -120,8 +64,62 @@ public class GameObject {
 	 * @param _gameObjectType
 	 * @param _objectSymbol
 	 */
-	public iniGameObject(GameObjectType _gameObjectType, char _objectSymbol){
+	public void initGameObject(GameObjectType _gameObjectType, char _objectSymbol){
 		this.gameObjectType = _gameObjectType;
 		this.objectSymbol = _objectSymbol;
 	}
+
+		/**
+	 * Enumerator untuk Tipe - Tipe GameObject
+	 */
+	protected enum GameObjectType {
+		PLAYER,
+		MIXER,
+		TRUCK,
+		WELL,
+		LAND,
+		CHICKEN,
+		PLATYPUS,
+		PTERODACTYL,
+		BISON,
+		DOG,
+		TREX,
+		CHICKEN_EGG,
+		PLATYPUS_EGG,
+		PTERODACTYL_EGG,
+		BISON_MEAT,
+		CHICKEN_MEAT,
+		DOG_MEAT,
+		PLATYPUS_MEAT,
+		TREX_MEAT,
+		BISON_MILK,
+		PLATYPUS_MILK,
+		CHEESE,
+		EKADO,
+		MAYONAISE,
+		STEAK
+	};
+
+	/**
+	 * Enumerator untuk Arah Gerak
+	 */
+	protected enum DirectionType{
+		UP,
+		DOWN,
+		RIGHT,
+		LEFT
+	};
+
+	/** 
+	 * Enumerator untuk tipe FarmProduct.
+	 */
+	protected enum FarmProductType {
+		MEAT,
+		EGG,
+		MILK,
+		NOT_FOUND
+	};
+	/**
+	 * Tipe dari suatu Objek, misalnya Product, TRex, etc
+	 */
 }
