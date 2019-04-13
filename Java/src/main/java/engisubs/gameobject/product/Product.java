@@ -81,7 +81,7 @@ public class Product extends GameObject{
     /**
      * Enumerator Product Type
      */
-    enum ProductType {
+    public enum ProductType {
         FARMPRODUCT,
         SIDEPRODUCT
     };
