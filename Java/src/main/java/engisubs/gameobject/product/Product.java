@@ -3,20 +3,18 @@ package main.java.engisubs.gameobject.product;
 import main.java.engisubs.gameobject.GameObject;
 
 /**
- * Enumerator Product Type
- */
-enum ProductType {
-	FARMPRODUCT,
-	SIDEPRODUCT
-};
-
-/**
  * Class Product berisi informasi terkait product
  * Informasi yang dimiliki adalah nama product
  * dan harga dari product.
  * Kelas ini merupakan turunan dari kelas GameObject
+ * 
+ * @author 007 - Mohammad Ridwan Hady Arifin
+ * @author 025 - Ricky Yuliawan
+ * @author 070 - Aidil Rezjki Suljztan Syawaludin	
+ * @author 091 - Adyaksa Wisanggeni
+ * @author 115 - Edward Alexander Jay
  */
-public class Product extends GameObject{
+public class Product extends GameObject{   
     /**
      * productType berisi informasi terkait Tipe Product.
      * Tipe tipe product tersebut ada di dalam enumerator ProductType
@@ -80,4 +78,11 @@ public class Product extends GameObject{
         this.gameObjectType = _gameObjectType;
         this.productName = _productName;
     }
+    /**
+     * Enumerator Product Type
+     */
+    enum ProductType {
+        FARMPRODUCT,
+        SIDEPRODUCT
+    };
 }
