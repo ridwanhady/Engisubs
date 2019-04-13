@@ -2,25 +2,12 @@
 
 .DS_Store
 
-*.pdf
-
 *.gch
 
 *.exe
 
 *.o
 
-*.html
-
-*.tex
-
-*.eps
-
-*.js
-
-*.png
-
-*.sty
 
 *.bat
 
