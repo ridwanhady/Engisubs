@@ -53,6 +53,12 @@ enum FarmProductType {
 
 /**
  * Class GameObject adalah super parent dari hampir setiap kelas yang ada di dalam game
+ * 
+ * @author 007 - Mohammad Ridwan Hady Arifin
+ * @author 025 - Ricky Yuliawan
+ * @author 070 - Aidil Rezjki Suljztan Syawaludin	
+ * @author 091 - Adyaksa Wisanggeni
+ * @author 115 - Edward Alexander Jaya
  */
 public class GameObject {
 	/**
