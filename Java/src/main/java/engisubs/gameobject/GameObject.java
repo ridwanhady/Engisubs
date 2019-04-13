@@ -3,7 +3,7 @@ package main.java.engisubs.gameobject;
 /**
  * Enumerator untuk Tipe - Tipe GameObject
  */
-enum ObjectType {
+enum GameObjectType {
 	PLAYER,
 	MIXER,
 	TRUCK,
@@ -51,12 +51,15 @@ enum FarmProductType {
 	NOT_FOUND
 };
 
+/**
+ * Class GameObject adalah super parent dari hampir setiap kelas yang ada di dalam game
+ */
 public class GameObject {
 	/**
 	 * Tipe dari suatu Objek, misalnya Product, TRex, etc
 	 */
 	
-	protected ObjectType objectType;
+	protected GameObjectType gameObjectType;
 	/**
 	 * Simbol dari suatu Objek yang nantinya 
 	 * akan ditampilkan di layar, misal C untuk Ayam
@@ -102,17 +105,17 @@ public class GameObject {
 	 * getter untuk ObjectType
 	 * @return ObjectType
 	 */
-	public ObjectType getObjectType(){
-		return this.objectType;
+	public GameObjectType getGameObjectType(){
+		return this.gameoObjectType;
 	}
 
 	/**
 	 * Menginisialisasi GameObject menyesuaikan parameter yang ada
-	 * @param _objectType
+	 * @param _gameObjectType
 	 * @param _objectSymbol
 	 */
-	public iniGameObject(ObjectType _objectType, char _objectSymbol){
-		this.objectType = _objectType;
+	public iniGameObject(GameObjectType _gameObjectType, char _objectSymbol){
+		this.gameObjectType = _gameObjectType;
 		this.objectSymbol = _objectSymbol;
 	}
 }
