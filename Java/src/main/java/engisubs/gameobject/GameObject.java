@@ -69,10 +69,10 @@ public class GameObject {
 		this.objectSymbol = _objectSymbol;
 	}
 
-		/**
+	/**
 	 * Enumerator untuk Tipe - Tipe GameObject
 	 */
-	protected enum GameObjectType {
+	public enum GameObjectType {
 		PLAYER,
 		MIXER,
 		TRUCK,
@@ -103,7 +103,7 @@ public class GameObject {
 	/**
 	 * Enumerator untuk Arah Gerak
 	 */
-	protected enum DirectionType{
+	public enum DirectionType{
 		UP,
 		DOWN,
 		RIGHT,
@@ -113,7 +113,7 @@ public class GameObject {
 	/** 
 	 * Enumerator untuk tipe FarmProduct.
 	 */
-	protected enum FarmProductType {
+	public enum FarmProductType {
 		MEAT,
 		EGG,
 		MILK,
