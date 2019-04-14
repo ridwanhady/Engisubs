@@ -1,5 +1,6 @@
-package main.java.engisubs.gameobject.cell.land;
+package engisubs.gameobject.cell.land;
 
-abstract class Land extends Cell{
+import engisubs.gameobject.cell.*;
+public abstract class Land extends Cell{
     
 }

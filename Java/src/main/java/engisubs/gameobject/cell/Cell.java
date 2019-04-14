@@ -1,7 +1,7 @@
-package main.java.engisubs.gameobject.cell;
+package engisubs.gameobject.cell;
 
-import main.java.engisubs.gameobject.GameObject;;
+import engisubs.gameobject.GameObject;;
 
-abstract class Cell extends GameObject{
+public abstract class Cell extends GameObject{
 
 }
