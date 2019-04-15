@@ -1,4 +1,4 @@
-package engisubs.gameobject;
+package main.java.engisubs.gameobject;
 
 public class Player extends GameObject{
  	/**
@@ -50,7 +50,7 @@ public class Player extends GameObject{
 		setPosition(x,y);
 		initGameObject(PLAYER, 'P');
 		worldMap = _worldMap;
-		inventory = new LinkedList<Product>;
+		inventory = new LinkedList<Product>();
 	}
 	/**
 	 * Getter nama pemain
@@ -81,7 +81,7 @@ public class Player extends GameObject{
 	public void removeInventory(int idx){
 		try{
 			inventory.remove(idx);
-		} catch {
+		} catch (Exception e) {
 			System.err.println("Index tidak terdefinisi");
 		}
 		
@@ -207,7 +207,7 @@ public class Player extends GameObject{
 	 */
 	public void kill(){
 		Cell targetCell = getCellInFront();
-		if(targetCell != NULL and targetCell.isWalkable()){
+		if(targetCell != NULL && targetCell.isWalkable()){
 			Land targetLand = (targetCell);
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (targetLand.getObjectHere());
@@ -246,8 +246,8 @@ public class Player extends GameObject{
 	 * player sesuai dengan direction yang diberikan.
 	 */
 	public void move(DirectionType direction){
-		int di[4] = {-1,1,0,0};
-		int dj[4] = {0,0,1,-1};
+		int di[] = {-1,1,0,0};
+		int dj[] = {0,0,1,-1};
 		targetRow = currentRow+di[direction];
 		targetCol = currentCol+dj[direction];
 		if(isValid(targetPosition, worldMap)){
@@ -267,8 +267,8 @@ public class Player extends GameObject{
 	 * @return Cell
 	 */
 	public Cell getCellInFront(){
-		int di[4] = {-1,1,0,0};
-		int dj[4] = {0,0,1,-1};
+		int di[] = {-1,1,0,0};
+		int dj[] = {0,0,1,-1};
 		targetRow = currentRow+di[direction];
 		targetCol = currentCol+dj[direction];
 		if(targetRow < 0 || targetRow >= worldMap.size() || targetCol < 0 || targetCol >= worldMap.get(0).size()){
@@ -292,7 +292,7 @@ public class Player extends GameObject{
 	public boolean isValid(int row, int col){
 		int n = worldMap.size();
 		int m = (worldMap.get(0)).size();
-		if(row < 0 or row >= n or col < 0 or col >= m){
+		if(row < 0 || row >= n || col < 0 || col >= m){
 			return false;
 		}
 		Cell targetCell = worldMap.get(row).get(col);

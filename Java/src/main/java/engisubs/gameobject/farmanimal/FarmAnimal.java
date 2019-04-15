@@ -1,5 +1,3 @@
-package engisubs.gameobject.farmanimal;
-
 import engisubs.gameobject.GameObject;
 import engisubs.gameobject.cell.land.Land;
 
