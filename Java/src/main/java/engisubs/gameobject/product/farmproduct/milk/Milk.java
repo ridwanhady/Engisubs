@@ -1,4 +1,4 @@
-package engisubs.gameobject.product.farm_product.milk;
+package main.java.engisubs.gameobject.product.farmproduct.milk;
 
 import engisubs.gameobject.product.farm_product.*;
 /**

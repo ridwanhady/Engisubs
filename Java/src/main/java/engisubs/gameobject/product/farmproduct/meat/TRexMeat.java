@@ -1,4 +1,4 @@
-package engisubs.gameobject.product.farm_product.meat;
+package main.java.engisubs.gameobject.product.farmproduct.meat;
 /**
  * TRexMeat adalah salah satu Golongan dari FarmProduct Meat,
  * Sesuai namanya, product ini dihasilkan oleh TRex

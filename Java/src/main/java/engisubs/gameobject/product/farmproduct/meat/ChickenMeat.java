@@ -1,4 +1,4 @@
-package engisubs.gameobject.product.farm_product.meat;
+package main.java.engisubs.gameobject.product.farmproduct.meat;
 
 /**
  * ChickenMeat adalah salah satu Golongan dari FarmProduct Meat,
