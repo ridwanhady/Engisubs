@@ -14,13 +14,9 @@ public class Player extends GameObject{
 	 */
 	private double uang;
 	/**
-	 * Posisi baris pemain
+	 * Posisi pemain
 	 */
-	private int currentRow;
-	/**
-	 * Posisi kolom pemain
-	 */
-	private int currentCol;
+	private Map<String,Integer> currentPos;
 	/**
 	 * Arah hadap pemain
 	 */
@@ -43,11 +39,11 @@ public class Player extends GameObject{
 	 * @param  _worldMap Peta dunia
 	 * @return           Objek Player
 	 */
-    public Player(String _name, int _water, double _uang, int row, int col, List<List<Cell>> _worldMap){
+    public Player(String _name, int _water, double _uang, Map<String,Integer> pos, List<List<Cell>> _worldMap){
 		setName(_name);
 		setWater(_water);
 		setUang(_uang);
-		setPosition(x,y);
+		setPosition(pos);
 		initGameObject(PLAYER, 'P');
 		worldMap = _worldMap;
 		inventory = new LinkedList<Product>();
@@ -155,18 +151,11 @@ public class Player extends GameObject{
 		uang = _uang;
 	}
 	/**
-	 * Setter currentRow
-	 * @param _currentRow Nilai currentRow yang baru
+	 * Setter currentPos
+	 * @param _currentPos Nilai _currentPos yang baru
 	 */
-	public void setCurrentRow(int _currentRow){
-		currentRow = _currentRow;
-	}
-	/**
-	 * Setter currentCol
-	 * @param _currentCol Nilai currentCol yang baru
-	 */
-	public void setCurrentCol(int _currentCol){
-		currentCol = _currentCol;
+	public void setCurrentPos(Map<String,Integer> _currentPos){
+		currentPos = _currentPos;
 	}
 	/**
 	 * Fungsi talk berguna untuk ngobrol hewan.
@@ -255,9 +244,12 @@ public class Player extends GameObject{
 	public void move(DirectionType direction){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
-		targetRow = currentRow+di[direction];
-		targetCol = currentCol+dj[direction];
-		if(isValid(targetPosition, worldMap)){
+		Map<String,Integer> targetPos = new Map<String,Integer>();
+		targetPos.put("Row",currentRow+di[direction]);
+		targetPos.put("Col",currentCol+dj[direction]);
+		if(isValid(targetPos, worldMap)){
+			int targetRow = targetPos.get("Row");
+			int targetCol = targetPos.get("Col");
 			Land currentLand = (worldMap.get(currentRow).get(currentCol));
 			currentLand.setObjectHere(null);
 			currentRow = targetRow;
@@ -296,7 +288,9 @@ public class Player extends GameObject{
 	 * @param  col col koordinat yang ingin dicek
 	 * @return     boolean true jika valid
 	 */
-	public boolean isValid(int row, int col){
+	public boolean isValid(HashMap<String,Integer> pos){
+		int row = pos.get("Row");
+		int col = pos.get("Col");
 		int n = worldMap.size();
 		int m = (worldMap.get(0)).size();
 		if(row < 0 || row >= n || col < 0 || col >= m){

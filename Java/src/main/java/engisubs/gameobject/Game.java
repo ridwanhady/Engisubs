@@ -39,7 +39,9 @@ public class Game{
 	 * @param  col col koordinat yang ingin dicek
 	 * @return     boolean true jika valid
 	 */
-	private boolean isValid(int row, int col){
+	private boolean isValid(Map<String, Integer> position){
+		row = position.get("Row");
+		col = position.get("Col");
 		if(row < 0 || row >= n || col < 0 || col >= m){
 			return false;
 		}
@@ -81,41 +83,44 @@ public class Game{
 		for(int i = 0; i < n; i++){
 			List<Cell> temp = new LinkedList<Cell> ();
 			for(int j = 0; j < m; j++){
-				if(rand.nextInt()%100 <= 90){
-					int r = rand.nextInt()%3;
+				Map<String,Integer> pos = new HashMap<String,Integer>();
+				pos.put("Row", i);
+				pos.put("Col", j);
+				if(rand.nextInteger()%100 <= 90){
+					int r = rand.nextInteger()%3;
 					if (r == 0){
-						temp.add(new Grassland(i,j,1));
+						temp.add(new Grassland(pos,1));
 					}else if (r == 1){
-						temp.add(new Barn(i,j,1));
+						temp.add(new Barn(pos,1));
 					}else {
-						temp.add(new Coop(i,j,1));
+						temp.add(new Coop(pos,1));
 					}
 				} else {
-					int r = rand.nextInt()%3;
+					int r = rand.nextInteger()%3;
 					if (r == 0){
-						temp.add(new Truck(i,j));
+						temp.add(new Truck(pos));
 					}else if (r == 1){
-						temp.add(new Mixer(i, j));
+						temp.add(new Mixer(pos));
 					}else {
-						temp.add(new Well(i, j));
+						temp.add(new Well(pos));
 					}
 				}
 			}
 			
 			cellList.add(temp);
-			//vc.push_back(temp);
 		}
 		//Init animal
 		
 		int cntAnimal = 8;
 		while(cntAnimal--){
-			int randRow = rand.nextInt()%n;
-			int randCol = rand.nextint()%m;
-			while(!isValid(randRow,randCol)){
-				randRow = rand.nextInt()%n;
-				randCol = rand.nextint()%m;
+			Map<String,Integer> pos = new HashMap<String,Integer>();
+			pos.put("Row", rand.nextInteger()%n);
+			pos.put("Col", rand.nextint()%m);
+			while(!isValid(pos)){
+				pos.put("Row", rand.nextInteger()%n);
+				pos.put("Col", rand.nextint()%m);
 			}
-			int randAnimal = rand.nextInt()%6;
+			int randAnimal = rand.nextInteger()%6;
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (cellList.get(randPosition.first).get(randPosition.second)));
 				farmAnimalList.add(x);
@@ -150,13 +155,16 @@ public class Game{
 		namaPemain = sc.nextLine();
 
 		//Menaruh player di posisi random
-		curRow = rand.nextInt()%n;
-		curCol = rand.nextInt()%m;
-		while(!isValid(curRow,curCol)){
-			curRow = rand.nextInt()%n;
-			curCol = rand.nextInt()%m;
+		Map<String,Integer> pos = new HashMap<String,Integer>();
+		pos.put("Row", rand.nextInteger()%n);
+		pos.put("Col", rand.nextint()%m);
+		while(!isValid(pos)){
+			pos.put("Row", rand.nextInteger()%n);
+			pos.put("Col", rand.nextint()%m);
 		}
-		mainPlayer = new Player(namaPemain, 10, 10, curRow, curCol, cellList);
+		curRow = pos.get("Row");
+		curCol = pos.get("Col");
+		mainPlayer = new Player(namaPemain, 10, 10, pos, cellList);
 		mainPlayer.addInventory(new PlatypusMilk(HARGA_SUSU_PLATYPUS, "Test"));
 		mainPlayer.addInventory(new PlatypusEgg(HARGA_TELUR_PLATYPUS, "Test"));
 		(cellList.get(curRow).get(curCol)).setObjectHere(mainPlayer);
@@ -314,7 +322,7 @@ public class Game{
 				}
 				System.out.println("Pilih indeks dari Daftar Product!");
 				int idxDaftarProduct;
-				idxDaftarProduct = sc.nextInt();
+				idxDaftarProduct = sc.nextInteger();
 				System.out.println("Resep untuk membuat product adalah:");
 				if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
 					if (idxDaftarProduct == 0) {
@@ -378,18 +386,22 @@ public class Game{
 			}
 			//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 			int moveDirection;
+			Map<String,Integer> pos = new farmAnimalList.get(i).getPos();
 			curRow = farmAnimalList.get(i).getRow();
 			curCol = farmAnimalList.get(i).getCol();
+			Map<String,Integer> tempPos = new HashMap<String,Integer>();
 			do{
-				moveDirection = rand.nextInt()%5;
-				if(moveDirection < 4 && isValid(curRow+di[moveDirection],curCol+dj[moveDirection])){
+				moveDirection = rand.nextIntegereger()%5;
+				tempPos.put("Row", curRow+di[moveDirection]);
+				tempPos.put("Col", curCol+dj[moveDirection]);
+				if(moveDirection < 4 && isValid(tempPos)){
 					//Fungsi untuk gerak random
 					farmAnimalList.get(i).move(dir[moveDirection], cellList);
 					break;
 				} else if(moveDirection == 4){
 					break;
 				}
-			} while (!isValid(curRow+di[moveDirection],curCol+dj[moveDirection]));
+			} while (!isValid(tempPos));
 
 		}
 		//Mengupdate seluruh state Truck
