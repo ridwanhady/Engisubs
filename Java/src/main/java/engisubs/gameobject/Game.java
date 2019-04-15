@@ -360,7 +360,7 @@ public class Game{
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		for(int i = 0; i < farmAnimalList.size(); i++){
-			if(farmAnimalList.get(i) == NULL){
+			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
