@@ -7,7 +7,7 @@ public abstract class Land extends Cell{
 
     private boolean grown;
     private boolean occupied = false;
-    private final LandType landType;
+    private LandType landType;
     private GameObject objectHere;
     private char landSymbol[] = new char[]{'-', 'x', 'o'};
     private char grassSymbol[] = new char[] {'#', '@', '*'};
@@ -18,17 +18,19 @@ public abstract class Land extends Cell{
         COOP
     };
 
+    
+
     /**
      * Ctor dengan parameter
      */ 
     public Land(int _positionX, int _positionY, boolean _isGrown, LandType _landType) {
         super(_positionX, _positionY);
-        objectType = LAND;
+        gameObjectType = GameObjectType.LAND;
         grown = _isGrown;
         if (grown){
-            objectSymbol = grassSymbol[landType];
+            objectSymbol = grassSymbol[_landType.ordinal()];
         } else {
-            objectSymbol = landSymbol[landType];
+            objectSymbol = landSymbol[_landType.ordinal()];
         }
     }
 
@@ -47,8 +49,10 @@ public abstract class Land extends Cell{
 
     public void setObjectHere(GameObject _objectHere){
         objectHere = _objectHere;
-        if(objectHere == NULL) occupied = false;
-        else occupied = true;
+        if(objectHere == null) 
+            occupied = false;
+        else
+            occupied = true;
     }
 
 
@@ -57,7 +61,7 @@ public abstract class Land extends Cell{
      */
     public void grow() {
         grown = true;
-	    objectSymbol = grassSymbol[landType];
+	    objectSymbol = grassSymbol[landType.ordinal()];
     }
     
     /**
@@ -87,15 +91,14 @@ public abstract class Land extends Cell{
      */
     public void ungrow(){
 	    grown = false;
-	    objectSymbol = landSymbol[landType];
+	    objectSymbol = landSymbol[landType.ordinal()];
     }
 
     public void render(){
         if (isOccupied()){
             System.out.println(objectHere.objectSymbol);
         } else {
-            //ERROR
-            GameObject.render();
+            System.out.println(objectSymbol);
         }
     }
 }
