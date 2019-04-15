@@ -12,6 +12,8 @@ MeatProducing::MeatProducing(){
 void MeatProducing::initializeMeatProducing(Meat* _meat){
     if (meat == NULL){
         meat = _meat;
+    }else {
+    	delete _meat;
     }
 }
 

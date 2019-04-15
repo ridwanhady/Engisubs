@@ -11,6 +11,8 @@ EggProducing::EggProducing(){
 void EggProducing::initializeEggProducing(Egg* _egg){
     if (egg == NULL){
         egg = _egg;
+    }else {
+    	delete _egg;
     }
 }
 

@@ -1,6 +1,6 @@
-package engisubs.gameobject.product.farm_product.meat;
+package main.java.engisubs.gameobject.product.farmproduct.milk;
 /**
- * BisonMeat adalah salah satu Golongan dari FarmProduct Meat,
+ * BisonMilk adalah salah satu Golongan dari FarmProduct Milk,
  * Sesuai namanya, product ini dihasilkan oleh Bison
  * 
  * @author 007 - Mohammad Ridwan Hady Arifin
@@ -9,14 +9,14 @@ package engisubs.gameobject.product.farm_product.meat;
  * @author 091 - Adyaksa Wisanggeni
  * @author 115 - Edward Alexander Jaya
  */
-public class BisonMeat extends Meat{
+public class BisonMilk extends Milk{
     /**
-     * Constructor dengan parameter
+     * Constructor dengan parameter.
      * @param _price
      * @param _producer
      */
-    public BisonMeat(int _price, String _producer){
+    public BisonMilk(int _price, String _producer){
         super.initializeFarmProduct(_producer);
-        super.initializeProduct(_price, ProductType.FARMPRODUCT, GameObjectType.BISON_MEAT, "Daging Segar BISON");
+        super.initializeProduct(_price, ProductType.FARMPRODUCT, GameObjectType.BISON_MILK, "Susu Murni Bison");
     }
 }

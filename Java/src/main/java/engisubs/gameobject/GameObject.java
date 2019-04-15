@@ -1,4 +1,4 @@
-package engisubs.gameobject;
+package main.java.engisubs.gameobject;
 /**
  * Class GameObject adalah super parent dari hampir setiap kelas yang ada di dalam game
  * 

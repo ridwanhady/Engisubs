@@ -1,4 +1,4 @@
-package engisubs.gameobject.product.farm_product.egg;
+package main.java.engisubs.gameobject.product.farmproduct.egg;
 /**
  * ChickenEgg adalah salah satu Golongan dari FarmProduct Egg,
  * Sesuai namanya, product ini dihasilkan oleh Chicken

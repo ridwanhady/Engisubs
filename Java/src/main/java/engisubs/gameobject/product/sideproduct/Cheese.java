@@ -1,4 +1,4 @@
-package engisubs.gameobject.product.side_product;
+package main.java.engisubs.gameobject.product.sideproduct;
 
 import java.util.LinkedList;
 

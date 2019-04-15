@@ -1,4 +1,4 @@
-package engisubs.gameobject.cell.land;
+package main.java.engisubs.gameobject.cell.land;
 
 import engisubs.gameobject.GameObject;
 import engisubs.gameobject.cell.*;

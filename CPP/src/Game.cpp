@@ -63,7 +63,7 @@ Game::Game(){
 		while(!isValid(randPosition)){
 			randPosition = {rand()%n, rand()%m};
 		}
-		int randAnimal = 3;//rand()%6;
+		int randAnimal = rand()%6;
 		if(randAnimal == 0){
 			Chicken *x = new Chicken(randPosition, "Chicken", dynamic_cast<Land*>(cellList.get(randPosition.first)->get(randPosition.second)));
 			farmAnimalList.add(x);
@@ -102,6 +102,8 @@ Game::Game(){
 		curPos = {rand()%n, rand()%m};
 	}
 	mainPlayer = new Player(namaPemain, 10, 10, curPos, &cellList);
+	mainPlayer->addInventory(new PlatypusMilk(HARGA_SUSU_PLATYPUS, "Test"));
+	mainPlayer->addInventory(new PlatypusEgg(HARGA_TELUR_PLATYPUS, "Test"));
 	dynamic_cast<Land*>(cellList.get(curPos.first)->get(curPos.second))->setObjectHere(mainPlayer);
 	//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 	if(daftarProduct.size() == 0){
