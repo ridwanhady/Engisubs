@@ -236,7 +236,7 @@ public class Player extends GameObject{
 		if(!targetCell.isWalkable()){
 			return false;
 		}
-		Land *targetLand = dynamic_cast<Land*>(targetCell);
+		Land targetLand = (targetCell);
 		if(targetLand.isOccupied())return false;
 		return true;
 	}
