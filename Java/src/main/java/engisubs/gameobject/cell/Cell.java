@@ -1,5 +1,5 @@
 package main.java.engisubs.gameobject.cell;
-import engisubs.gameobject.GameObject;
+import main.java.engisubs.gameobject.*;
 
 public abstract class Cell extends GameObject{
     protected int positionX;
