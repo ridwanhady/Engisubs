@@ -77,6 +77,10 @@ public class Player extends GameObject{
 	public List<Product> getInventory(){
 		return inventory;
 	}
+	/**
+	 * Mengkosongkan suatu indeks pada inventory
+	 * @param idx indeks pada inventory yang ingin dihapus
+	 */
 
 	public void removeInventory(int idx){
 		try{
@@ -86,23 +90,38 @@ public class Player extends GameObject{
 		}
 		
 	}
-
+	/**
+	 * Mengkosongkan inventory
+	 */
 	public void emptyInventory(){
 		inventory.clear();
 	}
-
+	/**
+	 * Getter uang
+	 * @return uang
+	 */
 	public double getUang(){
 		return uang;	
 	}
-
+	/**
+	 * Getter currentRow
+	 * @return currentRow
+	 */
 	public int getCurrentRow(){
 		return currentRow;
 	}
-
+	/**
+	 * Getter currentCol
+	 * @return currentCol
+	 */
 	public int getCurrentCol(){
 		return currentCol;
 	}
-	
+	/**
+	 * Menghitung banyaknya suatu product pada inventory
+	 * @param  _product Product yang ingin dicari jumlahnya
+	 * @return          Count dari suatu product
+	 */
 	public int getCount(Product _product){
 		int cnt = 0;
 		for(int i = 0; i < inventory.size(); i++){
@@ -111,27 +130,53 @@ public class Player extends GameObject{
 			}
 		}
 	}
-
+	/**
+	 * Setter name
+	 * @param _name Nilai name yang baru
+	 */
+	public void setName(String _name){
+		name = _name;
+	}
+	/**
+	 * Setter water
+	 * @param _water Nilai water yang baru
+	 */
 	public void setWater(int _water){
 		water = _water;
 	}
-
+	/**
+	 * Menambah barang pada inventory
+	 * @param _barang Barang yang ingin dimasukkan ke inventory
+	 */
 	public void addInventory(Product _barang){
 		inventory.add(_barang);
 	}
-
+	/**
+	 * Setter uang
+	 * @param _uang Nilai uang yang baru
+	 */
 	public void setUang(double _uang){
 		uang = _uang;
 	}
-
+	/**
+	 * Setter currentRow
+	 * @param _currentRow Nilai currentRow yang baru
+	 */
 	public void setCurrentRow(int _currentRow){
 		currentRow = _currentRow;
 	}
-
+	/**
+	 * Setter currentCol
+	 * @param _currentCol Nilai currentCol yang baru
+	 */
 	public void setCurrentCol(int _currentCol){
 		currentCol = _currentCol;
 	}
-
+	/**
+	 * Fungsi talk berguna untuk ngobrol hewan.
+	 * Hewan yang diajak ngobrol, adalah hewan
+	 * yang berada di depan player.
+	 */
 	public void talk(){
 		Cell targetCell = getCellInFront();
 		if(targetCell.isWalkable()){
@@ -144,13 +189,17 @@ public class Player extends GameObject{
 		} 
 		throw logic_error("Tidak ada hewan disitu");
 	}
-
+	/**
+	 * Fungsi interact berguna untuk melakukan
+	 * interaksi dengan objek objek yang ada.
+	 * Efek Interaksi bergantung pada objek yang dikenai.
+	 */
 	public void interact(){
 		Cell targetCell = getCellInFront();
-		if(targetCell != NULL){
+		if(targetCell != null){
 			if(targetCell.isWalkable()){
 				Land targetLand = (targetCell);
-				if(targetLand.getObjectHere() != NULL){
+				if(targetLand.getObjectHere() != null){
 					targetLand.getObjectHere().interact(this);
 					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
@@ -163,10 +212,13 @@ public class Player extends GameObject{
 		}
 		throw logic_error("Tidak ada object yang bisa dilakukan interact disitu");
 	}
-
+	/**
+	 * Fungsi kill berguna untuk menyembelih hewan
+	 * hewan dalam kategori MeatProducing.
+	 */
 	public void kill(){
 		Cell targetCell = getCellInFront();
-		if(targetCell != NULL && targetCell.isWalkable()){
+		if(targetCell != null && targetCell.isWalkable()){
 			Land targetLand = (targetCell);
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (targetLand.getObjectHere());
@@ -174,14 +226,18 @@ public class Player extends GameObject{
 					farmAnimalList.remove(farmAnimalList.get(farmAnimalList.findElement(targetAnimal)));
 					MeatProducing m = (targetAnimal);
 					m.produceMeat(this);
-					targetLand.setObjectHere(NULL);
+					targetLand.setObjectHere(null);
 					return;
 				}
 			}
 		} 
 		throw logic_error("Tidak ada hewan yang bisa disembelih disitu");
 	}
-
+	/**
+	 * Fungsi grow berguna untuk menumbuhkan rumput
+	 * pada land yang dikenai, agar bisa dimakan oleh
+	 * Hewan yang berada pada land tersebut.
+	 */
 	public void grow(){
 		Cell targetCell = worldMap.get(currentRow).get(currentCol);
 		Land targetLand = (targetCell);
@@ -196,7 +252,10 @@ public class Player extends GameObject{
 			throw logic_error("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
 		}
 	}
-
+	/**
+	 * Fungsi Move berguna untuk mengubah posisi dari
+	 * player sesuai dengan direction yang diberikan.
+	 */
 	public void move(DirectionType direction){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
@@ -204,7 +263,7 @@ public class Player extends GameObject{
 		targetCol = currentCol+dj[direction];
 		if(isValid(targetPosition, worldMap)){
 			Land currentLand = (worldMap.get(currentRow).get(currentCol));
-			currentLand.setObjectHere(NULL);
+			currentLand.setObjectHere(null);
 			currentRow = targetRow;
 			currentCol = targetCol;
 			currentLand = worldMap.get(targetRow).get(targetCol);
@@ -214,22 +273,33 @@ public class Player extends GameObject{
 			throw logic_error("Langkah tidak valid");
 		}
 	}
-
+	/**
+	 * Mengembalikan cell yang dihadapan pemain
+	 * @return Cell
+	 */
 	public Cell getCellInFront(){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		targetRow = currentRow+di[direction];
 		targetCol = currentCol+dj[direction];
 		if(targetRow < 0 || targetRow >= worldMap.size() || targetCol < 0 || targetCol >= worldMap.get(0).size()){
-			return NULL;
+			return null;
 		}
 		return worldMap.get(targetRow).get(targetCol);
 	}
-
+	/**
+	 * Mengganti arah hadap pemain
+	 * @param newDirection Direction pemain yang baru
+	 */
 	public void changeDirection(DirectionType newDirection){
 		direction = newDirection;
 	}
-
+	/**
+	 * Mengecek apakah suatu koordinat valid atau tidak
+	 * @param  row row koordinat yang ingin dicek
+	 * @param  col col koordinat yang ingin dicek
+	 * @return     boolean true jika valid
+	 */
 	public boolean isValid(int row, int col){
 		int n = worldMap.size();
 		int m = (worldMap.get(0)).size();
