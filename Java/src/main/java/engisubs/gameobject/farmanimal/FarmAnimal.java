@@ -1,5 +1,7 @@
-import engisubs.gameobject.GameObject;
-import engisubs.gameobject.cell.land.Land;
+package main.java.engisubs.gameobject.farmanimal;
+
+import main.java.engisubs.gameobject.*;
+import main.java.engisubs.gameobject.cell.land.*;
 
 abstract class FarmAnimal extends GameObject {
     protected static int animalCount = 0;
@@ -26,10 +28,10 @@ abstract class FarmAnimal extends GameObject {
 
     public int getPositionRow(){
         return position_row;
-		}
+    }
 		
-		public int getPositionCol(){
-				return position_col;
+    public int getPositionCol(){
+        return position_col;
 	}
 
     public int getTimeUntilDead(){
@@ -59,11 +61,18 @@ abstract class FarmAnimal extends GameObject {
     public abstract void talk();
 
     protected void setPosition(int _position_row, int _position_col){
-				position_row = _position_row;
-				position_col = _position_col;
+        position_row = _position_row;
+        position_col = _position_col;
     }
 
     protected void setTimeUntilDead(int _timeUntilDead){
         timeUntilDead = _timeUntilDead;
+    }
+
+    public void eat(){
+        timeUntilDead = 10;
+        timeUntilHungry = 10;
+        landPos.ungrow();
+        isProductProduced = false;
     }
 }

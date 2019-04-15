@@ -1,5 +1,9 @@
 package main.java.engisubs.gameobject;
 
+import java.util.*;
+import main.java.engisubs.gameobject.cell.Cell;
+import main.java.engisubs.gameobject.product.Product;
+
 public class Player extends GameObject{
  	/**
  	 * Nama pemain
