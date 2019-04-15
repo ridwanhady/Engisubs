@@ -127,6 +127,13 @@ public class Player extends GameObject{
 		}
 	}
 	/**
+	 * Setter name
+	 * @param _name Nilai name yang baru
+	 */
+	public void setName(String _name){
+		name = _name;
+	}
+	/**
 	 * Setter water
 	 * @param _water Nilai water yang baru
 	 */
@@ -185,10 +192,10 @@ public class Player extends GameObject{
 	 */
 	public void interact(){
 		Cell targetCell = getCellInFront();
-		if(targetCell != NULL){
+		if(targetCell != null){
 			if(targetCell.isWalkable()){
 				Land targetLand = (targetCell);
-				if(targetLand.getObjectHere() != NULL){
+				if(targetLand.getObjectHere() != null){
 					targetLand.getObjectHere().interact(this);
 					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
@@ -207,7 +214,7 @@ public class Player extends GameObject{
 	 */
 	public void kill(){
 		Cell targetCell = getCellInFront();
-		if(targetCell != NULL && targetCell.isWalkable()){
+		if(targetCell != null && targetCell.isWalkable()){
 			Land targetLand = (targetCell);
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (targetLand.getObjectHere());
@@ -215,7 +222,7 @@ public class Player extends GameObject{
 					farmAnimalList.remove(farmAnimalList.get(farmAnimalList.findElement(targetAnimal)));
 					MeatProducing m = (targetAnimal);
 					m.produceMeat(this);
-					targetLand.setObjectHere(NULL);
+					targetLand.setObjectHere(null);
 					return;
 				}
 			}
@@ -252,7 +259,7 @@ public class Player extends GameObject{
 		targetCol = currentCol+dj[direction];
 		if(isValid(targetPosition, worldMap)){
 			Land currentLand = (worldMap.get(currentRow).get(currentCol));
-			currentLand.setObjectHere(NULL);
+			currentLand.setObjectHere(null);
 			currentRow = targetRow;
 			currentCol = targetCol;
 			currentLand = worldMap.get(targetRow).get(targetCol);
@@ -272,7 +279,7 @@ public class Player extends GameObject{
 		targetRow = currentRow+di[direction];
 		targetCol = currentCol+dj[direction];
 		if(targetRow < 0 || targetRow >= worldMap.size() || targetCol < 0 || targetCol >= worldMap.get(0).size()){
-			return NULL;
+			return null;
 		}
 		return worldMap.get(targetRow).get(targetCol);
 	}
