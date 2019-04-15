@@ -42,7 +42,7 @@ public class Steak extends SideProduct{
      * @return resep[index] , or null if not found
      */
     public static FarmProductType getResepwithIdx(int index){
-        return getResep().get(index);
+        return resep.get(index);
     }
 
     /**
