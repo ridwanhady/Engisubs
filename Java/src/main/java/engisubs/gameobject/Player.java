@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject;
+package engisubs.gameobject;
 
 public class Player extends GameObject{
  	/**

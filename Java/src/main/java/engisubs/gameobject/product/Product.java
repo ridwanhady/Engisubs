@@ -1,6 +1,6 @@
-package main.java.engisubs.gameobject.product;
+package engisubs.gameobject.product;
 
-import main.java.engisubs.gameobject.GameObject;
+import engisubs.gameobject.GameObject;
 
 /**
  * Class Product berisi informasi terkait product
