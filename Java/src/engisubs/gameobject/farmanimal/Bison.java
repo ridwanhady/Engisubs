@@ -2,10 +2,16 @@ package engisubs.gameobject.farmanimal;
 
 import java.util.*;
 import engisubs.gameobject.*;
+import engisubs.gameobject.cell.land.Land;
 import engisubs.gameobject.product.farmproduct.meat.BisonMeat;
 import engisubs.gameobject.product.farmproduct.milk.BisonMilk;
 
 public class Bison extends FarmAnimal implements MeatProducing, MilkProducing{
+    public Bison(Map <String, Integer> _position, String _name, Land _landPos){
+        initializeFarmAnimal(_position, _name, _landPos);
+        initGameObject(GameObjectType.BISON, 'B');
+    }
+
     public void produceMeat(Player _p){
         _p.addInventory(new BisonMeat(100, name));
     }
@@ -18,41 +24,10 @@ public class Bison extends FarmAnimal implements MeatProducing, MilkProducing{
         System.out.println("Mwooahahaha!");
     }
 
+    public void interact(Player _p){
+        if (!getIsProductProduced()){
+            produceMilk(_p);
+        }
+    }
+
 }
-
-/*
-#ifndef _BISON_H_
-#define _BISON_H_
-
-#include "Land.hpp"
-#include "MeatProducing.hpp"
-#include "MilkProducing.hpp"
-#include "BisonMeat.hpp"
-#include "BisonMilk.hpp"
-#include <string>
-
-#define HARGA_SUSU_BISON 30
-#define HARGA_DAGING_BISON 100
-
-class Bison : public MeatProducing, MilkProducing {
-    public:
-        
-        Constructor yang menerima parameter position, name, meat, dan milk
-        Parameter diturunkan dari MeatProducing dan MilkProducing.
-        
-        Bison(pair<int,int> _position, string _name, Land* _landPos);
-
-        void produceMeat(Player& _player);
-
-        void produceMilk(Player& _player);
-
-        void eat();
-
-        void talk();
-
-        void interact(Player* _p);
-};
-
-#endif
-
-*/

@@ -1,12 +1,13 @@
 package engisubs.gameobject.farmanimal;
 
+import java.util.*;
 import engisubs.gameobject.*;
+import engisubs.gameobject.cell.*;
 import engisubs.gameobject.cell.land.*;
 
-abstract class FarmAnimal extends GameObject {
+abstract public class FarmAnimal extends GameObject {
     protected static int animalCount = 0;
-    protected int position_row;
-    protected int position_col;
+    protected Map <String, Integer> position;
     protected Boolean hungry = false;
     protected int timeUntilDead = 10;
     protected int timeUntilHungry = 0;
@@ -15,24 +16,16 @@ abstract class FarmAnimal extends GameObject {
     protected Land landPos;
     protected Boolean killable = false;
 
-    public FarmAnimal(){
-
-    }
-
-    protected void initializeFarmAnimal(int _position_row, int _position_col, String _name, Land _landPos){
-        position_row = _position_row;
-        position_col = _position_col;
+    protected void initializeFarmAnimal(Map <String, Integer> _position, String _name, Land _landPos){
+        position.put("Row", _position.get("Row"));
+        position.put("Col", _position.get("Col"));
         name = _name;
         landPos = _landPos;
     }
 
-    public int getPositionRow(){
-        return position_row;
+    public Map <String, Integer> getPosition(){
+        return position;
     }
-		
-    public int getPositionCol(){
-        return position_col;
-	}
 
     public int getTimeUntilDead(){
         return timeUntilDead;
@@ -58,11 +51,15 @@ abstract class FarmAnimal extends GameObject {
         return killable;
     }
 
+    public Boolean isHungry(){
+        return hungry;
+    }
+
     public abstract void talk();
 
-    protected void setPosition(int _position_row, int _position_col){
-        position_row = _position_row;
-        position_col = _position_col;
+    protected void setPosition(Map <String, Integer> _newPosition){
+        position.replace("Row", _newPosition.get("Row"));
+        position.replace("Col", _newPosition.get("Col"));
     }
 
     protected void setTimeUntilDead(int _timeUntilDead){
@@ -74,5 +71,94 @@ abstract class FarmAnimal extends GameObject {
         timeUntilHungry = 10;
         landPos.ungrow();
         isProductProduced = false;
+    }
+
+    /*
+        Method untuk mengupdate keadaan animal
+        Jika isHungry = True, timeUntilDead = timeUntilDead-1
+        Jika isHungry = False, timeUntilHungry = timeUntilHungry-1, dan jika timeUntilHungry = 0, isHungry = True
+    */
+    public void updateCondition(){
+        if (hungry){
+            timeUntilDead -= 1;
+        }else {
+            timeUntilHungry -= 1;
+            if (timeUntilHungry == 0){
+                hungry = true;
+            }
+        }
+    }
+
+    public void move(DirectionType dir, List<LinkedList<Cell>> map){
+        switch (dir){
+            //Atas
+            case UP:
+                //Jika masih bisa ke atas
+                if (position.get("Row") > 0){
+                    Cell tempCell = (map.get(position.get("Row") - 1)).get(position.get("Col"));
+                    if (tempCell.isWalkable()){
+                        Land tempLand = (Land) tempCell;
+                        if (!tempLand.isOccupied()){
+                            //cout << "BERGERAK KE " << position.first - 1 << " " << position.second << endl;
+                            landPos.setObjectHere(null);
+                            landPos = tempLand;
+                            landPos.setObjectHere(this);
+                            position.replace("Row", position.get("Row") - 1);
+                        }
+                    }
+                }
+                break;
+            //Bawah
+            case DOWN:
+                //Jika masih bisa ke bawah
+                if (position.get("Row") < map.size() - 1){
+                    Cell tempCell = (map.get(position.get("Row") + 1)).get(position.get("Col"));
+                    if (tempCell.isWalkable()){
+                        Land tempLand = (Land) tempCell;
+                        if (tempLand.isOccupied()){
+                            //cout << "BERGERAK KE " << position.first + 1 << " " << position.second << endl;
+                            landPos.setObjectHere(null);
+                            landPos = tempLand;
+                            landPos.setObjectHere(this);
+                            position.replace("Row", position.get("Row") - 1);
+                        }
+                    }
+                }
+                break;
+            //Kiri
+            case LEFT:
+                //Jika masih bisa ke kiri
+                if (position.get("Col") > 0){
+                    Cell tempCell = (map.get(position.get("Row"))).get(position.get("Col") - 1);
+                    if (tempCell.isWalkable()){
+                        Land tempLand = (Land) tempCell;
+                        if (!tempLand.isOccupied()){
+                            //cout << "BERGERAK KE " << position.first << " " << position.second - 1 << endl;
+                            landPos.setObjectHere(null);
+                            landPos = tempLand;
+                            landPos.setObjectHere(this);
+                            position.replace("Col", position.get("Col") - 1);
+                        }
+                    }
+                }
+                break;
+            //Kanan
+            case RIGHT:
+                //Jika masih bisa ke kanan
+                if (position.get("Col") < map.get(position.get("Row")).size() - 1){
+                    Cell tempCell = (map.get(position.get("Row"))).get(position.get("Col") + 1);
+                    if (tempCell.isWalkable()){
+                        Land tempLand = (Land) tempCell;
+                        if (!tempLand.isOccupied()){
+                            //cout << "BERGERAK KE " << position.first << " " << position.second + 1 << endl;
+                            landPos.setObjectHere(null);
+                            landPos = tempLand;
+                            landPos.setObjectHere(this);
+                            position.replace("Col", position.get("Col") + 1);
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

@@ -1,6 +1,7 @@
 package engisubs.gameobject;
 
 import engisubs.gameobject.*;
+import engisubs.gameobject.GameObject.GameObjectType;
 import engisubs.gameobject.cell.land.*;
 import engisubs.gameobject.cell.Cell;
 import engisubs.gameobject.farmanimal.*;
@@ -9,6 +10,7 @@ import engisubs.gameobject.product.farmproduct.meat.*;
 import engisubs.gameobject.product.farmproduct.milk.*;
 import engisubs.gameobject.product.sideproduct.*;
 import engisubs.gameobject.product.Product;
+import engisubs.gameobject.cell.facility.*;
 
 
 import java.util.*;
@@ -64,7 +66,7 @@ public class Game{
 		if (!targetCell.isWalkable()){
 			return false;
 		}
-		Land targetLand = (targetCell);
+		Land targetLand = (Land) targetCell;
 		if(targetLand.isOccupied()) return false;
 		return true;
 	}
@@ -80,6 +82,7 @@ public class Game{
 			return "EGG";
 		else if (idxResep == 2)
 			return "MILK";
+		return "NOT FOUND";
 	}
 
 	/**
@@ -91,7 +94,7 @@ public class Game{
 
 		farmAnimalList = new ArrayList<FarmAnimal>();
 		cellList = new LinkedList<LinkedList<Cell>>();
-		daftarProduct = new ArrayList<Product>();
+		daftarProduct = new ArrayList<GameObjectType>();
 		Random rand = new Random();
 		//Init cell (
 		for(int i = 0; i < n; i++){
@@ -103,11 +106,11 @@ public class Game{
 				if(rand.nextInt()%100 <= 90){
 					int r = rand.nextInt()%3;
 					if (r == 0){
-						temp.add(new Grassland(pos,1));
+						temp.add(new Grassland(pos));
 					}else if (r == 1){
-						temp.add(new Barn(pos,1));
+						temp.add(new Barn(pos));
 					}else {
-						temp.add(new Coop(pos,1));
+						temp.add(new Coop(pos));
 					}
 				} else {
 					int r = rand.nextInt()%3;
@@ -182,9 +185,7 @@ public class Game{
 		int curRow = pos.get("Row");
 		int curCol = pos.get("Col");
 		mainPlayer = new Player(namaPemain, 10, 10, pos, cellList);
-		mainPlayer.addInventory(new PlatypusMilk(HARGA_SUSU_PLATYPUS, "Test"));
-		mainPlayer.addInventory(new PlatypusEgg(HARGA_TELUR_PLATYPUS, "Test"));
-		(cellList.get(curRow).get(curCol)).setObjectHere(mainPlayer);
+		((Land) (cellList.get(curRow).get(curCol))).setObjectHere(mainPlayer);
 		//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 		if(daftarProduct.size() == 0){
 			daftarProduct.add(GameObject.GameObjectType.CHEESE);
@@ -221,7 +222,7 @@ public class Game{
 			System.out.println("UANG : " + mainPlayer.getUang());
 			System.out.println("Berikut adalah isi dari Inventori:");
 			for (int i = 0 ; i < mainPlayer.getInventory().size() ; i ++) {
-				System.out.println(  "[" + i + "] " + mainPlayer.getInventory().get(i).getName());
+				System.out.println(  "[" + i + "] " + mainPlayer.getInventory().get(i).getProductName());
 			}
 			System.out.println();
 
@@ -322,7 +323,7 @@ public class Game{
 				System.out.println("UANG : "  + mainPlayer.getUang());
 				System.out.println("Berikut adalah isi dari Inventori:");
 				for (int i = 0 ; i < mainPlayer.getInventory().size() ; i ++) {
-					System.out.println(mainPlayer.getInventory().get(i).getName() + ",");
+					System.out.println(mainPlayer.getInventory().get(i).getProductName() + ",");
 				}
 				System.out.println();
 			} else if (command == "SHOWRESEP"){
@@ -370,6 +371,7 @@ public class Game{
 		if(farmAnimalList.size() == 0){
 			System.out.println("Sudah tidak ada hewan lagi di game");
 		}
+		sc.close();
 	}
 
 	/**
@@ -404,9 +406,9 @@ public class Game{
 			//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 			int moveDirection;
 			Map<String,Integer> pos = new HashMap<String,Integer>();
-			pos = farmAnimalList.get(i).getPos();
-			int curRow = farmAnimalList.get(i).getRow();
-			int curCol = farmAnimalList.get(i).getCol();
+			pos = farmAnimalList.get(i).getPosition();
+			int curRow = pos.get("Row");
+			int curCol = pos.get("Col");
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
 			do{
 				moveDirection = rand.nextInt()%5;
@@ -426,8 +428,8 @@ public class Game{
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){
 				Cell targetCell = cellList.get(i).get(j);
-				if(targetCell.getObjectType() == GameObject.GameObjectType.TRUCK){
-					Truck targetTruck = (targetCell);
+				if(targetCell.getGameObjectType() == GameObject.GameObjectType.TRUCK){
+					Truck targetTruck = (Truck) targetCell;
 					targetTruck.setNotUsableTurns(max(0,targetTruck.getNotUsableTurns()-1));
 				}
 			}

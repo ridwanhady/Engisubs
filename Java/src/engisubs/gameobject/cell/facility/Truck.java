@@ -1,7 +1,10 @@
 package engisubs.gameobject.cell.facility;
 
-class Truck extends Facility
+import java.util.*;
+
+public class Truck extends Facility
   {
-  
-  
+    public Truck(Map <String, Integer> _position){
+      super(_position);
+    }
   }

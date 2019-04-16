@@ -1,9 +1,11 @@
 package engisubs.gameobject;
 
 import java.util.*;
-import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.cell.*;
+import engisubs.gameobject.cell.facility.*;
 import engisubs.gameobject.cell.land.*;
-import engisubs.gameobject.product.Product;
+import engisubs.gameobject.farmanimal.*;
+import engisubs.gameobject.product.*;
 
 public class Player extends GameObject{
  	/**
@@ -115,10 +117,12 @@ public class Player extends GameObject{
 	public int getCount(Product _product){
 		int cnt = 0;
 		for(int i = 0; i < inventory.size(); i++){
-			if(inventory.get(i).getObjectType() == _product.getObjectType()){
+			if(inventory.get(i).getGameObjectType() == _product.getGameObjectType()){
 				cnt++;
 			}
 		}
+
+		return cnt;
 	}
 	/**
 	 * Setter name
@@ -163,9 +167,9 @@ public class Player extends GameObject{
 	public void talk(){
 		Cell targetCell = getCellInFront();
 		if(targetCell.isWalkable()){
-			Land targetLand = targetCell;
+			Land targetLand = (Land) targetCell;
 			if(targetLand.isOccupied()){
-				FarmAnimal targetAnimal = (targetLand.getObjectHere());
+				FarmAnimal targetAnimal = (FarmAnimal) targetLand.getObjectHere();
 				targetAnimal.talk();
 				return;
 			}
@@ -181,14 +185,14 @@ public class Player extends GameObject{
 		Cell targetCell = getCellInFront();
 		if(targetCell != null){
 			if(targetCell.isWalkable()){
-				Land targetLand = (targetCell);
+				Land targetLand = (Land) targetCell;
 				if(targetLand.getObjectHere() != null){
 					targetLand.getObjectHere().interact(this);
 					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
 				}
 			} else {
-				Facility targetFacility = (targetCell);
+				Facility targetFacility = (Facility) targetCell;
 				targetFacility.interact(this);
 				return;
 			}
@@ -202,12 +206,12 @@ public class Player extends GameObject{
 	public void kill(List<FarmAnimal> farmAnimalList){
 		Cell targetCell = getCellInFront();
 		if(targetCell != null && targetCell.isWalkable()){
-			Land targetLand = (targetCell);
+			Land targetLand = (Land) targetCell;
 			if(targetLand.isOccupied()){
-				FarmAnimal targetAnimal = (targetLand.getObjectHere());
+				FarmAnimal targetAnimal = (FarmAnimal) targetLand.getObjectHere();
 				if(targetAnimal.isKillable()){
 					farmAnimalList.remove(targetAnimal);
-					MeatProducing m = (targetAnimal);
+					MeatProducing m = (MeatProducing) targetAnimal;
 					m.produceMeat(this);
 					targetLand.setObjectHere(null);
 					return;
@@ -225,7 +229,7 @@ public class Player extends GameObject{
 		int currentRow = currentPos.get("Row");
 		int currentCol = currentPos.get("Col");
 		Cell targetCell = worldMap.get(currentRow).get(currentCol);
-		Land targetLand = (targetCell);
+		Land targetLand = (Land) targetCell;
 		if (!targetLand.isGrown()) {
 			if (water > 0){
 				targetLand.grow();
@@ -252,11 +256,11 @@ public class Player extends GameObject{
 		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
-			Land currentLand = (worldMap.get(currentRow).get(currentCol));
+			Land currentLand = (Land) worldMap.get(currentRow).get(currentCol);
 			currentLand.setObjectHere(null);
 			currentRow = targetRow;
 			currentCol = targetCol;
-			currentLand = worldMap.get(targetRow).get(targetCol);
+			currentLand = (Land) worldMap.get(targetRow).get(targetCol);
 			currentLand.setObjectHere(this);
 			this.direction = direction;
 		} else {
@@ -304,7 +308,7 @@ public class Player extends GameObject{
 		if(!targetCell.isWalkable()){
 			return false;
 		}
-		Land targetLand = (targetCell);
+		Land targetLand = (Land) targetCell;
 		if(targetLand.isOccupied())return false;
 		return true;
 	}

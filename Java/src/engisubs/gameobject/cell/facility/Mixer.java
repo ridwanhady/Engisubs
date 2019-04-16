@@ -1,7 +1,10 @@
 package engisubs.gameobject.cell.facility;
 
-class Mixer extends Facility
+import java.util.*;
+
+public class Mixer extends Facility
   {
-  
-  
+    public Mixer(Map <String, Integer> _position){
+      super(_position);
+    }
   }

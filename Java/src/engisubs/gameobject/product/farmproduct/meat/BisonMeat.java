@@ -1,11 +1,15 @@
 package engisubs.gameobject.product.farmproduct.meat;
+
+import engisubs.gameobject.GameObject.GameObjectType;
+import engisubs.gameobject.product.Product.ProductType;
+
 /**
- * BisonMeat adalah salah satu Golongan dari FarmProduct Meat,
- * Sesuai namanya, product ini dihasilkan oleh Bison
+ * BisonMeat adalah salah satu Golongan dari FarmProduct Meat, Sesuai namanya,
+ * product ini dihasilkan oleh Bison
  * 
  * @author 007 - Mohammad Ridwan Hady Arifin
  * @author 025 - Ricky Yuliawan
- * @author 070 - Aidil Rezjki Suljztan Syawaludin	
+ * @author 070 - Aidil Rezjki Suljztan Syawaludin
  * @author 091 - Adyaksa Wisanggeni
  * @author 115 - Edward Alexander Jaya
  */

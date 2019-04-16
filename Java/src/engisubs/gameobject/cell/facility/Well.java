@@ -1,7 +1,10 @@
 package engisubs.gameobject.cell.facility;
 
-class Well extends Facility
+import java.util.*;
+
+public class Well extends Facility
   {
-  
-  
+    public Well(Map <String, Integer> _position){
+      super(_position);
+    }
   }

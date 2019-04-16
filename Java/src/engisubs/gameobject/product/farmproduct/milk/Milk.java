@@ -15,5 +15,6 @@ public class Milk extends FarmProduct{
      * Constructor tanpa parameter
      */
     public Milk(){ 
+        
     }
 }

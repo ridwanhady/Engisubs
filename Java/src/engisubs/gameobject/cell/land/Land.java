@@ -18,13 +18,11 @@ public abstract class Land extends Cell{
         COOP
     };
 
-    
-
     /**
      * Ctor dengan parameter
      */ 
-    public Land(int _positionX, int _positionY, boolean _isGrown, LandType _landType) {
-        super(_positionX, _positionY);
+    public Land(Map<String, Integer> _position, boolean _isGrown, LandType _landType) {
+        super(_position);
         gameObjectType = GameObjectType.LAND;
         grown = _isGrown;
         if (grown){

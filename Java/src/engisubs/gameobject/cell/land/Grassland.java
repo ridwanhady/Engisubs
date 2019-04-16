@@ -1,5 +1,14 @@
 package engisubs.gameobject.cell.land;
 
-class Grassland extends Land{
-    
+import java.util.*;
+
+public class Grassland extends Land{
+
+    public Grassland(Map <String, Integer> _position){
+        super(_position, true, LandType.BARN);
+    }
+
+    public Grassland(Map <String, Integer> _position, boolean _isGrown){
+        super(_position, _isGrown, LandType.GRASSLAND);
+    }
 }

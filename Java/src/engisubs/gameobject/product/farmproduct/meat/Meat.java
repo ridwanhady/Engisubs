@@ -9,12 +9,13 @@ package engisubs.gameobject.product.farmproduct.meat;
  * @author 091 - Adyaksa Wisanggeni
  * @author 115 - Edward Alexander Jaya
  */
-import engisubs.gameobject.product.farm_product.*;
+import engisubs.gameobject.product.farmproduct.*;
 
 public class Meat extends FarmProduct{
     /**
      * Constructor tanpa parameter
      */
     public Meat(){ 
+        
     }
 }
