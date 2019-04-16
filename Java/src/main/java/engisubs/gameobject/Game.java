@@ -1,5 +1,17 @@
-import java.util.Random;
-import java.util.Collection;
+package engisubs.gameobject;
+
+import engisubs.gameobject.*;
+import engisubs.gameobject.cell.land.*;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.farmanimal.*;
+import engisubs.gameobject.product.farmproduct.egg.*;
+import engisubs.gameobject.product.farmproduct.meat.*;
+import engisubs.gameobject.product.farmproduct.milk.*;
+import engisubs.gameobject.product.sideproduct.*;
+import engisubs.gameobject.product.Product;
+
+
+import java.util.*;
 
 public class Game{
 	/**
@@ -21,7 +33,7 @@ public class Game{
 	/**
 	 * Daftar product pada game
 	 */
-	private static List<ObjectType> daftarProduct;
+	private static List<GameObject.GameObjectType> daftarProduct;
 	/**
 	 * Objek player pada game
 	 */
