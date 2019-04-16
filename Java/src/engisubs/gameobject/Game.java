@@ -1,14 +1,14 @@
-package engisubs.gameobject;
+package main.java.engisubs.gameobject;
 
-import engisubs.gameobject.*;
-import engisubs.gameobject.cell.land.*;
-import engisubs.gameobject.cell.Cell;
-import engisubs.gameobject.farmanimal.*;
-import engisubs.gameobject.product.farmproduct.egg.*;
-import engisubs.gameobject.product.farmproduct.meat.*;
-import engisubs.gameobject.product.farmproduct.milk.*;
-import engisubs.gameobject.product.sideproduct.*;
-import engisubs.gameobject.product.Product;
+import main.java.engisubs.gameobject.*;
+import main.java.engisubs.gameobject.cell.land.*;
+import main.java.engisubs.gameobject.cell.Cell;
+import main.java.engisubs.gameobject.farmanimal.*;
+import main.java.engisubs.gameobject.product.farmproduct.egg.*;
+import main.java.engisubs.gameobject.product.farmproduct.meat.*;
+import main.java.engisubs.gameobject.product.farmproduct.milk.*;
+import main.java.engisubs.gameobject.product.sideproduct.*;
+import main.java.engisubs.gameobject.product.Product;
 
 
 import java.util.*;
@@ -53,8 +53,8 @@ public class Game{
 	 * @return     boolean true jika valid
 	 */
 	private boolean isValid(Map<String, Integer> position){
-		row = position.get("Row");
-		col = position.get("Col");
+		int row = position.get("Row");
+		int col = position.get("Col");
 		if(row < 0 || row >= n || col < 0 || col >= m){
 			return false;
 		}
@@ -87,7 +87,7 @@ public class Game{
 	 * @return Objek Game
 	 */
 	public Game(){
-		string namaPemain;
+		String namaPemain;
 
 		farmAnimalList = new ArrayList<FarmAnimal>();
 		cellList = new LinkedList<LinkedList<Cell>>();
@@ -206,8 +206,8 @@ public class Game{
 	 * Pada fungsi ini game berjalan.
 	 */
 	public void gameLoop(){
-		string command;
-		Scanner sc = new Scanner();
+		String command;
+		Scanner sc = new Scanner(System.in);
 		while(isGameStarted && farmAnimalList.size() > 0){
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
 			System.out.println("STATUS ");
@@ -238,58 +238,58 @@ public class Game{
 				try{
 					mainPlayer.move(UP);
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "DOWN"){
 				try{
 					mainPlayer.move(DOWN);
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 
 			} else if(command == "RIGHT"){
 				try{
 					mainPlayer.move(RIGHT);
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "LEFT"){
 				try{
 					mainPlayer.move(LEFT);
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "TALK"){
 				try{
 					mainPlayer.talk();
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "INTERACT"){
 				try{
 					mainPlayer.interact();
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "KILL"){
 				try{
 					mainPlayer.kill(farmAnimalList);
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "GROW"){
 				try{
 					mainPlayer.grow();
 					updateGame();				
-				} catch (logic_error e){
-					System.out.println(e.what());
+				} catch (Exception e){
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "LU"){
 				mainPlayer.changeDirection(UP);

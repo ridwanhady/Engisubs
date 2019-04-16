@@ -1,8 +1,8 @@
-package engisubs.gameobject;
+package main.java.engisubs.gameobject;
 
 import java.util.*;
-import engisubs.gameobject.cell.Cell;
-import engisubs.gameobject.product.Product;
+import main.java.engisubs.gameobject.cell.Cell;
+import main.java.engisubs.gameobject.product.Product;
 
 public class Player extends GameObject{
  	/**
@@ -131,7 +131,7 @@ public class Player extends GameObject{
 	 * @param _name Nilai name yang baru
 	 */
 	public void setName(String _name){
-		name = _name;
+		player_name = _name;
 	}
 	/**
 	 * Setter water
@@ -176,7 +176,7 @@ public class Player extends GameObject{
 				return;
 			}
 		} 
-		throw logic_error("Tidak ada hewan disitu");
+		throw new RuntimeException("Tidak ada hewan disitu");
 	}
 	/**
 	 * Fungsi interact berguna untuk melakukan
@@ -199,20 +199,20 @@ public class Player extends GameObject{
 				return;
 			}
 		}
-		throw logic_error("Tidak ada object yang bisa dilakukan interact disitu");
+		throw new RuntimeException("Tidak ada object yang bisa dilakukan interact disitu");
 	}
 	/**
 	 * Fungsi kill berguna untuk menyembelih hewan
 	 * hewan dalam kategori MeatProducing.
 	 */
-	public void kill(){
+	public void kill(List<FarmAnimal> farmAnimalList){
 		Cell targetCell = getCellInFront();
 		if(targetCell != null && targetCell.isWalkable()){
 			Land targetLand = (targetCell);
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (targetLand.getObjectHere());
 				if(targetAnimal.isKillable()){
-					farmAnimalList.remove(farmAnimalList.get(farmAnimalList.findElement(targetAnimal)));
+					farmAnimalList.remove(targetAnimal);
 					MeatProducing m = (targetAnimal);
 					m.produceMeat(this);
 					targetLand.setObjectHere(null);
@@ -220,7 +220,7 @@ public class Player extends GameObject{
 				}
 			}
 		} 
-		throw logic_error("Tidak ada hewan yang bisa disembelih disitu");
+		throw new RuntimeException("Tidak ada hewan yang bisa disembelih disitu");
 	}
 	/**
 	 * Fungsi grow berguna untuk menumbuhkan rumput
@@ -228,6 +228,8 @@ public class Player extends GameObject{
 	 * Hewan yang berada pada land tersebut.
 	 */
 	public void grow(){
+		int currentRow = currentPos.get("Row");
+		int currentCol = currentPos.get("Col");
 		Cell targetCell = worldMap.get(currentRow).get(currentCol);
 		Land targetLand = (targetCell);
 		if (!targetLand.isGrown()) {
@@ -235,10 +237,10 @@ public class Player extends GameObject{
 				targetLand.grow();
 				water--;
 			} else{
-				throw logic_error("Air Anda tidak cukup");
+				throw new RuntimeException("Air Anda tidak cukup");
 			}
 		} else {
-			throw logic_error("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
+			throw new RuntimeException("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
 		}
 	}
 	/**
@@ -248,10 +250,12 @@ public class Player extends GameObject{
 	public void move(DirectionType direction){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
-		Map<String,Integer> targetPos = new Map<String,Integer>();
+		Map<String,Integer> targetPos = new HashMap<String,Integer>();
+		int currentRow = targetPos.get("Row");
+		int currentCol = targetPos.get("Col");
 		targetPos.put("Row",currentRow+di[direction]);
 		targetPos.put("Col",currentCol+dj[direction]);
-		if(isValid(targetPos, worldMap)){
+		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
 			Land currentLand = (worldMap.get(currentRow).get(currentCol));
@@ -262,7 +266,7 @@ public class Player extends GameObject{
 			currentLand.setObjectHere(this);
 			this.direction = direction;
 		} else {
-			throw logic_error("Langkah tidak valid");
+			throw new RuntimeException("Langkah tidak valid");
 		}
 	}
 	/**
@@ -272,8 +276,10 @@ public class Player extends GameObject{
 	public Cell getCellInFront(){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
-		targetRow = currentRow+di[direction];
-		targetCol = currentCol+dj[direction];
+		int currentRow = currentPos.get("Row");
+		int currentCol = currentPos.get("Col");
+		int targetRow = currentRow+di[direction];
+		int targetCol = currentCol+dj[direction];
 		if(targetRow < 0 || targetRow >= worldMap.size() || targetCol < 0 || targetCol >= worldMap.get(0).size()){
 			return null;
 		}
@@ -292,7 +298,7 @@ public class Player extends GameObject{
 	 * @param  col col koordinat yang ingin dicek
 	 * @return     boolean true jika valid
 	 */
-	public boolean isValid(HashMap<String,Integer> pos){
+	public boolean isValid(Map<String,Integer> pos){
 		int row = pos.get("Row");
 		int col = pos.get("Col");
 		int n = worldMap.size();
