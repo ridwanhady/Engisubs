@@ -90,6 +90,7 @@ public class Game{
 	 * @return Objek Game
 	 */
 	public Game(){
+		System.out.println("Initiating...");
 		String namaPemain;
 
 		farmAnimalList = new ArrayList<FarmAnimal>();
@@ -103,6 +104,7 @@ public class Game{
 				Map<String,Integer> pos = new HashMap<String,Integer>();
 				pos.put("Row", i);
 				pos.put("Col", j);
+				System.out.println("On " + pos.get("Row") + " " + pos.get("Col"));
 				if(rand.nextInt()%100 <= 90){
 					int r = rand.nextInt()%3;
 					if (r == 0){

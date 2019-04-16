@@ -4,15 +4,19 @@ import engisubs.gameobject.*;
 import java.util.*;
 
 public abstract class Cell extends GameObject{
-    private Map<String, Integer> currentPos;
+    private Map<String, Integer> currentPos = new HashMap<>();
 
     /** 
      * Konstruktor dari Cell dengan parameter.
      */
 
     public Cell(Map<String, Integer> _position) {
+        System.out.println("Cell");
+        System.out.println("Init " + _position.get("Row") + " " + _position.get("Col"));
         currentPos.put("Row", _position.get("Row"));
+        System.out.println("Cell A");
         currentPos.put("Col", _position.get("Col"));
+        System.out.println("Cell B");
     }
 
     /**
