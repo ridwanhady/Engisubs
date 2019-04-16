@@ -136,12 +136,14 @@ public class Game{
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt()%n;
 			int randCol = rand.nextInt()%m;
+			randPosition.put("Row", randRow);
+			randPosition.put("Col", randCol);
 			while(!isValid(randPosition)){
 				randRow = rand.nextInt()%n;
 				randCol = rand.nextInt()%m;
+				randPosition.replace("Row", randRow);
+				randPosition.replace("Col", randCol);
 			}
-			randPosition.put("Row", randRow);
-			randPosition.put("Col", randCol);
 			int randAnimal = rand.nextInt()%6;
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));

@@ -18,7 +18,7 @@ public class Cheese extends SideProduct{
     /**
      * Atribut Resep menyimpan daftar bahan yang digunakan untuk membuat Cheese di Mixer
      */
-    private static LinkedList<FarmProductType> resep;
+    private static LinkedList<FarmProductType> resep = new LinkedList<>();
 
     /**
      * Constructor dengan parameter

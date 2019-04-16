@@ -17,7 +17,7 @@ public class Mayonaise extends SideProduct{
     /**
      * Atribut Resep menyimpan daftar bahan yang digunakan untuk membuat Mayonaise di Mixer.
      */
-    private static LinkedList<FarmProductType> resep;
+    private static LinkedList<FarmProductType> resep = new LinkedList<>();
 
     /**
      * Constructor dengan Parameter

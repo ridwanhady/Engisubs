@@ -7,7 +7,7 @@ import engisubs.gameobject.cell.land.*;
 
 abstract public class FarmAnimal extends GameObject {
     protected static int animalCount = 0;
-    protected Map <String, Integer> position;
+    protected Map <String, Integer> position = new HashMap<>();
     protected Boolean hungry = false;
     protected int timeUntilDead = 10;
     protected int timeUntilHungry = 0;
