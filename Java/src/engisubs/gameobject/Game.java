@@ -197,6 +197,8 @@ public class Game{
 			Mayonaise.InitResep();
 			Steak.InitResep();
 		}
+
+		sc.close();
 	}
 
 	/**
@@ -430,7 +432,7 @@ public class Game{
 				Cell targetCell = cellList.get(i).get(j);
 				if(targetCell.getGameObjectType() == GameObject.GameObjectType.TRUCK){
 					Truck targetTruck = (Truck) targetCell;
-					targetTruck.setNotUsableTurns(max(0,targetTruck.getNotUsableTurns()-1));
+					targetTruck.setNotUsableTurns(Integer.max(0,targetTruck.getNotUsableTurns() - 1));
 				}
 			}
 		}

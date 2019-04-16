@@ -35,7 +35,7 @@ public class Player extends GameObject{
 	/**
 	 * Inventory pemain untuk menyimpan product
 	 */
-	private List<Product> inventory;
+	public List<Product> inventory;
 	/**
 	 * Konstruktor player
 	 * @param  _name     Nama pemain

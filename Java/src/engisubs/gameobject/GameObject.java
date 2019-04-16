@@ -142,4 +142,9 @@ public class GameObject {
 	/**
 	 * Tipe dari suatu Objek, misalnya Product, TRex, etc
 	 */
+
+
+	public GameObjectType getObjectType(){
+		return gameObjectType;
+	}
 }

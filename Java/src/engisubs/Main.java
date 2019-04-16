@@ -1,12 +1,13 @@
 package engisubs;
 
 import javax.swing.*;
+import engisubs.gameobject.*;
 class Main{
     
     static public void main(String args[]){
-        JFrame test = new JFrame();
-        test.setSize(800, 600);
-        test.setVisible(true);
+        Game newGame = new Game();
+        newGame.startGame();
+        newGame.gameLoop();
     }
     
 }
