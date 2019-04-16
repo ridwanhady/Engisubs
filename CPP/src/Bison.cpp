@@ -10,6 +10,7 @@ Bison::Bison(pair<int,int> _position, string _name, Land* _landPos){
     initializeFarmAnimal(_position, _name, _landPos);
     initializeMeatProducing(new BisonMeat(HARGA_DAGING_BISON, getName()));
     initializeMilkProducing(NULL);
+    setIsProductProduced(true);
 }
 
 void Bison::produceMeat(Player& _player){

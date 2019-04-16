@@ -142,29 +142,29 @@ public class Game{
 			randPosition.put("Col", randCol);
 			int randAnimal = rand.nextInt()%6;
 			if(randAnimal == 0){
-				Chicken x = new Chicken(randPosition, "Chicken", (cellList.get(randRow).get(randCol)));
+				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 1){
-				Bison x = new Bison(randPosition, "Bison", (cellList.get(randRow).get(randCol)));
+				Bison x = new Bison(randPosition, "Bison",(Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 2){
-				Dog x = new Dog(randPosition, "Dog", (cellList.get(randRow).get(randCol)));
+				Dog x = new Dog(randPosition, "Dog",(Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 3){
-				Platypus x = new Platypus(randPosition, "Platypus", (cellList.get(randRow).get(randCol)));
+				Platypus x = new Platypus(randPosition, "Platypus",(Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 4){
-				Pterodactyl x = new Pterodactyl(randPosition, "Pterodactyl", (cellList.get(randRow).get(randCol)));
+				Pterodactyl x = new Pterodactyl(randPosition, "Pterodactyl",(Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else {
-				TRex x = new TRex(randPosition, "TRex", (cellList.get(randRow).get(randCol)));
+				TRex x = new TRex(randPosition, "TRex",(Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randRow).get(randCol))).setObjectHere(x);
+				((Land) (cellList.get(randRow).get(randCol))).setObjectHere(x);
 			
 			}
 		}

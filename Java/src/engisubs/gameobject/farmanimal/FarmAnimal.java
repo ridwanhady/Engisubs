@@ -11,9 +11,9 @@ abstract public class FarmAnimal extends GameObject {
     protected Boolean hungry = false;
     protected int timeUntilDead = 10;
     protected int timeUntilHungry = 0;
-    protected Boolean isProductProduced = false;
+    protected Boolean isProductProduced = true;
     protected String name = "";
-    protected Land landPos;
+    protected Land landPos = null;
     protected Boolean killable = false;
 
     protected void initializeFarmAnimal(Map <String, Integer> _position, String _name, Land _landPos){
