@@ -1,14 +1,14 @@
-package main.java.engisubs.gameobject;
+package engisubs.gameobject;
 
-import main.java.engisubs.gameobject.*;
-import main.java.engisubs.gameobject.cell.land.*;
-import main.java.engisubs.gameobject.cell.Cell;
-import main.java.engisubs.gameobject.farmanimal.*;
-import main.java.engisubs.gameobject.product.farmproduct.egg.*;
-import main.java.engisubs.gameobject.product.farmproduct.meat.*;
-import main.java.engisubs.gameobject.product.farmproduct.milk.*;
-import main.java.engisubs.gameobject.product.sideproduct.*;
-import main.java.engisubs.gameobject.product.Product;
+import engisubs.gameobject.*;
+import engisubs.gameobject.cell.land.*;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.farmanimal.*;
+import engisubs.gameobject.product.farmproduct.egg.*;
+import engisubs.gameobject.product.farmproduct.meat.*;
+import engisubs.gameobject.product.farmproduct.milk.*;
+import engisubs.gameobject.product.sideproduct.*;
+import engisubs.gameobject.product.Product;
 
 
 import java.util.*;
