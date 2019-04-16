@@ -29,7 +29,7 @@ public class Game{
 	/**
 	 * Daftar cell pada game
 	 */
-	private List<List<Cell>> cellList;
+	private List<LinkedList<Cell>> cellList;
 	/**
 	 * Daftar product pada game
 	 */
@@ -95,13 +95,13 @@ public class Game{
 		Random rand = new Random();
 		//Init cell (
 		for(int i = 0; i < n; i++){
-			List<Cell> temp = new LinkedList<Cell> ();
+			LinkedList<Cell> temp = new LinkedList<Cell> ();
 			for(int j = 0; j < m; j++){
 				Map<String,Integer> pos = new HashMap<String,Integer>();
 				pos.put("Row", i);
 				pos.put("Col", j);
-				if(rand.nextInteger()%100 <= 90){
-					int r = rand.nextInteger()%3;
+				if(rand.nextInt()%100 <= 90){
+					int r = rand.nextInt()%3;
 					if (r == 0){
 						temp.add(new Grassland(pos,1));
 					}else if (r == 1){
@@ -110,7 +110,7 @@ public class Game{
 						temp.add(new Coop(pos,1));
 					}
 				} else {
-					int r = rand.nextInteger()%3;
+					int r = rand.nextInt()%3;
 					if (r == 0){
 						temp.add(new Truck(pos));
 					}else if (r == 1){
@@ -127,38 +127,40 @@ public class Game{
 		
 		int cntAnimal = 8;
 		while(cntAnimal--){
-			Map<String,Integer> pos = new HashMap<String,Integer>();
-			pos.put("Row", rand.nextInteger()%n);
-			pos.put("Col", rand.nextint()%m);
-			while(!isValid(pos)){
-				pos.put("Row", rand.nextInteger()%n);
-				pos.put("Col", rand.nextint()%m);
+			Map<String,Integer> randPosition = new HashMap<String,Integer>();
+			int randRow = rand.nextInt()%n;
+			int randCol = rand.nextInt()%m;
+			while(!isValid(randPosition)){
+				randRow = rand.nextInt()%n;
+				randCol = rand.nextInt()%m;
 			}
-			int randAnimal = rand.nextInteger()%6;
+			randPosition.put("Row", randRow);
+			randPosition.put("Col", randCol);
+			int randAnimal = rand.nextInt()%6;
 			if(randAnimal == 0){
-				Chicken x = new Chicken(randPosition, "Chicken", (cellList.get(randPosition.first).get(randPosition.second)));
+				Chicken x = new Chicken(randPosition, "Chicken", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 1){
-				Bison x = new Bison(randPosition, "Bison", (cellList.get(randPosition.first).get(randPosition.second)));
+				Bison x = new Bison(randPosition, "Bison", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 2){
-				Dog x = new Dog(randPosition, "Dog", (cellList.get(randPosition.first).get(randPosition.second)));
+				Dog x = new Dog(randPosition, "Dog", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 3){
-				Platypus x = new Platypus(randPosition, "Platypus", (cellList.get(randPosition.first).get(randPosition.second)));
+				Platypus x = new Platypus(randPosition, "Platypus", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else if(randAnimal == 4){
-				Pterodactyl x = new Pterodactyl(randPosition, "Pterodactyl", (cellList.get(randPosition.first).get(randPosition.second)));
+				Pterodactyl x = new Pterodactyl(randPosition, "Pterodactyl", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			} else {
-				TRex x = new TRex(randPosition, "TRex", (cellList.get(randPosition.first).get(randPosition.second)));
+				TRex x = new TRex(randPosition, "TRex", (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
-				((cellList.get(randPosition.first).get(randPosition.second))).setObjectHere(x);
+				((cellList.get(randRow).get(randCol))).setObjectHere(x);
 			
 			}
 		}
@@ -170,11 +172,11 @@ public class Game{
 
 		//Menaruh player di posisi random
 		Map<String,Integer> pos = new HashMap<String,Integer>();
-		pos.put("Row", rand.nextInteger()%n);
-		pos.put("Col", rand.nextInteger()%m);
+		pos.put("Row", rand.nextInt()%n);
+		pos.put("Col", rand.nextInt()%m);
 		while(!isValid(pos)){
-			pos.put("Row", rand.nextInteger()%n);
-			pos.put("Col", rand.nextInteger()%m);
+			pos.put("Row", rand.nextInt()%n);
+			pos.put("Col", rand.nextInt()%m);
 		}
 		int curRow = pos.get("Row");
 		int curCol = pos.get("Col");

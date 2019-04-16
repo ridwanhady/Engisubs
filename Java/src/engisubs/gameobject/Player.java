@@ -28,7 +28,7 @@ public class Player extends GameObject{
 	/**
 	 * Menyimpan worldmap
 	 */
-	private List<List<Cell>> worldMap;
+	private List<LinkedList<Cell>> worldMap;
 	/**
 	 * Inventory pemain untuk menyimpan product
 	 */
@@ -43,7 +43,7 @@ public class Player extends GameObject{
 	 * @param  _worldMap Peta dunia
 	 * @return           Objek Player
 	 */
-    public Player(String _name, int _water, double _uang, Map<String,Integer> pos, List<List<Cell>> _worldMap){
+    public Player(String _name, int _water, double _uang, Map<String,Integer> pos, List<LinkedList<Cell>> _worldMap){
 		setName(_name);
 		setWater(_water);
 		setUang(_uang);
@@ -100,18 +100,11 @@ public class Player extends GameObject{
 		return uang;	
 	}
 	/**
-	 * Getter currentRow
-	 * @return currentRow
+	 * Getter currentPos
+	 * @return currentPos
 	 */
-	public int getCurrentRow(){
-		return currentRow;
-	}
-	/**
-	 * Getter currentCol
-	 * @return currentCol
-	 */
-	public int getCurrentCol(){
-		return currentCol;
+	public Map<String,Integer> getCurrentPos(){
+		return currentPos;
 	}
 	/**
 	 * Menghitung banyaknya suatu product pada inventory
@@ -158,7 +151,7 @@ public class Player extends GameObject{
 	 * Setter currentPos
 	 * @param _currentPos Nilai _currentPos yang baru
 	 */
-	public void setCurrentPos(Map<String,Integer> _currentPos){
+	public void setPosition(Map<String,Integer> _currentPos){
 		currentPos = _currentPos;
 	}
 	/**
