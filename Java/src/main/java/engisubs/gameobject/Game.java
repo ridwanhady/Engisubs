@@ -1,14 +1,14 @@
-package engisubs.gameobject;
+package main.java.engisubs.gameobject;
 
-import engisubs.gameobject.*;
-import engisubs.gameobject.cell.land.*;
-import engisubs.gameobject.cell.Cell;
-import engisubs.gameobject.farmanimal.*;
-import engisubs.gameobject.product.farmproduct.egg.*;
-import engisubs.gameobject.product.farmproduct.meat.*;
-import engisubs.gameobject.product.farmproduct.milk.*;
-import engisubs.gameobject.product.sideproduct.*;
-import engisubs.gameobject.product.Product;
+import main.java.engisubs.gameobject.*;
+import main.java.engisubs.gameobject.cell.land.*;
+import main.java.engisubs.gameobject.cell.Cell;
+import main.java.engisubs.gameobject.farmanimal.*;
+import main.java.engisubs.gameobject.product.farmproduct.egg.*;
+import main.java.engisubs.gameobject.product.farmproduct.meat.*;
+import main.java.engisubs.gameobject.product.farmproduct.milk.*;
+import main.java.engisubs.gameobject.product.sideproduct.*;
+import main.java.engisubs.gameobject.product.Product;
 
 
 import java.util.*;
@@ -53,8 +53,8 @@ public class Game{
 	 * @return     boolean true jika valid
 	 */
 	private boolean isValid(Map<String, Integer> position){
-		row = position.get("Row");
-		col = position.get("Col");
+		int row = position.get("Row");
+		int col = position.get("Col");
 		if(row < 0 || row >= n || col < 0 || col >= m){
 			return false;
 		}
@@ -239,14 +239,14 @@ public class Game{
 					mainPlayer.move(UP);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "DOWN"){
 				try{
 					mainPlayer.move(DOWN);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 
 			} else if(command == "RIGHT"){
@@ -254,42 +254,42 @@ public class Game{
 					mainPlayer.move(RIGHT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "LEFT"){
 				try{
 					mainPlayer.move(LEFT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "TALK"){
 				try{
 					mainPlayer.talk();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "INTERACT"){
 				try{
 					mainPlayer.interact();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "KILL"){
 				try{
 					mainPlayer.kill(farmAnimalList);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "GROW"){
 				try{
 					mainPlayer.grow();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.what());
+					System.out.println(e.getMessage());
 				}
 			} else if(command == "LU"){
 				mainPlayer.changeDirection(UP);
