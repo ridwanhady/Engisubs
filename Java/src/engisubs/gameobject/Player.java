@@ -2,6 +2,7 @@ package engisubs.gameobject;
 
 import java.util.*;
 import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.cell.land.*;
 import engisubs.gameobject.product.Product;
 
 public class Player extends GameObject{

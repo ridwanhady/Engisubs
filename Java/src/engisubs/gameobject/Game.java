@@ -459,7 +459,7 @@ public class Game{
 	 * Mengecek product yang bisa dibuat
 	 * @return daftarProduct
 	 */
-	public static List<ObjectType> getProduct(){
+	public static List<GameObject.GameObjectType> getProduct(){
 		return Game.daftarProduct;
 	}
 }
