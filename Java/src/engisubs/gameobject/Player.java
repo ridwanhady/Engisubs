@@ -1,8 +1,8 @@
-package main.java.engisubs.gameobject;
+package engisubs.gameobject;
 
 import java.util.*;
-import main.java.engisubs.gameobject.cell.Cell;
-import main.java.engisubs.gameobject.product.Product;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.product.Product;
 
 public class Player extends GameObject{
  	/**
