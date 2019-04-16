@@ -104,20 +104,40 @@ public class GameObject {
 	 * Enumerator untuk Arah Gerak
 	 */
 	public enum DirectionType{
-		UP,
-		DOWN,
-		RIGHT,
-		LEFT
+		UP(0),
+		DOWN(1),
+		RIGHT(2),
+		LEFT(3);
+
+		private final int value;
+
+		DirectionType(int value){
+			this.value = value;
+		}
+
+		public int getValue(){
+			return value;
+		}
 	};
 
 	/** 
 	 * Enumerator untuk tipe FarmProduct.
 	 */
 	public enum FarmProductType {
-		MEAT,
-		EGG,
-		MILK,
-		NOT_FOUND
+		MEAT(0),
+		EGG(1),
+		MILK(2),
+		NOT_FOUND(3);
+
+		private final int value;
+
+		FarmProductType(int value){
+			this.value = value;
+		}
+
+		public int getValue(){
+			return value;
+		}
 	};
 	/**
 	 * Tipe dari suatu Objek, misalnya Product, TRex, etc

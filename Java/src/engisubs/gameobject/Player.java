@@ -48,7 +48,7 @@ public class Player extends GameObject{
 		setWater(_water);
 		setUang(_uang);
 		setPosition(pos);
-		initGameObject(PLAYER, 'P');
+		initGameObject(GameObject.GameObjectType.PLAYER, 'P');
 		worldMap = _worldMap;
 		inventory = new LinkedList<Product>();
 	}
@@ -246,8 +246,8 @@ public class Player extends GameObject{
 		Map<String,Integer> targetPos = new HashMap<String,Integer>();
 		int currentRow = targetPos.get("Row");
 		int currentCol = targetPos.get("Col");
-		targetPos.put("Row",currentRow+di[direction]);
-		targetPos.put("Col",currentCol+dj[direction]);
+		targetPos.put("Row",currentRow+di[direction.getValue()]);
+		targetPos.put("Col",currentCol+dj[direction.getValue()]);
 		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
@@ -271,8 +271,8 @@ public class Player extends GameObject{
 		int dj[] = {0,0,1,-1};
 		int currentRow = currentPos.get("Row");
 		int currentCol = currentPos.get("Col");
-		int targetRow = currentRow+di[direction];
-		int targetCol = currentCol+dj[direction];
+		int targetRow = currentRow+di[direction.getValue()];
+		int targetCol = currentCol+dj[direction.getValue()];
 		if(targetRow < 0 || targetRow >= worldMap.size() || targetCol < 0 || targetCol >= worldMap.get(0).size()){
 			return null;
 		}

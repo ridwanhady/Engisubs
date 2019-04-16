@@ -126,7 +126,8 @@ public class Game{
 		//Init animal
 		
 		int cntAnimal = 8;
-		while(cntAnimal--){
+		while(cntAnimal > 0){
+			cntAnimal--;
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt()%n;
 			int randCol = rand.nextInt()%m;
@@ -186,10 +187,10 @@ public class Game{
 		(cellList.get(curRow).get(curCol)).setObjectHere(mainPlayer);
 		//Melakukkan inisialisasi daftarProduct hanya saat belum pernah ada instance game
 		if(daftarProduct.size() == 0){
-			daftarProduct.add(CHEESE);
-			daftarProduct.add(EKADO);
-			daftarProduct.add(MAYONAISE);
-			daftarProduct.add(STEAK);
+			daftarProduct.add(GameObject.GameObjectType.CHEESE);
+			daftarProduct.add(GameObject.GameObjectType.EKADO);
+			daftarProduct.add(GameObject.GameObjectType.MAYONAISE);
+			daftarProduct.add(GameObject.GameObjectType.STEAK);
 			Cheese.InitResep();
 			Ekado.InitResep();
 			Mayonaise.InitResep();
@@ -239,14 +240,14 @@ public class Game{
 				System.out.println("LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS");
 			} else if(command == "UP"){
 				try{
-					mainPlayer.move(UP);
+					mainPlayer.move(GameObject.DirectionType.UP);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
 			} else if(command == "DOWN"){
 				try{
-					mainPlayer.move(DOWN);
+					mainPlayer.move(GameObject.DirectionType.DOWN);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
@@ -254,14 +255,14 @@ public class Game{
 
 			} else if(command == "RIGHT"){
 				try{
-					mainPlayer.move(RIGHT);
+					mainPlayer.move(GameObject.DirectionType.RIGHT);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
 			} else if(command == "LEFT"){
 				try{
-					mainPlayer.move(LEFT);
+					mainPlayer.move(GameObject.DirectionType.LEFT);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
@@ -295,25 +296,25 @@ public class Game{
 					System.out.println(e.getMessage());
 				}
 			} else if(command == "LU"){
-				mainPlayer.changeDirection(UP);
+				mainPlayer.changeDirection(GameObject.DirectionType.UP);
 			} else if(command == "LD"){
-				mainPlayer.changeDirection(DOWN);
+				mainPlayer.changeDirection(GameObject.DirectionType.DOWN);
 			} else if(command == "LL"){
-				mainPlayer.changeDirection(LEFT);
+				mainPlayer.changeDirection(GameObject.DirectionType.LEFT);
 			} else if(command == "LR"){
-				mainPlayer.changeDirection(RIGHT);
+				mainPlayer.changeDirection(GameObject.DirectionType.RIGHT);
 			} else if(command == "QUIT"){
 				endGame();
 			} else if(command == "SHOW") {
 				System.out.println("Berikut adalah isi dari DaftarProduct");
 				for (int i = 0 ; i < daftarProduct.size() ; i++) {
-					if (daftarProduct.get(i) == 21)
+					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)
 						System.out.println("[" + i + "] " + "CHEESE");
-					else if (daftarProduct.get(i) == 22)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.EKADO)
 						System.out.println("[" + i + "] " + "EKADO");
-					else if (daftarProduct.get(i) == 23)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.MAYONAISE)
 						System.out.println("[" + i + "] " + "MAYONAISE");
-					else if (daftarProduct.get(i) == 24)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.STEAK)
 						System.out.println("[" + i + "] " + "STEAK");
 				}
 			} else if (command == "STATUS") {
@@ -327,13 +328,13 @@ public class Game{
 			} else if (command == "SHOWRESEP"){
 				System.out.println("Berikut adalah isi dari DaftarProduct");
 				for (int i = 0 ; i < daftarProduct.size() ; i++) {
-					if (daftarProduct.get(i) == 21)
+					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)
 						System.out.println("CHEESE");
-					else if (daftarProduct.get(i) == 22)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.EKADO)
 						System.out.println("EKADO");
-					else if (daftarProduct.get(i) == 23)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.MAYONAISE)
 						System.out.println("MAYONAISE");
-					else if (daftarProduct.get(i) == 24)
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.STEAK)
 						System.out.println("STEAK");
 				}
 				System.out.println("Pilih indeks dari Daftar Product!");
@@ -343,19 +344,19 @@ public class Game{
 				if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
 					if (idxDaftarProduct == 0) {
 						for (int i = 0 ; i < Cheese.getResep().size() ; i++) {
-							System.out.println(ConvertIdxToString(Cheese.getResepwithIdx(i)));
+							System.out.println(ConvertIdxToString(Cheese.getResepwithIdx(i).getValue()));
 						}
 					} else if (idxDaftarProduct == 1) {
 						for (int i = 0 ; i < Ekado.getResep().size() ; i++) {
-							System.out.println(ConvertIdxToString(Ekado.getResepwithIdx(i)));
+							System.out.println(ConvertIdxToString(Ekado.getResepwithIdx(i).getValue()));
 						}
 					} else if (idxDaftarProduct == 2) {
 						for (int i = 0 ; i < Mayonaise.getResep().size() ; i++) {
-							System.out.println(ConvertIdxToString(Mayonaise.getResepwithIdx(i)));
+							System.out.println(ConvertIdxToString(Mayonaise.getResepwithIdx(i).getValue()));
 						}
 					} else if (idxDaftarProduct == 3) {
 						for (int i = 0 ; i < Steak.getResep().size() ; i++) {
-							System.out.println(ConvertIdxToString(Steak.getResepwithIdx(i)));
+							System.out.println(ConvertIdxToString(Steak.getResepwithIdx(i).getValue()));
 						}
 					}
 				} else {
@@ -380,9 +381,10 @@ public class Game{
 		//1. Makan
 		//2. Update hungryBar
 		//3. Pindah ke cell lain
-		DirectionType dir[] = {UP,DOWN,RIGHT,LEFT};
+		GameObject.DirectionType dir[] = {GameObject.DirectionType.UP,GameObject.DirectionType.DOWN,GameObject.DirectionType.RIGHT,GameObject.DirectionType.LEFT};
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
+		Random rand = new Random();
 		for(int i = 0; i < farmAnimalList.size(); i++){
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
@@ -396,18 +398,18 @@ public class Game{
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
 				FarmAnimal temp = farmAnimalList.get(i);
 				farmAnimalList.remove(farmAnimalList.get(i));
-				delete temp;
 				i--;
 				continue;
 			}
 			//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 			int moveDirection;
-			Map<String,Integer> pos = new farmAnimalList.get(i).getPos();
-			curRow = farmAnimalList.get(i).getRow();
-			curCol = farmAnimalList.get(i).getCol();
+			Map<String,Integer> pos = new HashMap<String,Integer>();
+			pos = farmAnimalList.get(i).getPos();
+			int curRow = farmAnimalList.get(i).getRow();
+			int curCol = farmAnimalList.get(i).getCol();
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
 			do{
-				moveDirection = rand.nextIntegereger()%5;
+				moveDirection = rand.nextInt()%5;
 				tempPos.put("Row", curRow+di[moveDirection]);
 				tempPos.put("Col", curCol+dj[moveDirection]);
 				if(moveDirection < 4 && isValid(tempPos)){
@@ -424,7 +426,7 @@ public class Game{
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){
 				Cell targetCell = cellList.get(i).get(j);
-				if(targetCell.getObjectType() == TRUCK){
+				if(targetCell.getObjectType() == GameObject.GameObjectType.TRUCK){
 					Truck targetTruck = (targetCell);
 					targetTruck.setNotUsableTurns(max(0,targetTruck.getNotUsableTurns()-1));
 				}
