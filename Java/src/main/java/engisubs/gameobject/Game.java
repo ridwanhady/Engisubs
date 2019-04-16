@@ -92,6 +92,7 @@ public class Game{
 		farmAnimalList = new ArrayList<FarmAnimal>();
 		cellList = new LinkedList<LinkedList<Cell>>();
 		daftarProduct = new ArrayList<Product>();
+		Random rand = new Random();
 		//Init cell (
 		for(int i = 0; i < n; i++){
 			List<Cell> temp = new LinkedList<Cell> ();
@@ -170,13 +171,13 @@ public class Game{
 		//Menaruh player di posisi random
 		Map<String,Integer> pos = new HashMap<String,Integer>();
 		pos.put("Row", rand.nextInteger()%n);
-		pos.put("Col", rand.nextint()%m);
+		pos.put("Col", rand.nextInteger()%m);
 		while(!isValid(pos)){
 			pos.put("Row", rand.nextInteger()%n);
-			pos.put("Col", rand.nextint()%m);
+			pos.put("Col", rand.nextInteger()%m);
 		}
-		curRow = pos.get("Row");
-		curCol = pos.get("Col");
+		int curRow = pos.get("Row");
+		int curCol = pos.get("Col");
 		mainPlayer = new Player(namaPemain, 10, 10, pos, cellList);
 		mainPlayer.addInventory(new PlatypusMilk(HARGA_SUSU_PLATYPUS, "Test"));
 		mainPlayer.addInventory(new PlatypusEgg(HARGA_TELUR_PLATYPUS, "Test"));
@@ -335,7 +336,7 @@ public class Game{
 				}
 				System.out.println("Pilih indeks dari Daftar Product!");
 				int idxDaftarProduct;
-				idxDaftarProduct = sc.nextInteger();
+				idxDaftarProduct = sc.nextInt();
 				System.out.println("Resep untuk membuat product adalah:");
 				if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
 					if (idxDaftarProduct == 0) {
