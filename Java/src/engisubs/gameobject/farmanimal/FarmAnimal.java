@@ -1,7 +1,7 @@
-package main.java.engisubs.gameobject.farmanimal;
+package engisubs.gameobject.farmanimal;
 
-import main.java.engisubs.gameobject.*;
-import main.java.engisubs.gameobject.cell.land.*;
+import engisubs.gameobject.*;
+import engisubs.gameobject.cell.land.*;
 
 abstract class FarmAnimal extends GameObject {
     protected static int animalCount = 0;
