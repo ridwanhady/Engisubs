@@ -48,6 +48,9 @@ public class Game{
 	 * Banyak kolom pada game
 	 */
 	private int m = 10;
+
+	Scanner sc = new Scanner(System.in);
+
 	/**
 	 * Mengecek apakah suatu koordinat valid atau tidak
 	 * @param  row row koordinat yang ingin dicek
@@ -175,7 +178,6 @@ public class Game{
 
 		//Meminta nama pemain
 		System.out.println("Masukkan nama pemain");
-		Scanner sc = new Scanner(System.in);
 		namaPemain = sc.nextLine();
 
 		//Menaruh player di posisi random
@@ -201,8 +203,6 @@ public class Game{
 			Mayonaise.InitResep();
 			Steak.InitResep();
 		}
-
-		sc.close();
 	}
 
 	/**
@@ -218,7 +218,6 @@ public class Game{
 	 */
 	public void gameLoop(){
 		String command;
-		Scanner sc = new Scanner(System.in);
 		while(isGameStarted && farmAnimalList.size() > 0){
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
 			System.out.println("STATUS ");
@@ -346,7 +345,7 @@ public class Game{
 				}
 				System.out.println("Pilih indeks dari Daftar Product!");
 				int idxDaftarProduct;
-				idxDaftarProduct = sc.nextInt();
+				idxDaftarProduct = Integer.parseInt(sc.nextLine());
 				System.out.println("Resep untuk membuat product adalah:");
 				if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
 					if (idxDaftarProduct == 0) {
@@ -457,7 +456,7 @@ public class Game{
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){
 				cellList.get(i).get(j).render();
-				System.out.println(" ");
+				System.out.print(" ");
 			}
 			System.out.println();
 		}

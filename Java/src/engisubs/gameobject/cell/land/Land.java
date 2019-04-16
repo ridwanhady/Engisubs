@@ -94,9 +94,9 @@ public abstract class Land extends Cell{
 
     public void render(){
         if (isOccupied()){
-            System.out.println(objectHere.objectSymbol);
+            System.out.print(objectHere.objectSymbol);
         } else {
-            System.out.println(objectSymbol);
+            System.out.print(objectSymbol);
         }
     }
 }

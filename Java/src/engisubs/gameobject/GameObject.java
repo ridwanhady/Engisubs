@@ -39,7 +39,7 @@ public class GameObject {
 	 * render() akan mengeluarkan objectSymbol ke layar
 	 */
 	public void render(){
-		System.out.println(this.objectSymbol);
+		System.out.print(this.objectSymbol);
 	}
 
 	/**
