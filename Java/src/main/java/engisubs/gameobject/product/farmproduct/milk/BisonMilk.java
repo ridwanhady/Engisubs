@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product.farmproduct.milk;
+package engisubs.gameobject.product.farmproduct.milk;
 /**
  * BisonMilk adalah salah satu Golongan dari FarmProduct Milk,
  * Sesuai namanya, product ini dihasilkan oleh Bison

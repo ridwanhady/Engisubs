@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product.farmproduct.meat;
+package engisubs.gameobject.product.farmproduct.meat;
 
 /**
  * PlatypusMeat adalah salah satu Golongan dari FarmProduct Meat,

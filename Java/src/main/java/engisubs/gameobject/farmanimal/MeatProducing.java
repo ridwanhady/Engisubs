@@ -1,6 +1,6 @@
-package main.java.engisubs.gameobject.farmanimal;
+package engisubs.gameobject.farmanimal;
 
-import main.java.engisubs.gameobject.Player;
+import engisubs.gameobject.Player;
 
 interface MeatProducing {
     void produceMeat(Player _p);

@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product.farmproduct.milk;
+package engisubs.gameobject.product.farmproduct.milk;
 
 /**
  * PlatypusMilk adalah salah satu Golongan dari FarmProduct Milk,

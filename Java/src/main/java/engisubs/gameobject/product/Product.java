@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product;
+package engisubs.gameobject.product;
 
 import engisubs.gameobject.GameObject;
 

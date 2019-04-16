@@ -1,11 +1,11 @@
-package main.java.engisubs.gameobject.farmanimal;
+package engisubs.gameobject.farmanimal;
 
 import java.util.*;
-import main.java.engisubs.gameobject.*;
-import main.java.engisubs.gameobject.product.farmproduct.meat.BisonMeat;
-import main.java.engisubs.gameobject.product.farmproduct.milk.BisonMilk;
+import engisubs.gameobject.*;
+import engisubs.gameobject.product.farmproduct.meat.BisonMeat;
+import engisubs.gameobject.product.farmproduct.milk.BisonMilk;
 
-class Bison extends FarmAnimal implements MeatProducing, MilkProducing{
+public class Bison extends FarmAnimal implements MeatProducing, MilkProducing{
     public void produceMeat(Player _p){
         _p.addInventory(new BisonMeat(100, name));
     }

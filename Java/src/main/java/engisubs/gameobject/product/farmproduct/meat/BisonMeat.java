@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product.farmproduct.meat;
+package engisubs.gameobject.product.farmproduct.meat;
 /**
  * BisonMeat adalah salah satu Golongan dari FarmProduct Meat,
  * Sesuai namanya, product ini dihasilkan oleh Bison

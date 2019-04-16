@@ -1,4 +1,4 @@
-package main.java.engisubs.gameobject.product.farmproduct.egg;
+package engisubs.gameobject.product.farmproduct.egg;
 /**
  * PterodactylEgg adalah salah satu Golongan dari FarmProduct Egg,
  * Sesuai namanya, product ini dihasilkan oleh Pterodactyl

@@ -1,6 +1,6 @@
-package main.java.engisubs.gameobject.product.farmproduct.milk;
+package engisubs.gameobject.product.farmproduct.milk;
 
-import engisubs.gameobject.product.farm_product.*;
+import engisubs.gameobject.product.farmproduct.*;
 /**
  * Kelas ini berfungsi sebagai discrimator untuk membedakan kelas kelas yang berhubungan dengan MILK dengan kelas kelas FarmProduct Lainnya seperti MEAT dan EGG.
  * 
