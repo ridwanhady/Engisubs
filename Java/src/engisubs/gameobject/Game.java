@@ -402,8 +402,6 @@ public class Game{
 		Random rand = new Random();
 		System.out.println("Size list adalah " + farmAnimalList.size());
 		for(int i = 0; i < farmAnimalList.size(); i++){
-
-			System.out.println("Testing debug");
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
