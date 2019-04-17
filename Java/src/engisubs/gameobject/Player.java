@@ -246,13 +246,18 @@ public class Player extends GameObject{
 	 * player sesuai dengan direction yang diberikan.
 	 */
 	public void move(DirectionType direction){
+		System.out.println("A");
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		Map<String,Integer> targetPos = new HashMap<String,Integer>();
-		int currentRow = targetPos.get("Row");
-		int currentCol = targetPos.get("Col");
+		int currentRow = currentPos.get("Row");
+		int currentCol = currentPos.get("Col");
+		System.out.println("B");
 		targetPos.put("Row",currentRow+di[direction.getValue()]);
+		System.out.println("C");
 		targetPos.put("Col",currentCol+dj[direction.getValue()]);
+		System.out.println("D");
+		System.out.println("Trying to move to " + targetPos.get("Row") + " " + targetPos.get("Col"));
 		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
@@ -263,6 +268,8 @@ public class Player extends GameObject{
 			currentLand = (Land) worldMap.get(targetRow).get(targetCol);
 			currentLand.setObjectHere(this);
 			this.direction = direction;
+			currentPos.replace("Row", targetRow);
+			currentPos.replace("Col", targetCol);
 		} else {
 			throw new RuntimeException("Langkah tidak valid");
 		}
@@ -309,7 +316,7 @@ public class Player extends GameObject{
 			return false;
 		}
 		Land targetLand = (Land) targetCell;
-		if(targetLand.isOccupied())return false;
+		if(targetLand.isOccupied()) return false;
 		return true;
 	}
 }
