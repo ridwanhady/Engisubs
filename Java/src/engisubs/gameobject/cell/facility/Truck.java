@@ -23,14 +23,19 @@ public class Truck extends Facility
      */
     public void interact(Player _p){
       //LinkedList <Product *> inventTemp = _p->getInventory();
-      for(int i = 0; i < _p.inventory.size(); i++){
-        _p.setUang(_p.getUang() + _p.inventory.get(i).getPrice());
-      }
-      setNotUsableTurns(10);
-      System.out.println("Isi Inventori Sekarang Kosong!");
+      if(notUsableTurns > 0){
+        System.out.println("Supir truck terlihat lelah, berikan dia waktu " + notUsableTurns + " ticks lagi sebelum menjual inventorymu!");
+      } else {
+        for(int i = 0; i < _p.inventory.size(); i++){
+          _p.setUang(_p.getUang() + _p.inventory.get(i).getPrice());
+        }
+        setNotUsableTurns(10);
+        System.out.println("Isi Inventori Sekarang Kosong!");
 
-      //Todo: Delete inventory
-      _p.inventory.clear();;
+        //Todo: Delete inventory
+        _p.inventory.clear();;
+
+      }
     }
 
     //Setter

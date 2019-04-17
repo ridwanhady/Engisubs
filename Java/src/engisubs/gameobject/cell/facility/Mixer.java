@@ -225,5 +225,6 @@ public class Mixer extends Facility
       } else {
         System.out.println("Indeks yang Anda masukkan tidak valid.");
       }
+      inputScanner.close();
     }
 }
