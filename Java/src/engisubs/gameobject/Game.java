@@ -160,7 +160,6 @@ public class Game{
 				randPosition.replace("Col", randCol);
 			}
 			System.out.println(randRow + " " + randCol);
-			
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);

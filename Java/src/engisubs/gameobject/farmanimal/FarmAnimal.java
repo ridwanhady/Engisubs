@@ -66,11 +66,17 @@ abstract public class FarmAnimal extends GameObject {
         timeUntilDead = _timeUntilDead;
     }
 
+    protected void setIsProductProduced(Boolean _isProductProduced){
+        isProductProduced = _isProductProduced;
+    }
+
     public void eat(){
-        timeUntilDead = 10;
-        timeUntilHungry = 10;
-        landPos.ungrow();
-        isProductProduced = false;
+        if (landPos.isGrown()) {
+            timeUntilDead = 10;
+            timeUntilHungry = 10;
+            landPos.ungrow();
+            isProductProduced = false;
+        }
     }
 
     /*

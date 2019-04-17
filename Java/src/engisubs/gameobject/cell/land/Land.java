@@ -13,9 +13,20 @@ public abstract class Land extends Cell{
     private char grassSymbol[] = new char[] {'#', '@', '*'};
 
     public enum LandType {
-        GRASSLAND,
-        BARN,
-        COOP
+        GRASSLAND(0),
+        BARN(1),
+        COOP(2);
+
+        private final int value;
+
+		LandType(int value){
+			this.value = value;
+		}
+
+		public int getValue(){
+			return value;
+		}
+
     };
 
     /**
@@ -26,9 +37,10 @@ public abstract class Land extends Cell{
         gameObjectType = GameObjectType.LAND;
         grown = _isGrown;
         if (grown){
-            objectSymbol = grassSymbol[_landType.ordinal()];
+            objectSymbol = grassSymbol[_landType.getValue()];
+            System.out.println("Ini adalah value dari enum" + _landType.getValue());
         } else {
-            objectSymbol = landSymbol[_landType.ordinal()];
+            objectSymbol = landSymbol[_landType.getValue()];
         }
     }
 
@@ -65,7 +77,7 @@ public abstract class Land extends Cell{
      */
     public void grow() {
         grown = true;
-	    objectSymbol = grassSymbol[landType.ordinal()];
+	    objectSymbol = grassSymbol[landType.getValue()];
     }
     
     /**
@@ -95,7 +107,7 @@ public abstract class Land extends Cell{
      */
     public void ungrow(){
 	    grown = false;
-	    objectSymbol = landSymbol[landType.ordinal()];
+	    objectSymbol = landSymbol[landType.getValue()];
     }
 
     public void render(){
