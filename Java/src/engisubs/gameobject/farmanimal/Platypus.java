@@ -13,7 +13,6 @@ public class Platypus extends FarmAnimal implements MeatProducing, EggProducing,
         super.killable = true;
         initGameObject(GameObjectType.PLATYPUS, 'Y');
         initializeFarmAnimal(_position, _name, _landPos);
-        setIsProductProduced(true);
     }
 
     public void produceMeat(Player _p){

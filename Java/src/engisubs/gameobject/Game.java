@@ -406,6 +406,7 @@ public class Game{
 		int di[] = {-1,1,0,0,0};
 		int dj[] = {0,0,1,-1,0};
 		Random rand = new Random();
+		System.out.println("Size list adalah " + farmAnimalList.size());
 		for(int i = 0; i < farmAnimalList.size(); i++){
 			System.out.println(i);
 			if(farmAnimalList.get(i) == null){
@@ -415,9 +416,9 @@ public class Game{
 			}
 			System.out.println("XX");
 			if(farmAnimalList.get(i).isHungry()){
-				System.out.println("HEWAN ke - " + i + "LAPAR");
+				System.out.println("HEWAN ke - " + i + " LAPAR");
 				farmAnimalList.get(i).eat();
-				System.out.println("HEWAN ke - " + i + "MAKAN");
+				System.out.println("HEWAN ke - " + i + " MAKAN");
 			}
 			System.out.println("XXX");
 			farmAnimalList.get(i).updateCondition();
