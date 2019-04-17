@@ -401,7 +401,9 @@ public class Game{
 				continue;
 			}
 			if(farmAnimalList.get(i).isHungry()){
+				System.out.println("HEWAN ke - " + i + "LAPAR");
 				farmAnimalList.get(i).eat();
+				System.out.println("HEWAN ke - " + i + "MAKAN");
 			}
 			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
@@ -425,6 +427,7 @@ public class Game{
 					farmAnimalList.get(i).move(dir[moveDirection], cellList);
 					break;
 				} else if(moveDirection == 4){
+					System.out.println("HEWAN BERHENTI.");
 					break;
 				}
 			} while (!isValid(tempPos));

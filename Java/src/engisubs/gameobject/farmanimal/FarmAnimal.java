@@ -8,13 +8,13 @@ import engisubs.gameobject.cell.land.*;
 abstract public class FarmAnimal extends GameObject {
     protected static int animalCount = 0;
     protected Map <String, Integer> position = new HashMap<>();
-    protected Boolean hungry = false;
+    protected boolean hungry = false;
     protected int timeUntilDead = 10;
     protected int timeUntilHungry = 0;
-    protected Boolean isProductProduced = true;
+    protected boolean isProductProduced = true;
     protected String name = "";
     protected Land landPos = null;
-    protected Boolean killable = false;
+    protected boolean killable = false;
 
     protected void initializeFarmAnimal(Map <String, Integer> _position, String _name, Land _landPos){
         position.put("Row", _position.get("Row"));
@@ -35,7 +35,7 @@ abstract public class FarmAnimal extends GameObject {
         return timeUntilHungry;
     }
 
-    public Boolean getIsProductProduced(){
+    public boolean getIsProductProduced(){
         return isProductProduced;
     }
 
@@ -47,11 +47,11 @@ abstract public class FarmAnimal extends GameObject {
         return landPos;
     }
 
-    public Boolean isKillable(){
+    public boolean isKillable(){
         return killable;
     }
 
-    public Boolean isHungry(){
+    public boolean isHungry(){
         return hungry;
     }
 
@@ -66,16 +66,17 @@ abstract public class FarmAnimal extends GameObject {
         timeUntilDead = _timeUntilDead;
     }
 
-    protected void setIsProductProduced(Boolean _isProductProduced){
+    protected void setIsProductProduced(boolean _isProductProduced){
         isProductProduced = _isProductProduced;
     }
 
     public void eat(){
         if (landPos.isGrown()) {
+            System.out.println("MAKAN VALID");
             timeUntilDead = 10;
             timeUntilHungry = 10;
             landPos.ungrow();
-            isProductProduced = false;
+            setIsProductProduced(false);
         }
     }
 
@@ -85,13 +86,13 @@ abstract public class FarmAnimal extends GameObject {
         Jika isHungry = False, timeUntilHungry = timeUntilHungry-1, dan jika timeUntilHungry = 0, isHungry = True
     */
     public void updateCondition(){
-        if (hungry){
+        if (isHungry()){
             timeUntilDead -= 1;
         }else {
-            timeUntilHungry -= 1;
-            if (timeUntilHungry == 0){
+            if (timeUntilHungry > 0)
+                timeUntilHungry--;
+            else
                 hungry = true;
-            }
         }
     }
 
