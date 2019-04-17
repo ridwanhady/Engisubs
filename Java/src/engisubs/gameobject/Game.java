@@ -238,20 +238,20 @@ public class Game{
 			command = sc.nextLine();
 			System.out.println();
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			if(command == "HELP"){
+			if(command.equals("HELP") ){
 				System.out.println();
 				System.out.println("Command yang tersedia:");
 				System.out.println("UP,  DOWN,  RIGHT,  LEFT,  TALK,  INTERACT,  KILL,  GROW");
 				System.out.println("Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain):");
 				System.out.println("LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS");
-			} else if(command == "UP"){
+			} else if(command.equals("UP")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.UP);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "DOWN"){
+			} else if(command.equals("DOWN")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.DOWN);
 					updateGame();				
@@ -259,59 +259,59 @@ public class Game{
 					System.out.println(e.getMessage());
 				}
 
-			} else if(command == "RIGHT"){
+			} else if(command.equals("RIGHT")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.RIGHT);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "LEFT"){
+			} else if(command.equals("LEFT")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.LEFT);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "TALK"){
+			} else if(command.equals("TALK")){
 				try{
 					mainPlayer.talk();
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "INTERACT"){
+			} else if(command.equals("INTERACT")){
 				try{
 					mainPlayer.interact();
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "KILL"){
+			} else if(command.equals("KILL")){
 				try{
 					mainPlayer.kill(farmAnimalList);
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "GROW"){
+			} else if(command.equals("GROW")){
 				try{
 					mainPlayer.grow();
 					updateGame();				
 				} catch (Exception e){
 					System.out.println(e.getMessage());
 				}
-			} else if(command == "LU"){
+			} else if(command.equals("LU")){
 				mainPlayer.changeDirection(GameObject.DirectionType.UP);
-			} else if(command == "LD"){
+			} else if(command.equals("LD")){
 				mainPlayer.changeDirection(GameObject.DirectionType.DOWN);
-			} else if(command == "LL"){
+			} else if(command.equals("LL")){
 				mainPlayer.changeDirection(GameObject.DirectionType.LEFT);
-			} else if(command == "LR"){
+			} else if(command.equals("LR")){
 				mainPlayer.changeDirection(GameObject.DirectionType.RIGHT);
-			} else if(command == "QUIT"){
+			} else if(command.equals("QUIT")){
 				endGame();
-			} else if(command == "SHOW") {
+			} else if(command.equals("SHOW")) {
 				System.out.println("Berikut adalah isi dari DaftarProduct");
 				for (int i = 0 ; i < daftarProduct.size() ; i++) {
 					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)
@@ -323,7 +323,7 @@ public class Game{
 					else if (daftarProduct.get(i) == GameObject.GameObjectType.STEAK)
 						System.out.println("[" + i + "] " + "STEAK");
 				}
-			} else if (command == "STATUS") {
+			} else if (command.equals("STATUS")) {
 				System.out.println("WATER : " + mainPlayer.getWater());
 				System.out.println("UANG : "  + mainPlayer.getUang());
 				System.out.println("Berikut adalah isi dari Inventori:");
@@ -331,7 +331,7 @@ public class Game{
 					System.out.println(mainPlayer.getInventory().get(i).getProductName() + ",");
 				}
 				System.out.println();
-			} else if (command == "SHOWRESEP"){
+			} else if (command.equals("SHOWRESEP")){
 				System.out.println("Berikut adalah isi dari DaftarProduct");
 				for (int i = 0 ; i < daftarProduct.size() ; i++) {
 					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)

@@ -244,22 +244,34 @@ public class Player extends GameObject{
 	/**
 	 * Fungsi Move berguna untuk mengubah posisi dari
 	 * player sesuai dengan direction yang diberikan.
+	 * @param direction arah dari pemain sekarang
 	 */
 	public void move(DirectionType direction){
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		Map<String,Integer> targetPos = new HashMap<String,Integer>();
-		int currentRow = targetPos.get("Row");
-		int currentCol = targetPos.get("Col");
+		int currentRow = currentPos.get("Row");
+		int currentCol = currentPos.get("Col");
 		targetPos.put("Row",currentRow+di[direction.getValue()]);
 		targetPos.put("Col",currentCol+dj[direction.getValue()]);
+		System.out.println("VALUE :");
+		System.out.println(direction.getValue());
+
+		System.out.println("CURRENT POS:");
+		System.out.println(currentRow);
+		System.out.println(currentCol);
+
 		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
+			System.out.println("TESTING");
 			Land currentLand = (Land) worldMap.get(currentRow).get(currentCol);
 			currentLand.setObjectHere(null);
-			currentRow = targetRow;
-			currentCol = targetCol;
+			System.out.println("TESTING2");
+			//currentRow = targetRow;
+			//currentCol = targetCol;
+			currentPos.put("Row",targetRow);
+			currentPos.put("Col",targetCol);
 			currentLand = (Land) worldMap.get(targetRow).get(targetCol);
 			currentLand.setObjectHere(this);
 			this.direction = direction;
