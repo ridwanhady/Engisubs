@@ -74,7 +74,6 @@ public class Game{
 		if(targetLand.getLandType() == Land.LandType.COOP && !isCoopWalkable)return false;
 		else if(targetLand.getLandType() == Land.LandType.BARN && !isBarnWalkable) return false;
 		else if(targetLand.getLandType() == Land.LandType.GRASSLAND && !isGrasslandWalkable) return false;
-		System.out.println("AW");
 		return true;
 	}
 	/**
@@ -136,13 +135,9 @@ public class Game{
 			cellList.add(temp);
 		}
 		//Init animal
-		//boolean isCoopWalkable[] = {Chicken instanceof EggProducing, Bison instanceof EggProducing, Dog instanceof EggProducing, Platypus instanceof EggProducing, Pterodactyl instanceof EggProducing, TRex instanceof EggProducing};
-		//boolean isBarnWalkable[] = {Chicken instanceof MilkProducing, Bison instanceof MilkProducing, Dog instanceof MilkProducing, Platypus instanceof MilkProducing, Pterodactyl instanceof MilkProducing, TRex instanceof MilkProducing};
-		//boolean isGrasslandWalkable[] = {Chicken instanceof MeatProducing, Bison instanceof MeatProducing, Dog instanceof MeatProducing, Platypus instanceof MeatProducing, Pterodactyl instanceof MeatProducing, TRex instanceof MeatProducing};
-		boolean isCoopWalkable[] = {true, true, true, true, true};
-		boolean isBarnWalkable[] = {true, true, true, true, true};
-		boolean isGrasslandWalkable[] = {true, true, true, true, true};
-						
+		boolean isCoopWalkable[] = {EggProducing.class.isAssignableFrom(Chicken.class), EggProducing.class.isAssignableFrom(Bison.class), EggProducing.class.isAssignableFrom(Dog.class), EggProducing.class.isAssignableFrom(Platypus.class), EggProducing.class.isAssignableFrom(Pterodactyl.class), EggProducing.class.isAssignableFrom(TRex.class)};
+		boolean isBarnWalkable[] = {MilkProducing.class.isAssignableFrom(Chicken.class), MilkProducing.class.isAssignableFrom(Bison.class), MilkProducing.class.isAssignableFrom(Dog.class), MilkProducing.class.isAssignableFrom(Platypus.class), MilkProducing.class.isAssignableFrom(Pterodactyl.class), MilkProducing.class.isAssignableFrom(TRex.class)};
+		boolean isGrasslandWalkable[] = {MeatProducing.class.isAssignableFrom(Chicken.class), MeatProducing.class.isAssignableFrom(Bison.class), MeatProducing.class.isAssignableFrom(Dog.class), MeatProducing.class.isAssignableFrom(Platypus.class), MeatProducing.class.isAssignableFrom(Pterodactyl.class), MeatProducing.class.isAssignableFrom(TRex.class)};				
 
 		int cntAnimal = 8;
 		while(cntAnimal > 0){
@@ -159,7 +154,6 @@ public class Game{
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			System.out.println(randRow + " " + randCol);
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
@@ -407,35 +401,29 @@ public class Game{
 		int dj[] = {0,0,1,-1,0};
 		Random rand = new Random();
 		for(int i = 0; i < farmAnimalList.size(); i++){
-			System.out.println(i);
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
-			System.out.println("XX");
 			if(farmAnimalList.get(i).isHungry()){
 				farmAnimalList.get(i).eat();
 			}
-			System.out.println("XXX");
 			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
-			System.out.println("XXXX");
 			//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 			int moveDirection;
 			int curRow = farmAnimalList.get(i).getPosition().get("Row");
 			int curCol = farmAnimalList.get(i).getPosition().get("Col");
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
-			System.out.println(curRow + " " + curCol);
 			do{
 				moveDirection = rand.nextInt(5);
 				tempPos.put("Row", curRow+di[moveDirection]);
 				tempPos.put("Col", curCol+dj[moveDirection]);
-				System.out.println(moveDirection);
 				if(moveDirection < 4 && isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing)){
 					//Fungsi untuk gerak random
 					farmAnimalList.get(i).move(dir[moveDirection], cellList);
@@ -445,7 +433,6 @@ public class Game{
 				}
 			} while (!isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing));
 		}
-		System.out.println("UWU");
 		//Mengupdate seluruh state Truck
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){
