@@ -8,6 +8,7 @@ import engisubs.gameobject.product.farmproduct.meat.*;
 
 public class Dog extends FarmAnimal implements MeatProducing{
     public Dog(Map <String, Integer> _position, String _name, Land _landPos){
+        super.killable = true;
         initGameObject(GameObjectType.DOG, 'D');
         initializeFarmAnimal(_position, _name, _landPos);
     }

@@ -10,6 +10,7 @@ import engisubs.gameobject.product.farmproduct.milk.*;
 
 public class Platypus extends FarmAnimal implements MeatProducing, EggProducing, MilkProducing{
     public Platypus(Map <String, Integer> _position, String _name, Land _landPos){
+        super.killable = true;
         initGameObject(GameObjectType.PLATYPUS, 'Y');
         initializeFarmAnimal(_position, _name, _landPos);
     }

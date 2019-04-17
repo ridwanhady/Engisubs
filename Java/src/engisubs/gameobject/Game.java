@@ -147,7 +147,7 @@ public class Game{
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			int randAnimal = 3;//rand.nextInt(6);
+			int randAnimal = rand.nextInt(5);
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
@@ -418,7 +418,6 @@ public class Game{
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
 			do{
 				moveDirection = rand.nextInt(5);
-				System.out.println("Direction: " + moveDirection);
 				tempPos.put("Row", curRow+di[moveDirection]);
 				tempPos.put("Col", curCol+dj[moveDirection]);
 				if(moveDirection < 4 && isValid(tempPos)){

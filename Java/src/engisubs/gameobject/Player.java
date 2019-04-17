@@ -213,8 +213,11 @@ public class Player extends GameObject{
 			Land targetLand = (Land) targetCell;
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (FarmAnimal) targetLand.getObjectHere();
+				System.out.println(targetAnimal.getName());
 				if(targetAnimal.isKillable()){
-					farmAnimalList.remove(targetAnimal);
+					//Mencari indeks farmAnimal yang ingin dihapus dari List.
+					System.out.println("Animal isKillable");
+					farmAnimalList.remove(farmAnimalList.get(farmAnimalList.indexOf(targetAnimal)));
 					MeatProducing m = (MeatProducing) targetAnimal;
 					m.produceMeat(this);
 					targetLand.setObjectHere(null);
@@ -223,6 +226,8 @@ public class Player extends GameObject{
 			}
 		} 
 		throw new RuntimeException("Tidak ada hewan yang bisa disembelih disitu");
+		
+		
 	}
 	/**
 	 * Fungsi grow berguna untuk menumbuhkan rumput

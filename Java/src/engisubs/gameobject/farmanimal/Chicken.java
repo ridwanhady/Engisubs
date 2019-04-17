@@ -8,6 +8,7 @@ import engisubs.gameobject.product.farmproduct.egg.*;
 
 public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
     public Chicken(Map <String, Integer> _position, String _name, Land _landPos){
+        super.killable = true;
         initGameObject(GameObjectType.CHICKEN, 'C');
         initializeFarmAnimal(_position, _name, _landPos);
     }
