@@ -108,8 +108,8 @@ public class Game{
 				pos.put("Row", i);
 				pos.put("Col", j);
 				System.out.println("On " + pos.get("Row") + " " + pos.get("Col"));
-				if(rand.nextInt()%100 <= 90){
-					int r = rand.nextInt()%3;
+				if(rand.nextInt(100)<= 90){
+					int r = rand.nextInt(3);
 					if (r == 0){
 						temp.add(new Grassland(pos));
 					}else if (r == 1){
@@ -118,7 +118,7 @@ public class Game{
 						temp.add(new Coop(pos));
 					}
 				} else {
-					int r = rand.nextInt()%3;
+					int r = rand.nextInt(3);
 					if (r == 0){
 						temp.add(new Truck(pos));
 					}else if (r == 1){
@@ -137,17 +137,17 @@ public class Game{
 		while(cntAnimal > 0){
 			cntAnimal--;
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
-			int randRow = rand.nextInt()%n;
-			int randCol = rand.nextInt()%m;
+			int randRow = rand.nextInt(n);
+			int randCol = rand.nextInt(m);
 			randPosition.put("Row", randRow);
 			randPosition.put("Col", randCol);
 			while(!isValid(randPosition)){
-				randRow = rand.nextInt()%n;
-				randCol = rand.nextInt()%m;
+				randRow = rand.nextInt(n);
+				randCol = rand.nextInt(m);
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			int randAnimal = 3;//rand.nextInt()%6;
+			int randAnimal = rand.nextInt(5);
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
@@ -182,11 +182,11 @@ public class Game{
 
 		//Menaruh player di posisi random
 		Map<String,Integer> pos = new HashMap<String,Integer>();
-		pos.put("Row", rand.nextInt()%n);
-		pos.put("Col", rand.nextInt()%m);
+		pos.put("Row", rand.nextInt(n));
+		pos.put("Col", rand.nextInt(m));
 		while(!isValid(pos)){
-			pos.put("Row", rand.nextInt()%n);
-			pos.put("Col", rand.nextInt()%m);
+			pos.put("Row", rand.nextInt(n));
+			pos.put("Col", rand.nextInt(m));
 		}
 		int curRow = pos.get("Row");
 		int curCol = pos.get("Col");
@@ -417,7 +417,7 @@ public class Game{
 			int curCol = pos.get("Col");
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
 			do{
-				moveDirection = rand.nextInt()%5;
+				moveDirection = rand.nextInt(5);
 				tempPos.put("Row", curRow+di[moveDirection]);
 				tempPos.put("Col", curCol+dj[moveDirection]);
 				if(moveDirection < 4 && isValid(tempPos)){
