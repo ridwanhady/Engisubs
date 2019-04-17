@@ -5,7 +5,7 @@ import java.util.*;
 public class Grassland extends Land{
 
     public Grassland(Map <String, Integer> _position){
-        super(_position, true, LandType.BARN);
+        super(_position, true, LandType.GRASSLAND);
     }
 
     public Grassland(Map <String, Integer> _position, boolean _isGrown){

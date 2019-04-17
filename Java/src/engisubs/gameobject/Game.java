@@ -57,7 +57,7 @@ public class Game{
 	 * @param  col col koordinat yang ingin dicek
 	 * @return     boolean true jika valid
 	 */
-	private boolean isValid(Map<String, Integer> position){
+	private boolean isValid(Map<String, Integer> position, boolean isCoopWalkable, boolean isBarnWalkable, boolean isGrasslandWalkable){
 		int row = position.get("Row");
 		int col = position.get("Col");
 		if(row < 0 || row >= n || col < 0 || col >= m){
@@ -71,6 +71,10 @@ public class Game{
 		}
 		Land targetLand = (Land) targetCell;
 		if(targetLand.isOccupied()) return false;
+		if(targetLand.getLandType() == Land.LandType.COOP && !isCoopWalkable)return false;
+		else if(targetLand.getLandType() == Land.LandType.BARN && !isBarnWalkable) return false;
+		else if(targetLand.getLandType() == Land.LandType.GRASSLAND && !isGrasslandWalkable) return false;
+		System.out.println("AW");
 		return true;
 	}
 	/**
@@ -132,22 +136,31 @@ public class Game{
 			cellList.add(temp);
 		}
 		//Init animal
-		
+		//boolean isCoopWalkable[] = {Chicken instanceof EggProducing, Bison instanceof EggProducing, Dog instanceof EggProducing, Platypus instanceof EggProducing, Pterodactyl instanceof EggProducing, TRex instanceof EggProducing};
+		//boolean isBarnWalkable[] = {Chicken instanceof MilkProducing, Bison instanceof MilkProducing, Dog instanceof MilkProducing, Platypus instanceof MilkProducing, Pterodactyl instanceof MilkProducing, TRex instanceof MilkProducing};
+		//boolean isGrasslandWalkable[] = {Chicken instanceof MeatProducing, Bison instanceof MeatProducing, Dog instanceof MeatProducing, Platypus instanceof MeatProducing, Pterodactyl instanceof MeatProducing, TRex instanceof MeatProducing};
+		boolean isCoopWalkable[] = {true, true, true, true, true};
+		boolean isBarnWalkable[] = {true, true, true, true, true};
+		boolean isGrasslandWalkable[] = {true, true, true, true, true};
+						
+
 		int cntAnimal = 8;
 		while(cntAnimal > 0){
 			cntAnimal--;
+			int randAnimal = rand.nextInt(6);
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt(n);
 			int randCol = rand.nextInt(m);
 			randPosition.put("Row", randRow);
 			randPosition.put("Col", randCol);
-			while(!isValid(randPosition)){
+			while(!isValid(randPosition,isCoopWalkable[randAnimal],isBarnWalkable[randAnimal],isGrasslandWalkable[randAnimal])){ //Todo: cek siapa yang walkable
 				randRow = rand.nextInt(n);
 				randCol = rand.nextInt(m);
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			int randAnimal = rand.nextInt(5);
+			System.out.println(randRow + " " + randCol);
+			
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
@@ -184,7 +197,7 @@ public class Game{
 		Map<String,Integer> pos = new HashMap<String,Integer>();
 		pos.put("Row", rand.nextInt(n));
 		pos.put("Col", rand.nextInt(m));
-		while(!isValid(pos)){
+		while(!isValid(pos,true,true,true)){
 			pos.put("Row", rand.nextInt(n));
 			pos.put("Col", rand.nextInt(m));
 		}
@@ -325,6 +338,7 @@ public class Game{
 						System.out.println("[" + i + "] " + "STEAK");
 				}
 			} else if (command.equals("STATUS")) {
+				System.out.println("WAKTU: " + currentTime);
 				System.out.println("WATER : " + mainPlayer.getWater());
 				System.out.println("UANG : "  + mainPlayer.getUang());
 				System.out.println("Berikut adalah isi dari Inventori:");
@@ -389,47 +403,50 @@ public class Game{
 		//1. Makan
 		//2. Update hungryBar
 		//3. Pindah ke cell lain
-		currentTime++;
 		GameObject.DirectionType dir[] = {GameObject.DirectionType.UP,GameObject.DirectionType.DOWN,GameObject.DirectionType.RIGHT,GameObject.DirectionType.LEFT};
-		int di[] = {-1,1,0,0};
-		int dj[] = {0,0,1,-1};
+		int di[] = {-1,1,0,0,0};
+		int dj[] = {0,0,1,-1,0};
 		Random rand = new Random();
 		for(int i = 0; i < farmAnimalList.size(); i++){
+			System.out.println(i);
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
+			System.out.println("XX");
 			if(farmAnimalList.get(i).isHungry()){
 				farmAnimalList.get(i).eat();
 			}
+			System.out.println("XXX");
 			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
+			System.out.println("XXXX");
 			//Melakukan randomisasi gerakan, jika muncul angka 4, maka hewan tidak akan bergerak
 			int moveDirection;
-			Map<String,Integer> pos = new HashMap<String,Integer>();
-			pos = farmAnimalList.get(i).getPosition();
-			int curRow = pos.get("Row");
-			int curCol = pos.get("Col");
+			int curRow = farmAnimalList.get(i).getPosition().get("Row");
+			int curCol = farmAnimalList.get(i).getPosition().get("Col");
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
+			System.out.println(curRow + " " + curCol);
 			do{
 				moveDirection = rand.nextInt(5);
 				tempPos.put("Row", curRow+di[moveDirection]);
 				tempPos.put("Col", curCol+dj[moveDirection]);
-				if(moveDirection < 4 && isValid(tempPos)){
+				System.out.println(moveDirection);
+				if(moveDirection < 4 && isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing)){
 					//Fungsi untuk gerak random
 					farmAnimalList.get(i).move(dir[moveDirection], cellList);
 					break;
 				} else if(moveDirection == 4){
 					break;
 				}
-			} while (!isValid(tempPos));
-
+			} while (!isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing));
 		}
+		System.out.println("UWU");
 		//Mengupdate seluruh state Truck
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){

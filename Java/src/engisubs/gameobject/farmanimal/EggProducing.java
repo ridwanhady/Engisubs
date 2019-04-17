@@ -2,6 +2,6 @@ package engisubs.gameobject.farmanimal;
 
 import engisubs.gameobject.Player;
 
-interface EggProducing {
+public interface EggProducing {
     void produceEgg(Player _p);
 }
