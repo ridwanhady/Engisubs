@@ -94,8 +94,11 @@ abstract public class FarmAnimal extends GameObject {
         }else {
             if (timeUntilHungry > 0)
                 timeUntilHungry--;
-            else
+            else {
+                System.out.println("HUNGRY!");
                 hungry = true;
+            }
+               
         }
     }
 

@@ -409,7 +409,7 @@ public class Game{
 				i--;
 				continue;
 			}
-
+			
 			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).isHungry()){
 				System.out.println("HEWAN ke - " + i + " LAPAR");
@@ -429,6 +429,7 @@ public class Game{
 			int curRow = farmAnimalList.get(i).getPosition().get("Row");
 			int curCol = farmAnimalList.get(i).getPosition().get("Col");
 			Map<String,Integer> tempPos = new HashMap<String,Integer>();
+			
 			do{
 				moveDirection = rand.nextInt(5);
 				tempPos.put("Row", curRow+di[moveDirection]);
@@ -442,7 +443,10 @@ public class Game{
 					break;
 				}
 			} while (!isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing));
+			
 		}
+
+		
 		//Mengupdate seluruh state Truck
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < m; j++){
@@ -453,6 +457,7 @@ public class Game{
 				}
 			}
 		}
+		
 		currentTime++;
 	}
 
