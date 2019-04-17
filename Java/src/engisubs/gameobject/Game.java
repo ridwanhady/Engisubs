@@ -147,7 +147,7 @@ public class Game{
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			int randAnimal = rand.nextInt()%6;
+			int randAnimal = 3;//rand.nextInt()%6;
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);
@@ -236,6 +236,7 @@ public class Game{
 			System.out.println( "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
 			System.out.println("Input: ");
 			command = sc.nextLine();
+			System.out.println("Command Entered: " + command);
 			System.out.println();
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
 			if(command.equals("HELP") ){
@@ -249,14 +250,14 @@ public class Game{
 					mainPlayer.move(GameObject.DirectionType.UP);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					System.out.println("Error: " + e.getMessage());
 				}
 			} else if(command.equals("DOWN")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.DOWN);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					System.out.println("Error: " + e.getMessage());
 				}
 
 			} else if(command.equals("RIGHT")){
@@ -264,14 +265,14 @@ public class Game{
 					mainPlayer.move(GameObject.DirectionType.RIGHT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					System.out.println("Error: " + e.getMessage());
 				}
 			} else if(command.equals("LEFT")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.LEFT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					System.out.println("Error: " + e.getMessage());
 				}
 			} else if(command.equals("TALK")){
 				try{

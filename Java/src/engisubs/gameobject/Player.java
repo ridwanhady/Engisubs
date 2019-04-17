@@ -184,14 +184,18 @@ public class Player extends GameObject{
 	public void interact(){
 		Cell targetCell = getCellInFront();
 		if(targetCell != null){
+			System.out.println("INTER A");
 			if(targetCell.isWalkable()){
+				System.out.println("INTER B");
 				Land targetLand = (Land) targetCell;
 				if(targetLand.getObjectHere() != null){
+					System.out.println("INTER C");
 					targetLand.getObjectHere().interact(this);
 					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
 				}
 			} else {
+				System.out.println("INTER D");
 				Facility targetFacility = (Facility) targetCell;
 				targetFacility.interact(this);
 				return;
@@ -247,12 +251,15 @@ public class Player extends GameObject{
 	 * @param direction arah dari pemain sekarang
 	 */
 	public void move(DirectionType direction){
+		System.out.println("A");
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		Map<String,Integer> targetPos = new HashMap<String,Integer>();
 		int currentRow = currentPos.get("Row");
 		int currentCol = currentPos.get("Col");
+		
 		targetPos.put("Row",currentRow+di[direction.getValue()]);
+	
 		targetPos.put("Col",currentCol+dj[direction.getValue()]);
 		System.out.println("VALUE :");
 		System.out.println(direction.getValue());
@@ -275,6 +282,8 @@ public class Player extends GameObject{
 			currentLand = (Land) worldMap.get(targetRow).get(targetCol);
 			currentLand.setObjectHere(this);
 			this.direction = direction;
+			currentPos.replace("Row", targetRow);
+			currentPos.replace("Col", targetCol);
 		} else {
 			throw new RuntimeException("Langkah tidak valid");
 		}
@@ -321,7 +330,7 @@ public class Player extends GameObject{
 			return false;
 		}
 		Land targetLand = (Land) targetCell;
-		if(targetLand.isOccupied())return false;
+		if(targetLand.isOccupied()) return false;
 		return true;
 	}
 }
