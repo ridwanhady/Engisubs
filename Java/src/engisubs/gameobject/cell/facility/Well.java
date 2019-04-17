@@ -12,6 +12,6 @@ public class Well extends Facility
     }
 
     public void interact(Player _p){
-      _p.setWater(100);
+      _p.setWater(10);
     }
   }

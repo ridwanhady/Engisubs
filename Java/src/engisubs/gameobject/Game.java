@@ -142,7 +142,7 @@ public class Game{
 		int cntAnimal = 8;
 		while(cntAnimal > 0){
 			cntAnimal--;
-			int randAnimal = 0;//rand.nextInt(6);
+			int randAnimal = rand.nextInt(6);
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt(n);
 			int randCol = rand.nextInt(m);

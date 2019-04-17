@@ -37,9 +37,5 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
         }
     }
 
-    public void eat(){
-        System.out.println("Method eat() dipanggil");
-        super.eat();
-        setIsProductProduced(false);
-    }
+
 }
