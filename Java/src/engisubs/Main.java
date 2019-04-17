@@ -2,13 +2,19 @@ package engisubs;
 
 import javax.swing.*;
 import engisubs.gameobject.*;
-class Main{
+public class Main{
     
-    static public void main(String args[]){
-        System.out.println("Starting...");
-        Game newGame = new Game();
-        newGame.startGame();
-        newGame.gameLoop();
+    public static void main(String args[]){
+        JFrame f = new JFrame();
+        JButton b =new JButton("click");
+        b.setBounds(130,100,100,40);
+        f.add(b);
+        f.setSize(1000,600);
+        f.setLayout(null);
+        f.setVisible(true);
+        //System.out.println("Starting...");
+        //Game newGame = new Game();
+        //newGame.startGame();
+        //newGame.gameLoop();
     }
-    
 }
