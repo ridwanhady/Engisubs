@@ -9,6 +9,7 @@ import engisubs.gameobject.product.farmproduct.egg.*;
 public class Pterodactyl extends FarmAnimal implements EggProducing{
     public Pterodactyl(Map <String, Integer> _position, String _name, Land _landPos){
         initGameObject(GameObjectType.PTERODACTYL, 'L');
+        initializeFarmAnimal(_position, _name, _landPos);
     }
 
     public void produceEgg(Player _p){
