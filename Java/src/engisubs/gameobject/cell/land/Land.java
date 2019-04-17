@@ -51,8 +51,14 @@ public abstract class Land extends Cell{
     public GameObject getObjectHere() {
         return objectHere;
     }
-
-
+    
+    /**
+     * Getter LandType
+     * @return LandType
+     */
+    public LandType getLandType(){
+        return landType;
+    }
     /**
      * Setter :Menambah/mengurangi object saat ini dan mengganti isOccupied
      */
