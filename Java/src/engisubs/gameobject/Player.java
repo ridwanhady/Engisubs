@@ -184,14 +184,18 @@ public class Player extends GameObject{
 	public void interact(){
 		Cell targetCell = getCellInFront();
 		if(targetCell != null){
+			System.out.println("INTER A");
 			if(targetCell.isWalkable()){
+				System.out.println("INTER B");
 				Land targetLand = (Land) targetCell;
 				if(targetLand.getObjectHere() != null){
+					System.out.println("INTER C");
 					targetLand.getObjectHere().interact(this);
 					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
 				}
 			} else {
+				System.out.println("INTER D");
 				Facility targetFacility = (Facility) targetCell;
 				targetFacility.interact(this);
 				return;
