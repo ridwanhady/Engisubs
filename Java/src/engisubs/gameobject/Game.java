@@ -142,7 +142,7 @@ public class Game{
 		int cntAnimal = 8;
 		while(cntAnimal > 0){
 			cntAnimal--;
-			int randAnimal = rand.nextInt(6);
+			int randAnimal = 0;//rand.nextInt(6);
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt(n);
 			int randCol = rand.nextInt(m);
@@ -400,17 +400,23 @@ public class Game{
 		int di[] = {-1,1,0,0,0};
 		int dj[] = {0,0,1,-1,0};
 		Random rand = new Random();
+		System.out.println("Size list adalah " + farmAnimalList.size());
 		for(int i = 0; i < farmAnimalList.size(); i++){
-			System.out.println(i);
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
-			if(farmAnimalList.get(i).isHungry()){
-				farmAnimalList.get(i).eat();
-			}
+
 			farmAnimalList.get(i).updateCondition();
+			if(farmAnimalList.get(i).isHungry()){
+				System.out.println("HEWAN ke - " + i + " LAPAR");
+				farmAnimalList.get(i).eat();
+				System.out.println("HEWAN ke - " + i + " MAKAN");
+			}
+			
+			System.out.println("Hewan ke " + i  + " " + farmAnimalList.get(i).isHungry());
+			
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
@@ -430,6 +436,7 @@ public class Game{
 					farmAnimalList.get(i).move(dir[moveDirection], cellList);
 					break;
 				} else if(moveDirection == 4){
+					System.out.println("HEWAN BERHENTI.");
 					break;
 				}
 			} while (!isValid(tempPos, farmAnimalList.get(i) instanceof EggProducing, farmAnimalList.get(i) instanceof MilkProducing, farmAnimalList.get(i) instanceof MeatProducing));

@@ -38,9 +38,11 @@ public class Platypus extends FarmAnimal implements MeatProducing, EggProducing,
             isProductProduced = true;
         }
     }
-
+    /*
     public void eat() {
+        System.out.println("PLATYPUS MAKAN");
         super.eat();
         setIsProductProduced(false);
     }
+    */
 }
