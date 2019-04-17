@@ -108,7 +108,7 @@ public class Game{
 				pos.put("Row", i);
 				pos.put("Col", j);
 				System.out.println("On " + pos.get("Row") + " " + pos.get("Col"));
-				if(rand.nextInt(100)<= 90){
+				if(rand.nextInt(100) <= 90){
 					int r = rand.nextInt(3);
 					if (r == 0){
 						temp.add(new Grassland(pos));
@@ -389,6 +389,7 @@ public class Game{
 		//1. Makan
 		//2. Update hungryBar
 		//3. Pindah ke cell lain
+		currentTime++;
 		GameObject.DirectionType dir[] = {GameObject.DirectionType.UP,GameObject.DirectionType.DOWN,GameObject.DirectionType.RIGHT,GameObject.DirectionType.LEFT};
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
@@ -404,7 +405,6 @@ public class Game{
 			}
 			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
-				FarmAnimal temp = farmAnimalList.get(i);
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
