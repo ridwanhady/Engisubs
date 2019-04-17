@@ -401,6 +401,7 @@ public class Game{
 		int dj[] = {0,0,1,-1,0};
 		Random rand = new Random();
 		for(int i = 0; i < farmAnimalList.size(); i++){
+			System.out.println(i);
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
