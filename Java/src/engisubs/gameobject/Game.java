@@ -147,7 +147,7 @@ public class Game{
 				randPosition.replace("Row", randRow);
 				randPosition.replace("Col", randCol);
 			}
-			int randAnimal = rand.nextInt(5);
+			int randAnimal = 3;//rand.nextInt(5);
 			if(randAnimal == 0){
 				Chicken x = new Chicken(randPosition, "Chicken", (Land) (cellList.get(randRow).get(randCol)));
 				farmAnimalList.add(x);

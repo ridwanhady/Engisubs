@@ -5,10 +5,11 @@ import java.util.*;
 public class Coop extends Land{
 
     public Coop(Map <String, Integer> _position){
-        super(_position, true, LandType.BARN);
+        super(_position, true, LandType.COOP);
     }
-
+    /*
     public Coop(Map <String, Integer> _position, boolean _isGrown){
         super(_position, _isGrown, LandType.COOP);
     }
+    */
 }
