@@ -9,6 +9,7 @@ import engisubs.gameobject.product.farmproduct.meat.*;
 public class TRex extends FarmAnimal implements MeatProducing{
     public TRex(Map <String, Integer> _position, String _name, Land _landPos){
         initGameObject(GameObjectType.TREX, 'X');
+        initializeFarmAnimal(_position, _name, _landPos);
         super.killable = true;
     }
 
