@@ -75,8 +75,13 @@ public class Mixer extends Facility
 
               if (isFoundIdx1 && isFoundIdx2) {
                 //Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-                _p.inventory.remove( _p.inventory.get(idxInventory_1));
-                _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                if(idxInventory_1 > idxInventory_2){
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                } else {
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));                  
+                }
 
                 //Tambahkan Cheese pada Inventori:
                 //Construct newCheese
@@ -111,8 +116,13 @@ public class Mixer extends Facility
 
               if (isFoundIdx1 && isFoundIdx2) {
                 //Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-                _p.inventory.remove( _p.inventory.get(idxInventory_1));
-                _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                if(idxInventory_1 > idxInventory_2){
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                } else {
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));                  
+                }
 
                 //Tambahkan Steak pada Inventori:
                 //Construct newSteak
@@ -144,12 +154,15 @@ public class Mixer extends Facility
                   }
                 }
               }
-
               if (isFoundIdx1 && isFoundIdx2) {
                 //Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-                _p.inventory.remove( _p.inventory.get(idxInventory_1));
-                _p.inventory.remove( _p.inventory.get(idxInventory_2));
-
+                if(idxInventory_1 > idxInventory_2){
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                } else {
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));                  
+                }
                 //Tambahkan Ekado pada Inventori:
                 //Construct newEkado
                 _p.inventory.add(new Ekado(300));
@@ -183,8 +196,13 @@ public class Mixer extends Facility
 
               if (isFoundIdx1 && isFoundIdx2) {
                 //Kalau dua duanya valid, HAPUS DUA BARANG TERSEBUT PADA INVENTORI.
-                _p.inventory.remove( _p.inventory.get(idxInventory_1));
-                _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                if(idxInventory_1 > idxInventory_2){
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                } else {
+                  _p.inventory.remove( _p.inventory.get(idxInventory_2));
+                  _p.inventory.remove( _p.inventory.get(idxInventory_1));                  
+                }
 
                 //Tambahkan Mayonaise pada Inventori:
                 //Construct newMayonaise
@@ -207,6 +225,5 @@ public class Mixer extends Facility
       } else {
         System.out.println("Indeks yang Anda masukkan tidak valid.");
       }
-      inputScanner.close();
     }
 }
