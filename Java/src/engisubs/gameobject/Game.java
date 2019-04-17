@@ -142,7 +142,7 @@ public class Game{
 		int cntAnimal = 8;
 		while(cntAnimal > 0){
 			cntAnimal--;
-			int randAnimal = rand.nextInt(6);
+			int randAnimal = 0;//rand.nextInt(6);
 			Map<String,Integer> randPosition = new HashMap<String,Integer>();
 			int randRow = rand.nextInt(n);
 			int randCol = rand.nextInt(m);
@@ -402,17 +402,23 @@ public class Game{
 		Random rand = new Random();
 		System.out.println("Size list adalah " + farmAnimalList.size());
 		for(int i = 0; i < farmAnimalList.size(); i++){
+
+			System.out.println("Testing debug");
 			if(farmAnimalList.get(i) == null){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;
 				continue;
 			}
+
+			farmAnimalList.get(i).updateCondition();
 			if(farmAnimalList.get(i).isHungry()){
 				System.out.println("HEWAN ke - " + i + " LAPAR");
 				farmAnimalList.get(i).eat();
 				System.out.println("HEWAN ke - " + i + " MAKAN");
 			}
-			farmAnimalList.get(i).updateCondition();
+			
+			System.out.println("Hewan ke " + i  + " " + farmAnimalList.get(i).isHungry());
+			
 			if(farmAnimalList.get(i).getTimeUntilDead() == 0){
 				farmAnimalList.remove(farmAnimalList.get(i));
 				i--;

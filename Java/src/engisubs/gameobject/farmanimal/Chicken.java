@@ -11,6 +11,7 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
         super.killable = true;
         initGameObject(GameObjectType.CHICKEN, 'C');
         initializeFarmAnimal(_position, _name, _landPos);
+        setIsProductProduced(true);
     }
 
     public void produceMeat(Player _p){
@@ -26,9 +27,19 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
     }
 
     public void interact(Player _p){
+        System.out.println("Kamu Berinteraksi dengan Ayam!");
         if (!getIsProductProduced()){
+            System.out.println("Produk siap diproduksi!");
             produceEgg(_p);
             isProductProduced = true;
+        } else {
+            System.out.println("Produk belum diproduksi!");
         }
+    }
+
+    public void eat(){
+        System.out.println("Method eat() dipanggil");
+        super.eat();
+        setIsProductProduced(false);
     }
 }
