@@ -15,14 +15,15 @@ public class Main {
         
         //Background Image + logo
         try {
-            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bg+logo.jpg")))));
+            //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bg+logo.jpg")))));
+            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("./engisubs/data/engisubs_bg+logo.jpg")))));
         } catch (IOException e) {
             e.printStackTrace();
         }        
         
         //Background Music
         try {
-			AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bgm.wav"));
+			AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("./engisubs/data/engisubs_bgm.wav"));
 			Clip clip = AudioSystem.getClip();
 			clip.open(bgm);
 			clip.start();
@@ -31,7 +32,7 @@ public class Main {
         
         //Label Menu
         try {
-			Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
+			Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("./engisubs/data/KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
 			JButton start = new JButton("START GAME");
 			start.setFont(font1);
 			start.setBounds(220,275,200,40);
@@ -64,5 +65,6 @@ public class Main {
         //Game newGame = new Game();
         //newGame.startGame();
         //newGame.gameLoop();
+
     }
 }
