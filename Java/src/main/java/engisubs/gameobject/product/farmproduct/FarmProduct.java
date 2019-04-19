@@ -24,7 +24,9 @@ public class FarmProduct extends Product{
     /**
      * Constructor tanpa parameter
      */
-    public FarmProduct(){}
+    public FarmProduct(){
+        super();
+    }
 
     /**
      * Menginisialisasi Farm Product, yaitu mengeset Atribut Producer
