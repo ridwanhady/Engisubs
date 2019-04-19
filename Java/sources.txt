@@ -40,4 +40,7 @@
 ./src/main/java/engisubs/gameobject/cell/facility/Well.java
 ./src/main/java/engisubs/gameobject/cell/facility/Facility.java
 ./src/main/java/engisubs/gameobject/GameObject.java
-./src/main/java/engisubs/Main.java
+./src/main/java/engisubs/ui/MainMenu.java
+./src/main/java/engisubs/ui/Main.java
+./src/main/java/engisubs/ui/MainGame.java
+
