@@ -1,4 +1,3 @@
-./engisubs/Main.class
 ./engisubs/gameobject/farmanimal/Platypus.class
 ./engisubs/gameobject/farmanimal/MeatProducing.class
 ./engisubs/gameobject/farmanimal/Chicken.class
@@ -47,3 +46,10 @@
 ./engisubs/gameobject/Game.class
 ./engisubs/gameobject/GameObject$FarmProductType.class
 ./engisubs/gameobject/GameObject$GameObjectType.class
+./engisubs/ui/Main$1.class
+./engisubs/ui/Main.class
+./engisubs/ui/MainMenu.class
+./engisubs/ui/MainGame.class
+./engisubs/ui/MainGame$1.class
+./engisubs/ui/MainMenu$1.class
+./engisubs/ui/MainMenu$2.class
