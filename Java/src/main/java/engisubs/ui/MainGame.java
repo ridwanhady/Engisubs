@@ -67,8 +67,8 @@ public class MainGame {
         try {
             for (int i = 0 ; i < 110 ; i++) {
                 //JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
-                JLabel label = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(path)));
-                panel.add(label);
+                //JLabel label = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(path)));
+                panel.add(new CellPanel(false));
             }
             
         } catch (Exception e) {

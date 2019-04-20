@@ -44,3 +44,4 @@
 ./engisubs/ui/MainGame.java
 ./engisubs/ui/MainMenu.java
 ./engisubs/ui/Main.java
+./engisubs/ui/CellPanel.java
