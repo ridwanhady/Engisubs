@@ -18,7 +18,7 @@ public class MainGame {
         /*
         String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
-        */
+    
 
         //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
 
