@@ -5,12 +5,12 @@ engisubs/gameobject/farmanimal/MilkProducing.class
 engisubs/gameobject/farmanimal/Bison.class
 engisubs/gameobject/product/sideproduct/SideProduct.class
 engisubs/gameobject/farmanimal/EggProducing.class
-engisubs/ui/MainGame$1.class
 engisubs/gameobject/cell/facility/Mixer.class
 engisubs/gameobject/product/farmproduct/milk/PlatypusMilk.class
 engisubs/gameobject/GameObject$GameObjectType.class
 engisubs/gameobject/product/sideproduct/Steak.class
 engisubs/gameobject/cell/facility/Well.class
+engisubs/ui/CellPanel.class
 engisubs/gameobject/product/sideproduct/Ekado.class
 engisubs/gameobject/product/farmproduct/meat/ChickenMeat.class
 engisubs/gameobject/cell/land/Land$LandType.class
@@ -49,7 +49,6 @@ engisubs/gameobject/product/farmproduct/milk/Milk.class
 engisubs/gameobject/farmanimal/FarmAnimal.class
 engisubs/gameobject/farmanimal/Platypus.class
 engisubs/gameobject/product/farmproduct/meat/PlatypusMeat.class
-jar/App.class
 engisubs/gameobject/farmanimal/Chicken.class
 engisubs/gameobject/cell/land/Barn.class
 engisubs/gameobject/cell/facility/Facility.class
