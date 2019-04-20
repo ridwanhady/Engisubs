@@ -48,7 +48,6 @@ public class MainMenu extends JFrame {
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg0) {
                     MainGame MG = new MainGame();
-                    //MG.LaunchGame();
                 }
             });
 			JButton exit = new JButton("EXIT GAME");

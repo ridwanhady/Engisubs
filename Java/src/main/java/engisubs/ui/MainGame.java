@@ -14,19 +14,6 @@ import engisubs.gameobject.*;
 public class MainGame {
     private JFrame frame;
 
-    public static void LaunchGame() {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try{
-                    MainGame window = new MainGame();
-                    window.frame.setVisible(true);
-                } catch  (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     public MainGame() {
         /*
         String path = new File("engisubs/ui/ASSETS/tilesets/ungrowed.png").getAbsolutePath();
