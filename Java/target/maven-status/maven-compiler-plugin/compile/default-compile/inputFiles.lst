@@ -7,7 +7,6 @@
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/ui/MainMenu.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/egg/Egg.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/milk/BisonMilk.java
-/home/rid1hady/Documents/Engisubs/Java/src/main/java/jar/App.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/ui/Main.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/sideproduct/Mayonaise.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/meat/ChickenMeat.java
@@ -33,6 +32,7 @@
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/Product.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/sideproduct/SideProduct.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/meat/PlatypusMeat.java
+/home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/ui/CellPanel.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/meat/TRexMeat.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/farmanimal/EggProducing.java
 /home/rid1hady/Documents/Engisubs/Java/src/main/java/engisubs/gameobject/product/farmproduct/milk/PlatypusMilk.java
