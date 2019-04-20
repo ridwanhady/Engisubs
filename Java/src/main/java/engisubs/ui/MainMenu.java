@@ -11,12 +11,13 @@ import engisubs.gameobject.*;
 public class MainMenu extends JFrame {
     public MainMenu() {
         super();
+
         JFrame f = new JFrame();
-        
+    
         //Background Image + logo
         try {
-           
-            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("D:\\INFORMATIKA ITB\\Semester 4\\IF2210 - Pemrograman Berorientasi Objek\\TUBES2\\Engisubs\\Java\\src\\main\\java\\engisubs\\data\\engisubs_bg+logo.jpg")))));
+
+            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("engisubs/ui/ASSETS/engisubs_bg+logo.jpg")))));
             //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bg+logo.jpg")))));
         } catch (IOException e) {
             e.printStackTrace();
@@ -24,7 +25,7 @@ public class MainMenu extends JFrame {
         
         //Background Music
         try {
-            AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("D:\\INFORMATIKA ITB\\Semester 4\\IF2210 - Pemrograman Berorientasi Objek\\TUBES2\\Engisubs\\Java\\src\\main\\java\\engisubs\\data\\engisubs_bgm.wav"));
+            AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("engisubs/ui/ASSETS/engisubs_bgm.wav"));
 			//AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bgm.wav"));
 			Clip clip = AudioSystem.getClip();
 			clip.open(bgm);
@@ -34,7 +35,7 @@ public class MainMenu extends JFrame {
         
         //Label Menu
         try {
-            Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("D:\\INFORMATIKA ITB\\Semester 4\\IF2210 - Pemrograman Berorientasi Objek\\TUBES2\\Engisubs\\Java\\src\\main\\java\\engisubs\\data\\KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
+            Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
 			//Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
 			JButton start = new JButton("START GAME");
 			start.setFont(font1);

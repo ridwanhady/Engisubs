@@ -51,5 +51,6 @@
 ./engisubs/ui/MainMenu.class
 ./engisubs/ui/MainGame.class
 ./engisubs/ui/MainGame$1.class
+./engisubs/ui/MainGame$2.class
 ./engisubs/ui/MainMenu$1.class
 ./engisubs/ui/MainMenu$2.class
