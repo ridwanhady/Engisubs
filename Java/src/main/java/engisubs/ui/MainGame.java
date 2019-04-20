@@ -29,6 +29,7 @@ public class MainGame {
 
         //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
         mainGame = new Game();
+        mainGame.startGame();
 
         frame = new JFrame();
         /**
@@ -81,6 +82,13 @@ public class MainGame {
         Container contentPane = frame.getContentPane();
         contentPane.setLayout(new FlowLayout(FlowLayout.LEADING, 0,0));
 
+        up.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainGame.gameHandler("UP");
+                initPanel();
+            }
+        });
+
         initPanel();
 
         JPanel panelStatus = new JPanel();
@@ -104,6 +112,9 @@ public class MainGame {
 
 
         setButton(up);
+
+        
+
         setButton(down);
         setButton(left);
         setButton(right);
@@ -134,6 +145,8 @@ public class MainGame {
         panelCommand.add(interact,c);
         panelCommand.add(kill,c);
 
+        
+
         frame.add(panelCommand);
         
         frame.setSize(1150,900);
@@ -149,7 +162,11 @@ public class MainGame {
     private void initPanel(){
         if (panel != null){
             frame.remove(panel);
+            System.out.println("INVALIDATE TEST");
+            panel.invalidate();
+            System.out.println("INVALIDATE TEST 2");
             panel = null;
+            System.out.println("INVALIDATE TEST 3");
         }
 
         panel = new JPanel();
@@ -179,10 +196,14 @@ public class MainGame {
                     }
                 }
             }
-            
+            panel.validate();
+            System.out.println("VALIDASI");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+       
         
         System.out.println("GamePanel has " + panel.getComponents().length + " tiles.");
         frame.add(panel);

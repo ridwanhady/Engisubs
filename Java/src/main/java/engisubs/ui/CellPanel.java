@@ -27,7 +27,9 @@ class CellPanel extends JLayeredPane{
     private GameObjectType objectHere = GameObjectType.PLAYER;
     
     public CellPanel(boolean _isGrown, GameObjectType _objectHere){
+        
         super();
+        invalidate();
         setLayout(null);
         setPreferredSize(new Dimension(80, 80));
         setBackground(Color.blue);
@@ -35,12 +37,15 @@ class CellPanel extends JLayeredPane{
         objectHere = _objectHere;
         reinitGroundSprite();
         reinitCharSprite();
+        validate();
     }
 
     public void reinitGroundSprite(){
         if (cellGround != null){
             remove(cellGround);
+            cellGround = null;
         }
+        
 
         if (!isGrown){
             cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathUngrown)));
