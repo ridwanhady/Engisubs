@@ -72,14 +72,14 @@ abstract public class FarmAnimal extends GameObject {
 
     public void eat(){
         if (landPos.isGrown()) {
-            System.out.println("MAKAN VALID");
+            //System.out.println("MAKAN VALID");
             timeUntilDead = 10;
             timeUntilHungry = 10;
             hungry = false;
             landPos.ungrow();
             setIsProductProduced(false);
         } else {
-            System.out.println("MAKAN TIDAK VALID");
+            //System.out.println("MAKAN TIDAK VALID");
         }
     }
 

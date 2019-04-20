@@ -17,6 +17,6 @@ public class PlatypusEgg extends Egg{
      */
     public PlatypusEgg(int _price, String _producer){
         super.initializeFarmProduct(_producer);
-        super.initializeProduct(_price, ProductType.FARMPRODUCT, GameObjectType.PTERODACTYL_EGG, "Telur \"Mamalia\" Platypus");
+        super.initializeProduct(_price, ProductType.FARMPRODUCT, GameObjectType.PLATYPUS_EGG, "Telur \"Mamalia\" Platypus");
     }
 }

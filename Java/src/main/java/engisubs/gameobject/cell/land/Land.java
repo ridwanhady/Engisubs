@@ -39,7 +39,7 @@ public abstract class Land extends Cell{
         landType = _landType;
         if (grown){
             objectSymbol = grassSymbol[_landType.getValue()];
-            System.out.println("Ini adalah value dari enum" + _landType.getValue());
+            //System.out.println("Ini adalah value dari enum" + _landType.getValue());
         } else {
             objectSymbol = landSymbol[_landType.getValue()];
         }
