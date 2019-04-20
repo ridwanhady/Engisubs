@@ -28,8 +28,12 @@ public class MainGame {
     }
 
     public MainGame() {
+        /*
         String path = new File("engisubs/ui/ASSETS/tilesets/ungrowed.png").getAbsolutePath();
         System.out.println(path);
+        */
+
+        String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
 
         frame = new JFrame();
         JButton up = new JButton("Up");
@@ -75,11 +79,12 @@ public class MainGame {
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         try {
             for (int i = 0 ; i < 110 ; i++) {
-                JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
+                //JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
+                JLabel label = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(path)));
                 panel.add(label);
             }
             
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         
@@ -101,13 +106,17 @@ public class MainGame {
         frame.setSize(1280,960);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(up);
+        frame.add(down);
+        frame.add(left);
+        frame.add(right);
         //frame.add(up); 
 
         //frmClass.add(down);
         //frmClass.add(left);
         //frmClass.add(right);
   
-        
+        frame.setVisible(true);
     
     }
 
