@@ -656,4 +656,16 @@ public class Game{
 	public static List<GameObject.GameObjectType> getProduct(){
 		return Game.daftarProduct;
 	}
+
+	public int getRowCount(){
+		return n;
+	}
+
+	public int getColCount(){
+		return m;
+	}
+
+	public Cell getCell(int i, int j){
+		return cellList.get(i).get(j);
+	}
 }

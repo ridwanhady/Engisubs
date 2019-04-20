@@ -10,18 +10,23 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import engisubs.gameobject.*;
+import engisubs.gameobject.GameObject.GameObjectType;
+import engisubs.gameobject.cell.*;
+import engisubs.gameobject.cell.land.*;
 
 public class MainGame {
     private JFrame frame;
+    private Game mainGame = null;
+    private JPanel panel = null;
 
     public MainGame() {
         /*
         String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
         */
-    
 
         //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
+        mainGame = new Game();
 
         frame = new JFrame();
         JButton up = new JButton("Up");
@@ -30,7 +35,6 @@ public class MainGame {
         JButton right = new JButton("Right");
 
         Font font  = new Font(Font.SANS_SERIF, Font.BOLD, 13);
-   
         
         up.setFont(font);
         up.setBounds(1020,250,60,40);
@@ -53,30 +57,9 @@ public class MainGame {
          */
         Container contentPane = frame.getContentPane();
         contentPane.setLayout(new FlowLayout(FlowLayout.LEADING, 0,0));
+
+        initPanel();
         
-
-
-        /**
-         * Mengeset besar(size) Panel di dalam frame.
-         */
-        JPanel panel = new JPanel();
-        panel.setPreferredSize(new Dimension(880, 800));
-        panel.setLayout(new GridLayout(10,11));
-        
-        panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        try {
-            for (int i = 0 ; i < 110 ; i++) {
-                //JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
-                //JLabel label = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(path)));
-                panel.add(new CellPanel(false));
-            }
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
-        frame.add(panel);
-
         //frame.getContentPane().add(panel,BorderLayout.PAGE_START);
         frame.setSize(1280,960);
         frame.setTitle("Engi's Farm by AwSubs");
@@ -87,7 +70,50 @@ public class MainGame {
         frame.add(right);
   
         frame.setVisible(true);
-    
     }
 
+    /**
+     * Mengeset besar(size) Panel di dalam frame.
+     */
+    private void initPanel(){
+        if (panel != null){
+            frame.remove(panel);
+            panel = null;
+        }
+
+        panel = new JPanel();
+        panel.setPreferredSize(new Dimension(80 * mainGame.getRowCount(), 80 * mainGame.getColCount()));
+        panel.setLayout(new GridLayout(mainGame.getRowCount(), mainGame.getColCount()));
+        
+        panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        try {
+            for (int i = 0; i < mainGame.getRowCount(); i++){
+                for (int j = 0; j < mainGame.getColCount(); j++){
+                    if (mainGame.getCell(i, j).isWalkable()){
+                        Land curToDraw = ((Land) mainGame.getCell(i, j));
+                        if (curToDraw == null){
+                            System.out.println("Null curToDraw");
+                        }
+                        CellPanel newCell = null;
+                        if (curToDraw.isOccupied()){
+                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere().getGameObjectType());
+                        }else {
+                            newCell = new CellPanel(curToDraw.isGrown(), GameObjectType.LAND);
+                        }
+                        panel.add(newCell);
+                    }else {
+                        Cell curToDraw = mainGame.getCell(i, j);
+                        CellPanel newCell = new CellPanel(false, curToDraw.getGameObjectType());
+                        panel.add(newCell);
+                    }
+                }
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("GamePanel has " + panel.getComponents().length + " tiles.");
+        frame.add(panel);
+    }
 }
