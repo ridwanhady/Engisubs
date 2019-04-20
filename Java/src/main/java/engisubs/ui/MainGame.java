@@ -17,9 +17,9 @@ public class MainGame {
     public MainGame() {
         String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
-        */
+    
 
-        String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
+        //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
 
         frame = new JFrame();
         JButton up = new JButton("Up");

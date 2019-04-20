@@ -387,6 +387,176 @@ public class Game{
 		sc.close();
 	}
 
+
+	public void gameHandler(String command){
+		while(isGameStarted && farmAnimalList.size() > 0){
+			/*
+			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+			System.out.println("STATUS ");
+			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+			System.out.println("NAMA :" + mainPlayer.getName());
+			System.out.println("WATER : " + mainPlayer.getWater());
+			System.out.println("UANG : " + mainPlayer.getUang());
+			System.out.println("Berikut adalah isi dari Inventori:");
+			for (int i = 0 ; i < mainPlayer.getInventory().size() ; i ++) {
+				System.out.println(  "[" + i + "] " + mainPlayer.getInventory().get(i).getProductName());
+			}
+			System.out.println();
+
+			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+			showMap();
+			System.out.println( "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+			System.out.println("Input: ");
+			command = sc.nextLine();
+			System.out.println("Command Entered: " + command);
+			System.out.println();
+			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+			*/
+
+			if(command.equals("HELP") ){
+				/* INVOKE THIS IN VIEW.
+				System.out.println();
+				System.out.println("Command yang tersedia:");
+				System.out.println("UP,  DOWN,  RIGHT,  LEFT,  TALK,  INTERACT,  KILL,  GROW");
+				System.out.println("Command untuk mengubah arah hadap player (Tidak akan menambah waktu bermain):");
+				System.out.println("LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS");
+				*/
+			} else if(command.equals("UP")){
+				try{
+					mainPlayer.move(GameObject.DirectionType.UP);
+					updateGame();				
+				} catch (Exception e){
+					System.out.println("Error: " + e.getMessage());
+				}
+			} else if(command.equals("DOWN")){
+				try{
+					mainPlayer.move(GameObject.DirectionType.DOWN);
+					updateGame();				
+				} catch (Exception e){
+					System.out.println("Error: " + e.getMessage());
+				}
+
+			} else if(command.equals("RIGHT")){
+				try{
+					mainPlayer.move(GameObject.DirectionType.RIGHT);
+					updateGame();				
+				} catch (Exception e){
+					System.out.println("Error: " + e.getMessage());
+				}
+			} else if(command.equals("LEFT")){
+				try{
+					mainPlayer.move(GameObject.DirectionType.LEFT);
+					updateGame();				
+				} catch (Exception e){
+					System.out.println("Error: " + e.getMessage());
+				}
+			} else if(command.equals("TALK")){
+				try{
+					mainPlayer.talk();
+					updateGame();				
+				} catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+			} else if(command.equals("INTERACT")){
+				try{
+					mainPlayer.interact();
+					updateGame();				
+				} catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+			} else if(command.equals("KILL")){
+				try{
+					mainPlayer.kill(farmAnimalList);
+					updateGame();				
+				} catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+			} else if(command.equals("GROW")){
+				try{
+					mainPlayer.grow();
+					updateGame();				
+				} catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+			} else if(command.equals("LU")){
+				mainPlayer.changeDirection(GameObject.DirectionType.UP);
+			} else if(command.equals("LD")){
+				mainPlayer.changeDirection(GameObject.DirectionType.DOWN);
+			} else if(command.equals("LL")){
+				mainPlayer.changeDirection(GameObject.DirectionType.LEFT);
+			} else if(command.equals("LR")){
+				mainPlayer.changeDirection(GameObject.DirectionType.RIGHT);
+			} else if(command.equals("QUIT")){
+				endGame();
+			} else if(command.equals("SHOW")) {
+				System.out.println("Berikut adalah isi dari DaftarProduct");
+				for (int i = 0 ; i < daftarProduct.size() ; i++) {
+					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)
+						System.out.println("[" + i + "] " + "CHEESE");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.EKADO)
+						System.out.println("[" + i + "] " + "EKADO");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.MAYONAISE)
+						System.out.println("[" + i + "] " + "MAYONAISE");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.STEAK)
+						System.out.println("[" + i + "] " + "STEAK");
+				}
+			} else if (command.equals("STATUS")) {
+				System.out.println("WAKTU: " + currentTime);
+				System.out.println("WATER : " + mainPlayer.getWater());
+				System.out.println("UANG : "  + mainPlayer.getUang());
+				System.out.println("Berikut adalah isi dari Inventori:");
+				for (int i = 0 ; i < mainPlayer.getInventory().size() ; i ++) {
+					System.out.println(mainPlayer.getInventory().get(i).getProductName() + ",");
+				}
+				System.out.println();
+			} else if (command.equals("SHOWRESEP")){
+				System.out.println("Berikut adalah isi dari DaftarProduct");
+				for (int i = 0 ; i < daftarProduct.size() ; i++) {
+					if (daftarProduct.get(i) == GameObject.GameObjectType.CHEESE)
+						System.out.println("CHEESE");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.EKADO)
+						System.out.println("EKADO");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.MAYONAISE)
+						System.out.println("MAYONAISE");
+					else if (daftarProduct.get(i) == GameObject.GameObjectType.STEAK)
+						System.out.println("STEAK");
+				}
+				System.out.println("Pilih indeks dari Daftar Product!");
+				int idxDaftarProduct;
+				idxDaftarProduct = Integer.parseInt(sc.nextLine());
+				System.out.println("Resep untuk membuat product adalah:");
+				if (idxDaftarProduct >= 0 && idxDaftarProduct <= 3) {
+					if (idxDaftarProduct == 0) {
+						for (int i = 0 ; i < Cheese.getResep().size() ; i++) {
+							System.out.println(ConvertIdxToString(Cheese.getResepwithIdx(i).getValue()));
+						}
+					} else if (idxDaftarProduct == 1) {
+						for (int i = 0 ; i < Ekado.getResep().size() ; i++) {
+							System.out.println(ConvertIdxToString(Ekado.getResepwithIdx(i).getValue()));
+						}
+					} else if (idxDaftarProduct == 2) {
+						for (int i = 0 ; i < Mayonaise.getResep().size() ; i++) {
+							System.out.println(ConvertIdxToString(Mayonaise.getResepwithIdx(i).getValue()));
+						}
+					} else if (idxDaftarProduct == 3) {
+						for (int i = 0 ; i < Steak.getResep().size() ; i++) {
+							System.out.println(ConvertIdxToString(Steak.getResepwithIdx(i).getValue()));
+						}
+					}
+				} else {
+					System.out.println("Indeks tidak valid");
+				}
+
+			} else {
+				System.out.println("Command tidak valid");
+			}
+		}
+		if(farmAnimalList.size() == 0){
+			System.out.println("Sudah tidak ada hewan lagi di game");
+		}
+		sc.close();
+	}
+
 	/**
 	 * Mengupdate seluruh state game
 	 */
