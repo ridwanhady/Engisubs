@@ -15,8 +15,7 @@ public class MainGame {
     private JFrame frame;
 
     public MainGame() {
-        /*
-        String path = new File("engisubs/ui/ASSETS/tilesets/ungrowed.png").getAbsolutePath();
+        String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
         */
 
@@ -62,7 +61,6 @@ public class MainGame {
         panel.setPreferredSize(new Dimension(880, 800));
         panel.setLayout(new GridLayout(10,11));
         
-        panel.setBackground(Color.red);
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         try {
             for (int i = 0 ; i < 110 ; i++) {
