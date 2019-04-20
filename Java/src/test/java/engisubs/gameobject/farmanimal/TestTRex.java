@@ -38,18 +38,20 @@ public class TestTRex{
 
     @Test
     public void itCanTalkSOMEHOW(){
-        Assert.assertEquals("Name: Reeeeeeee!", outContent.toString());
+        test.talk();
+        Assert.assertEquals("Name: Reeeeeeee!\n", outContent.toString());
     }
 
     @Test
     public void renderTest(){
+        test.render();
         Assert.assertEquals("X", outContent.toString());
     }
 
     @Test
     public void interactTest(){
         test.interact(null);
-        Assert.assertEquals("You cannot do anything with the great TRex, or can you? *wink*", outContent.toString());
+        Assert.assertEquals("You cannot do anything with the great TRex, or can you? *wink*\n", outContent.toString());
     }
 
     @Test

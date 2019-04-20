@@ -27,13 +27,13 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
     }
 
     public void interact(Player _p){
-        System.out.println("Kamu Berinteraksi dengan Ayam!");
+        //System.out.println("Kamu Berinteraksi dengan Ayam!");
         if (!getIsProductProduced()){
-            System.out.println("Produk siap diproduksi!");
+            //System.out.println("Produk siap diproduksi!");
             produceEgg(_p);
             isProductProduced = true;
         } else {
-            System.out.println("Produk belum diproduksi!");
+            //System.out.println("Produk belum diproduksi!");
         }
     }
 

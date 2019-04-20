@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
-
+ 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,17 +35,19 @@ public class TestPterodactyl{
     public void instantiationTest(){
         Assert.assertEquals("Name", test.getName());
         Assert.assertEquals(pos, test.getPosition());
-        Assert.assertNotNull(test.getLandPos());
-        Assert.assertTrue(test.isKillable());
+        Assert.assertNotEquals(null, test.getLandPos());
+        Assert.assertEquals(false,test.isKillable());
     }
 
     @Test
     public void itCanTalkSOMEHOW(){
-        Assert.assertEquals("Name: Nyehehehehe!", outContent.toString());
+        test.talk();
+        Assert.assertEquals("Name: Nyehehehehe!\n", outContent.toString());
     }
 
     @Test
     public void renderTest(){
+        test.render();
         Assert.assertEquals("L", outContent.toString());
     }
 

@@ -40,16 +40,18 @@ public class TestPlatypus{
 
     @Test
     public void itCanTalkSOMEHOW(){
-        Assert.assertEquals("Name: Nyehehehehe!", outContent.toString());
+        test.talk();
+        Assert.assertEquals("Name: It is I, Name, Destroyer of Worlds!\n", outContent.toString());
     }
 
     @Test
     public void renderTest(){
-        Assert.assertEquals("L", outContent.toString());
+        test.render();
+        Assert.assertEquals("Y", outContent.toString());
     }
 
     @Test
-    public void itCanProduceEgg(){
+    public void itCanProduceEggandMilk(){
         Player p = new Player("Iwang", 20, 20, this.pos, null);
         Assert.assertEquals(0,p.getInventory().size());
         test.interact(p);
@@ -57,5 +59,13 @@ public class TestPlatypus{
         test.eat();
         test.interact(p);
         Assert.assertEquals(2,p.getInventory().size());
+    }
+
+    @Test
+    public void itCanProduceMeat(){
+        Player p = new Player("Iwang", 20, 20, this.pos, null);
+        Assert.assertEquals(0,p.getInventory().size());
+        test.produceMeat(p);
+        Assert.assertEquals(1,p.getInventory().size());
     }
 }
