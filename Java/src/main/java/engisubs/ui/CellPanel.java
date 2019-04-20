@@ -8,7 +8,7 @@ import javax.swing.*;
 import engisubs.gameobject.GameObject.GameObjectType;
 
 class CellPanel extends JLayeredPane{
-    static private String pathUngrowed = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
+    static private String pathUngrowed = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
     static private String pathCock = "engisubs/ui/ASSETS/character/cock.gif";
 
     private boolean isGrown = false;
