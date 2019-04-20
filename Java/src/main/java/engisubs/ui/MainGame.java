@@ -15,11 +15,12 @@ public class MainGame {
     private JFrame frame;
 
     public MainGame() {
+        /*
         String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
         */
 
-        String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
+        //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
 
         frame = new JFrame();
         JButton up = new JButton("Up");
@@ -72,18 +73,6 @@ public class MainGame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
-        //panel.add(new JLabel("Button 2"));
-        //panel.add(new JLabel("Button 3"));
-        //panel.add(new JLabel("Button 4"));
-        //panel.add(new JLabel("Button 5"));
-        //panel.add(new JLabel("Button 6"));
-        //panel.add(new JLabel("Button 7"));
-        //panel.add(new JLabel("Button 8"));
-        //panel.add(new JLabel("Button 9"));
-        //panel.add(new JLabel("Button 10"));
-        //panel.add(new JLabel("Button 11"));
     
         frame.add(panel);
 
@@ -95,11 +84,6 @@ public class MainGame {
         frame.add(down);
         frame.add(left);
         frame.add(right);
-        //frame.add(up); 
-
-        //frmClass.add(down);
-        //frmClass.add(left);
-        //frmClass.add(right);
   
         frame.setVisible(true);
     
