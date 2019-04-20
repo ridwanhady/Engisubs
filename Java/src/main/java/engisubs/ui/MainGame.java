@@ -14,22 +14,14 @@ import engisubs.gameobject.*;
 public class MainGame {
     private JFrame frame;
 
-    public static void LaunchGame() {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try{
-                    MainGame window = new MainGame();
-                    window.frame.setVisible(true);
-                } catch  (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     public MainGame() {
-        String path = new File("engisubs/ui/ASSETS/tilesets/ungrowed.png").getAbsolutePath();
+        /*
+        String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
         System.out.println(path);
+        */
+    
+
+        //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
 
         frame = new JFrame();
         JButton up = new JButton("Up");
@@ -71,29 +63,17 @@ public class MainGame {
         panel.setPreferredSize(new Dimension(880, 800));
         panel.setLayout(new GridLayout(10,11));
         
-        panel.setBackground(Color.red);
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         try {
             for (int i = 0 ; i < 110 ; i++) {
-                JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
-                panel.add(label);
+                //JLabel label = new JLabel(new ImageIcon(ImageIO.read(new File(path))));
+                //JLabel label = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(path)));
+                panel.add(new CellPanel(false));
             }
             
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
-        //panel.add(new JLabel("Button 2"));
-        //panel.add(new JLabel("Button 3"));
-        //panel.add(new JLabel("Button 4"));
-        //panel.add(new JLabel("Button 5"));
-        //panel.add(new JLabel("Button 6"));
-        //panel.add(new JLabel("Button 7"));
-        //panel.add(new JLabel("Button 8"));
-        //panel.add(new JLabel("Button 9"));
-        //panel.add(new JLabel("Button 10"));
-        //panel.add(new JLabel("Button 11"));
     
         frame.add(panel);
 
@@ -101,13 +81,12 @@ public class MainGame {
         frame.setSize(1280,960);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.add(up); 
-
-        //frmClass.add(down);
-        //frmClass.add(left);
-        //frmClass.add(right);
+        frame.add(up);
+        frame.add(down);
+        frame.add(left);
+        frame.add(right);
   
-        
+        frame.setVisible(true);
     
     }
 

@@ -17,15 +17,17 @@ public class MainMenu extends JFrame {
         //Background Image + logo
         try {
 
-            f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("engisubs/ui/ASSETS/engisubs_bg+logo.jpg")))));
+            //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("engisubs/ui/ASSETS/engisubs_bg+logo.jpg")))));
+            f.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/engisubs_bg+logo.jpg"))));
             //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bg+logo.jpg")))));
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }        
         
         //Background Music
         try {
-            AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("engisubs/ui/ASSETS/engisubs_bgm.wav"));
+            //AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("engisubs/ui/ASSETS/engisubs_bgm.wav"));
+            AudioInputStream bgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/engisubs_bgm.wav"));
 			//AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bgm.wav"));
 			Clip clip = AudioSystem.getClip();
 			clip.open(bgm);
@@ -35,7 +37,9 @@ public class MainMenu extends JFrame {
         
         //Label Menu
         try {
-            Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
+            //Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
+            InputStream fontStream = getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf");
+            Font font1 = Font.createFont(Font.TRUETYPE_FONT, fontStream).deriveFont(Font.PLAIN, 24);
 			//Font font1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\KentuckyFriedChickenFont.ttf"))).deriveFont(Font.PLAIN, 24);
 			JButton start = new JButton("START GAME");
 			start.setFont(font1);
@@ -44,7 +48,6 @@ public class MainMenu extends JFrame {
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg0) {
                     MainGame MG = new MainGame();
-                    MG.LaunchGame();
                 }
             });
 			JButton exit = new JButton("EXIT GAME");
