@@ -11,12 +11,12 @@ public abstract class Cell extends GameObject{
      */
 
     public Cell(Map<String, Integer> _position) {
-        System.out.println("Cell");
-        System.out.println("Init " + _position.get("Row") + " " + _position.get("Col"));
+        //System.out.println("Cell");
+        //System.out.println("Init " + _position.get("Row") + " " + _position.get("Col"));
         currentPos.put("Row", _position.get("Row"));
-        System.out.println("Cell A");
+        //System.out.println("Cell A");
         currentPos.put("Col", _position.get("Col"));
-        System.out.println("Cell B");
+        //System.out.println("Cell B");
     }
 
     /**
