@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import engisubs.gameobject.*;
 public class MainMenu extends JFrame {
+    private Clip clip;
     public MainMenu() {
         super();
 
@@ -29,7 +30,7 @@ public class MainMenu extends JFrame {
             //AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("engisubs/ui/ASSETS/engisubs_bgm.wav"));
             AudioInputStream bgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/engisubs_bgm.wav"));
 			//AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bgm.wav"));
-			Clip clip = AudioSystem.getClip();
+			clip = AudioSystem.getClip();
 			clip.open(bgm);
 			clip.start();
 		}
@@ -48,6 +49,7 @@ public class MainMenu extends JFrame {
             start.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg0) {
                     MainGame MG = new MainGame();
+                    clip.close();
                 }
             });
 			JButton exit = new JButton("EXIT GAME");
