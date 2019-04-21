@@ -40,8 +40,9 @@
 ./engisubs/gameobject/cell/facility/Well.java
 ./engisubs/gameobject/cell/facility/Facility.java
 ./engisubs/gameobject/GameObject.java
+./engisubs/ui/CellPanel.java
 ./engisubs/Main.java
 ./engisubs/ui/MainGame.java
 ./engisubs/ui/MainMenu.java
 ./engisubs/ui/Main.java
-./engisubs/ui/CellPanel.java
+

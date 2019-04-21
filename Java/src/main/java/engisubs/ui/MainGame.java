@@ -124,7 +124,8 @@ public class MainGame {
         panelCommand.add(kill);
 
         frame.add(panelCommand);
-        frame.setSize(800,720);
+        frame.setSize(830,740);
+        frame.setResizable(false);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

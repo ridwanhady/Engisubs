@@ -79,6 +79,7 @@ public class MainMenu extends JFrame {
         f.add(credit);    
  
         f.setSize(640,480);
+        f.setResizable(false);
         f.setTitle("Engi's Farm by AWSubs");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLayout(null);
