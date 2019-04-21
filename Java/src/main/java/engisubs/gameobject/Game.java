@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Objects;
 
 import engisubs.gameobject.GameObject.GameObjectType;
@@ -150,11 +151,7 @@ public class Game{
 		} else {
 			BufferedReader br = null;
 		    try {
-		    	try {
-		    		br = new BufferedReader(new FileReader("Map.txt"));	
-		    	} catch (FileNotFoundException e){
-		    		System.out.println("Tidak ada file tersebut");
-		    	}
+		    	br = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("engisubs/ui/Map.txt")));	
 		    	String line = "";
 		    	try {
 		    		line = br.readLine();	
