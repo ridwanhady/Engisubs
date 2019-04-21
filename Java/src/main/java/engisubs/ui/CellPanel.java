@@ -13,6 +13,7 @@ import engisubs.gameobject.GameObject.DirectionType;
 import engisubs.gameobject.GameObject.GameObjectType;
 import engisubs.gameobject.Player;
 import engisubs.gameobject.cell.land.Land;
+import engisubs.gameobject.farmanimal.FarmAnimal;
 
 class CellPanel extends JLayeredPane{
     private static final long serialVersionUID = -4404788909941538588L;
@@ -23,11 +24,17 @@ class CellPanel extends JLayeredPane{
     static private String pathCoopUngrown = "engisubs/ui/ASSETS/tilesets/coop-ungrown.png";
     static private String pathCoopGrown = "engisubs/ui/ASSETS/tilesets/coop-grown.png";
     static private String pathCock = "engisubs/ui/ASSETS/Chicken/chickenn_2.gif";
+    static private String pathCockHungry = "engisubs/ui/ASSETS/Chicken/chickenn_2_hungry.gif";
     static private String pathBison = "engisubs/ui/ASSETS/Bison/bison_2.gif";
+    static private String pathBisonHungry = "engisubs/ui/ASSETS/Bison/bison_2_hungry.gif";
     static private String pathDog = "engisubs/ui/ASSETS/Dog/doggg_0.gif";
+    static private String pathDogHungry = "engisubs/ui/ASSETS/Dog/doggg_0_hungry.gif";
     static private String pathPlaty = "engisubs/ui/ASSETS/Platypus/platypus.gif";
+    static private String pathPlatyHungry = "engisubs/ui/ASSETS/Platypus/platypus_hungry.gif";
     static private String pathPtero = "engisubs/ui/ASSETS/Pterodactyl/ptero_0.gif";
+    static private String pathPteroHungry = "engisubs/ui/ASSETS/Pterodactyl/ptero_0_hungry.gif";
     static private String pathTRex = "engisubs/ui/ASSETS/TRex/trex_0.gif";
+    static private String pathTRexHungry = "engisubs/ui/ASSETS/TRex/trex_0_hungry.gif";
     static private String pathPlayerUp = "engisubs/ui/ASSETS/Player/playerrrr_0.gif";
     static private String pathPlayerLeft = "engisubs/ui/ASSETS/Player/playerrrr_1.gif";
     static private String pathPlayerDown = "engisubs/ui/ASSETS/Player/playerrrr_2.gif";
@@ -114,17 +121,51 @@ class CellPanel extends JLayeredPane{
         String path = "";
         System.out.println(objectHere.getObjectType());
         if (objectHere.getObjectType() == GameObjectType.CHICKEN){
-            path = pathCock;
+            FarmAnimal CockNow = (FarmAnimal) objectHere;
+            if (CockNow.getTimeUntilHungry() <= 0) {
+                path = pathCockHungry;
+            } else {
+                path = pathCock;
+            }
         }else if (objectHere.getObjectType() == GameObjectType.BISON){
-            path = pathBison;
+            FarmAnimal BisonNow = (FarmAnimal) objectHere;
+            if (BisonNow.getTimeUntilHungry() <= 0) {
+                path = pathBisonHungry;
+            } else {
+                path = pathBison;
+            }
+            
         }else if (objectHere.getObjectType() == GameObjectType.DOG){
+            FarmAnimal DogNow = (FarmAnimal) objectHere;
+            if (DogNow.getTimeUntilHungry() <= 0) {
+                path = pathDogHungry;
+            } else {
+                path = pathDog;
+            }
             path = pathDog;
         }else if (objectHere.getObjectType() == GameObjectType.PLATYPUS){
-            path = pathPlaty;
+            FarmAnimal PlatyNow = (FarmAnimal) objectHere;
+            if (PlatyNow.getTimeUntilHungry() <= 0) {
+                path = pathPlatyHungry;
+            } else {
+                path = pathPlaty;
+            }
         }else if (objectHere.getObjectType() == GameObjectType.PTERODACTYL){
-            path = pathPtero;
+
+            FarmAnimal PteroNow = (FarmAnimal) objectHere;
+            if (PteroNow.getTimeUntilHungry() <= 0) {
+                path = pathPteroHungry;
+            } else {
+                path = pathPtero;
+            }
+        
         }else if (objectHere.getObjectType() == GameObjectType.TREX){
-            path = pathTRex;
+            FarmAnimal TRexNow = (FarmAnimal) objectHere;
+            if (TRexNow.getTimeUntilHungry() <= 0) {
+                path = pathTRexHungry;
+            } else {
+                path = pathTRex;
+            }
         }else if (objectHere.getObjectType() == GameObjectType.PLAYER){
             Player playerNow = (Player) objectHere;
             if (playerNow.getDirection() == DirectionType.UP) {
