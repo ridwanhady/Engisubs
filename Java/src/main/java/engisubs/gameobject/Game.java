@@ -151,7 +151,7 @@ public class Game{
 		} else {
 			BufferedReader br = null;
 		    try {
-		    	br = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("engisubs/ui/Map.txt")));	
+		    	br = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/Map.txt")));	
 		    	String line = "";
 		    	try {
 		    		line = br.readLine();	
@@ -161,6 +161,7 @@ public class Game{
 			    
 			    int i = 0;
 			    while (line != null) {
+			    	System.out.println(i);
 			        LinkedList<Cell> temp = new LinkedList<Cell> ();
 			        for(int j = 0; j < line.length(); j++){
 			        	Map<String,Integer> pos = new HashMap<String,Integer>();
