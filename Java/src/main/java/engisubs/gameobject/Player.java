@@ -36,6 +36,8 @@ public class Player extends GameObject{
 	 * Inventory pemain untuk menyimpan product
 	 */
 	public List<Product> inventory;
+
+	private String message;
 	/**
 	 * Konstruktor player
 	 * @param  _name     Nama pemain
@@ -184,18 +186,13 @@ public class Player extends GameObject{
 	public void interact(){
 		Cell targetCell = getCellInFront();
 		if(targetCell != null){
-			System.out.println("INTER A");
 			if(targetCell.isWalkable()){
-				System.out.println("INTER B");
 				Land targetLand = (Land) targetCell;
 				if(targetLand.getObjectHere() != null){
-					System.out.println("INTER C");
 					targetLand.getObjectHere().interact(this);
-					//cout << "INTERACT DIPANGGIL" << endl;
 					return;
 				}
 			} else {
-				System.out.println("INTER D");
 				Facility targetFacility = (Facility) targetCell;
 				targetFacility.interact(this);
 				return;
@@ -213,10 +210,8 @@ public class Player extends GameObject{
 			Land targetLand = (Land) targetCell;
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (FarmAnimal) targetLand.getObjectHere();
-				System.out.println(targetAnimal.getName());
 				if(targetAnimal.isKillable()){
 					//Mencari indeks farmAnimal yang ingin dihapus dari List.
-					System.out.println("Animal isKillable");
 					farmAnimalList.remove(farmAnimalList.get(farmAnimalList.indexOf(targetAnimal)));
 					MeatProducing m = (MeatProducing) targetAnimal;
 					m.produceMeat(this);
@@ -256,7 +251,6 @@ public class Player extends GameObject{
 	 * @param direction arah dari pemain sekarang
 	 */
 	public void move(DirectionType direction){
-		System.out.println("A");
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
 		Map<String,Integer> targetPos = new HashMap<String,Integer>();
@@ -276,10 +270,10 @@ public class Player extends GameObject{
 		if(isValid(targetPos)){
 			int targetRow = targetPos.get("Row");
 			int targetCol = targetPos.get("Col");
-			System.out.println("TESTING");
+		
 			Land currentLand = (Land) worldMap.get(currentRow).get(currentCol);
 			currentLand.setObjectHere(null);
-			System.out.println("TESTING2");
+
 			//currentRow = targetRow;
 			//currentCol = targetCol;
 			currentPos.put("Row",targetRow);

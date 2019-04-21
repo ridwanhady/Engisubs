@@ -24,19 +24,14 @@ public class MainMenu extends JFrame {
     
         //Background Image + logo
         try {
-
-            //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("engisubs/ui/ASSETS/engisubs_bg+logo.jpg")))));
             f.setContentPane(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/engisubs_bg+logo.jpg"))));
-            //f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bg+logo.jpg")))));
         } catch (Exception e) {
             e.printStackTrace();
         }        
         
         //Background Music
         try {
-            //AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("engisubs/ui/ASSETS/engisubs_bgm.wav"));
             AudioInputStream bgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/engisubs_bgm.wav"));
-			//AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("C:\\Users\\acer\\Documents\\Engisubs-master\\Java\\src\\engisubs\\data\\engisubs_bgm.wav"));
 			clip = AudioSystem.getClip();
 			clip.open(bgm);
 			clip.start();

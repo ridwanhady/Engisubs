@@ -8,17 +8,19 @@ public abstract class Facility extends Cell
   {
   
   /**
-  * Constructor, menginisialisasi posisi
-  */
+   * Constructor dari Facility
+   * @param  _position Posisi dari Facility
+   * @return           Instance dari Facility
+   */
   public Facility(Map <String, Integer> _position)
     {
       super(_position);
     }
    
    /**
-   * Facility tidak bisa dilangkahi
-   */
-   
+    * Abstract method dari Cell yang menunjukkan bahwa Facility tidak bisa dilangkahi
+    * @return false
+    */
    public boolean isWalkable()
     {
       return false;
