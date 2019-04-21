@@ -54,6 +54,8 @@ public class Game{
 	 */
 	private int m = 10;
 
+	private String outplayer;
+
 	Scanner sc = new Scanner(System.in);
 
 	/**
@@ -467,30 +469,6 @@ public class Game{
 
 	public void gameHandler(String command){
 		if (isGameStarted && farmAnimalList.size() > 0){
-			System.out.println("TESSS");
-			/*
-			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			System.out.println("STATUS ");
-			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			System.out.println("NAMA :" + mainPlayer.getName());
-			System.out.println("WATER : " + mainPlayer.getWater());
-			System.out.println("UANG : " + mainPlayer.getUang());
-			System.out.println("Berikut adalah isi dari Inventori:");
-			for (int i = 0 ; i < mainPlayer.getInventory().size() ; i ++) {
-				System.out.println(  "[" + i + "] " + mainPlayer.getInventory().get(i).getProductName());
-			}
-			System.out.println();
-
-			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			showMap();
-			System.out.println( "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			System.out.println("Input: ");
-			command = sc.nextLine();
-			System.out.println("Command Entered: " + command);
-			System.out.println();
-			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-			*/
-
 			if(command.equals("HELP") ){
 				/* INVOKE THIS IN VIEW.
 				System.out.println();
@@ -500,19 +478,18 @@ public class Game{
 				System.out.println("LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS");
 				*/
 			} else if(command.equals("UP")){
-				System.out.println("HEY TES");
 				try{
 					mainPlayer.move(GameObject.DirectionType.UP);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println("Error: " + e.getMessage());
+					outplayer = ("Error: " + e.getMessage());
 				}
 			} else if(command.equals("DOWN")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.DOWN);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println("Error: " + e.getMessage());
+					outplayer = ("Error: " + e.getMessage());
 				}
 
 			} else if(command.equals("RIGHT")){
@@ -520,42 +497,42 @@ public class Game{
 					mainPlayer.move(GameObject.DirectionType.RIGHT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println("Error: " + e.getMessage());
+					outplayer = ("Error: " + e.getMessage());
 				}
 			} else if(command.equals("LEFT")){
 				try{
 					mainPlayer.move(GameObject.DirectionType.LEFT);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println("Error: " + e.getMessage());
+					outplayer = ("Error: " + e.getMessage());
 				}
 			} else if(command.equals("TALK")){
 				try{
 					mainPlayer.talk();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					outplayer = (e.getMessage());
 				}
 			} else if(command.equals("INTERACT")){
 				try{
 					mainPlayer.interact();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					outplayer = (e.getMessage());
 				}
 			} else if(command.equals("KILL")){
 				try{
 					mainPlayer.kill(farmAnimalList);
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					outplayer = (e.getMessage());
 				}
 			} else if(command.equals("GROW")){
 				try{
 					mainPlayer.grow();
 					updateGame();				
 				} catch (Exception e){
-					System.out.println(e.getMessage());
+					outplayer = (e.getMessage());
 				}
 			} else if(command.equals("LU")){
 				mainPlayer.changeDirection(GameObject.DirectionType.UP);
