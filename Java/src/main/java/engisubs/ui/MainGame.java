@@ -196,11 +196,13 @@ public class MainGame {
         JButton temp = new JButton(command);
         temp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+                mainGame.gameHandler(command.toUpperCase());
                 initPanel();
                 frame.remove(panelCommand);
                 frame.remove(panelStatus);
                 frame.add(panelStatus);
                 frame.add(panelCommand);
+                System.out.println("TESTING");
                 SwingUtilities.updateComponentTreeUI(frame);
             }
         });
