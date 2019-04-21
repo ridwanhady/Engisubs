@@ -27,15 +27,16 @@ public abstract class Cell extends GameObject{
     }
 
     /**
-     * Getter
+     * Getter position
+     * @return currentPos
      */
-
     public Map<String, Integer> getPosition(){
         return currentPos;
     }
 
-    /** 
-     * Setter
+    /**
+     * Setter position
+     * @param _newPosition currentPos yang baru
      */
     public void setPosition(Map<String, Integer> _newPosition) {
         currentPos.replace("Row", _newPosition.get("Row"));

@@ -25,12 +25,6 @@ public class MainGame {
     private final int CELLSIZE = 60;
 
     public MainGame() {
-        /*
-        String path = new File("engisubs/ui/ASSETS/tilesets/coop-ungrown.png").getAbsolutePath();
-        System.out.println(path);
-        */
-
-        //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
         mainGame = new Game();
         mainGame.startGame();
         try {
@@ -54,7 +48,6 @@ public class MainGame {
         JButton ld = addCommand("LD");
         JButton ll = addCommand("LL");
         JButton lr = addCommand("LR");
-
         /**
          * Button command interactable pemain.
          */

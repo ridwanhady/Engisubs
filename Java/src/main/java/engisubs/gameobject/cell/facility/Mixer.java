@@ -6,14 +6,21 @@ import engisubs.gameobject.product.Product.ProductType;
 import engisubs.gameobject.product.farmproduct.*;
 import engisubs.gameobject.product.sideproduct.*;
 
-public class Mixer extends Facility
-  {
+public class Mixer extends Facility{
+    /**
+     * Constructor Mixer
+     * @param  _position Posisi dari Mixer
+     * @return           Instance dari Mixer
+     */
     public Mixer(Map <String, Integer> _position){
       super(_position);
       initGameObject(GameObjectType.MIXER, 'M');
     }
 
-    //Implementasi virtual interact()
+    /**
+     * Melakukan interact dengan Mixer untuk membuat sebuah SideProduct
+     * @param _p Reference dari player untuk melakukan penambahan inventory
+     */
     public void interact(Player _p){
       //minta input
       int idxInventory_1, idxInventory_2, idxSideProd, idxResep;

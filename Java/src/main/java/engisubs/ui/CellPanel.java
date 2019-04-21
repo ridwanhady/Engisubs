@@ -43,7 +43,13 @@ class CellPanel extends JLayeredPane{
     private GameObject objectHere = null;
     private Land landHere = null;
     private final int CELLSIZE;
-    
+    /**
+     * Constructor CellPanel
+     * @param  _isGrown  Menandakan apakah terdapat rumput di Cell atau tidak
+     * @param  _cellHere Object Cell
+     * @param  cellSize  Ukuran pixel dari Cell
+     * @return           Instance dari CellPanel
+     */
     public CellPanel(boolean _isGrown, GameObject _cellHere, int cellSize){
         super();
         CELLSIZE = cellSize;
@@ -64,7 +70,9 @@ class CellPanel extends JLayeredPane{
         
         reinitCharSprite();
     }
-
+    /**
+     * Membuat sprite Land
+     */
     public void reinitGroundSprite(){
         if (cellGround != null){
             remove(cellGround);
@@ -80,7 +88,6 @@ class CellPanel extends JLayeredPane{
             } else if(landHere.getLandType() == Land.LandType.COOP){
                 path = pathCoopUngrown;
             }
-            //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathUngrown)));
         }else {
             if(landHere.getLandType() == Land.LandType.GRASSLAND){
                 path = pathGrasslandGrown;
@@ -89,7 +96,6 @@ class CellPanel extends JLayeredPane{
             } else if(landHere.getLandType() == Land.LandType.COOP){
                 path = pathCoopGrown;
             }
-            //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathGrown)));
         }
         cellGround = new JLabel();
         cellGround.setBounds(0, 0, CELLSIZE, CELLSIZE);
@@ -97,7 +103,9 @@ class CellPanel extends JLayeredPane{
         setLayer(cellGround, 0);
         add(cellGround);
     }
-
+    /**
+     * Membuat sprite karakter
+     */
     public void reinitCharSprite(){
         System.out.println("CHARSPRITE");
         if (charSprite != null){
@@ -108,22 +116,16 @@ class CellPanel extends JLayeredPane{
         System.out.println(objectHere.getObjectType());
         if (objectHere.getObjectType() == GameObjectType.CHICKEN){
             path = pathCock;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathCock)));
         }else if (objectHere.getObjectType() == GameObjectType.BISON){
             path = pathBison;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathBison)));
         }else if (objectHere.getObjectType() == GameObjectType.DOG){
             path = pathDog;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathDog)));
         }else if (objectHere.getObjectType() == GameObjectType.PLATYPUS){
             path = pathPlaty;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlaty)));
         }else if (objectHere.getObjectType() == GameObjectType.PTERODACTYL){
             path = pathPtero;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPtero)));
         }else if (objectHere.getObjectType() == GameObjectType.TREX){
             path = pathTRex;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTRex)));
         }else if (objectHere.getObjectType() == GameObjectType.PLAYER){
             Player playerNow = (Player) objectHere;
             if (playerNow.getDirection() == DirectionType.UP) {
@@ -137,16 +139,12 @@ class CellPanel extends JLayeredPane{
             } else {
                 path = pathPlayerDown;
             }
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlayer)));
         }else if (objectHere.getObjectType() == GameObjectType.WELL){
             path = pathWell;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathWell)));
         }else if (objectHere.getObjectType() == GameObjectType.TRUCK){
             path = pathTruck;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTruck)));
         }else if (objectHere.getObjectType() == GameObjectType.MIXER){
             path = pathMixer;
-            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathMixer)));
         }else {
             return;
         }
@@ -156,6 +154,12 @@ class CellPanel extends JLayeredPane{
         setLayer(charSprite, 1);
         add(charSprite);
     }
+
+    /**
+     * Menambahkan resizable image
+     * @param label Tempat menaruh image yang dibuat
+     * @param path  Lokasi file image
+     */
     private void addImage(JLabel label, String path){
         URL url = getClass().getClassLoader().getResource(path);
         System.out.println(path);
