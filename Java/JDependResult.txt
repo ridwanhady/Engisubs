@@ -1,0 +1,708 @@
+
+--------------------------------------------------
+- Package: engisubs
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 6
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.Main
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    javax.imageio
+    javax.sound.sampled
+    javax.swing
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: engisubs.gameobject
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 9
+    Abstract Classes: 0
+
+    Ca: 11
+    Ce: 9
+
+    A: 0
+    I: 0.45
+    D: 0.55
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.DummyDerrived
+    engisubs.gameobject.GameObject
+    engisubs.gameobject.GameObject$DirectionType
+    engisubs.gameobject.GameObject$FarmProductType
+    engisubs.gameobject.GameObject$GameObjectType
+    engisubs.gameobject.Player
+    engisubs.gameobject.TestGame
+    engisubs.gameobject.TestGameObject
+    engisubs.gameobject.TestPlayer
+
+Depends Upon:
+    engisubs.gameobject.cell
+    engisubs.gameobject.cell.facility
+    engisubs.gameobject.cell.land
+    engisubs.gameobject.farmanimal
+    engisubs.gameobject.product
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell
+    engisubs.gameobject.cell.facility
+    engisubs.gameobject.cell.land
+    engisubs.gameobject.farmanimal
+    engisubs.gameobject.product
+    engisubs.gameobject.product.farmproduct
+    engisubs.gameobject.product.farmproduct.egg
+    engisubs.gameobject.product.farmproduct.meat
+    engisubs.gameobject.product.farmproduct.milk
+    engisubs.gameobject.product.sideproduct
+    engisubs.ui
+
+--------------------------------------------------
+- Package: engisubs.gameobject.cell
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 4
+
+    A: 0.5
+    I: 0.5
+    D: 0
+
+Abstract Classes:
+    engisubs.gameobject.cell.Cell
+
+Concrete Classes:
+    engisubs.gameobject.cell.TestCell
+
+Depends Upon:
+    engisubs.gameobject
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject
+    engisubs.gameobject.cell.facility
+    engisubs.gameobject.cell.land
+    engisubs.gameobject.farmanimal
+
+--------------------------------------------------
+- Package: engisubs.gameobject.cell.facility
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 6
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 12
+
+    A: 0.14
+    I: 0.92
+    D: 0.07
+
+Abstract Classes:
+    engisubs.gameobject.cell.facility.Facility
+
+Concrete Classes:
+    engisubs.gameobject.cell.facility.Mixer
+    engisubs.gameobject.cell.facility.TestFacility
+    engisubs.gameobject.cell.facility.TestMixer
+    engisubs.gameobject.cell.facility.TestTruck
+    engisubs.gameobject.cell.facility.TestWell
+    engisubs.gameobject.cell.facility.Well
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.cell
+    engisubs.gameobject.product
+    engisubs.gameobject.product.farmproduct
+    engisubs.gameobject.product.farmproduct.egg
+    engisubs.gameobject.product.farmproduct.meat
+    engisubs.gameobject.product.farmproduct.milk
+    engisubs.gameobject.product.sideproduct
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject
+
+--------------------------------------------------
+- Package: engisubs.gameobject.cell.land
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 8
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 6
+
+    A: 0.11
+    I: 0.67
+    D: 0.22
+
+Abstract Classes:
+    engisubs.gameobject.cell.land.Land
+
+Concrete Classes:
+    engisubs.gameobject.cell.land.Barn
+    engisubs.gameobject.cell.land.Coop
+    engisubs.gameobject.cell.land.Grassland
+    engisubs.gameobject.cell.land.Land$LandType
+    engisubs.gameobject.cell.land.TestBarn
+    engisubs.gameobject.cell.land.TestCoop
+    engisubs.gameobject.cell.land.TestGrassland
+    engisubs.gameobject.cell.land.TestLand
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.cell
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject
+    engisubs.gameobject.farmanimal
+    engisubs.ui
+
+--------------------------------------------------
+- Package: engisubs.gameobject.farmanimal
+--------------------------------------------------
+
+Stats:
+    Total Classes: 15
+    Concrete Classes: 11
+    Abstract Classes: 4
+
+    Ca: 1
+    Ce: 7
+
+    A: 0.27
+    I: 0.88
+    D: 0.14
+
+Abstract Classes:
+    engisubs.gameobject.farmanimal.EggProducing
+    engisubs.gameobject.farmanimal.FarmAnimal
+    engisubs.gameobject.farmanimal.MeatProducing
+    engisubs.gameobject.farmanimal.MilkProducing
+
+Concrete Classes:
+    engisubs.gameobject.farmanimal.FarmAnimal$1
+    engisubs.gameobject.farmanimal.TestBison
+    engisubs.gameobject.farmanimal.TestChicken
+    engisubs.gameobject.farmanimal.TestDog
+    engisubs.gameobject.farmanimal.TestEggProducing
+    engisubs.gameobject.farmanimal.TestFarmAnimal
+    engisubs.gameobject.farmanimal.TestMeatProducing
+    engisubs.gameobject.farmanimal.TestMilkProducing
+    engisubs.gameobject.farmanimal.TestPlatypus
+    engisubs.gameobject.farmanimal.TestPterodactyl
+    engisubs.gameobject.farmanimal.TestTRex
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.cell
+    engisubs.gameobject.cell.land
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 7
+    Ce: 4
+
+    A: 0
+    I: 0.36
+    D: 0.64
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.Product
+    engisubs.gameobject.product.Product$ProductType
+    engisubs.gameobject.product.TestProduct
+
+Depends Upon:
+    engisubs.gameobject
+    java.io
+    java.lang
+    org.junit
+
+Used By:
+    engisubs.gameobject
+    engisubs.gameobject.cell.facility
+    engisubs.gameobject.product.farmproduct
+    engisubs.gameobject.product.farmproduct.egg
+    engisubs.gameobject.product.farmproduct.meat
+    engisubs.gameobject.product.farmproduct.milk
+    engisubs.gameobject.product.sideproduct
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product.farmproduct
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 4
+    Ce: 5
+
+    A: 0
+    I: 0.56
+    D: 0.44
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.farmproduct.FarmProduct
+    engisubs.gameobject.product.farmproduct.TestFarmProduct
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.product
+    java.io
+    java.lang
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell.facility
+    engisubs.gameobject.product.farmproduct.egg
+    engisubs.gameobject.product.farmproduct.meat
+    engisubs.gameobject.product.farmproduct.milk
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product.farmproduct.egg
+--------------------------------------------------
+
+Stats:
+    Total Classes: 8
+    Concrete Classes: 8
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 5
+
+    A: 0
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.farmproduct.egg.ChickenEgg
+    engisubs.gameobject.product.farmproduct.egg.Egg
+    engisubs.gameobject.product.farmproduct.egg.PlatypusEgg
+    engisubs.gameobject.product.farmproduct.egg.PterodactylEgg
+    engisubs.gameobject.product.farmproduct.egg.TestChickenEgg
+    engisubs.gameobject.product.farmproduct.egg.TestEgg
+    engisubs.gameobject.product.farmproduct.egg.TestPlatypusEgg
+    engisubs.gameobject.product.farmproduct.egg.TestPterodactylEgg
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.product
+    engisubs.gameobject.product.farmproduct
+    java.lang
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell.facility
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product.farmproduct.meat
+--------------------------------------------------
+
+Stats:
+    Total Classes: 12
+    Concrete Classes: 12
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 5
+
+    A: 0
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.farmproduct.meat.BisonMeat
+    engisubs.gameobject.product.farmproduct.meat.ChickenMeat
+    engisubs.gameobject.product.farmproduct.meat.DogMeat
+    engisubs.gameobject.product.farmproduct.meat.Meat
+    engisubs.gameobject.product.farmproduct.meat.PlatypusMeat
+    engisubs.gameobject.product.farmproduct.meat.TRexMeat
+    engisubs.gameobject.product.farmproduct.meat.TestBisonMeat
+    engisubs.gameobject.product.farmproduct.meat.TestChickenMeat
+    engisubs.gameobject.product.farmproduct.meat.TestDogMeat
+    engisubs.gameobject.product.farmproduct.meat.TestMeat
+    engisubs.gameobject.product.farmproduct.meat.TestPlatypusMeat
+    engisubs.gameobject.product.farmproduct.meat.TestTRexMeat
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.product
+    engisubs.gameobject.product.farmproduct
+    java.lang
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell.facility
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product.farmproduct.milk
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 5
+
+    A: 0
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.farmproduct.milk.BisonMilk
+    engisubs.gameobject.product.farmproduct.milk.Milk
+    engisubs.gameobject.product.farmproduct.milk.PlatypusMilk
+    engisubs.gameobject.product.farmproduct.milk.TestBisonMilk
+    engisubs.gameobject.product.farmproduct.milk.TestMilk
+    engisubs.gameobject.product.farmproduct.milk.TestPlatypusMilk
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.product
+    engisubs.gameobject.product.farmproduct
+    java.lang
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell.facility
+
+--------------------------------------------------
+- Package: engisubs.gameobject.product.sideproduct
+--------------------------------------------------
+
+Stats:
+    Total Classes: 10
+    Concrete Classes: 10
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 6
+
+    A: 0
+    I: 0.86
+    D: 0.14
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.gameobject.product.sideproduct.Cheese
+    engisubs.gameobject.product.sideproduct.Ekado
+    engisubs.gameobject.product.sideproduct.Mayonaise
+    engisubs.gameobject.product.sideproduct.SideProduct
+    engisubs.gameobject.product.sideproduct.Steak
+    engisubs.gameobject.product.sideproduct.TestCheese
+    engisubs.gameobject.product.sideproduct.TestEkado
+    engisubs.gameobject.product.sideproduct.TestMayonaise
+    engisubs.gameobject.product.sideproduct.TestSideProduct
+    engisubs.gameobject.product.sideproduct.TestSteak
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.product
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    engisubs.gameobject.cell.facility
+
+--------------------------------------------------
+- Package: engisubs.ui
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 7
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 8
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    engisubs.ui.CellPanel
+    engisubs.ui.Main
+    engisubs.ui.Main$1
+    engisubs.ui.MainGame$1
+    engisubs.ui.MainMenu
+    engisubs.ui.MainMenu$1
+    engisubs.ui.MainMenu$2
+
+Depends Upon:
+    engisubs.gameobject
+    engisubs.gameobject.cell.land
+    java.awt
+    java.awt.event
+    java.io
+    java.lang
+    javax.sound.sampled
+    javax.swing
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: jar
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 2
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    jar.AppTest
+
+Depends Upon:
+    java.lang
+    junit.framework
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt.event
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.imageio
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.sound.sampled
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.swing
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: junit.framework
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+engisubs.gameobject
+    |
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.cell
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.cell.facility
+    |
+    |   engisubs.gameobject.cell
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.cell.land
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.farmanimal
+    |
+    |   engisubs.gameobject
+    |-> engisubs.gameobject.farmanimal
+
+engisubs.gameobject.product
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.product.farmproduct
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.product.farmproduct.egg
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.product.farmproduct.meat
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.product.farmproduct.milk
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.gameobject.product.sideproduct
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+engisubs.ui
+    |
+    |-> engisubs.gameobject
+    |   engisubs.gameobject.farmanimal
+    |-> engisubs.gameobject
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+engisubs,1,0,0,6,0,1,0,1
+engisubs.gameobject,9,0,11,9,0,0.45,0.55,1
+engisubs.gameobject.cell,2,1,4,4,0.5,0.5,0,1
+engisubs.gameobject.cell.facility,7,1,1,12,0.14,0.92,0.07,1
+engisubs.gameobject.cell.land,9,1,3,6,0.11,0.67,0.22,1
+engisubs.gameobject.farmanimal,15,4,1,7,0.27,0.88,0.14,1
+engisubs.gameobject.product,3,0,7,4,0,0.36,0.64,1
+engisubs.gameobject.product.farmproduct,2,0,4,5,0,0.56,0.44,1
+engisubs.gameobject.product.farmproduct.egg,8,0,1,5,0,0.83,0.17,1
+engisubs.gameobject.product.farmproduct.meat,12,0,1,5,0,0.83,0.17,1
+engisubs.gameobject.product.farmproduct.milk,6,0,1,5,0,0.83,0.17,1
+engisubs.gameobject.product.sideproduct,10,0,1,6,0,0.86,0.14,1
+engisubs.ui,7,0,0,8,0,1,0,1
+jar,1,0,0,2,0,1,0,1
+java.awt,0,0,2,0,0,0,1,1
+java.awt.event,0,0,1,0,0,0,1,1
+java.io,0,0,9,0,0,0,1,1
+java.lang,0,0,14,0,0,0,1,1
+java.util,0,0,6,0,0,0,1,1
+javax.imageio,0,0,1,0,0,0,1,1
+javax.sound.sampled,0,0,2,0,0,0,1,1
+javax.swing,0,0,2,0,0,0,1,1
+junit.framework,0,0,1,0,0,0,1,1
+org.junit,0,0,11,0,0,0,1,1

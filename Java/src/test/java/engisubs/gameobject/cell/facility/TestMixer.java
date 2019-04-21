@@ -10,24 +10,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import engisubs.gameobject.Player;
 import engisubs.gameobject.GameObject.GameObjectType;
-import engisubs.gameobject.product.farmproduct.egg.ChickenEgg;
-import engisubs.gameobject.product.farmproduct.meat.ChickenMeat;
-import engisubs.gameobject.product.farmproduct.milk.BisonMilk;
 
 public class TestMixer{
     private Mixer test;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Map<String, Integer> pos = new HashMap<>();
-    private Player dummy;
+    //private Player dummy;
 
     @Before
     public void initMixer(){
         pos.put("Row", 1);
         pos.put("Col", 1);
         test = new Mixer(pos);
-        dummy = new Player("Iwang", 8, 10, pos, null);
+        //dummy = new Player("Iwang", 8, 10, pos, null);
         System.setOut(new PrintStream(outContent));
     }
 

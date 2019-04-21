@@ -1,18 +1,29 @@
 package engisubs.ui;
 
+import java.awt.Color;
+import java.awt.ComponentOrientation;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.InputStream;
 
-import java.awt.EventQueue;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
-import engisubs.gameobject.*;
-import engisubs.gameobject.GameObject.GameObjectType;
-import engisubs.gameobject.cell.*;
-import engisubs.gameobject.cell.land.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+
+import engisubs.gameobject.Game;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.cell.land.Land;
+import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
     private JPanel panelCommand = null;
@@ -167,13 +178,7 @@ public class MainGame {
         System.out.println("GamePanel has " + panel.getComponents().length + " tiles.");
         frame.add(panel);
     }
-    /*
-    private void addGB(JPanel panel, Component component, int x, int y) {
-        c.gridx = x;
-        c.gridy = y;
-        panel.add(component, c);
-    }
-    */
+    
     /**
      * Melakukan kustomisasi pada JButton
      * @param button JButton yang ingin dikustomisasi

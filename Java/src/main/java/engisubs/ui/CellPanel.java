@@ -1,23 +1,22 @@
 package engisubs.ui;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-
-import javax.swing.*;
-import javax.imageio.ImageIO;
-import java.io.*;
 import java.net.URL;
 
-import engisubs.gameobject.GameObject.GameObjectType;
-import engisubs.gameobject.GameObject.DirectionType;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+
 import engisubs.gameobject.GameObject;
+import engisubs.gameobject.GameObject.DirectionType;
+import engisubs.gameobject.GameObject.GameObjectType;
 import engisubs.gameobject.Player;
 import engisubs.gameobject.cell.land.Land;
 import engisubs.gameobject.farmanimal.FarmAnimal;
 
 class CellPanel extends JLayeredPane{
+    private static final long serialVersionUID = -4404788909941538588L;
     static private String pathGrasslandUngrown = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
     static private String pathGrasslandGrown = "engisubs/ui/ASSETS/tilesets/grassland-grown.jpg";
     static private String pathBarnUngrown = "engisubs/ui/ASSETS/tilesets/barn-ungrown.png";

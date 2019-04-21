@@ -41,7 +41,7 @@ public class TestChicken{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: Petak Petok!\n", outContent.toString());
+        Assert.assertEquals("Name: Petak Petok!", outContent.toString().trim());
     }
 
     @Test
