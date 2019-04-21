@@ -86,7 +86,7 @@ abstract public class FarmAnimal extends GameObject {
     /**
      * Abstract prosedur talk yang berbeda untuk setiap FarmAnimal
      */
-    public abstract void talk();
+    public abstract String talk();
     /**
      * Setter Position
      * @param _newPosition Posisi baru dari FarmAnimal

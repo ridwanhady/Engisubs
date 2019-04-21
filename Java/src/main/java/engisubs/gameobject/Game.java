@@ -469,6 +469,7 @@ public class Game{
 
 	public void gameHandler(String command){
 		if (isGameStarted && farmAnimalList.size() > 0){
+			mainPlayer.lastConvo = "";
 			if(command.equals("HELP") ){
 				/* INVOKE THIS IN VIEW.
 				System.out.println();
@@ -722,5 +723,9 @@ public class Game{
 
 	public Cell getCell(int i, int j){
 		return cellList.get(i).get(j);
+	}
+
+	public Player getPlayer(){
+		return mainPlayer;
 	}
 }

@@ -37,8 +37,9 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": Petak Petok!");
+        return name + ": Petak Petok!";
     }
     /**
      * Method untuk melakukan interaksi dimana Chicken akan menghasilkan telur

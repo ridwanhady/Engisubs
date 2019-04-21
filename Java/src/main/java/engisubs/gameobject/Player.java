@@ -37,6 +37,8 @@ public class Player extends GameObject{
 	 */
 	public List<Product> inventory;
 
+	public String lastConvo = "";
+
 	private String message;
 	/**
 	 * Konstruktor player
@@ -172,7 +174,7 @@ public class Player extends GameObject{
 			Land targetLand = (Land) targetCell;
 			if(targetLand.isOccupied()){
 				FarmAnimal targetAnimal = (FarmAnimal) targetLand.getObjectHere();
-				targetAnimal.talk();
+				lastConvo = targetAnimal.talk();
 				return;
 			}
 		} 

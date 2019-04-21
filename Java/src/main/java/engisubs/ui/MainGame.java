@@ -23,6 +23,7 @@ public class MainGame {
     private GridBagConstraints c;
     private Font font;
     private final int CELLSIZE = 60;
+    private String convoToWrite = "";
 
     public MainGame() {
         mainGame = new Game();
@@ -63,32 +64,7 @@ public class MainGame {
 
         initPanel();
 
-        panelStatus = new JPanel();
-        panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
-        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,10,0));
-        panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        JLabel name = new JLabel("Name: ");
-        panelStatus.add(name);
-
-        JLabel water = new JLabel("Water: ");
-        panelStatus.add(water);
-
-        JLabel money = new JLabel("Money: ");
-        panelStatus.add(money);
-
-        JLabel inventori = new JLabel("Inventori:");
-        panelStatus.add(inventori);
-
-        JTextArea textarea = new JTextArea(5,20);
-        panelStatus.add(textarea);
-
-        JLabel interactables = new JLabel("Interactables");
-        panelStatus.add(interactables);
-
-        JTextArea interact_textarea = new JTextArea(5,20);
-        panelStatus.add(interact_textarea);
-    
-        frame.add(panelStatus);
+        initStatus();
 
         panelCommand = new JPanel();
         panelCommand.setPreferredSize(new Dimension(600,90));
@@ -119,6 +95,44 @@ public class MainGame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         frame.setVisible(true);
+    }
+
+    private void initStatus(){
+        if (panelStatus != null){
+            frame.remove(panelStatus);
+        }
+
+        panelStatus = new JPanel();
+        panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
+        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,10,0));
+        panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        JLabel name = new JLabel("Name: " + mainGame.getPlayer().getName());
+        panelStatus.add(name);
+
+        JLabel water = new JLabel("Water: " + mainGame.getPlayer().getWater());
+        panelStatus.add(water);
+
+        JLabel money = new JLabel("Money: " + mainGame.getPlayer().getUang());
+        panelStatus.add(money);
+
+        JLabel inventori = new JLabel("Inventori:");
+        panelStatus.add(inventori);
+
+        JTextArea textarea = new JTextArea(5,20);
+        for (int i = 0; i < mainGame.getPlayer().getInventory().size(); i++){
+            textarea.append("[" + (i + 1) + "] " + mainGame.getPlayer().getInventory().get(i).getProductName() + "\n");
+        }
+        
+        panelStatus.add(textarea);
+
+        JLabel interactables = new JLabel("Conversation:");
+        panelStatus.add(interactables);
+
+        JTextArea interact_textarea = new JTextArea(5,20);
+        interact_textarea.append(mainGame.getPlayer().lastConvo);
+        panelStatus.add(interact_textarea);
+    
+        frame.add(panelStatus);
     }
 
     /**
@@ -193,6 +207,7 @@ public class MainGame {
             public void actionPerformed(ActionEvent arg0) {
                 mainGame.gameHandler(command.toUpperCase());
                 initPanel();
+                initStatus();
                 frame.remove(panelCommand);
                 frame.remove(panelStatus);
                 frame.add(panelStatus);

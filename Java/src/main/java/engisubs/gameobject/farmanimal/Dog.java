@@ -29,8 +29,9 @@ public class Dog extends FarmAnimal implements MeatProducing{
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": Woof Rawr XD");
+        return name + ": Woof Rawr XD";
     }
     /**
      * Method untuk melakukan interaksi kepada Dog sebagai perwujudan fungsi abstrak pada GameObject

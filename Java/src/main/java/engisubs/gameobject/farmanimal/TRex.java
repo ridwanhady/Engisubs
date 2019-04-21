@@ -29,8 +29,9 @@ public class TRex extends FarmAnimal implements MeatProducing{
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": Reeeeeeee!");
+        return name + ": Reeeeeeee!";
     }
     /**
      * Method untuk melakukan interaksi kepada TRex sebagai perwujudan fungsi abstrak pada GameObject
