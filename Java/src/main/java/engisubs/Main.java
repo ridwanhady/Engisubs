@@ -20,11 +20,11 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }        
-        Clip clip;
+        
         //Background Music
         try {
 			AudioInputStream bgm = AudioSystem.getAudioInputStream(new File("./engisubs/data/engisubs_bgm.wav"));
-			clip = AudioSystem.getClip();
+			Clip clip = AudioSystem.getClip();
 			clip.open(bgm);
 			clip.start();
 		}
