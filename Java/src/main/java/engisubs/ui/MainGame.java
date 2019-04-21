@@ -1,18 +1,30 @@
 package engisubs.ui;
 
+import java.awt.Color;
+import java.awt.ComponentOrientation;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.InputStream;
 
-import java.awt.EventQueue;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
-import engisubs.gameobject.*;
-import engisubs.gameobject.GameObject.GameObjectType;
-import engisubs.gameobject.cell.*;
-import engisubs.gameobject.cell.land.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
+import engisubs.gameobject.Game;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.cell.land.Land;
+import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
     private JPanel panelCommand = null;
@@ -24,6 +36,7 @@ public class MainGame {
     private Font font;
     private final int CELLSIZE = 60;
     private String convoToWrite = "";
+    private boolean gameOverShown = false;
 
     public MainGame() {
         mainGame = new Game();
@@ -181,13 +194,7 @@ public class MainGame {
         System.out.println("GamePanel has " + panel.getComponents().length + " tiles.");
         frame.add(panel);
     }
-    /*
-    private void addGB(JPanel panel, Component component, int x, int y) {
-        c.gridx = x;
-        c.gridy = y;
-        panel.add(component, c);
-    }
-    */
+    
     /**
      * Melakukan kustomisasi pada JButton
      * @param button JButton yang ingin dikustomisasi
@@ -205,17 +212,45 @@ public class MainGame {
         JButton temp = new JButton(command);
         temp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                mainGame.gameHandler(command.toUpperCase());
-                initPanel();
-                initStatus();
-                frame.remove(panelCommand);
-                frame.remove(panelStatus);
-                frame.add(panelStatus);
-                frame.add(panelCommand);
-                SwingUtilities.updateComponentTreeUI(frame);
+                if (!mainGame.isGameOver()) {
+                    mainGame.gameHandler(command.toUpperCase());
+                    initPanel();
+                    initStatus();
+                    frame.remove(panelCommand);
+                    frame.remove(panelStatus);
+                    frame.add(panelStatus);
+                    frame.add(panelCommand);
+                    SwingUtilities.updateComponentTreeUI(frame);
+                }
+                if (mainGame.isGameOver()){
+                    if (!gameOverShown){
+                        gameOverHandler();
+                        gameOverShown = true;
+                    }
+                }
             }
         });
         setButton(temp);
         return temp;
+    }
+
+    private void gameOverHandler(){
+        JFrame gameOverFrame = new JFrame("Game Over");
+        JPanel gameOverPanel = new JPanel();
+        
+        gameOverFrame.setSize(600, 400);
+        gameOverFrame.setResizable(false);
+
+        JLabel gameOverText = new JLabel("Game Over", SwingConstants.CENTER);
+        gameOverText.setFont(new Font(font.getFontName(), Font.PLAIN, 100));
+
+        JLabel gameOverMessage = new JLabel("Kamu cupu!", SwingConstants.CENTER);
+        gameOverMessage.setFont(new Font(font.getFontName(), Font.PLAIN, 50));
+
+        gameOverPanel.add(gameOverText);
+        gameOverPanel.add(gameOverMessage);
+        gameOverFrame.add(gameOverPanel);
+
+        gameOverFrame.setVisible(true);
     }
 }

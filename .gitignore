@@ -1,5 +1,7 @@
 #.gitignore - Ignores files that follows the patterns mentioned.
 
+target
+
 .DS_Store
 
 *.gch

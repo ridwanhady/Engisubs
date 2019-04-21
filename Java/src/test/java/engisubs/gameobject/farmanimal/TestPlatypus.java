@@ -41,7 +41,7 @@ public class TestPlatypus{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: It is I, Name, Destroyer of Worlds!\n", outContent.toString());
+        Assert.assertEquals("Name: It is I, Name, Destroyer of Worlds!", outContent.toString().trim());
     }
 
     @Test

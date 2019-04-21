@@ -41,9 +41,8 @@
 ./engisubs/gameobject/cell/facility/Facility.java
 ./engisubs/gameobject/GameObject.java
 ./engisubs/Main.java
-./engisubs/ui/ListLabel.java
+./engisubs/exception/InvalidCommandException.java
 ./engisubs/ui/MainGame.java
 ./engisubs/ui/MainMenu.java
 ./engisubs/ui/Main.java
-./engisubs/ui/StatusWindow.java
 ./engisubs/ui/CellPanel.java

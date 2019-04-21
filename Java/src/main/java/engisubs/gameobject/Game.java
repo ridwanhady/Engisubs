@@ -728,4 +728,8 @@ public class Game{
 	public Player getPlayer(){
 		return mainPlayer;
 	}
+
+	public boolean isGameOver(){
+		return farmAnimalList.size() == 0;
+	}
 }

@@ -39,7 +39,7 @@ public class TestTRex{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: Reeeeeeee!\n", outContent.toString());
+        Assert.assertEquals("Name: Reeeeeeee!", outContent.toString().trim());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class TestTRex{
     @Test
     public void interactTest(){
         test.interact(null);
-        Assert.assertEquals("You cannot do anything with the great TRex, or can you? *wink*\n", outContent.toString());
+        Assert.assertEquals("You cannot do anything with the great TRex, or can you? *wink*", outContent.toString().trim());
     }
 
     @Test

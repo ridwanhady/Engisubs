@@ -3,20 +3,15 @@ import engisubs.gameobject.*;
 
 import java.util.*;
 
-public abstract class Cell extends GameObject{
+public abstract class Cell extends GameObject implements Comparable<Cell>{
     private Map<String, Integer> currentPos = new HashMap<>();
 
     /** 
      * Konstruktor dari Cell dengan parameter.
      */
-
     public Cell(Map<String, Integer> _position) {
-        //System.out.println("Cell");
-        //System.out.println("Init " + _position.get("Row") + " " + _position.get("Col"));
         currentPos.put("Row", _position.get("Row"));
-        //System.out.println("Cell A");
         currentPos.put("Col", _position.get("Col"));
-        //System.out.println("Cell B");
     }
 
     /**
@@ -43,6 +38,15 @@ public abstract class Cell extends GameObject{
         currentPos.replace("Col", _newPosition.get("Col"));
     }
 
+    public int compareTo(Cell c){
+        if(currentPos == c.getPosition()){
+            return 0;
+        } else if(currentPos.get("Row") == c.getPosition().get("Row")){
+            return currentPos.get("Col") > c.getPosition().get("Col") ? 1 : -1;
+        } else {
+            return currentPos.get("Row") > c.getPosition().get("Row") ? 1 : -1;
+        }
+    }
 }
 
 

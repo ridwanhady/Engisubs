@@ -42,7 +42,7 @@ public class TestPterodactyl{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: Nyehehehehe!\n", outContent.toString());
+        Assert.assertEquals("Name: Nyehehehehe!",outContent.toString().trim());
     }
 
     @Test
