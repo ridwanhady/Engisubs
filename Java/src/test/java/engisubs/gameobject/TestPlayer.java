@@ -10,8 +10,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import engisubs.gameobject.GameObject.DirectionType;
-
 public class TestPlayer{
     private Player test;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
