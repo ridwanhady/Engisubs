@@ -11,6 +11,9 @@ import java.io.*;
 import java.net.URL;
 
 import engisubs.gameobject.GameObject.GameObjectType;
+import engisubs.gameobject.GameObject.DirectionType;
+import engisubs.gameobject.GameObject;
+import engisubs.gameobject.Player;
 
 class CellPanel extends JLayeredPane{
     static private String pathUngrown = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
@@ -21,7 +24,10 @@ class CellPanel extends JLayeredPane{
     static private String pathPlaty = "engisubs/ui/ASSETS/Platypus/platypus.gif";
     static private String pathPtero = "engisubs/ui/ASSETS/Pterodactyl/ptero_0.gif";
     static private String pathTRex = "engisubs/ui/ASSETS/TRex/trex_0.gif";
-    static private String pathPlayer = "engisubs/ui/ASSETS/Player/playerrrr_0.gif";
+    static private String pathPlayerUp = "engisubs/ui/ASSETS/Player/playerrrr_0.gif";
+    static private String pathPlayerLeft = "engisubs/ui/ASSETS/Player/playerrrr_1.gif";
+    static private String pathPlayerDown = "engisubs/ui/ASSETS/Player/playerrrr_2.gif";
+    static private String pathPlayerRight = "engisubs/ui/ASSETS/Player/playerrrr_3.gif";
     static private String pathWell = "engisubs/ui/ASSETS/tilesets/well.png";
     static private String pathTruck = "engisubs/ui/ASSETS/tilesets/truck.png";
     static private String pathMixer = "engisubs/ui/ASSETS/tilesets/mixer.png";
@@ -29,21 +35,19 @@ class CellPanel extends JLayeredPane{
     private boolean isGrown = false;
     private JLabel cellGround = null;
     private JLabel charSprite = null;
-    private GameObjectType objectHere = GameObjectType.PLAYER;
+    private GameObject objectHere = null;
     private final int CELLSIZE;
     
-    public CellPanel(boolean _isGrown, GameObjectType _objectHere, int cellSize){
+    public CellPanel(boolean _isGrown, GameObject _objectHere, int cellSize){
         super();
         CELLSIZE = cellSize;
-        invalidate();
         setLayout(null);
         setPreferredSize(new Dimension(cellSize, cellSize));
-        setBackground(Color.blue);
+        //setBackground(Color.blue);
         isGrown = _isGrown;
         objectHere = _objectHere;
         reinitGroundSprite();
         reinitCharSprite();
-        validate();
     }
 
     public void reinitGroundSprite(){
@@ -68,39 +72,51 @@ class CellPanel extends JLayeredPane{
     }
 
     public void reinitCharSprite(){
+        System.out.println("CHARSPRITE");
         if (charSprite != null){
             remove(charSprite);
         }
         charSprite = null;
         String path = "";
-        if (objectHere == GameObjectType.CHICKEN){
+        if (objectHere.getObjectType() == GameObjectType.CHICKEN){
             path = pathCock;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathCock)));
-        }else if (objectHere == GameObjectType.BISON){
+        }else if (objectHere.getObjectType() == GameObjectType.BISON){
             path = pathBison;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathBison)));
-        }else if (objectHere == GameObjectType.DOG){
+        }else if (objectHere.getObjectType() == GameObjectType.DOG){
             path = pathDog;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathDog)));
-        }else if (objectHere == GameObjectType.PLATYPUS){
+        }else if (objectHere.getObjectType() == GameObjectType.PLATYPUS){
             path = pathPlaty;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlaty)));
-        }else if (objectHere == GameObjectType.PTERODACTYL){
+        }else if (objectHere.getObjectType() == GameObjectType.PTERODACTYL){
             path = pathPtero;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPtero)));
-        }else if (objectHere == GameObjectType.TREX){
+        }else if (objectHere.getObjectType() == GameObjectType.TREX){
             path = pathTRex;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTRex)));
-        }else if (objectHere == GameObjectType.PLAYER){
-            path = pathPlayer;
+        }else if (objectHere.getObjectType() == GameObjectType.PLAYER){
+            Player playerNow = (Player) objectHere;
+            if (playerNow.getDirection() == DirectionType.UP) {
+                path = pathPlayerUp;
+            } else if (playerNow.getDirection() == DirectionType.DOWN) {
+                path = pathPlayerDown;
+            } else if (playerNow.getDirection() == DirectionType.LEFT) {
+                path = pathPlayerLeft;
+            } else if (playerNow.getDirection() == DirectionType.RIGHT) {
+                path = pathPlayerRight;
+            } else {
+                path = pathPlayerDown;
+            }
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlayer)));
-        }else if (objectHere == GameObjectType.WELL){
+        }else if (objectHere.getObjectType() == GameObjectType.WELL){
             path = pathWell;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathWell)));
-        }else if (objectHere == GameObjectType.TRUCK){
+        }else if (objectHere.getObjectType() == GameObjectType.TRUCK){
             path = pathTruck;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTruck)));
-        }else if (objectHere == GameObjectType.MIXER){
+        }else if (objectHere.getObjectType() == GameObjectType.MIXER){
             path = pathMixer;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathMixer)));
         }else {
