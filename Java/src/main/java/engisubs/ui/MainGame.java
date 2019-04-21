@@ -156,9 +156,6 @@ public class MainGame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-       
-        
         System.out.println("GamePanel has " + panel.getComponents().length + " tiles.");
         frame.add(panel);
     }
