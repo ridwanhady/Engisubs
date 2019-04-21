@@ -23,6 +23,7 @@ import javax.swing.SwingUtilities;
 import engisubs.gameobject.Game;
 import engisubs.gameobject.cell.Cell;
 import engisubs.gameobject.cell.land.Land;
+import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
     private JPanel panelCommand = null;

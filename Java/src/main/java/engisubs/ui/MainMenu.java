@@ -55,7 +55,7 @@ public class MainMenu extends JFrame {
 			try {
 				AudioInputStream gamebgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/game_bgm.wav"));
 				clip = AudioSystem.getClip();
-				clip.open(bgm);
+				clip.open(gamebgm);
 				clip.start();
 			}
 			catch(Exception e){e.printStackTrace();}
