@@ -7,6 +7,11 @@ import engisubs.gameobject.*;
 public class Truck extends Facility
   {
     private int notUsableTurns;
+    /**
+     * Constructor dari Truck
+     * @param  _position Posisi dari Truck
+     * @return           Instance dari Truck
+     */
     public Truck(Map <String, Integer> _position){
       super(_position);
       notUsableTurns = 0;
@@ -20,6 +25,7 @@ public class Truck extends Facility
      * sejumlah harga barang - barang tersebut.
      * Setelah interact digunakan, Interact tidak akan bisa
      * digunakan untuk sementara waktu.
+     * @param _p Reference dari player untuk melakukan penambahan inventory
      */
     public void interact(Player _p){
       //LinkedList <Product *> inventTemp = _p->getInventory();
@@ -38,16 +44,18 @@ public class Truck extends Facility
       }
     }
 
-    //Setter
     /**
-     * setNotUsableTurns akan mengubah nilai dari notUsableTurn menjadi
-     * sebesar nut.
+     * Setter notUsableTurns
+     * @param nut Nilai notUsableTurns yang baruu
      */
     public void setNotUsableTurns(int nut){
       notUsableTurns = nut;
     }
 
-    //Getter
+    /**
+     * Getter getNotUsableTurns
+     * @return notUsableTurns
+     */
     public int getNotUsableTurns(){
       return notUsableTurns;
     }
