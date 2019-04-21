@@ -22,7 +22,7 @@ public class Pterodactyl extends FarmAnimal implements EggProducing{
      * Method untuk menghasilkan telur
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceEgg(Player _p){
+    public void produceEgg(Player<?> _p){
         _p.addInventory(new PterodactylEgg(15, name));
     }
     /**
@@ -35,7 +35,7 @@ public class Pterodactyl extends FarmAnimal implements EggProducing{
      * Method untuk melakukan interaksi dimana Pterodactyl akan menghasilkan telur
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
         if (!getIsProductProduced()){
             produceEgg(_p);
             isProductProduced = true;

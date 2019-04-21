@@ -24,14 +24,14 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
      * Method untuk menghasilkan daging
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceMeat(Player _p){
+    public void produceMeat(Player<?> _p){
         _p.addInventory(new ChickenMeat(30, name));
     }
     /**
      * Method untuk menghasilkan telur
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceEgg(Player _p){
+    public void produceEgg(Player<?> _p){
         _p.addInventory(new ChickenEgg(5, name));
     }
     /**
@@ -44,7 +44,7 @@ public class Chicken extends FarmAnimal implements MeatProducing, EggProducing{
      * Method untuk melakukan interaksi dimana Chicken akan menghasilkan telur
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
         //System.out.println("Kamu Berinteraksi dengan Ayam!");
         if (!getIsProductProduced()){
             //System.out.println("Produk siap diproduksi!");
