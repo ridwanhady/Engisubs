@@ -28,8 +28,9 @@ public class Pterodactyl extends FarmAnimal implements EggProducing{
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": Nyehehehehe!");
+        return name + ": Nyehehehehe!";
     }
     /**
      * Method untuk melakukan interaksi dimana Pterodactyl akan menghasilkan telur

@@ -471,6 +471,7 @@ public class Game{
 
 	public void gameHandler(String command){
 		if (isGameStarted && farmAnimalList.size() > 0){
+			mainPlayer.lastConvo = "";
 			if(command.equals("HELP") ){
 				/* INVOKE THIS IN VIEW.
 				System.out.println();
@@ -726,6 +727,14 @@ public class Game{
 		return cellList.get(i).get(j);
 	}
 
+	public Player<Object> getPlayer(){
+		return mainPlayer;
+	}
+
+	public boolean isGameOver(){
+		return farmAnimalList.size() == 0;
+	}
+	
 	public List<FarmAnimal> getFarmAnimalList() {
 		return farmAnimalList;
 	}

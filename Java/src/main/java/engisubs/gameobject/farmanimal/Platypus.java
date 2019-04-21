@@ -45,8 +45,9 @@ public class Platypus extends FarmAnimal implements MeatProducing, EggProducing,
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": It is I, " + name + ", Destroyer of Worlds!");
+        return name + ": It is I, " + name + ", Destroyer of Worlds!";
     }
     /**
      * Method untuk melakukan interaksi dimana Platypus akan menghasilkan telur dan susu

@@ -16,7 +16,6 @@ import engisubs.gameobject.cell.land.Land;
 import engisubs.gameobject.farmanimal.FarmAnimal;
 
 class CellPanel extends JLayeredPane{
-    private static final long serialVersionUID = -4404788909941538588L;
     static private String pathGrasslandUngrown = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
     static private String pathGrasslandGrown = "engisubs/ui/ASSETS/tilesets/grassland-grown.jpg";
     static private String pathBarnUngrown = "engisubs/ui/ASSETS/tilesets/barn-ungrown.png";

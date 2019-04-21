@@ -36,8 +36,9 @@ public class Bison extends FarmAnimal implements MeatProducing, MilkProducing{
     /**
      * Method untuk berbicara
      */
-    public void talk(){
+    public String talk(){
         System.out.println(name + ": Mwooahahaha!");
+        return name + ": Mwooahahaha!";
     }
     /**
      * Method untuk melakukan interaksi dimana Bison akan menghasilkan susu

@@ -18,11 +18,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import engisubs.gameobject.Game;
 import engisubs.gameobject.cell.Cell;
 import engisubs.gameobject.cell.land.Land;
+import engisubs.gameobject.product.Product;
 import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
@@ -34,6 +36,8 @@ public class MainGame {
     private GridBagConstraints c;
     private Font font;
     private final int CELLSIZE = 60;
+    private String convoToWrite = "";
+    private boolean gameOverShown = false;
 
     public MainGame() {
         mainGame = new Game();
@@ -74,32 +78,7 @@ public class MainGame {
 
         initPanel();
 
-        panelStatus = new JPanel();
-        panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
-        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,10,0));
-        panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        JLabel name = new JLabel("Name: ");
-        panelStatus.add(name);
-
-        JLabel water = new JLabel("Water: ");
-        panelStatus.add(water);
-
-        JLabel money = new JLabel("Money: ");
-        panelStatus.add(money);
-
-        JLabel inventori = new JLabel("Inventori:");
-        panelStatus.add(inventori);
-
-        JTextArea textarea = new JTextArea(5,20);
-        panelStatus.add(textarea);
-
-        JLabel interactables = new JLabel("Interactables");
-        panelStatus.add(interactables);
-
-        JTextArea interact_textarea = new JTextArea(5,20);
-        panelStatus.add(interact_textarea);
-    
-        frame.add(panelStatus);
+        initStatus();
 
         panelCommand = new JPanel();
         panelCommand.setPreferredSize(new Dimension(600,90));
@@ -125,11 +104,50 @@ public class MainGame {
         panelCommand.add(kill);
 
         frame.add(panelCommand);
-        frame.setSize(800,720);
+        frame.setSize(830,740);
+        frame.setResizable(false);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         frame.setVisible(true);
+    }
+
+    private void initStatus(){
+        if (panelStatus != null){
+            frame.remove(panelStatus);
+        }
+
+        panelStatus = new JPanel();
+        panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
+        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,10,0));
+        panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        JLabel name = new JLabel("Name: " + mainGame.getPlayer().getName());
+        panelStatus.add(name);
+
+        JLabel water = new JLabel("Water: " + mainGame.getPlayer().getWater());
+        panelStatus.add(water);
+
+        JLabel money = new JLabel("Money: " + mainGame.getPlayer().getUang());
+        panelStatus.add(money);
+
+        JLabel inventori = new JLabel("Inventori:");
+        panelStatus.add(inventori);
+
+        JTextArea textarea = new JTextArea(5,20);
+        for (int i = 0; i < mainGame.getPlayer().getInventory().size(); i++){
+            textarea.append("[" + (i + 1) + "] " + ((Product) mainGame.getPlayer().getInventory().get(i)).getProductName() + "\n");
+        }
+        
+        panelStatus.add(textarea);
+
+        JLabel interactables = new JLabel("Conversation:");
+        panelStatus.add(interactables);
+
+        JTextArea interact_textarea = new JTextArea(5,20);
+        interact_textarea.append(mainGame.getPlayer().lastConvo);
+        panelStatus.add(interact_textarea);
+    
+        frame.add(panelStatus);
     }
 
     /**
@@ -196,15 +214,45 @@ public class MainGame {
         JButton temp = new JButton(command);
         temp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                initPanel();
-                frame.remove(panelCommand);
-                frame.remove(panelStatus);
-                frame.add(panelStatus);
-                frame.add(panelCommand);
-                SwingUtilities.updateComponentTreeUI(frame);
+                if (!mainGame.isGameOver()) {
+                    mainGame.gameHandler(command.toUpperCase());
+                    initPanel();
+                    initStatus();
+                    frame.remove(panelCommand);
+                    frame.remove(panelStatus);
+                    frame.add(panelStatus);
+                    frame.add(panelCommand);
+                    SwingUtilities.updateComponentTreeUI(frame);
+                }
+                if (mainGame.isGameOver()){
+                    if (!gameOverShown){
+                        gameOverHandler();
+                        gameOverShown = true;
+                    }
+                }
             }
         });
         setButton(temp);
         return temp;
+    }
+
+    private void gameOverHandler(){
+        JFrame gameOverFrame = new JFrame("Game Over");
+        JPanel gameOverPanel = new JPanel();
+        
+        gameOverFrame.setSize(600, 400);
+        gameOverFrame.setResizable(false);
+
+        JLabel gameOverText = new JLabel("Game Over", SwingConstants.CENTER);
+        gameOverText.setFont(new Font(font.getFontName(), Font.PLAIN, 100));
+
+        JLabel gameOverMessage = new JLabel("Kamu cupu!", SwingConstants.CENTER);
+        gameOverMessage.setFont(new Font(font.getFontName(), Font.PLAIN, 50));
+
+        gameOverPanel.add(gameOverText);
+        gameOverPanel.add(gameOverMessage);
+        gameOverFrame.add(gameOverPanel);
+
+        gameOverFrame.setVisible(true);
     }
 }
