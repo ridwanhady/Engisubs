@@ -1,0 +1,85 @@
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running engisubs.gameobject.TestGame
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec
+Running engisubs.gameobject.product.TestProduct
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running engisubs.gameobject.product.sideproduct.TestSideProduct
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running engisubs.gameobject.product.sideproduct.TestEkado
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running engisubs.gameobject.product.sideproduct.TestCheese
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running engisubs.gameobject.product.sideproduct.TestSteak
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running engisubs.gameobject.product.sideproduct.TestMayonaise
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestDogMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestChickenMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestBisonMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestPlatypusMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running engisubs.gameobject.product.farmproduct.meat.TestTRexMeat
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running engisubs.gameobject.product.farmproduct.TestFarmProduct
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running engisubs.gameobject.product.farmproduct.milk.TestMilk
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running engisubs.gameobject.product.farmproduct.milk.TestBisonMilk
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running engisubs.gameobject.product.farmproduct.milk.TestPlatypusMilk
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running engisubs.gameobject.product.farmproduct.egg.TestPterodactylEgg
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running engisubs.gameobject.product.farmproduct.egg.TestEgg
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running engisubs.gameobject.product.farmproduct.egg.TestChickenEgg
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running engisubs.gameobject.product.farmproduct.egg.TestPlatypusEgg
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running engisubs.gameobject.TestGameObject
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running engisubs.gameobject.TestPlayer
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running engisubs.gameobject.farmanimal.TestPlatypus
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 sec
+Running engisubs.gameobject.farmanimal.TestChicken
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
+Running engisubs.gameobject.farmanimal.TestEggProducing
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running engisubs.gameobject.farmanimal.TestMilkProducing
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running engisubs.gameobject.farmanimal.TestTRex
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running engisubs.gameobject.farmanimal.TestMeatProducing
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running engisubs.gameobject.farmanimal.TestDog
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running engisubs.gameobject.farmanimal.TestFarmAnimal
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running engisubs.gameobject.farmanimal.TestPterodactyl
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running engisubs.gameobject.farmanimal.TestBison
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running engisubs.gameobject.cell.facility.TestMixer
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running engisubs.gameobject.cell.facility.TestWell
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running engisubs.gameobject.cell.facility.TestFacility
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running engisubs.gameobject.cell.facility.TestTruck
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running engisubs.gameobject.cell.land.TestBarn
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running engisubs.gameobject.cell.land.TestGrassland
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running engisubs.gameobject.cell.land.TestCoop
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running engisubs.gameobject.cell.TestCell
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
