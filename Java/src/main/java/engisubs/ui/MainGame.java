@@ -20,6 +20,7 @@ public class MainGame {
     private JPanel panel = null;
     private GridBagConstraints c;
     private Font font;
+    private final int CELLSIZE = 60;
 
     public MainGame() {
         /*
@@ -43,15 +44,15 @@ public class MainGame {
         Font font  = new Font(Font.SANS_SERIF, Font.BOLD, 13);
         
         up.setFont(font);
-        up.setBounds(1020,250,60,40);
+        //up.setBounds(1020,250,60,40);
         up.setBackground(Color.white);
 
         down.setFont(font);
-        down.setBounds(1020,350,60,40);
+        //down.setBounds(1020,350,60,40);
         down.setBackground(Color.white);
 
         left.setFont(font);
-        left.setBounds(930,300,60,40);
+        //left.setBounds(930,300,60,40);
         left.setBackground(Color.white);
         /**
          * Button command direction pemain.
@@ -146,9 +147,8 @@ public class MainGame {
         panelCommand.add(kill,c);
 
         
-
+        frame.setResizable(true);
         frame.add(panelCommand);
-        
         frame.setSize(1150,900);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -170,7 +170,7 @@ public class MainGame {
         }
 
         panel = new JPanel();
-        panel.setPreferredSize(new Dimension(80 * mainGame.getRowCount(), 80 * mainGame.getColCount()));
+        panel.setPreferredSize(new Dimension(CELLSIZE * mainGame.getRowCount(), CELLSIZE * mainGame.getColCount()));
         panel.setLayout(new GridLayout(mainGame.getRowCount(), mainGame.getColCount()));
         
         panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -184,14 +184,14 @@ public class MainGame {
                         }
                         CellPanel newCell = null;
                         if (curToDraw.isOccupied()){
-                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere().getGameObjectType());
+                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere().getGameObjectType(), CELLSIZE);
                         }else {
-                            newCell = new CellPanel(curToDraw.isGrown(), GameObjectType.LAND);
+                            newCell = new CellPanel(curToDraw.isGrown(), GameObjectType.LAND, CELLSIZE);
                         }
                         panel.add(newCell);
                     }else {
                         Cell curToDraw = mainGame.getCell(i, j);
-                        CellPanel newCell = new CellPanel(false, curToDraw.getGameObjectType());
+                        CellPanel newCell = new CellPanel(false, curToDraw.getGameObjectType(), CELLSIZE);
                         panel.add(newCell);
                     }
                 }

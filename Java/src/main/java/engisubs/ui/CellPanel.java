@@ -2,8 +2,13 @@ package engisubs.ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 
 import javax.swing.*;
+import javax.imageio.ImageIO;
+import java.io.*;
+import java.net.URL;
 
 import engisubs.gameobject.GameObject.GameObjectType;
 
@@ -25,13 +30,14 @@ class CellPanel extends JLayeredPane{
     private JLabel cellGround = null;
     private JLabel charSprite = null;
     private GameObjectType objectHere = GameObjectType.PLAYER;
+    private final int CELLSIZE;
     
-    public CellPanel(boolean _isGrown, GameObjectType _objectHere){
-        
+    public CellPanel(boolean _isGrown, GameObjectType _objectHere, int cellSize){
         super();
+        CELLSIZE = cellSize;
         invalidate();
         setLayout(null);
-        setPreferredSize(new Dimension(80, 80));
+        setPreferredSize(new Dimension(cellSize, cellSize));
         setBackground(Color.blue);
         isGrown = _isGrown;
         objectHere = _objectHere;
@@ -46,14 +52,17 @@ class CellPanel extends JLayeredPane{
             cellGround = null;
         }
         
-
+        String path = "";
         if (!isGrown){
-            cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathUngrown)));
+            path = pathUngrown;
+            //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathUngrown)));
         }else {
-            cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathGrown)));
+            path = pathGrown;
+            //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathGrown)));
         }
-        //cellGround.setLocation(0, 0);
-        cellGround.setBounds(0, 0, 80, 80);
+        cellGround = new JLabel();
+        cellGround.setBounds(0, 0, CELLSIZE, CELLSIZE);
+        addImage(cellGround, path);
         setLayer(cellGround, 0);
         add(cellGround);
     }
@@ -63,32 +72,50 @@ class CellPanel extends JLayeredPane{
             remove(charSprite);
         }
         charSprite = null;
+        String path = "";
         if (objectHere == GameObjectType.CHICKEN){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathCock)));
+            path = pathCock;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathCock)));
         }else if (objectHere == GameObjectType.BISON){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathBison)));
+            path = pathBison;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathBison)));
         }else if (objectHere == GameObjectType.DOG){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathDog)));
+            path = pathDog;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathDog)));
         }else if (objectHere == GameObjectType.PLATYPUS){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlaty)));
+            path = pathPlaty;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlaty)));
         }else if (objectHere == GameObjectType.PTERODACTYL){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPtero)));
+            path = pathPtero;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPtero)));
         }else if (objectHere == GameObjectType.TREX){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTRex)));
+            path = pathTRex;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTRex)));
         }else if (objectHere == GameObjectType.PLAYER){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlayer)));
+            path = pathPlayer;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathPlayer)));
         }else if (objectHere == GameObjectType.WELL){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathWell)));
+            path = pathWell;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathWell)));
         }else if (objectHere == GameObjectType.TRUCK){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTruck)));
+            path = pathTruck;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathTruck)));
         }else if (objectHere == GameObjectType.MIXER){
-            charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathMixer)));
+            path = pathMixer;
+            //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathMixer)));
         }else {
             return;
         }
-        //charSprite.setLocation(0, 0);
-        charSprite.setBounds(0, 0, 80, 80);
+        charSprite = new JLabel();
+        charSprite.setBounds(0, 0, CELLSIZE, CELLSIZE);
+        addImage(charSprite, path);
         setLayer(charSprite, 1);
         add(charSprite);
+    }
+    private void addImage(JLabel label, String path){
+        URL url = getClass().getClassLoader().getResource(path);
+        ImageIcon icon = new ImageIcon(url);
+        icon.setImage(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icon);
     }
 }
