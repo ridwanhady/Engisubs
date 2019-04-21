@@ -31,7 +31,12 @@ public class MainGame {
         //String path = "engisubs/ui/ASSETS/tilesets/ungrowed.png";
         mainGame = new Game();
         mainGame.startGame();
-
+        try {
+            InputStream fontStream = getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf");
+            font = Font.createFont(Font.TRUETYPE_FONT, fontStream).deriveFont(Font.PLAIN, 20);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         frame = new JFrame();
         /**
          * Button command dasar pemain.
@@ -55,14 +60,6 @@ public class MainGame {
         JButton grow = addCommand("Grow");
         JButton interact = addCommand("Interact");
         JButton kill = addCommand("Kill");
-
-        try {
-            InputStream fontStream = getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf");
-            font = Font.createFont(Font.TRUETYPE_FONT, fontStream).deriveFont(Font.PLAIN, 20);
-        } catch (Exception e){
-			e.printStackTrace();
-		}
-        
         /**
          * Mengeset layout Panel di dalam frame.
          */
@@ -88,26 +85,6 @@ public class MainGame {
         c.insets.top = -30;   
         c.insets.left = 5;
         c.insets.right = 5;
-
-
-        setButton(up);
-
-        
-
-        setButton(down);
-        setButton(left);
-        setButton(right);
-
-        setButton(lu);
-        setButton(ld);
-        setButton(ll);
-        setButton(lr);
-
-        setButton(talk);
-        setButton(grow);
-        setButton(interact);
-        setButton(kill);
-
 
         panelCommand.add(up,c);
         panelCommand.add(down,c);
@@ -192,12 +169,19 @@ public class MainGame {
         c.gridy = y;
         panel.add(component, c);
     }
-
+    /**
+     * Melakukan kustomisasi pada JButton
+     * @param button JButton yang ingin dikustomisasi
+     */
     private void setButton (JButton button) {
         button.setFont(font);
         button.setBackground(Color.yellow);
     }
-
+    /**
+     * Membuat sebuah JButton yang berisikan command
+     * @param  command Command yang direpresentasikan JButton tersebut
+     * @return         JButton
+     */
     private JButton addCommand(String command){
         JButton temp = new JButton(command);
         temp.addActionListener(new ActionListener() {
@@ -206,6 +190,7 @@ public class MainGame {
                 initPanel();
             }
         });
+        setButton(temp);
         return temp;
     }
 
