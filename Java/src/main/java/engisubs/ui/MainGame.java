@@ -93,7 +93,7 @@ public class MainGame {
         initPanel();
 
         JPanel panelStatus = new JPanel();
-        panelStatus.setPreferredSize(new Dimension(200,800));
+        panelStatus.setPreferredSize(new Dimension(200,600));
         panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,20,0));
         panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         
