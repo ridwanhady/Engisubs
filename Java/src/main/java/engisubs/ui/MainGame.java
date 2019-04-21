@@ -1,18 +1,28 @@
 package engisubs.ui;
 
+import java.awt.Color;
+import java.awt.ComponentOrientation;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.InputStream;
 
-import java.awt.EventQueue;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
-import engisubs.gameobject.*;
-import engisubs.gameobject.GameObject.GameObjectType;
-import engisubs.gameobject.cell.*;
-import engisubs.gameobject.cell.land.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+
+import engisubs.gameobject.Game;
+import engisubs.gameobject.cell.Cell;
+import engisubs.gameobject.cell.land.Land;
 
 public class MainGame {
     private JPanel panelCommand = null;
@@ -29,7 +39,7 @@ public class MainGame {
         mainGame.startGame();
         try {
             InputStream fontStream = getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf");
-            font = Font.createFont(Font.TRUETYPE_FONT, fontStream).deriveFont(Font.PLAIN, 20);
+            font = Font.createFont(Font.TRUETYPE_FONT, fontStream).deriveFont(Font.PLAIN, 15);
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -65,38 +75,56 @@ public class MainGame {
 
         panelStatus = new JPanel();
         panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
-        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,20,0));
+        panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,10,0));
         panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        JLabel tick = new JLabel("tick");
-        panelStatus.add(tick);
+        JLabel name = new JLabel("Name: ");
+        panelStatus.add(name);
+
+        JLabel water = new JLabel("Water: ");
+        panelStatus.add(water);
+
+        JLabel money = new JLabel("Money: ");
+        panelStatus.add(money);
+
+        JLabel inventori = new JLabel("Inventori:");
+        panelStatus.add(inventori);
+
+        JTextArea textarea = new JTextArea(5,20);
+        panelStatus.add(textarea);
+
+        JLabel interactables = new JLabel("Interactables");
+        panelStatus.add(interactables);
+
+        JTextArea interact_textarea = new JTextArea(5,20);
+        panelStatus.add(interact_textarea);
     
         frame.add(panelStatus);
 
         panelCommand = new JPanel();
-        panelCommand.setPreferredSize(new Dimension(1150,100));
-        panelCommand.setLayout(new GridBagLayout());
-        c = new GridBagConstraints();
-        c.insets.top = -30;   
-        c.insets.left = 5;
-        c.insets.right = 5;
+        panelCommand.setPreferredSize(new Dimension(600,90));
+        panelCommand.setLayout(new GridLayout(2,6));
+        //c = new GridBagConstraints();
+        //c.insets.top = 0;   
+        //c.insets.left = 0;
+        //c.insets.right = 0;
 
-        panelCommand.add(up,c);
-        panelCommand.add(down,c);
-        panelCommand.add(left,c);
-        panelCommand.add(right,c);
+        panelCommand.add(up);
+        panelCommand.add(down);
+        panelCommand.add(left);
+        panelCommand.add(right);
 
-        panelCommand.add(lu,c);
-        panelCommand.add(ld,c);
-        panelCommand.add(ll,c);
-        panelCommand.add(lr,c);
+        panelCommand.add(lu);
+        panelCommand.add(ld);
+        panelCommand.add(ll);
+        panelCommand.add(lr);
 
-        panelCommand.add(talk,c);
-        panelCommand.add(grow,c);
-        panelCommand.add(interact,c);
-        panelCommand.add(kill,c);
+        panelCommand.add(talk);
+        panelCommand.add(grow);
+        panelCommand.add(interact);
+        panelCommand.add(kill);
 
         frame.add(panelCommand);
-        frame.setSize(1150,900);
+        frame.setSize(800,720);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -109,11 +137,8 @@ public class MainGame {
     private void initPanel(){
         if (panel != null){
             frame.remove(panel);
-            System.out.println("INVALIDATE TEST");
             panel.invalidate();
-            System.out.println("INVALIDATE TEST 2");
             panel = null;
-            System.out.println("INVALIDATE TEST 3");
         }
 
         panel = new JPanel();
@@ -153,11 +178,6 @@ public class MainGame {
         frame.add(panel);
     }
     
-    private void addGB(JPanel panel, Component component, int x, int y) {
-        c.gridx = x;
-        c.gridy = y;
-        panel.add(component, c);
-    }
     /**
      * Melakukan kustomisasi pada JButton
      * @param button JButton yang ingin dikustomisasi

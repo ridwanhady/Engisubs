@@ -25,6 +25,7 @@ public class TestBison{
         test = new Bison(pos, "Name", landPos);
         System.setOut(new PrintStream(outContent));
     }
+
     @After
     public void cleanStreams() {
         System.setOut(null);
@@ -41,7 +42,7 @@ public class TestBison{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: Mwooahahaha!\n", outContent.toString());
+        Assert.assertEquals("Name: Mwooahahaha!", outContent.toString().trim());
     }
 
     @Test

@@ -39,7 +39,7 @@ public class TestDog{
     @Test
     public void itCanTalkSOMEHOW(){
         test.talk();
-        Assert.assertEquals("Name: Woof Rawr XD\n", outContent.toString());
+        Assert.assertEquals("Name: Woof Rawr XD", outContent.toString().trim());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class TestDog{
     @Test
     public void interactTest(){
         test.interact(null);
-        Assert.assertEquals("You cannot do anything with a Dog, or can you? *wink*\n", outContent.toString());
+        Assert.assertEquals("You cannot do anything with a Dog, or can you? *wink*", outContent.toString().trim());
     }
 
     @Test

@@ -1,14 +1,21 @@
 package engisubs.ui;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
-import engisubs.gameobject.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.io.InputStream;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 public class MainMenu extends JFrame {
+    private static final long serialVersionUID = 1L;
     private Clip clip;
     public MainMenu() {
         super();
@@ -45,6 +52,13 @@ public class MainMenu extends JFrame {
                 public void actionPerformed(ActionEvent arg0) {
                     MainGame MG = new MainGame();
                     clip.close();
+			try {
+				AudioInputStream gamebgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/game_bgm.wav"));
+				clip = AudioSystem.getClip();
+				clip.open(bgm);
+				clip.start();
+			}
+			catch(Exception e){e.printStackTrace();}
                 }
             });
 			JButton exit = new JButton("EXIT GAME");

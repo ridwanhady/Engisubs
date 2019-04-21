@@ -37,8 +37,8 @@ public class TestGameObject{
     @Test
     public void interactMethodTest(){
         test.interact(null);
-        Assert.assertNotEquals("Must Be Override\n", outContent.toString());
-        Assert.assertEquals("Im just a dummy\n", outContent.toString());
+        Assert.assertNotEquals("Must Be Override", outContent.toString().trim());
+        Assert.assertEquals("Im just a dummy", outContent.toString().trim());
     }
     @Test
     public void renderMethodTest(){
