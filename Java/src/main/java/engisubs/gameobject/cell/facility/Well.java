@@ -18,7 +18,7 @@ public class Well extends Facility{
      * Melakukan interact dengan Well untuk mengisi air sampai penuh
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
       _p.setWater(10);
     }
   }
