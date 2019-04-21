@@ -25,21 +25,21 @@ public class Platypus extends FarmAnimal implements MeatProducing, EggProducing,
      * Method untuk menghasilkan daging
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceMeat(Player _p){
+    public void produceMeat(Player<?> _p){
         _p.addInventory(new PlatypusMeat(70, name));
     }
     /**
      * Method untuk menghasilkan telur
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceEgg(Player _p){
+    public void produceEgg(Player<?> _p){
         _p.addInventory(new PlatypusEgg(10, name));
     }
     /**
      * Method untuk menghasilkan susu
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceMilk(Player _p){
+    public void produceMilk(Player<?> _p){
         _p.addInventory(new PlatypusMilk(15, name));
     }
     /**
@@ -53,7 +53,7 @@ public class Platypus extends FarmAnimal implements MeatProducing, EggProducing,
      * Method untuk melakukan interaksi dimana Platypus akan menghasilkan telur dan susu
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
         if (!getIsProductProduced()){
             produceEgg(_p);
             produceMilk(_p);

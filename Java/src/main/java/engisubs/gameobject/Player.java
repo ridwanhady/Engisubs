@@ -8,7 +8,7 @@ import engisubs.gameobject.farmanimal.*;
 import engisubs.gameobject.product.*;
 import engisubs.exception.InvalidCommandException;
 
-public class Player extends GameObject{
+public class Player<T extends Object> extends GameObject{
  	/**
  	 * Nama pemain
  	 */
@@ -51,8 +51,8 @@ public class Player extends GameObject{
 	 * @param  _worldMap Peta dunia
 	 * @return           Objek Player
 	 */
-    public Player(String _name, int _water, double _uang, Map<String,Integer> pos, List<LinkedList<Cell>> _worldMap){
-		setName(_name);
+    public Player(T _name, int _water, double _uang, Map<String,Integer> pos, List<LinkedList<Cell>> _worldMap){
+		setName(_name.toString());
 		setWater(_water);
 		setUang(_uang);
 		setPosition(pos);

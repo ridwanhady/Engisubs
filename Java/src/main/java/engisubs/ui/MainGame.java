@@ -24,6 +24,7 @@ import javax.swing.SwingUtilities;
 import engisubs.gameobject.Game;
 import engisubs.gameobject.cell.Cell;
 import engisubs.gameobject.cell.land.Land;
+import engisubs.gameobject.product.Product;
 import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
@@ -103,7 +104,8 @@ public class MainGame {
         panelCommand.add(kill);
 
         frame.add(panelCommand);
-        frame.setSize(800,720);
+        frame.setSize(830,740);
+        frame.setResizable(false);
         frame.setTitle("Engi's Farm by AwSubs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -133,7 +135,7 @@ public class MainGame {
 
         JTextArea textarea = new JTextArea(5,20);
         for (int i = 0; i < mainGame.getPlayer().getInventory().size(); i++){
-            textarea.append("[" + (i + 1) + "] " + mainGame.getPlayer().getInventory().get(i).getProductName() + "\n");
+            textarea.append("[" + (i + 1) + "] " + ((Product) mainGame.getPlayer().getInventory().get(i)).getProductName() + "\n");
         }
         
         panelStatus.add(textarea);

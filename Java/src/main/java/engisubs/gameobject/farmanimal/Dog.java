@@ -23,7 +23,7 @@ public class Dog extends FarmAnimal implements MeatProducing{
      * Method untuk menghasilkan daging
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceMeat(Player _p){
+    public void produceMeat(Player<?> _p){
         _p.addInventory(new DogMeat(50, name));
     }
     /**
@@ -37,7 +37,7 @@ public class Dog extends FarmAnimal implements MeatProducing{
      * Method untuk melakukan interaksi kepada Dog sebagai perwujudan fungsi abstrak pada GameObject
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
         System.out.println("You cannot do anything with a Dog, or can you? *wink*");
     }
 }
