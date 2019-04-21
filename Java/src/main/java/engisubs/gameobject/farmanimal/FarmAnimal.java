@@ -15,61 +15,103 @@ abstract public class FarmAnimal extends GameObject {
     protected String name = "";
     protected Land landPos = null;
     protected boolean killable = false;
-
+    /**
+     * Inisialisasi informasi yang dibutuhkan oleh FarmAnimal
+     * @param _position Posisi dari FarmAnimal
+     * @param _name     Nama dari FarmAnimal
+     * @param _landPos  Land dimana FarmAnimal berada
+     */
     protected void initializeFarmAnimal(Map <String, Integer> _position, String _name, Land _landPos){
         position.put("Row", _position.get("Row"));
         position.put("Col", _position.get("Col"));
         name = _name;
         landPos = _landPos;
     }
-
+    /**
+     * Getter position
+     * @return Map<String,Integer>
+     */
     public Map <String, Integer> getPosition(){
         return position;
     }
-
+    /**
+     * Getter timeUntilDead
+     * @return timeUntilDead
+     */
     public int getTimeUntilDead(){
         return timeUntilDead;
     }
-
+    /**
+     * Getter timeUntilHungry
+     * @return timeUntilHungry
+     */
     public int getTimeUntilHungry(){
         return timeUntilHungry;
     }
-
+    /**
+     * Getter isProductProduced
+     * @return isProductProduced
+     */
     public boolean getIsProductProduced(){
         return isProductProduced;
     }
-
+    /**
+     * Getter name
+     * @return name
+     */
     public String getName(){
         return name;
     }
-
+    /**
+     * Getter landPos
+     * @return landPos
+     */
     public Land getLandPos(){
         return landPos;
     }
-
+    /**
+     * Getter isKillable
+     * @return killable
+     */
     public boolean isKillable(){
         return killable;
     }
-
+    /**
+     * Getter isHungry
+     * @return hungry
+     */
     public boolean isHungry(){
         return hungry;
     }
-
+    /**
+     * Abstract prosedur talk yang berbeda untuk setiap FarmAnimal
+     */
     public abstract void talk();
-
+    /**
+     * Setter Position
+     * @param _newPosition Posisi baru dari FarmAnimal
+     */
     protected void setPosition(Map <String, Integer> _newPosition){
         position.replace("Row", _newPosition.get("Row"));
         position.replace("Col", _newPosition.get("Col"));
     }
-
+    /**
+     * Setter timeUntilDead
+     * @param _timeUntilDead timeUntilDead yang baru dari FarmAnimal
+     */
     protected void setTimeUntilDead(int _timeUntilDead){
         timeUntilDead = _timeUntilDead;
     }
-
+    /**
+     * Setter isProductProduced
+     * @param _isProductProduced Nilai isProductProduced yang baru
+     */
     protected void setIsProductProduced(boolean _isProductProduced){
         isProductProduced = _isProductProduced;
     }
-
+    /**
+     * Method makan bagi FarmAnimal
+     */
     public void eat(){
         if (landPos.isGrown()) {
             //System.out.println("MAKAN VALID");
@@ -83,11 +125,11 @@ abstract public class FarmAnimal extends GameObject {
         }
     }
 
-    /*
-        Method untuk mengupdate keadaan animal
-        Jika isHungry = True, timeUntilDead = timeUntilDead-1
-        Jika isHungry = False, timeUntilHungry = timeUntilHungry-1, dan jika timeUntilHungry = 0, isHungry = True
-    */
+    /**
+     *  Method untuk mengupdate keadaan animal
+     *  Jika isHungry = True, timeUntilDead = timeUntilDead-1
+     *  Jika isHungry = False, timeUntilHungry = timeUntilHungry-1, dan jika timeUntilHungry = 0, isHungry = True
+     */
     public void updateCondition(){
         if (isHungry()){
             timeUntilDead -= 1;
@@ -101,7 +143,11 @@ abstract public class FarmAnimal extends GameObject {
                
         }
     }
-
+    /**
+     * Method untuk menggerakan FarmAnimal
+     * @param dir Direction yang dituju oleh FarmAnimal tersebut
+     * @param map Peta dari game
+     */
     public void move(DirectionType dir, List<LinkedList<Cell>> map){
         switch (dir){
             //Atas
