@@ -6,6 +6,7 @@ import engisubs.gameobject.cell.facility.*;
 import engisubs.gameobject.cell.land.*;
 import engisubs.gameobject.farmanimal.*;
 import engisubs.gameobject.product.*;
+import engisubs.exception.InvalidCommandException;
 
 public class Player extends GameObject{
  	/**
@@ -164,7 +165,7 @@ public class Player extends GameObject{
 	 * Hewan yang diajak ngobrol, adalah hewan
 	 * yang berada di depan player.
 	 */
-	public void talk(){
+	public void talk() throws InvalidCommandException{
 		Cell targetCell = getCellInFront();
 		if(targetCell.isWalkable()){
 			Land targetLand = (Land) targetCell;
@@ -174,14 +175,14 @@ public class Player extends GameObject{
 				return;
 			}
 		} 
-		throw new RuntimeException("Tidak ada hewan disitu");
+		throw new InvalidCommandException("Tidak ada hewan disitu");
 	}
 	/**
 	 * Fungsi interact berguna untuk melakukan
 	 * interaksi dengan objek objek yang ada.
 	 * Efek Interaksi bergantung pada objek yang dikenai.
 	 */
-	public void interact(){
+	public void interact() throws InvalidCommandException{
 		Cell targetCell = getCellInFront();
 		if(targetCell != null){
 			System.out.println("INTER A");
@@ -201,13 +202,13 @@ public class Player extends GameObject{
 				return;
 			}
 		}
-		throw new RuntimeException("Tidak ada object yang bisa dilakukan interact disitu");
+		throw new InvalidCommandException("Tidak ada object yang bisa dilakukan interact disitu");
 	}
 	/**
 	 * Fungsi kill berguna untuk menyembelih hewan
 	 * hewan dalam kategori MeatProducing.
 	 */
-	public void kill(List<FarmAnimal> farmAnimalList){
+	public void kill(List<FarmAnimal> farmAnimalList) throws InvalidCommandException{
 		Cell targetCell = getCellInFront();
 		if(targetCell != null && targetCell.isWalkable()){
 			Land targetLand = (Land) targetCell;
@@ -225,7 +226,7 @@ public class Player extends GameObject{
 				}
 			}
 		} 
-		throw new RuntimeException("Tidak ada hewan yang bisa disembelih disitu");
+		throw new InvalidCommandException("Tidak ada hewan yang bisa disembelih disitu");
 		
 		
 	}
@@ -234,7 +235,7 @@ public class Player extends GameObject{
 	 * pada land yang dikenai, agar bisa dimakan oleh
 	 * Hewan yang berada pada land tersebut.
 	 */
-	public void grow(){
+	public void grow() throws InvalidCommandException{
 		int currentRow = currentPos.get("Row");
 		int currentCol = currentPos.get("Col");
 		Cell targetCell = worldMap.get(currentRow).get(currentCol);
@@ -244,10 +245,10 @@ public class Player extends GameObject{
 				targetLand.grow();
 				water--;
 			} else{
-				throw new RuntimeException("Air Anda tidak cukup");
+				throw new InvalidCommandException("Air Anda tidak cukup");
 			}
 		} else {
-			throw new RuntimeException("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
+			throw new InvalidCommandException("Sudah ada Rumput di Land ini, mau dijadiin Pohon?");
 		}
 	}
 	/**
@@ -255,7 +256,7 @@ public class Player extends GameObject{
 	 * player sesuai dengan direction yang diberikan.
 	 * @param direction arah dari pemain sekarang
 	 */
-	public void move(DirectionType direction){
+	public void move(DirectionType direction) throws InvalidCommandException{
 		System.out.println("A");
 		int di[] = {-1,1,0,0};
 		int dj[] = {0,0,1,-1};
@@ -290,7 +291,7 @@ public class Player extends GameObject{
 			currentPos.replace("Row", targetRow);
 			currentPos.replace("Col", targetCol);
 		} else {
-			throw new RuntimeException("Langkah tidak valid");
+			throw new InvalidCommandException("Langkah tidak valid");
 		}
 	}
 	
