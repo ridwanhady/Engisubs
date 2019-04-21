@@ -139,14 +139,14 @@ public class MainGame {
                         }
                         CellPanel newCell = null;
                         if (curToDraw.isOccupied()){
-                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere().getGameObjectType(), CELLSIZE);
+                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere(), CELLSIZE);
                         }else {
-                            newCell = new CellPanel(curToDraw.isGrown(), GameObjectType.LAND, CELLSIZE);
+                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw, CELLSIZE);
                         }
                         panel.add(newCell);
                     }else {
                         Cell curToDraw = mainGame.getCell(i, j);
-                        CellPanel newCell = new CellPanel(false, curToDraw.getGameObjectType(), CELLSIZE);
+                        CellPanel newCell = new CellPanel(false, curToDraw, CELLSIZE);
                         panel.add(newCell);
                     }
                 }

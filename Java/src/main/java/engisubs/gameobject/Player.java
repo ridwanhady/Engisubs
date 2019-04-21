@@ -293,6 +293,15 @@ public class Player extends GameObject{
 			throw new RuntimeException("Langkah tidak valid");
 		}
 	}
+	
+	/**
+	 * Mengembalikan direction pemain
+	 * @return direction
+	 */
+	public DirectionType getDirection() {
+		return direction;
+	}
+
 	/**
 	 * Mengembalikan cell yang dihadapan pemain
 	 * @return Cell
