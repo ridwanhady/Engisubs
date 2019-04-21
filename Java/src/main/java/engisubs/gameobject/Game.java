@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Collections;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -143,7 +144,7 @@ public class Game{
 						}
 					}
 				}
-				
+				Collections.sort(temp);
 				cellList.add(temp);
 			}
 		} else {
@@ -196,6 +197,7 @@ public class Game{
 		                }
 			        }
 			        m = line.length();
+			        Collections.sort(temp);
 			        cellList.add(temp);
 			        i++;
 			    	try {
