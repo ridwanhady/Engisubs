@@ -48,15 +48,11 @@
 ./engisubs/gameobject/GameObject$FarmProductType.class
 ./engisubs/gameobject/GameObject$GameObjectType.class
 ./engisubs/exception/InvalidCommandException.class
-./engisubs/ui/MainGame$4.class
-./engisubs/ui/MainGame$5.class
 ./engisubs/ui/MainMenu$2.class
-./engisubs/ui/MainGame$2.class
-./engisubs/ui/MainGame$3.class
-./engisubs/ui/MainMenu.class
 ./engisubs/ui/Main.class
 ./engisubs/ui/Main$1.class
 ./engisubs/ui/MainGame.class
 ./engisubs/ui/MainMenu$1.class
+./engisubs/ui/MainMenu.class
 ./engisubs/ui/MainGame$1.class
 ./engisubs/ui/CellPanel.class
