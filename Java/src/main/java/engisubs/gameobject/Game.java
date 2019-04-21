@@ -389,7 +389,8 @@ public class Game{
 
 
 	public void gameHandler(String command){
-		while(isGameStarted && farmAnimalList.size() > 0){
+		if (isGameStarted && farmAnimalList.size() > 0){
+			System.out.println("TESSS");
 			/*
 			System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
 			System.out.println("STATUS ");
@@ -422,6 +423,7 @@ public class Game{
 				System.out.println("LU,  LD,  LL,  LR,  QUIT,  SHOW,  STATUS");
 				*/
 			} else if(command.equals("UP")){
+				System.out.println("HEY TES");
 				try{
 					mainPlayer.move(GameObject.DirectionType.UP);
 					updateGame();				
@@ -554,7 +556,6 @@ public class Game{
 		if(farmAnimalList.size() == 0){
 			System.out.println("Sudah tidak ada hewan lagi di game");
 		}
-		sc.close();
 	}
 
 	/**
@@ -655,5 +656,17 @@ public class Game{
 	 */
 	public static List<GameObject.GameObjectType> getProduct(){
 		return Game.daftarProduct;
+	}
+
+	public int getRowCount(){
+		return n;
+	}
+
+	public int getColCount(){
+		return m;
+	}
+
+	public Cell getCell(int i, int j){
+		return cellList.get(i).get(j);
 	}
 }
