@@ -21,7 +21,7 @@ public class Mixer extends Facility{
      * Melakukan interact dengan Mixer untuk membuat sebuah SideProduct
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
       //minta input
       int idxInventory_1, idxInventory_2, idxSideProd, idxResep;
       boolean isIdx1Valid, isIdx2Valid, isIdxSideProdValid, isFarmProduct;

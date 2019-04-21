@@ -27,7 +27,7 @@ public class Truck extends Facility
      * digunakan untuk sementara waktu.
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
       //LinkedList <Product *> inventTemp = _p->getInventory();
       if(notUsableTurns > 0){
         System.out.println("Supir truck terlihat lelah, berikan dia waktu " + notUsableTurns + " ticks lagi sebelum menjual inventorymu!");

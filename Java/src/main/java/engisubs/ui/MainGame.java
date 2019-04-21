@@ -23,6 +23,7 @@ import javax.swing.SwingUtilities;
 import engisubs.gameobject.Game;
 import engisubs.gameobject.cell.Cell;
 import engisubs.gameobject.cell.land.Land;
+import engisubs.exception.InvalidCommandException;
 
 public class MainGame {
     private JPanel panelCommand = null;
@@ -196,7 +197,6 @@ public class MainGame {
         JButton temp = new JButton(command);
         temp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                mainGame.gameHandler(command.toUpperCase());
                 initPanel();
                 frame.remove(panelCommand);
                 frame.remove(panelStatus);

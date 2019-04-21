@@ -47,7 +47,7 @@ public class GameObject {
 	 * nantinya akan di Override oleh kelas kelas anaknya.
 	 * @param _p
 	 */
-	public void interact(Player _p){
+	public void interact(Player<?> _p){
 		System.out.println("Must Be Override");
 	}
 

@@ -44,7 +44,7 @@ public class Game{
 	/**
 	 * Objek player pada game
 	 */
-	private Player mainPlayer;
+	private Player<Object> mainPlayer;
 	/**
 	 * Banyak baris pada game
 	 */
@@ -228,7 +228,7 @@ public class Game{
 		}
 		int curRow = pos.get("Row");
 		int curCol = pos.get("Col");
-		mainPlayer = new Player(namaPemain, 10, 10, pos, cellList);
+		mainPlayer = new Player<Object>(namaPemain, 10, 10, pos, cellList);
 		((Land) (cellList.get(curRow).get(curCol))).setObjectHere(mainPlayer);
 
 			//Init animal
@@ -722,5 +722,9 @@ public class Game{
 
 	public Cell getCell(int i, int j){
 		return cellList.get(i).get(j);
+	}
+
+	public List<FarmAnimal> getFarmAnimalList() {
+		return farmAnimalList;
 	}
 }

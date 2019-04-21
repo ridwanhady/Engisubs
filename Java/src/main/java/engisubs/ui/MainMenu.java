@@ -52,6 +52,13 @@ public class MainMenu extends JFrame {
                 public void actionPerformed(ActionEvent arg0) {
                     MainGame MG = new MainGame();
                     clip.close();
+			try {
+				AudioInputStream gamebgm = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource("engisubs/ui/ASSETS/game_bgm.wav"));
+				clip = AudioSystem.getClip();
+				clip.open(gamebgm);
+				clip.start();
+			}
+			catch(Exception e){e.printStackTrace();}
                 }
             });
 			JButton exit = new JButton("EXIT GAME");

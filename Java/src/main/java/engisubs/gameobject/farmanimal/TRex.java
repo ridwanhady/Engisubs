@@ -23,7 +23,7 @@ public class TRex extends FarmAnimal implements MeatProducing{
      * Method untuk menghasilkan daging
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void produceMeat(Player _p){
+    public void produceMeat(Player<?> _p){
         _p.addInventory(new TRexMeat(200, name));
     }
     /**
@@ -36,7 +36,7 @@ public class TRex extends FarmAnimal implements MeatProducing{
      * Method untuk melakukan interaksi kepada TRex sebagai perwujudan fungsi abstrak pada GameObject
      * @param _p Reference dari player untuk melakukan penambahan inventory
      */
-    public void interact(Player _p){
+    public void interact(Player<?> _p){
         System.out.println("You cannot do anything with the great TRex, or can you? *wink*");
     }
 }
