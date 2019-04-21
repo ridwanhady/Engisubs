@@ -36,39 +36,25 @@ public class MainGame {
         /**
          * Button command dasar pemain.
          */
-        JButton up = new JButton("Up");
-        JButton down = new JButton("Down");
-        JButton left = new JButton("Left");
-        JButton right = new JButton("Right");
-
-        Font font  = new Font(Font.SANS_SERIF, Font.BOLD, 13);
-        
-        up.setFont(font);
-        //up.setBounds(1020,250,60,40);
-        up.setBackground(Color.white);
-
-        down.setFont(font);
-        //down.setBounds(1020,350,60,40);
-        down.setBackground(Color.white);
-
-        left.setFont(font);
-        //left.setBounds(930,300,60,40);
-        left.setBackground(Color.white);
+        JButton up = addCommand("Up");
+        JButton down = addCommand("Down");
+        JButton left = addCommand("Left");
+        JButton right = addCommand("Right");
         /**
          * Button command direction pemain.
          */
-        JButton lu = new JButton("LU");
-        JButton ld = new JButton("LD");
-        JButton ll = new JButton("LL");
-        JButton lr = new JButton("LR");
+        JButton lu = addCommand("LU");
+        JButton ld = addCommand("LD");
+        JButton ll = addCommand("LL");
+        JButton lr = addCommand("LR");
 
         /**
          * Button command interactable pemain.
          */
-        JButton talk = new JButton("Talk");
-        JButton grow = new JButton("Grow");
-        JButton interact = new JButton("Interact");
-        JButton kill = new JButton("Kill");
+        JButton talk = addCommand("Talk");
+        JButton grow = addCommand("Grow");
+        JButton interact = addCommand("Interact");
+        JButton kill = addCommand("Kill");
 
         try {
             InputStream fontStream = getClass().getClassLoader().getResourceAsStream("engisubs/ui/ASSETS/KentuckyFriedChickenFont.ttf");
@@ -83,13 +69,6 @@ public class MainGame {
         Container contentPane = frame.getContentPane();
         contentPane.setLayout(new FlowLayout(FlowLayout.LEADING, 0,0));
 
-        up.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                mainGame.gameHandler("UP");
-                initPanel();
-            }
-        });
-
         initPanel();
 
         JPanel panelStatus = new JPanel();
@@ -100,7 +79,6 @@ public class MainGame {
         JLabel tick = new JLabel("tick");
         panelStatus.add(tick);
     
-
         frame.add(panelStatus);
         
         JPanel panelCommand = new JPanel();
@@ -209,15 +187,26 @@ public class MainGame {
         frame.add(panel);
     }
     
-    void addGB(JPanel panel, Component component, int x, int y) {
+    private void addGB(JPanel panel, Component component, int x, int y) {
         c.gridx = x;
         c.gridy = y;
         panel.add(component, c);
     }
 
-    void setButton (JButton button) {
+    private void setButton (JButton button) {
         button.setFont(font);
         button.setBackground(Color.yellow);
+    }
+
+    private JButton addCommand(String command){
+        JButton temp = new JButton(command);
+        temp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainGame.gameHandler(command.toUpperCase());
+                initPanel();
+            }
+        });
+        return temp;
     }
 
 }
