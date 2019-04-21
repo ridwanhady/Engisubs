@@ -131,7 +131,6 @@ public class MainGame {
         try {
             for (int i = 0; i < mainGame.getRowCount(); i++){
                 for (int j = 0; j < mainGame.getColCount(); j++){
-            System.out.println(i + " " + j);
                     if (mainGame.getCell(i, j).isWalkable()){
                         Land curToDraw = ((Land) mainGame.getCell(i, j));
                         if (curToDraw == null){
@@ -139,7 +138,7 @@ public class MainGame {
                         }
                         CellPanel newCell = null;
                         if (curToDraw.isOccupied()){
-                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw.getObjectHere(), CELLSIZE);
+                            newCell = new CellPanel(curToDraw.isGrown(), curToDraw, CELLSIZE);
                         }else {
                             newCell = new CellPanel(curToDraw.isGrown(), curToDraw, CELLSIZE);
                         }

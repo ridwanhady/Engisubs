@@ -14,10 +14,15 @@ import engisubs.gameobject.GameObject.GameObjectType;
 import engisubs.gameobject.GameObject.DirectionType;
 import engisubs.gameobject.GameObject;
 import engisubs.gameobject.Player;
+import engisubs.gameobject.cell.land.Land;
 
 class CellPanel extends JLayeredPane{
-    static private String pathUngrown = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
-    static private String pathGrown = "engisubs/ui/ASSETS/tilesets/grassland-grown.jpg";
+    static private String pathGrasslandUngrown = "engisubs/ui/ASSETS/tilesets/grassland-ungrown.png";
+    static private String pathGrasslandGrown = "engisubs/ui/ASSETS/tilesets/grassland-grown.jpg";
+    static private String pathBarnUngrown = "engisubs/ui/ASSETS/tilesets/barn-ungrown.png";
+    static private String pathBarnGrown = "engisubs/ui/ASSETS/tilesets/barn-grown.png";
+    static private String pathCoopUngrown = "engisubs/ui/ASSETS/tilesets/coop-ungrown.png";
+    static private String pathCoopGrown = "engisubs/ui/ASSETS/tilesets/coop-grown.png";
     static private String pathCock = "engisubs/ui/ASSETS/Chicken/chickenn_2.gif";
     static private String pathBison = "engisubs/ui/ASSETS/Bison/bison_2.gif";
     static private String pathDog = "engisubs/ui/ASSETS/Dog/doggg_0.gif";
@@ -36,17 +41,27 @@ class CellPanel extends JLayeredPane{
     private JLabel cellGround = null;
     private JLabel charSprite = null;
     private GameObject objectHere = null;
+    private Land landHere = null;
     private final int CELLSIZE;
     
-    public CellPanel(boolean _isGrown, GameObject _objectHere, int cellSize){
+    public CellPanel(boolean _isGrown, GameObject _cellHere, int cellSize){
         super();
         CELLSIZE = cellSize;
         setLayout(null);
         setPreferredSize(new Dimension(cellSize, cellSize));
         //setBackground(Color.blue);
         isGrown = _isGrown;
-        objectHere = _objectHere;
-        reinitGroundSprite();
+
+        if(_cellHere.getGameObjectType() == GameObjectType.LAND){
+            if( ((Land)_cellHere).isOccupied()){
+                objectHere = ((Land)_cellHere).getObjectHere();
+            } else objectHere = _cellHere;
+            landHere = (Land)_cellHere;
+            reinitGroundSprite();
+        } else {
+            objectHere = _cellHere;
+        }
+        
         reinitCharSprite();
     }
 
@@ -58,10 +73,22 @@ class CellPanel extends JLayeredPane{
         
         String path = "";
         if (!isGrown){
-            path = pathUngrown;
+            if(landHere.getLandType() == Land.LandType.GRASSLAND){
+                path = pathGrasslandUngrown;
+            } else if(landHere.getLandType() == Land.LandType.BARN){
+                path = pathBarnUngrown;
+            } else if(landHere.getLandType() == Land.LandType.COOP){
+                path = pathCoopUngrown;
+            }
             //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathUngrown)));
         }else {
-            path = pathGrown;
+            if(landHere.getLandType() == Land.LandType.GRASSLAND){
+                path = pathGrasslandGrown;
+            } else if(landHere.getLandType() == Land.LandType.BARN){
+                path = pathBarnGrown;
+            } else if(landHere.getLandType() == Land.LandType.COOP){
+                path = pathCoopGrown;
+            }
             //cellGround = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathGrown)));
         }
         cellGround = new JLabel();
@@ -78,6 +105,7 @@ class CellPanel extends JLayeredPane{
         }
         charSprite = null;
         String path = "";
+        System.out.println(objectHere.getObjectType());
         if (objectHere.getObjectType() == GameObjectType.CHICKEN){
             path = pathCock;
             //charSprite = new JLabel(new ImageIcon(getClass().getClassLoader().getResource(pathCock)));
@@ -130,6 +158,7 @@ class CellPanel extends JLayeredPane{
     }
     private void addImage(JLabel label, String path){
         URL url = getClass().getClassLoader().getResource(path);
+        System.out.println(path);
         ImageIcon icon = new ImageIcon(url);
         icon.setImage(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icon);
