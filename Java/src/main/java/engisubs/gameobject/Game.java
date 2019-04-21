@@ -723,4 +723,8 @@ public class Game{
 	public Cell getCell(int i, int j){
 		return cellList.get(i).get(j);
 	}
+
+	public List<FarmAnimal> getFarmAnimalList() {
+		return farmAnimalList;
+	}
 }
