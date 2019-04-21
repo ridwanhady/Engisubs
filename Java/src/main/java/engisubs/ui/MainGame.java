@@ -15,6 +15,8 @@ import engisubs.gameobject.cell.*;
 import engisubs.gameobject.cell.land.*;
 
 public class MainGame {
+    private JPanel panelCommand = null;
+    private JPanel panelStatus = null;
     private JFrame frame;
     private Game mainGame = null;
     private JPanel panel = null;
@@ -68,17 +70,16 @@ public class MainGame {
 
         initPanel();
 
-        JPanel panelStatus = new JPanel();
-        panelStatus.setPreferredSize(new Dimension(200,600));
+        panelStatus = new JPanel();
+        panelStatus.setPreferredSize(new Dimension(200,CELLSIZE*10));
         panelStatus.setLayout(new FlowLayout(FlowLayout.LEADING,20,0));
         panelStatus.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        
         JLabel tick = new JLabel("tick");
         panelStatus.add(tick);
     
         frame.add(panelStatus);
-        
-        JPanel panelCommand = new JPanel();
+
+        panelCommand = new JPanel();
         panelCommand.setPreferredSize(new Dimension(1150,100));
         panelCommand.setLayout(new GridBagLayout());
         c = new GridBagConstraints();
@@ -101,8 +102,6 @@ public class MainGame {
         panelCommand.add(interact,c);
         panelCommand.add(kill,c);
 
-        
-        frame.setResizable(true);
         frame.add(panelCommand);
         frame.setSize(1150,900);
         frame.setTitle("Engi's Farm by AwSubs");
@@ -188,10 +187,14 @@ public class MainGame {
             public void actionPerformed(ActionEvent arg0) {
                 mainGame.gameHandler(command.toUpperCase());
                 initPanel();
+                frame.remove(panelCommand);
+                frame.remove(panelStatus);
+                frame.add(panelStatus);
+                frame.add(panelCommand);
+                SwingUtilities.updateComponentTreeUI(frame);
             }
         });
         setButton(temp);
         return temp;
     }
-
 }
